@@ -1,0 +1,391 @@
+   1               		.file	"keymap_common.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               		.section	.text.actionmap_key_to_action,"ax",@progbits
+  11               	.global	actionmap_key_to_action
+  13               	actionmap_key_to_action:
+  14               	.LFB102:
+  15               		.file 1 "keymap_common.c"
+   1:keymap_common.c **** /*
+   2:keymap_common.c **** Copyright 2012,2013 Jun Wako <wakojun@gmail.com>
+   3:keymap_common.c **** 
+   4:keymap_common.c **** This program is free software: you can redistribute it and/or modify
+   5:keymap_common.c **** it under the terms of the GNU General Public License as published by
+   6:keymap_common.c **** the Free Software Foundation, either version 2 of the License, or
+   7:keymap_common.c **** (at your option) any later version.
+   8:keymap_common.c **** 
+   9:keymap_common.c **** This program is distributed in the hope that it will be useful,
+  10:keymap_common.c **** but WITHOUT ANY WARRANTY; without even the implied warranty of
+  11:keymap_common.c **** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  12:keymap_common.c **** GNU General Public License for more details.
+  13:keymap_common.c **** 
+  14:keymap_common.c **** You should have received a copy of the GNU General Public License
+  15:keymap_common.c **** along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  16:keymap_common.c **** */
+  17:keymap_common.c **** #include "keymap_common.h"
+  18:keymap_common.c **** 
+  19:keymap_common.c **** /* translates key to keycode */
+  20:keymap_common.c **** uint16_t actionmap_key_to_action(uint8_t layer, key_t key)
+  21:keymap_common.c **** {
+  16               		.loc 1 21 0
+  17               		.cfi_startproc
+  18               	.LVL0:
+  19               	/* prologue: function */
+  20               	/* frame size = 0 */
+  21               	/* stack size = 0 */
+  22               	.L__stack_usage = 0
+  23               	.LBB6:
+  22:keymap_common.c ****     return pgm_read_word(&keymaps[(layer)][(key.row)][(key.col)]);
+  24               		.loc 1 22 0
+  25 0000 9BE0      		ldi r25,lo8(11)
+  26 0002 799F      		mul r23,r25
+  27 0004 F001      		movw r30,r0
+  28 0006 1124      		clr __zero_reg__
+  29 0008 9CE2      		ldi r25,lo8(44)
+  30 000a 899F      		mul r24,r25
+  31 000c E00D      		add r30,r0
+  32 000e F11D      		adc r31,r1
+  33 0010 1124      		clr __zero_reg__
+  34 0012 E60F      		add r30,r22
+  35 0014 F11D      		adc r31,__zero_reg__
+  36 0016 EE0F      		lsl r30
+  37 0018 FF1F      		rol r31
+  38               	.LVL1:
+  39 001a E050      		subi r30,lo8(-(keymaps))
+  40 001c F040      		sbci r31,hi8(-(keymaps))
+  41               	.LVL2:
+  42               	.LBE6:
+  23:keymap_common.c **** }
+  43               		.loc 1 23 0
+  44               	/* #APP */
+  45               	 ;  22 "keymap_common.c" 1
+  46 001e 8591      		lpm r24, Z+
+  47 0020 9491      		lpm r25, Z
+  48               		
+  49               	 ;  0 "" 2
+  50               	/* #NOAPP */
+  51 0022 0895      		ret
+  52               		.cfi_endproc
+  53               	.LFE102:
+  55               		.section	.text.keymap_fn_to_action,"ax",@progbits
+  56               	.global	keymap_fn_to_action
+  58               	keymap_fn_to_action:
+  59               	.LFB103:
+  24:keymap_common.c **** 
+  25:keymap_common.c **** /* translates Fn keycode to action */
+  26:keymap_common.c **** action_t keymap_fn_to_action(uint8_t keycode)
+  27:keymap_common.c **** {
+  60               		.loc 1 27 0
+  61               		.cfi_startproc
+  62               	.LVL3:
+  63               	/* prologue: function */
+  64               	/* frame size = 0 */
+  65               	/* stack size = 0 */
+  66               	.L__stack_usage = 0
+  67               	.LBB7:
+  28:keymap_common.c ****     return (action_t){ .code = pgm_read_word(&fn_actions[FN_INDEX(keycode)]) };
+  68               		.loc 1 28 0
+  69 0000 E82F      		mov r30,r24
+  70 0002 F0E0      		ldi r31,0
+  71 0004 EE0F      		lsl r30
+  72 0006 FF1F      		rol r31
+  73 0008 E050      		subi r30,lo8(-(fn_actions-384))
+  74 000a F040      		sbci r31,hi8(-(fn_actions-384))
+  75               	.LVL4:
+  76               	.LBE7:
+  29:keymap_common.c **** }
+  77               		.loc 1 29 0
+  78               	/* #APP */
+  79               	 ;  28 "keymap_common.c" 1
+  80 000c 8591      		lpm r24, Z+
+  81 000e 9491      		lpm r25, Z
+  82               		
+  83               	 ;  0 "" 2
+  84               	.LVL5:
+  85               	/* #NOAPP */
+  86 0010 0895      		ret
+  87               		.cfi_endproc
+  88               	.LFE103:
+  90               		.section	.text.bootloader,"ax",@progbits
+  91               	.global	bootloader
+  93               	bootloader:
+  94               	.LFB104:
+  30:keymap_common.c **** 
+  31:keymap_common.c **** void bootloader() {
+  95               		.loc 1 31 0
+  96               		.cfi_startproc
+  97               	/* prologue: function */
+  98               	/* frame size = 0 */
+  99               	/* stack size = 0 */
+ 100               	.L__stack_usage = 0
+  32:keymap_common.c ****   clear_keyboard();
+ 101               		.loc 1 32 0
+ 102 0000 0E94 0000 		call clear_keyboard
+ 103               	.LVL6:
+  33:keymap_common.c ****   print("\n\nJump to bootloader... ");
+ 104               		.loc 1 33 0
+ 105 0004 80E0      		ldi r24,lo8(__c.4553)
+ 106 0006 90E0      		ldi r25,hi8(__c.4553)
+ 107 0008 0E94 0000 		call xputs
+ 108               	.LVL7:
+ 109               	.LBB8:
+ 110               	.LBB9:
+ 111               		.file 2 "/usr/lib/avr/include/util/delay.h"
+   1:/usr/lib/avr/include/util/delay.h **** /* Copyright (c) 2002, Marek Michalkiewicz
+   2:/usr/lib/avr/include/util/delay.h ****    Copyright (c) 2004,2005,2007 Joerg Wunsch
+   3:/usr/lib/avr/include/util/delay.h ****    Copyright (c) 2007  Florin-Viorel Petrov
+   4:/usr/lib/avr/include/util/delay.h ****    All rights reserved.
+   5:/usr/lib/avr/include/util/delay.h **** 
+   6:/usr/lib/avr/include/util/delay.h ****    Redistribution and use in source and binary forms, with or without
+   7:/usr/lib/avr/include/util/delay.h ****    modification, are permitted provided that the following conditions are met:
+   8:/usr/lib/avr/include/util/delay.h **** 
+   9:/usr/lib/avr/include/util/delay.h ****    * Redistributions of source code must retain the above copyright
+  10:/usr/lib/avr/include/util/delay.h ****      notice, this list of conditions and the following disclaimer.
+  11:/usr/lib/avr/include/util/delay.h **** 
+  12:/usr/lib/avr/include/util/delay.h ****    * Redistributions in binary form must reproduce the above copyright
+  13:/usr/lib/avr/include/util/delay.h ****      notice, this list of conditions and the following disclaimer in
+  14:/usr/lib/avr/include/util/delay.h ****      the documentation and/or other materials provided with the
+  15:/usr/lib/avr/include/util/delay.h ****      distribution.
+  16:/usr/lib/avr/include/util/delay.h **** 
+  17:/usr/lib/avr/include/util/delay.h ****    * Neither the name of the copyright holders nor the names of
+  18:/usr/lib/avr/include/util/delay.h ****      contributors may be used to endorse or promote products derived
+  19:/usr/lib/avr/include/util/delay.h ****      from this software without specific prior written permission.
+  20:/usr/lib/avr/include/util/delay.h **** 
+  21:/usr/lib/avr/include/util/delay.h ****   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  22:/usr/lib/avr/include/util/delay.h ****   AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  23:/usr/lib/avr/include/util/delay.h ****   IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  24:/usr/lib/avr/include/util/delay.h ****   ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+  25:/usr/lib/avr/include/util/delay.h ****   LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  26:/usr/lib/avr/include/util/delay.h ****   CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  27:/usr/lib/avr/include/util/delay.h ****   SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  28:/usr/lib/avr/include/util/delay.h ****   INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  29:/usr/lib/avr/include/util/delay.h ****   CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  30:/usr/lib/avr/include/util/delay.h ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  31:/usr/lib/avr/include/util/delay.h ****   POSSIBILITY OF SUCH DAMAGE. */
+  32:/usr/lib/avr/include/util/delay.h **** 
+  33:/usr/lib/avr/include/util/delay.h **** /* $Id: delay.h.in 2251 2011-09-14 08:20:33Z joerg_wunsch $ */
+  34:/usr/lib/avr/include/util/delay.h **** 
+  35:/usr/lib/avr/include/util/delay.h **** #ifndef _UTIL_DELAY_H_
+  36:/usr/lib/avr/include/util/delay.h **** #define _UTIL_DELAY_H_ 1
+  37:/usr/lib/avr/include/util/delay.h **** 
+  38:/usr/lib/avr/include/util/delay.h **** #ifndef __HAS_DELAY_CYCLES
+  39:/usr/lib/avr/include/util/delay.h **** #define __HAS_DELAY_CYCLES 1
+  40:/usr/lib/avr/include/util/delay.h **** #endif
+  41:/usr/lib/avr/include/util/delay.h **** 
+  42:/usr/lib/avr/include/util/delay.h **** #include <inttypes.h>
+  43:/usr/lib/avr/include/util/delay.h **** #include <util/delay_basic.h>
+  44:/usr/lib/avr/include/util/delay.h **** #include <math.h>
+  45:/usr/lib/avr/include/util/delay.h **** 
+  46:/usr/lib/avr/include/util/delay.h **** /** \file */
+  47:/usr/lib/avr/include/util/delay.h **** /** \defgroup util_delay <util/delay.h>: Convenience functions for busy-wait delay loops
+  48:/usr/lib/avr/include/util/delay.h ****     \code
+  49:/usr/lib/avr/include/util/delay.h ****     #define F_CPU 1000000UL  // 1 MHz
+  50:/usr/lib/avr/include/util/delay.h ****     //#define F_CPU 14.7456E6
+  51:/usr/lib/avr/include/util/delay.h ****     #include <util/delay.h>
+  52:/usr/lib/avr/include/util/delay.h ****     \endcode
+  53:/usr/lib/avr/include/util/delay.h **** 
+  54:/usr/lib/avr/include/util/delay.h ****     \note As an alternative method, it is possible to pass the
+  55:/usr/lib/avr/include/util/delay.h ****     F_CPU macro down to the compiler from the Makefile.
+  56:/usr/lib/avr/include/util/delay.h ****     Obviously, in that case, no \c \#define statement should be
+  57:/usr/lib/avr/include/util/delay.h ****     used.
+  58:/usr/lib/avr/include/util/delay.h **** 
+  59:/usr/lib/avr/include/util/delay.h ****     The functions in this header file are wrappers around the basic
+  60:/usr/lib/avr/include/util/delay.h ****     busy-wait functions from <util/delay_basic.h>.  They are meant as
+  61:/usr/lib/avr/include/util/delay.h ****     convenience functions where actual time values can be specified
+  62:/usr/lib/avr/include/util/delay.h ****     rather than a number of cycles to wait for.  The idea behind is
+  63:/usr/lib/avr/include/util/delay.h ****     that compile-time constant expressions will be eliminated by
+  64:/usr/lib/avr/include/util/delay.h ****     compiler optimization so floating-point expressions can be used
+  65:/usr/lib/avr/include/util/delay.h ****     to calculate the number of delay cycles needed based on the CPU
+  66:/usr/lib/avr/include/util/delay.h ****     frequency passed by the macro F_CPU.
+  67:/usr/lib/avr/include/util/delay.h **** 
+  68:/usr/lib/avr/include/util/delay.h ****     \note In order for these functions to work as intended, compiler
+  69:/usr/lib/avr/include/util/delay.h ****     optimizations <em>must</em> be enabled, and the delay time
+  70:/usr/lib/avr/include/util/delay.h ****     <em>must</em> be an expression that is a known constant at
+  71:/usr/lib/avr/include/util/delay.h ****     compile-time.  If these requirements are not met, the resulting
+  72:/usr/lib/avr/include/util/delay.h ****     delay will be much longer (and basically unpredictable), and
+  73:/usr/lib/avr/include/util/delay.h ****     applications that otherwise do not use floating-point calculations
+  74:/usr/lib/avr/include/util/delay.h ****     will experience severe code bloat by the floating-point library
+  75:/usr/lib/avr/include/util/delay.h ****     routines linked into the application.
+  76:/usr/lib/avr/include/util/delay.h **** 
+  77:/usr/lib/avr/include/util/delay.h ****     The functions available allow the specification of microsecond, and
+  78:/usr/lib/avr/include/util/delay.h ****     millisecond delays directly, using the application-supplied macro
+  79:/usr/lib/avr/include/util/delay.h ****     F_CPU as the CPU clock frequency (in Hertz).
+  80:/usr/lib/avr/include/util/delay.h **** 
+  81:/usr/lib/avr/include/util/delay.h **** */
+  82:/usr/lib/avr/include/util/delay.h **** 
+  83:/usr/lib/avr/include/util/delay.h **** #if !defined(__DOXYGEN__)
+  84:/usr/lib/avr/include/util/delay.h **** static inline void _delay_us(double __us) __attribute__((always_inline));
+  85:/usr/lib/avr/include/util/delay.h **** static inline void _delay_ms(double __ms) __attribute__((always_inline));
+  86:/usr/lib/avr/include/util/delay.h **** #endif
+  87:/usr/lib/avr/include/util/delay.h **** 
+  88:/usr/lib/avr/include/util/delay.h **** #ifndef F_CPU
+  89:/usr/lib/avr/include/util/delay.h **** /* prevent compiler error by supplying a default */
+  90:/usr/lib/avr/include/util/delay.h **** # warning "F_CPU not defined for <util/delay.h>"
+  91:/usr/lib/avr/include/util/delay.h **** # define F_CPU 1000000UL
+  92:/usr/lib/avr/include/util/delay.h **** #endif
+  93:/usr/lib/avr/include/util/delay.h **** 
+  94:/usr/lib/avr/include/util/delay.h **** #ifndef __OPTIMIZE__
+  95:/usr/lib/avr/include/util/delay.h **** # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+  96:/usr/lib/avr/include/util/delay.h **** #endif
+  97:/usr/lib/avr/include/util/delay.h **** 
+  98:/usr/lib/avr/include/util/delay.h **** #if __HAS_DELAY_CYCLES && defined(__OPTIMIZE__) && \
+  99:/usr/lib/avr/include/util/delay.h ****   !defined(__DELAY_BACKWARD_COMPATIBLE__) &&	   \
+ 100:/usr/lib/avr/include/util/delay.h ****   __STDC_HOSTED__
+ 101:/usr/lib/avr/include/util/delay.h **** #  include <math.h>
+ 102:/usr/lib/avr/include/util/delay.h **** #endif
+ 103:/usr/lib/avr/include/util/delay.h **** 
+ 104:/usr/lib/avr/include/util/delay.h **** /**
+ 105:/usr/lib/avr/include/util/delay.h ****    \ingroup util_delay
+ 106:/usr/lib/avr/include/util/delay.h **** 
+ 107:/usr/lib/avr/include/util/delay.h ****    Perform a delay of \c __ms milliseconds, using _delay_loop_2().
+ 108:/usr/lib/avr/include/util/delay.h **** 
+ 109:/usr/lib/avr/include/util/delay.h ****    The macro F_CPU is supposed to be defined to a
+ 110:/usr/lib/avr/include/util/delay.h ****    constant defining the CPU clock frequency (in Hertz).
+ 111:/usr/lib/avr/include/util/delay.h **** 
+ 112:/usr/lib/avr/include/util/delay.h ****    The maximal possible delay is 262.14 ms / F_CPU in MHz.
+ 113:/usr/lib/avr/include/util/delay.h **** 
+ 114:/usr/lib/avr/include/util/delay.h ****    When the user request delay which exceed the maximum possible one,
+ 115:/usr/lib/avr/include/util/delay.h ****    _delay_ms() provides a decreased resolution functionality. In this
+ 116:/usr/lib/avr/include/util/delay.h ****    mode _delay_ms() will work with a resolution of 1/10 ms, providing
+ 117:/usr/lib/avr/include/util/delay.h ****    delays up to 6.5535 seconds (independent from CPU frequency).  The
+ 118:/usr/lib/avr/include/util/delay.h ****    user will not be informed about decreased resolution.
+ 119:/usr/lib/avr/include/util/delay.h **** 
+ 120:/usr/lib/avr/include/util/delay.h ****    If the avr-gcc toolchain has __builtin_avr_delay_cycles(unsigned long)
+ 121:/usr/lib/avr/include/util/delay.h ****    support, maximal possible delay is 4294967.295 ms/ F_CPU in MHz. For
+ 122:/usr/lib/avr/include/util/delay.h ****    values greater than the maximal possible delay, overflows results in
+ 123:/usr/lib/avr/include/util/delay.h ****    no delay i.e., 0ms.
+ 124:/usr/lib/avr/include/util/delay.h **** 
+ 125:/usr/lib/avr/include/util/delay.h ****    Conversion of __us into clock cycles may not always result in integer.
+ 126:/usr/lib/avr/include/util/delay.h ****    By default, the clock cycles rounded up to next integer. This ensures that
+ 127:/usr/lib/avr/include/util/delay.h ****    the user gets atleast __us microseconds of delay.
+ 128:/usr/lib/avr/include/util/delay.h **** 
+ 129:/usr/lib/avr/include/util/delay.h ****    Alternatively, user can define __DELAY_ROUND_DOWN__ and __DELAY_ROUND_CLOSEST__
+ 130:/usr/lib/avr/include/util/delay.h ****    to round down and round to closest integer.
+ 131:/usr/lib/avr/include/util/delay.h **** 
+ 132:/usr/lib/avr/include/util/delay.h ****    Note: The new implementation of _delay_ms(double __ms) with 
+ 133:/usr/lib/avr/include/util/delay.h ****     __builtin_avr_delay_cycles(unsigned long) support is not backward compatible. 
+ 134:/usr/lib/avr/include/util/delay.h ****    User can define __DELAY_BACKWARD_COMPATIBLE__ to get a backward compatible delay.
+ 135:/usr/lib/avr/include/util/delay.h ****    Also, the backward compatible
+ 136:/usr/lib/avr/include/util/delay.h ****    algorithm will be chosen if the code is compiled in a <em>freestanding
+ 137:/usr/lib/avr/include/util/delay.h ****    environment</em> (GCC option \c -ffreestanding), as the math functions
+ 138:/usr/lib/avr/include/util/delay.h ****    required for rounding are not available to the compiler then.
+ 139:/usr/lib/avr/include/util/delay.h **** 
+ 140:/usr/lib/avr/include/util/delay.h ****  */
+ 141:/usr/lib/avr/include/util/delay.h **** void
+ 142:/usr/lib/avr/include/util/delay.h **** _delay_ms(double __ms)
+ 143:/usr/lib/avr/include/util/delay.h **** {
+ 144:/usr/lib/avr/include/util/delay.h **** 	uint16_t __ticks;
+ 145:/usr/lib/avr/include/util/delay.h **** 	double __tmp ; 
+ 146:/usr/lib/avr/include/util/delay.h **** #if __HAS_DELAY_CYCLES && defined(__OPTIMIZE__) && \
+ 147:/usr/lib/avr/include/util/delay.h ****   !defined(__DELAY_BACKWARD_COMPATIBLE__) &&	   \
+ 148:/usr/lib/avr/include/util/delay.h ****   __STDC_HOSTED__
+ 149:/usr/lib/avr/include/util/delay.h **** 	uint32_t __ticks_dc;
+ 150:/usr/lib/avr/include/util/delay.h **** 	extern void __builtin_avr_delay_cycles(unsigned long);
+ 151:/usr/lib/avr/include/util/delay.h **** 	__tmp = ((F_CPU) / 1e3) * __ms;
+ 152:/usr/lib/avr/include/util/delay.h **** 
+ 153:/usr/lib/avr/include/util/delay.h **** 	#if defined(__DELAY_ROUND_DOWN__)
+ 154:/usr/lib/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)fabs(__tmp);
+ 155:/usr/lib/avr/include/util/delay.h **** 
+ 156:/usr/lib/avr/include/util/delay.h **** 	#elif defined(__DELAY_ROUND_CLOSEST__)
+ 157:/usr/lib/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(fabs(__tmp)+0.5);
+ 158:/usr/lib/avr/include/util/delay.h **** 
+ 159:/usr/lib/avr/include/util/delay.h **** 	#else
+ 160:/usr/lib/avr/include/util/delay.h **** 		//round up by default
+ 161:/usr/lib/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+ 162:/usr/lib/avr/include/util/delay.h **** 	#endif
+ 163:/usr/lib/avr/include/util/delay.h **** 
+ 164:/usr/lib/avr/include/util/delay.h **** 	__builtin_avr_delay_cycles(__ticks_dc);
+ 112               		.loc 2 164 0
+ 113 000c 2FEF      		ldi r18,lo8(799999)
+ 114 000e 84E3      		ldi r24,hi8(799999)
+ 115 0010 9CE0      		ldi r25,hlo8(799999)
+ 116 0012 2150      		1: subi r18,1
+ 117 0014 8040      		sbci r24,0
+ 118 0016 9040      		sbci r25,0
+ 119 0018 01F4      		brne 1b
+ 120 001a 00C0      		rjmp .
+ 121 001c 0000      		nop
+ 122               	.LBE9:
+ 123               	.LBE8:
+  34:keymap_common.c ****   _delay_ms(250);
+  35:keymap_common.c **** #ifdef TEENSY
+  36:keymap_common.c ****   cli();
+  37:keymap_common.c ****   UDCON = 1;
+  38:keymap_common.c ****   USBCON = (1<<FRZCLK);  // disable USB
+  39:keymap_common.c ****   UCSR1B = 0;
+  40:keymap_common.c ****   _delay_ms(5);
+  41:keymap_common.c ****   EIMSK = 0; PCICR = 0; SPCR = 0; ACSR = 0; EECR = 0; ADCSRA = 0;
+  42:keymap_common.c ****   TIMSK0 = 0; TIMSK1 = 0; TIMSK3 = 0; TIMSK4 = 0; UCSR1B = 0; TWCR = 0;
+  43:keymap_common.c ****   DDRB = 0; DDRC = 0; DDRD = 0; DDRE = 0; DDRF = 0; TWCR = 0;
+  44:keymap_common.c ****   PORTB = 0; PORTC = 0; PORTD = 0; PORTE = 0; PORTF = 0;
+  45:keymap_common.c ****   asm volatile("jmp 0x7E00");
+  46:keymap_common.c **** #else
+  47:keymap_common.c ****   *(uint16_t *)0x0800 = 0x7777; // these two are a-star-specific
+ 124               		.loc 1 47 0
+ 125 001e 87E7      		ldi r24,lo8(119)
+ 126 0020 97E7      		ldi r25,lo8(119)
+ 127 0022 9093 0108 		sts 2048+1,r25
+ 128 0026 8093 0008 		sts 2048,r24
+  48:keymap_common.c ****   bootloader_jump();
+ 129               		.loc 1 48 0
+ 130 002a 0E94 0000 		call bootloader_jump
+ 131               	.LVL8:
+  49:keymap_common.c ****   print("not supported.\n");
+ 132               		.loc 1 49 0
+ 133 002e 80E0      		ldi r24,lo8(__c.4556)
+ 134 0030 90E0      		ldi r25,hi8(__c.4556)
+ 135 0032 0C94 0000 		jmp xputs
+ 136               	.LVL9:
+ 137               		.cfi_endproc
+ 138               	.LFE104:
+ 140               		.section	.progmem.data,"a",@progbits
+ 143               	__c.4556:
+ 144 0000 6E6F 7420 		.string	"not supported.\n"
+ 144      7375 7070 
+ 144      6F72 7465 
+ 144      642E 0A00 
+ 147               	__c.4553:
+ 148 0010 0A0A 4A75 		.string	"\n\nJump to bootloader... "
+ 148      6D70 2074 
+ 148      6F20 626F 
+ 148      6F74 6C6F 
+ 148      6164 6572 
+ 149               		.comm	debug_config,1,1
+ 150               		.text
+ 151               	.Letext0:
+ 152               		.file 3 "/usr/lib/avr/include/stdint.h"
+ 153               		.file 4 "../../common/keyboard.h"
+ 154               		.file 5 "../../common/action_code.h"
+ 155               		.file 6 "../../common/debug_config.h"
+ 156               		.file 7 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBTask.h"
+ 157               		.file 8 "keymap_common.h"
+ 158               		.file 9 "../../common/action.h"
+ 159               		.file 10 "../../common/xprintf.h"
+ 160               		.file 11 "../../common/keycode.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 keymap_common.c
+     /tmp/cc86xjXv.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cc86xjXv.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cc86xjXv.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cc86xjXv.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cc86xjXv.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cc86xjXv.s:13     .text.actionmap_key_to_action:0000000000000000 actionmap_key_to_action
+     /tmp/cc86xjXv.s:58     .text.keymap_fn_to_action:0000000000000000 keymap_fn_to_action
+     /tmp/cc86xjXv.s:93     .text.bootloader:0000000000000000 bootloader
+     /tmp/cc86xjXv.s:147    .progmem.data:0000000000000010 __c.4553
+     /tmp/cc86xjXv.s:143    .progmem.data:0000000000000000 __c.4556
+                            *COM*:0000000000000001 debug_config
+
+UNDEFINED SYMBOLS
+keymaps
+fn_actions
+clear_keyboard
+xputs
+bootloader_jump
+__do_clear_bss

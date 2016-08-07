@@ -1,0 +1,198 @@
+   1               		.file	"print.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               		.section	.text.print_set_sendchar,"ax",@progbits
+  11               	.global	print_set_sendchar
+  13               	print_set_sendchar:
+  14               	.LFB1:
+  15               		.file 1 "../../common/print.c"
+   1:../../common/print.c **** /* Copyright 2012,2013 Jun Wako <wakojun@gmail.com> */
+   2:../../common/print.c **** /* Very basic print functions, intended to be used with usb_debug_only.c
+   3:../../common/print.c ****  * http://www.pjrc.com/teensy/
+   4:../../common/print.c ****  * Copyright (c) 2008 PJRC.COM, LLC
+   5:../../common/print.c ****  * 
+   6:../../common/print.c ****  * Permission is hereby granted, free of charge, to any person obtaining a copy
+   7:../../common/print.c ****  * of this software and associated documentation files (the "Software"), to deal
+   8:../../common/print.c ****  * in the Software without restriction, including without limitation the rights
+   9:../../common/print.c ****  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  10:../../common/print.c ****  * copies of the Software, and to permit persons to whom the Software is
+  11:../../common/print.c ****  * furnished to do so, subject to the following conditions:
+  12:../../common/print.c ****  * 
+  13:../../common/print.c ****  * The above copyright notice and this permission notice shall be included in
+  14:../../common/print.c ****  * all copies or substantial portions of the Software.
+  15:../../common/print.c ****  * 
+  16:../../common/print.c ****  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  17:../../common/print.c ****  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  18:../../common/print.c ****  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  19:../../common/print.c ****  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  20:../../common/print.c ****  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  21:../../common/print.c ****  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  22:../../common/print.c ****  * THE SOFTWARE.
+  23:../../common/print.c ****  */
+  24:../../common/print.c **** 
+  25:../../common/print.c **** #include <avr/io.h>
+  26:../../common/print.c **** #include <avr/pgmspace.h>
+  27:../../common/print.c **** #include "print.h"
+  28:../../common/print.c **** 
+  29:../../common/print.c **** 
+  30:../../common/print.c **** #ifndef NO_PRINT
+  31:../../common/print.c **** 
+  32:../../common/print.c **** #define sendchar(c)    xputc(c)
+  33:../../common/print.c **** 
+  34:../../common/print.c **** 
+  35:../../common/print.c **** void print_set_sendchar(int8_t (*sendchar_func)(uint8_t))
+  36:../../common/print.c **** {
+  16               		.loc 1 36 0
+  17               		.cfi_startproc
+  18               	.LVL0:
+  19               	/* prologue: function */
+  20               	/* frame size = 0 */
+  21               	/* stack size = 0 */
+  22               	.L__stack_usage = 0
+  37:../../common/print.c ****     xdev_out(sendchar_func);
+  23               		.loc 1 37 0
+  24 0000 9093 0000 		sts xfunc_out+1,r25
+  25 0004 8093 0000 		sts xfunc_out,r24
+  26 0008 0895      		ret
+  27               		.cfi_endproc
+  28               	.LFE1:
+  30               		.section	.text.print_S,"ax",@progbits
+  31               	.global	print_S
+  33               	print_S:
+  34               	.LFB2:
+  38:../../common/print.c **** }
+  39:../../common/print.c **** 
+  40:../../common/print.c **** void print_S(const char *s)
+  41:../../common/print.c **** {
+  35               		.loc 1 41 0
+  36               		.cfi_startproc
+  37               	.LVL1:
+  38 0000 1F93      		push r17
+  39               	.LCFI0:
+  40               		.cfi_def_cfa_offset 3
+  41               		.cfi_offset 17, -2
+  42 0002 CF93      		push r28
+  43               	.LCFI1:
+  44               		.cfi_def_cfa_offset 4
+  45               		.cfi_offset 28, -3
+  46 0004 DF93      		push r29
+  47               	.LCFI2:
+  48               		.cfi_def_cfa_offset 5
+  49               		.cfi_offset 29, -4
+  50               	/* prologue: function */
+  51               	/* frame size = 0 */
+  52               	/* stack size = 3 */
+  53               	.L__stack_usage = 3
+  54 0006 EC01      		movw r28,r24
+  55               	.LVL2:
+  56               	.L5:
+  42:../../common/print.c ****     uint8_t c;
+  43:../../common/print.c ****     while (1) {
+  44:../../common/print.c ****         c = *s++;
+  57               		.loc 1 44 0
+  58 0008 1991      		ld r17,Y+
+  59               	.LVL3:
+  45:../../common/print.c ****         if (!c) break;
+  60               		.loc 1 45 0
+  61 000a 1123      		tst r17
+  62 000c 01F0      		breq .L2
+  46:../../common/print.c ****         if (c == '\n') sendchar('\r');
+  63               		.loc 1 46 0
+  64 000e 1A30      		cpi r17,lo8(10)
+  65 0010 01F4      		brne .L4
+  66               		.loc 1 46 0 is_stmt 0 discriminator 1
+  67 0012 8DE0      		ldi r24,lo8(13)
+  68 0014 0E94 0000 		call xputc
+  69               	.LVL4:
+  70               	.L4:
+  47:../../common/print.c ****         sendchar(c);
+  71               		.loc 1 47 0 is_stmt 1
+  72 0018 812F      		mov r24,r17
+  73 001a 0E94 0000 		call xputc
+  74               	.LVL5:
+  48:../../common/print.c ****     }
+  75               		.loc 1 48 0
+  76 001e 00C0      		rjmp .L5
+  77               	.L2:
+  78               	/* epilogue start */
+  49:../../common/print.c **** }
+  79               		.loc 1 49 0
+  80 0020 DF91      		pop r29
+  81 0022 CF91      		pop r28
+  82               	.LVL6:
+  83 0024 1F91      		pop r17
+  84               	.LVL7:
+  85 0026 0895      		ret
+  86               		.cfi_endproc
+  87               	.LFE2:
+  89               		.section	.text.print_lf,"ax",@progbits
+  90               	.global	print_lf
+  92               	print_lf:
+  93               	.LFB3:
+  50:../../common/print.c **** 
+  51:../../common/print.c **** void print_lf(void)
+  52:../../common/print.c **** {
+  94               		.loc 1 52 0
+  95               		.cfi_startproc
+  96               	/* prologue: function */
+  97               	/* frame size = 0 */
+  98               	/* stack size = 0 */
+  99               	.L__stack_usage = 0
+  53:../../common/print.c ****     sendchar('\n');
+ 100               		.loc 1 53 0
+ 101 0000 8AE0      		ldi r24,lo8(10)
+ 102 0002 0C94 0000 		jmp xputc
+ 103               	.LVL8:
+ 104               		.cfi_endproc
+ 105               	.LFE3:
+ 107               		.section	.text.print_crlf,"ax",@progbits
+ 108               	.global	print_crlf
+ 110               	print_crlf:
+ 111               	.LFB4:
+  54:../../common/print.c **** }
+  55:../../common/print.c **** 
+  56:../../common/print.c **** void print_crlf(void)
+  57:../../common/print.c **** {
+ 112               		.loc 1 57 0
+ 113               		.cfi_startproc
+ 114               	/* prologue: function */
+ 115               	/* frame size = 0 */
+ 116               	/* stack size = 0 */
+ 117               	.L__stack_usage = 0
+  58:../../common/print.c ****     sendchar('\r');
+ 118               		.loc 1 58 0
+ 119 0000 8DE0      		ldi r24,lo8(13)
+ 120 0002 0E94 0000 		call xputc
+ 121               	.LVL9:
+  59:../../common/print.c ****     sendchar('\n');
+ 122               		.loc 1 59 0
+ 123 0006 8AE0      		ldi r24,lo8(10)
+ 124 0008 0C94 0000 		jmp xputc
+ 125               	.LVL10:
+ 126               		.cfi_endproc
+ 127               	.LFE4:
+ 129               		.text
+ 130               	.Letext0:
+ 131               		.file 2 "/usr/lib/avr/include/stdint.h"
+ 132               		.file 3 "../../common/xprintf.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 print.c
+     /tmp/ccA0oVmr.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccA0oVmr.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccA0oVmr.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccA0oVmr.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccA0oVmr.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccA0oVmr.s:13     .text.print_set_sendchar:0000000000000000 print_set_sendchar
+     /tmp/ccA0oVmr.s:33     .text.print_S:0000000000000000 print_S
+     /tmp/ccA0oVmr.s:92     .text.print_lf:0000000000000000 print_lf
+     /tmp/ccA0oVmr.s:110    .text.print_crlf:0000000000000000 print_crlf
+
+UNDEFINED SYMBOLS
+xfunc_out
+xputc

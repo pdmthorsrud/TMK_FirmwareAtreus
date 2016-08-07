@@ -1,0 +1,166 @@
+   1               		.file	"suspend.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               		.section	.text.suspend_power_down,"ax",@progbits
+  11               	.global	suspend_power_down
+  13               	suspend_power_down:
+  14               	.LFB4:
+  15               		.file 1 "../../common/suspend.c"
+   1:../../common/suspend.c **** #include "suspend.h"
+   2:../../common/suspend.c **** #include "matrix.h"
+   3:../../common/suspend.c **** #include "action.h"
+   4:../../common/suspend.c **** #include "backlight.h"
+   5:../../common/suspend.c **** 
+   6:../../common/suspend.c **** 
+   7:../../common/suspend.c **** void suspend_power_down(void)
+   8:../../common/suspend.c **** {
+  16               		.loc 1 8 0
+  17               		.cfi_startproc
+  18               	/* prologue: function */
+  19               	/* frame size = 0 */
+  20               	/* stack size = 0 */
+  21               	.L__stack_usage = 0
+  22 0000 0895      		ret
+  23               		.cfi_endproc
+  24               	.LFE4:
+  26               		.section	.text.suspend_wakeup_condition,"ax",@progbits
+  27               	.global	suspend_wakeup_condition
+  29               	suspend_wakeup_condition:
+  30               	.LFB5:
+   9:../../common/suspend.c **** #ifdef BACKLIGHT_ENABLE
+  10:../../common/suspend.c ****     backlight_set(0);
+  11:../../common/suspend.c **** #endif
+  12:../../common/suspend.c **** #ifndef NO_SUSPEND_POWER_DOWN
+  13:../../common/suspend.c ****     // Enable watchdog to wake from MCU sleep
+  14:../../common/suspend.c ****     cli();
+  15:../../common/suspend.c ****     wdt_reset();
+  16:../../common/suspend.c **** 
+  17:../../common/suspend.c ****     // Watchdog Interrupt and System Reset Mode
+  18:../../common/suspend.c ****     //wdt_enable(WDTO_1S);
+  19:../../common/suspend.c ****     //WDTCSR |= _BV(WDIE);
+  20:../../common/suspend.c ****     
+  21:../../common/suspend.c ****     // Watchdog Interrupt Mode
+  22:../../common/suspend.c ****     wdt_intr_enable(WDTO_120MS);
+  23:../../common/suspend.c ****     
+  24:../../common/suspend.c ****     // TODO: more power saving
+  25:../../common/suspend.c ****     // See PicoPower application note
+  26:../../common/suspend.c ****     // - I/O port input with pullup
+  27:../../common/suspend.c ****     // - prescale clock
+  28:../../common/suspend.c ****     // - BOD disable
+  29:../../common/suspend.c ****     // - Power Reduction Register PRR
+  30:../../common/suspend.c ****     // sleep in power down mode
+  31:../../common/suspend.c ****     set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+  32:../../common/suspend.c ****     sleep_enable();
+  33:../../common/suspend.c ****     sei();
+  34:../../common/suspend.c ****     sleep_cpu();
+  35:../../common/suspend.c ****     sleep_disable();
+  36:../../common/suspend.c **** 
+  37:../../common/suspend.c ****     // Disable watchdog after sleep
+  38:../../common/suspend.c ****     wdt_disable();
+  39:../../common/suspend.c **** #endif
+  40:../../common/suspend.c **** }
+  41:../../common/suspend.c **** 
+  42:../../common/suspend.c **** bool suspend_wakeup_condition(void)
+  43:../../common/suspend.c **** {
+  31               		.loc 1 43 0
+  32               		.cfi_startproc
+  33               		.loc 1 43 0
+  34 0000 CF93      		push r28
+  35               	.LCFI0:
+  36               		.cfi_def_cfa_offset 3
+  37               		.cfi_offset 28, -2
+  38               	/* prologue: function */
+  39               	/* frame size = 0 */
+  40               	/* stack size = 1 */
+  41               	.L__stack_usage = 1
+  44:../../common/suspend.c ****     matrix_scan();
+  42               		.loc 1 44 0
+  43 0002 0E94 0000 		call matrix_scan
+  44               	.LVL0:
+  45               	.LBB2:
+  45:../../common/suspend.c ****     for (uint8_t r = 0; r < MATRIX_ROWS; r++) {
+  46               		.loc 1 45 0
+  47 0006 C0E0      		ldi r28,0
+  48               	.LVL1:
+  49               	.L4:
+  46:../../common/suspend.c ****         if (matrix_get_row(r)) return true;
+  50               		.loc 1 46 0
+  51 0008 8C2F      		mov r24,r28
+  52 000a 0E94 0000 		call matrix_get_row
+  53               	.LVL2:
+  54 000e 892B      		or r24,r25
+  55 0010 01F4      		brne .L5
+  45:../../common/suspend.c ****     for (uint8_t r = 0; r < MATRIX_ROWS; r++) {
+  56               		.loc 1 45 0
+  57 0012 CF5F      		subi r28,lo8(-(1))
+  58               	.LVL3:
+  59 0014 C430      		cpi r28,lo8(4)
+  60 0016 01F4      		brne .L4
+  61               	.LBE2:
+  47:../../common/suspend.c ****     }
+  48:../../common/suspend.c ****     return false;
+  62               		.loc 1 48 0
+  63 0018 80E0      		ldi r24,0
+  64 001a 00C0      		rjmp .L3
+  65               	.L5:
+  66               	.LBB3:
+  46:../../common/suspend.c ****         if (matrix_get_row(r)) return true;
+  67               		.loc 1 46 0
+  68 001c 81E0      		ldi r24,lo8(1)
+  69               	.L3:
+  70               	/* epilogue start */
+  71               	.LBE3:
+  49:../../common/suspend.c **** }
+  72               		.loc 1 49 0
+  73 001e CF91      		pop r28
+  74               	.LVL4:
+  75 0020 0895      		ret
+  76               		.cfi_endproc
+  77               	.LFE5:
+  79               		.section	.text.suspend_wakeup_init,"ax",@progbits
+  80               	.global	suspend_wakeup_init
+  82               	suspend_wakeup_init:
+  83               	.LFB6:
+  50:../../common/suspend.c **** 
+  51:../../common/suspend.c **** // run immediately after wakeup
+  52:../../common/suspend.c **** void suspend_wakeup_init(void)
+  53:../../common/suspend.c **** {
+  84               		.loc 1 53 0
+  85               		.cfi_startproc
+  86               	/* prologue: function */
+  87               	/* frame size = 0 */
+  88               	/* stack size = 0 */
+  89               	.L__stack_usage = 0
+  54:../../common/suspend.c ****     // clear keyboard state
+  55:../../common/suspend.c ****     clear_keyboard();
+  90               		.loc 1 55 0
+  91 0000 0C94 0000 		jmp clear_keyboard
+  92               	.LVL5:
+  93               		.cfi_endproc
+  94               	.LFE6:
+  96               		.text
+  97               	.Letext0:
+  98               		.file 2 "/usr/lib/avr/include/stdint.h"
+  99               		.file 3 "../../common/matrix.h"
+ 100               		.file 4 "../../common/action.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 suspend.c
+     /tmp/ccFztjGv.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccFztjGv.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccFztjGv.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccFztjGv.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccFztjGv.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccFztjGv.s:13     .text.suspend_power_down:0000000000000000 suspend_power_down
+     /tmp/ccFztjGv.s:29     .text.suspend_wakeup_condition:0000000000000000 suspend_wakeup_condition
+     /tmp/ccFztjGv.s:82     .text.suspend_wakeup_init:0000000000000000 suspend_wakeup_init
+
+UNDEFINED SYMBOLS
+matrix_scan
+matrix_get_row
+clear_keyboard
