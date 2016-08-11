@@ -181,7 +181,7 @@
  156 00e2 4400      		.word	68
  157 00e4 0000      		.word	0
  158 00e6 8000      		.word	128
- 159 00e8 0000      		.word	0
+ 159 00e8 3900      		.word	57
  160 00ea 0000      		.word	0
  161 00ec C300      		.word	195
  162 00ee E000      		.word	224
@@ -214,14 +214,14 @@
  189               		.file 9 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBTask.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 keymap_qwertyPD.c
-     /tmp/ccg5x5fo.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccg5x5fo.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccg5x5fo.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccg5x5fo.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccg5x5fo.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccg5x5fo.s:13     .text.action_function:0000000000000000 action_function
-     /tmp/ccg5x5fo.s:38     .progmem.data:0000000000000000 fn_actions
-     /tmp/ccg5x5fo.s:46     .progmem.data:0000000000000008 keymaps
+     /tmp/ccHLUEIp.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccHLUEIp.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccHLUEIp.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccHLUEIp.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccHLUEIp.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccHLUEIp.s:13     .text.action_function:0000000000000000 action_function
+     /tmp/ccHLUEIp.s:38     .progmem.data:0000000000000000 fn_actions
+     /tmp/ccHLUEIp.s:46     .progmem.data:0000000000000008 keymaps
                             *COM*:0000000000000001 debug_config
 
 UNDEFINED SYMBOLS

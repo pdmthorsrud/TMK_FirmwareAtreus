@@ -10,7 +10,7 @@
   10               		.section	.text.suspend_power_down,"ax",@progbits
   11               	.global	suspend_power_down
   13               	suspend_power_down:
-  14               	.LFB4:
+  14               	.LFB6:
   15               		.file 1 "../../common/suspend.c"
    1:../../common/suspend.c **** #include "suspend.h"
    2:../../common/suspend.c **** #include "matrix.h"
@@ -28,11 +28,11 @@
   21               	.L__stack_usage = 0
   22 0000 0895      		ret
   23               		.cfi_endproc
-  24               	.LFE4:
+  24               	.LFE6:
   26               		.section	.text.suspend_wakeup_condition,"ax",@progbits
   27               	.global	suspend_wakeup_condition
   29               	suspend_wakeup_condition:
-  30               	.LFB5:
+  30               	.LFB7:
    9:../../common/suspend.c **** #ifdef BACKLIGHT_ENABLE
   10:../../common/suspend.c ****     backlight_set(0);
   11:../../common/suspend.c **** #endif
@@ -97,7 +97,7 @@
   54 000e 892B      		or r24,r25
   55 0010 01F4      		brne .L5
   45:../../common/suspend.c ****     for (uint8_t r = 0; r < MATRIX_ROWS; r++) {
-  56               		.loc 1 45 0
+  56               		.loc 1 45 0 discriminator 2
   57 0012 CF5F      		subi r28,lo8(-(1))
   58               	.LVL3:
   59 0014 C430      		cpi r28,lo8(4)
@@ -107,9 +107,9 @@
   48:../../common/suspend.c ****     return false;
   62               		.loc 1 48 0
   63 0018 80E0      		ldi r24,0
-  64 001a 00C0      		rjmp .L3
-  65               	.L5:
-  66               	.LBB3:
+  64               	.LBB3:
+  65 001a 00C0      		rjmp .L3
+  66               	.L5:
   46:../../common/suspend.c ****         if (matrix_get_row(r)) return true;
   67               		.loc 1 46 0
   68 001c 81E0      		ldi r24,lo8(1)
@@ -122,11 +122,11 @@
   74               	.LVL4:
   75 0020 0895      		ret
   76               		.cfi_endproc
-  77               	.LFE5:
+  77               	.LFE7:
   79               		.section	.text.suspend_wakeup_init,"ax",@progbits
   80               	.global	suspend_wakeup_init
   82               	suspend_wakeup_init:
-  83               	.LFB6:
+  83               	.LFB8:
   50:../../common/suspend.c **** 
   51:../../common/suspend.c **** // run immediately after wakeup
   52:../../common/suspend.c **** void suspend_wakeup_init(void)
@@ -143,7 +143,7 @@
   91 0000 0C94 0000 		jmp clear_keyboard
   92               	.LVL5:
   93               		.cfi_endproc
-  94               	.LFE6:
+  94               	.LFE8:
   96               		.text
   97               	.Letext0:
   98               		.file 2 "/usr/lib/avr/include/stdint.h"
@@ -151,14 +151,14 @@
  100               		.file 4 "../../common/action.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 suspend.c
-     /tmp/ccFztjGv.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccFztjGv.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccFztjGv.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccFztjGv.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccFztjGv.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccFztjGv.s:13     .text.suspend_power_down:0000000000000000 suspend_power_down
-     /tmp/ccFztjGv.s:29     .text.suspend_wakeup_condition:0000000000000000 suspend_wakeup_condition
-     /tmp/ccFztjGv.s:82     .text.suspend_wakeup_init:0000000000000000 suspend_wakeup_init
+     /tmp/cc1fTSKl.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cc1fTSKl.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cc1fTSKl.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cc1fTSKl.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cc1fTSKl.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cc1fTSKl.s:13     .text.suspend_power_down:0000000000000000 suspend_power_down
+     /tmp/cc1fTSKl.s:29     .text.suspend_wakeup_condition:0000000000000000 suspend_wakeup_condition
+     /tmp/cc1fTSKl.s:82     .text.suspend_wakeup_init:0000000000000000 suspend_wakeup_init
 
 UNDEFINED SYMBOLS
 matrix_scan

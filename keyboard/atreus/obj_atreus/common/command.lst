@@ -652,8 +652,8 @@
   26 0002 C82F      		mov r28,r24
  628:../../common/command.c ****     print("switch_default_layer: "); print_dec(biton32(default_layer_state));
   27               		.loc 1 628 0
-  28 0004 80E0      		ldi r24,lo8(__c.4854)
-  29 0006 90E0      		ldi r25,hi8(__c.4854)
+  28 0004 80E0      		ldi r24,lo8(__c.4872)
+  29 0006 90E0      		ldi r25,hi8(__c.4872)
   30               	.LVL1:
   31 0008 0E94 0000 		call xputs
   32               	.LVL2:
@@ -669,20 +669,20 @@
   42 0022 8F93      		push r24
   43               	.LCFI2:
   44               		.cfi_def_cfa_offset 5
-  45 0024 20E0      		ldi r18,lo8(__c.4856)
-  46 0026 30E0      		ldi r19,hi8(__c.4856)
-  47 0028 3F93      		push r19
+  45 0024 80E0      		ldi r24,lo8(__c.4874)
+  46 0026 90E0      		ldi r25,hi8(__c.4874)
+  47 0028 9F93      		push r25
   48               	.LCFI3:
   49               		.cfi_def_cfa_offset 6
-  50 002a 2F93      		push r18
+  50 002a 8F93      		push r24
   51               	.LCFI4:
   52               		.cfi_def_cfa_offset 7
   53 002c 0E94 0000 		call __xprintf
   54               	.LVL4:
  629:../../common/command.c ****     print(" to "); print_dec(layer); print("\n");
   55               		.loc 1 629 0
-  56 0030 80E0      		ldi r24,lo8(__c.4858)
-  57 0032 90E0      		ldi r25,hi8(__c.4858)
+  56 0030 80E0      		ldi r24,lo8(__c.4876)
+  57 0032 90E0      		ldi r25,hi8(__c.4876)
   58 0034 0E94 0000 		call xputs
   59               	.LVL5:
   60 0038 1F92      		push __zero_reg__
@@ -691,298 +691,300 @@
   63 003a CF93      		push r28
   64               	.LCFI6:
   65               		.cfi_def_cfa_offset 9
-  66 003c 20E0      		ldi r18,lo8(__c.4860)
-  67 003e 30E0      		ldi r19,hi8(__c.4860)
-  68 0040 3F93      		push r19
+  66 003c 80E0      		ldi r24,lo8(__c.4878)
+  67 003e 90E0      		ldi r25,hi8(__c.4878)
+  68 0040 9F93      		push r25
   69               	.LCFI7:
   70               		.cfi_def_cfa_offset 10
-  71 0042 2F93      		push r18
+  71 0042 8F93      		push r24
   72               	.LCFI8:
   73               		.cfi_def_cfa_offset 11
   74 0044 0E94 0000 		call __xprintf
   75               	.LVL6:
-  76 0048 80E0      		ldi r24,lo8(__c.4862)
-  77 004a 90E0      		ldi r25,hi8(__c.4862)
+  76 0048 80E0      		ldi r24,lo8(__c.4880)
+  77 004a 90E0      		ldi r25,hi8(__c.4880)
   78 004c 0E94 0000 		call xputs
   79               	.LVL7:
  630:../../common/command.c ****     default_layer_set(1UL<<layer);
   80               		.loc 1 630 0
-  81 0050 61E0      		ldi r22,lo8(1)
-  82 0052 70E0      		ldi r23,0
-  83 0054 80E0      		ldi r24,0
-  84 0056 90E0      		ldi r25,0
-  85 0058 00C0      		rjmp 2f
-  86               		1:
-  87 005a 660F      		lsl r22
-  88 005c 771F      		rol r23
-  89 005e 881F      		rol r24
-  90 0060 991F      		rol r25
-  91               		2:
-  92 0062 CA95      		dec r28
-  93 0064 02F4      		brpl 1b
-  94 0066 0E94 0000 		call default_layer_set
-  95               	.LVL8:
+  81 0050 81E0      		ldi r24,lo8(1)
+  82 0052 90E0      		ldi r25,0
+  83 0054 A0E0      		ldi r26,0
+  84 0056 B0E0      		ldi r27,0
+  85 0058 BC01      		movw r22,r24
+  86 005a CD01      		movw r24,r26
+  87 005c 00C0      		rjmp 2f
+  88               		1:
+  89 005e 660F      		lsl r22
+  90 0060 771F      		rol r23
+  91 0062 881F      		rol r24
+  92 0064 991F      		rol r25
+  93               		2:
+  94 0066 CA95      		dec r28
+  95 0068 02F4      		brpl 1b
+  96 006a 0E94 0000 		call default_layer_set
+  97               	.LVL8:
  631:../../common/command.c ****     clear_keyboard();
-  96               		.loc 1 631 0
-  97 006a 8DB7      		in r24,__SP_L__
-  98 006c 9EB7      		in r25,__SP_H__
-  99 006e 0896      		adiw r24,8
- 100 0070 0FB6      		in __tmp_reg__,__SREG__
- 101 0072 F894      		cli
- 102 0074 9EBF      		out __SP_H__,r25
- 103 0076 0FBE      		out __SREG__,__tmp_reg__
- 104 0078 8DBF      		out __SP_L__,r24
- 105               	.LCFI9:
- 106               		.cfi_def_cfa_offset 3
- 107               	/* epilogue start */
+  98               		.loc 1 631 0
+  99 006e 8DB7      		in r24,__SP_L__
+ 100 0070 9EB7      		in r25,__SP_H__
+ 101 0072 0896      		adiw r24,8
+ 102 0074 0FB6      		in __tmp_reg__,__SREG__
+ 103 0076 F894      		cli
+ 104 0078 9EBF      		out __SP_H__,r25
+ 105 007a 0FBE      		out __SREG__,__tmp_reg__
+ 106 007c 8DBF      		out __SP_L__,r24
+ 107               	.LCFI9:
+ 108               		.cfi_def_cfa_offset 3
+ 109               	/* epilogue start */
  632:../../common/command.c **** }
- 108               		.loc 1 632 0
- 109 007a CF91      		pop r28
- 110               	.LVL9:
+ 110               		.loc 1 632 0
+ 111 007e CF91      		pop r28
+ 112               	.LVL9:
  631:../../common/command.c ****     clear_keyboard();
- 111               		.loc 1 631 0
- 112 007c 0C94 0000 		jmp clear_keyboard
- 113               	.LVL10:
- 114               		.cfi_endproc
- 115               	.LFE109:
- 117               		.section	.text.command_extra,"ax",@progbits
- 118               		.weak	command_extra
- 120               	command_extra:
- 121               	.LFB103:
-  95:../../common/command.c **** {
- 122               		.loc 1 95 0
- 123               		.cfi_startproc
- 124               	.LVL11:
- 125               	/* prologue: function */
- 126               	/* frame size = 0 */
- 127               	/* stack size = 0 */
- 128               	.L__stack_usage = 0
-  97:../../common/command.c **** }
- 129               		.loc 1 97 0
- 130 0000 80E0      		ldi r24,0
- 131               	.LVL12:
- 132 0002 0895      		ret
- 133               		.cfi_endproc
- 134               	.LFE103:
- 136               		.section	.text.command_proc,"ax",@progbits
- 137               	.global	command_proc
- 139               	command_proc:
- 140               	.LFB102:
-  71:../../common/command.c **** {
- 141               		.loc 1 71 0
- 142               		.cfi_startproc
- 143               	.LVL13:
- 144 0000 CF93      		push r28
- 145               	.LCFI10:
- 146               		.cfi_def_cfa_offset 3
- 147               		.cfi_offset 28, -2
- 148               	/* prologue: function */
- 149               	/* frame size = 0 */
- 150               	/* stack size = 1 */
- 151               	.L__stack_usage = 1
- 152 0002 C82F      		mov r28,r24
-  72:../../common/command.c ****     switch (state) {
- 153               		.loc 1 72 0
- 154 0004 8091 0000 		lds r24,state
- 155               	.LVL14:
- 156 0008 8823      		tst r24
- 157 000a 01F0      		breq .L5
- 158 000c 8130      		cpi r24,lo8(1)
- 159 000e 01F4      		brne .+2
- 160 0010 00C0      		rjmp .L6
- 161 0012 00C0      		rjmp .L83
- 162               	.L5:
-  74:../../common/command.c ****             if (!IS_COMMAND())
- 163               		.loc 1 74 0
- 164 0014 E091 0000 		lds r30,keyboard_report
- 165 0018 F091 0000 		lds r31,keyboard_report+1
- 166 001c 8081      		ld r24,Z
- 167 001e 8232      		cpi r24,lo8(34)
- 168 0020 01F0      		breq .+2
- 169 0022 00C0      		rjmp .L43
-  76:../../common/command.c ****             return (command_extra(code) || command_common(code));
- 170               		.loc 1 76 0
- 171 0024 8C2F      		mov r24,r28
- 172 0026 0E94 0000 		call command_extra
- 173               	.LVL15:
- 174 002a 8111      		cpse r24,__zero_reg__
- 175 002c 00C0      		rjmp .L44
- 176               	.LVL16:
- 177               	.LBB94:
- 178               	.LBB95:
- 168:../../common/command.c ****     switch (code) {
- 179               		.loc 1 168 0
- 180 002e CB31      		cpi r28,lo8(27)
- 181 0030 01F4      		brne .+2
- 182 0032 00C0      		rjmp .L10
- 183 0034 00F0      		brlo .+2
- 184 0036 00C0      		rjmp .L11
- 185 0038 C031      		cpi r28,lo8(16)
- 186 003a 01F4      		brne .+2
- 187 003c 00C0      		rjmp .L12
- 188 003e 00F4      		brsh .L13
- 189 0040 C730      		cpi r28,lo8(7)
- 190 0042 01F4      		brne .+2
- 191 0044 00C0      		rjmp .L14
- 192 0046 00F4      		brsh .L15
- 193 0048 C630      		cpi r28,lo8(6)
- 194 004a 01F0      		breq .+2
- 195 004c 00C0      		rjmp .L9
- 198:../../common/command.c ****             debug_matrix   = false;
- 196               		.loc 1 198 0
- 197 004e 8091 0000 		lds r24,debug_config
- 201:../../common/command.c ****             debug_enable   = false;
- 198               		.loc 1 201 0
- 199 0052 817F      		andi r24,lo8(-15)
- 200 0054 8E7F      		andi r24,lo8(~(1<<0))
- 201 0056 8093 0000 		sts debug_config,r24
- 202               	.LBB96:
- 203               	.LBB97:
- 373:../../common/command.c ****     print("\n\n----- Console Help -----\n");
- 204               		.loc 1 373 0
- 205 005a 80E0      		ldi r24,lo8(__c.4819)
- 206 005c 90E0      		ldi r25,hi8(__c.4819)
- 207 005e 0E94 0000 		call xputs
- 208               	.LVL17:
- 374:../../common/command.c ****     print("ESC/q:	quit\n");
- 209               		.loc 1 374 0
- 210 0062 80E0      		ldi r24,lo8(__c.4821)
- 211 0064 90E0      		ldi r25,hi8(__c.4821)
- 212 0066 0E94 0000 		call xputs
- 213               	.LVL18:
- 214               	.LBE97:
- 215               	.LBE96:
- 203:../../common/command.c ****             print("\nEnter Console Mode\n");
- 216               		.loc 1 203 0
- 217 006a 80E0      		ldi r24,lo8(__c.4753)
- 218 006c 90E0      		ldi r25,hi8(__c.4753)
- 219 006e 0E94 0000 		call xputs
- 220               	.LVL19:
- 204:../../common/command.c ****             print("C> ");
- 221               		.loc 1 204 0
- 222 0072 80E0      		ldi r24,lo8(__c.4755)
- 223 0074 90E0      		ldi r25,hi8(__c.4755)
- 224 0076 0E94 0000 		call xputs
- 225               	.LVL20:
- 205:../../common/command.c ****             state = CONSOLE;
- 226               		.loc 1 205 0
- 227 007a 81E0      		ldi r24,lo8(1)
- 228 007c 8093 0000 		sts state,r24
- 229 0080 00C0      		rjmp .L44
- 230               	.L15:
- 168:../../common/command.c ****     switch (code) {
- 231               		.loc 1 168 0
- 232 0082 CB30      		cpi r28,lo8(11)
- 233 0084 01F4      		brne .+2
- 234 0086 00C0      		rjmp .L17
- 235 0088 CE30      		cpi r28,lo8(14)
- 236 008a 01F4      		brne .+2
- 237 008c 00C0      		rjmp .L18
- 238 008e 00C0      		rjmp .L9
- 239               	.L13:
- 240 0090 C631      		cpi r28,lo8(22)
- 241 0092 01F4      		brne .+2
- 242 0094 00C0      		rjmp .L19
- 243 0096 00F4      		brsh .L20
- 244 0098 C131      		cpi r28,lo8(17)
- 245 009a 01F4      		brne .+2
- 246 009c 00C0      		rjmp .L21
- 247 009e 00C0      		rjmp .L9
- 248               	.L20:
- 249 00a0 C731      		cpi r28,lo8(23)
- 250 00a2 01F4      		brne .+2
- 251 00a4 00C0      		rjmp .L22
- 252 00a6 C931      		cpi r28,lo8(25)
- 253 00a8 01F0      		breq .+2
- 254 00aa 00C0      		rjmp .L9
- 254:../../common/command.c ****             print("\n\n----- Version -----\n");
- 255               		.loc 1 254 0
- 256 00ac 80E0      		ldi r24,lo8(__c.4783)
- 257 00ae 90E0      		ldi r25,hi8(__c.4783)
- 258 00b0 0E94 0000 		call xputs
- 259               	.LVL21:
- 255:../../common/command.c ****             print("DESC: " STR(DESCRIPTION) "\n");
- 260               		.loc 1 255 0
- 261 00b4 80E0      		ldi r24,lo8(__c.4785)
- 262 00b6 90E0      		ldi r25,hi8(__c.4785)
- 263 00b8 0E94 0000 		call xputs
- 264               	.LVL22:
- 256:../../common/command.c ****             print("VID: " STR(VENDOR_ID) "(" STR(MANUFACTURER) ") "
- 265               		.loc 1 256 0
- 266 00bc 80E0      		ldi r24,lo8(__c.4787)
- 267 00be 90E0      		ldi r25,hi8(__c.4787)
- 268 00c0 0E94 0000 		call xputs
- 269               	.LVL23:
- 259:../../common/command.c ****             print("BUILD: " STR(VERSION) " (" __TIME__ " " __DATE__ ")\n");
- 270               		.loc 1 259 0
- 271 00c4 80E0      		ldi r24,lo8(__c.4789)
- 272 00c6 90E0      		ldi r25,hi8(__c.4789)
- 273 00c8 0E94 0000 		call xputs
- 274               	.LVL24:
- 261:../../common/command.c ****             print("OPTIONS:"
- 275               		.loc 1 261 0
- 276 00cc 80E0      		ldi r24,lo8(__c.4791)
- 277 00ce 90E0      		ldi r25,hi8(__c.4791)
- 278 00d0 0E94 0000 		call xputs
- 279               	.LVL25:
- 294:../../common/command.c ****             print("GCC: " STR(__GNUC__) "." STR(__GNUC_MINOR__) "." STR(__GNUC_PATCHLEVEL__) 
- 280               		.loc 1 294 0
- 281 00d4 80E0      		ldi r24,lo8(__c.4793)
- 282 00d6 90E0      		ldi r25,hi8(__c.4793)
- 283 00d8 00C0      		rjmp .L77
- 284               	.L11:
- 168:../../common/command.c ****     switch (code) {
- 285               		.loc 1 168 0
- 286 00da C533      		cpi r28,lo8(53)
- 287 00dc 01F4      		brne .+2
- 288 00de 00C0      		rjmp .L24
- 289 00e0 00F4      		brsh .L25
- 290 00e2 C732      		cpi r28,lo8(39)
- 291 00e4 01F4      		brne .+2
- 292 00e6 00C0      		rjmp .L24
- 293 00e8 00F4      		brsh .L26
- 294 00ea CE31      		cpi r28,lo8(30)
- 295 00ec 00F4      		brsh .+2
- 296 00ee 00C0      		rjmp .L9
- 355:../../common/command.c ****             switch_default_layer((code - KC_1) + 1);
- 297               		.loc 1 355 0
- 298 00f0 83EE      		ldi r24,lo8(-29)
- 299 00f2 00C0      		rjmp .L75
- 300               	.L26:
- 168:../../common/command.c ****     switch (code) {
- 301               		.loc 1 168 0
- 302 00f4 C932      		cpi r28,lo8(41)
- 303 00f6 01F4      		brne .+2
- 304 00f8 00C0      		rjmp .L24
- 305 00fa 00C0      		rjmp .L9
- 306               	.L25:
- 307 00fc C634      		cpi r28,lo8(70)
- 308 00fe 00F4      		brsh .L28
- 309 0100 CA33      		cpi r28,lo8(58)
- 310 0102 00F0      		brlo .+2
- 311 0104 00C0      		rjmp .L29
- 312 0106 C833      		cpi r28,lo8(56)
- 313 0108 01F0      		breq .L17
- 314 010a C933      		cpi r28,lo8(57)
- 315 010c 01F0      		breq .L30
- 316 010e 00C0      		rjmp .L9
- 317               	.L28:
- 318 0110 C834      		cpi r28,lo8(72)
- 319 0112 01F0      		breq .+2
- 320 0114 00C0      		rjmp .L9
- 208:../../common/command.c ****             clear_keyboard();
- 321               		.loc 1 208 0
- 322 0116 0E94 0000 		call clear_keyboard
- 323               	.LVL26:
- 209:../../common/command.c ****             print("\n\nJump to bootloader... ");
- 324               		.loc 1 209 0
- 325 011a 80E0      		ldi r24,lo8(__c.4758)
- 326 011c 90E0      		ldi r25,hi8(__c.4758)
- 327 011e 0E94 0000 		call xputs
- 328               	.LVL27:
- 329               	.LBB98:
- 330               	.LBB99:
- 331               		.file 2 "/usr/lib/avr/include/util/delay.h"
+ 113               		.loc 1 631 0
+ 114 0080 0C94 0000 		jmp clear_keyboard
+ 115               	.LVL10:
+ 116               		.cfi_endproc
+ 117               	.LFE109:
+ 119               		.section	.text.command_extra,"ax",@progbits
+ 120               		.weak	command_extra
+ 122               	command_extra:
+ 123               	.LFB103:
+  95:../../common/command.c ****     return false;
+ 124               		.loc 1 95 0
+ 125               		.cfi_startproc
+ 126               	.LVL11:
+ 127               	/* prologue: function */
+ 128               	/* frame size = 0 */
+ 129               	/* stack size = 0 */
+ 130               	.L__stack_usage = 0
+  97:../../common/command.c **** 
+ 131               		.loc 1 97 0
+ 132 0000 80E0      		ldi r24,0
+ 133               	.LVL12:
+ 134 0002 0895      		ret
+ 135               		.cfi_endproc
+ 136               	.LFE103:
+ 138               		.section	.text.command_proc,"ax",@progbits
+ 139               	.global	command_proc
+ 141               	command_proc:
+ 142               	.LFB102:
+  71:../../common/command.c ****     switch (state) {
+ 143               		.loc 1 71 0
+ 144               		.cfi_startproc
+ 145               	.LVL13:
+ 146 0000 CF93      		push r28
+ 147               	.LCFI10:
+ 148               		.cfi_def_cfa_offset 3
+ 149               		.cfi_offset 28, -2
+ 150               	/* prologue: function */
+ 151               	/* frame size = 0 */
+ 152               	/* stack size = 1 */
+ 153               	.L__stack_usage = 1
+ 154 0002 C82F      		mov r28,r24
+  72:../../common/command.c ****         case ONESHOT:
+ 155               		.loc 1 72 0
+ 156 0004 8091 0000 		lds r24,state
+ 157               	.LVL14:
+ 158 0008 8823      		tst r24
+ 159 000a 01F0      		breq .L5
+ 160 000c 8130      		cpi r24,lo8(1)
+ 161 000e 01F4      		brne .+2
+ 162 0010 00C0      		rjmp .L6
+ 163 0012 00C0      		rjmp .L83
+ 164               	.L5:
+  74:../../common/command.c ****                 return false;
+ 165               		.loc 1 74 0
+ 166 0014 E091 0000 		lds r30,keyboard_report
+ 167 0018 F091 0000 		lds r31,keyboard_report+1
+ 168 001c 8081      		ld r24,Z
+ 169 001e 8232      		cpi r24,lo8(34)
+ 170 0020 01F0      		breq .+2
+ 171 0022 00C0      		rjmp .L43
+  76:../../common/command.c ****         case CONSOLE:
+ 172               		.loc 1 76 0
+ 173 0024 8C2F      		mov r24,r28
+ 174 0026 0E94 0000 		call command_extra
+ 175               	.LVL15:
+ 176 002a 8111      		cpse r24,__zero_reg__
+ 177 002c 00C0      		rjmp .L44
+ 178               	.LVL16:
+ 179               	.LBB94:
+ 180               	.LBB95:
+ 168:../../common/command.c **** #ifdef SLEEP_LED_ENABLE
+ 181               		.loc 1 168 0
+ 182 002e CB31      		cpi r28,lo8(27)
+ 183 0030 01F4      		brne .+2
+ 184 0032 00C0      		rjmp .L10
+ 185 0034 00F0      		brlo .+2
+ 186 0036 00C0      		rjmp .L11
+ 187 0038 C031      		cpi r28,lo8(16)
+ 188 003a 01F4      		brne .+2
+ 189 003c 00C0      		rjmp .L12
+ 190 003e 00F4      		brsh .L13
+ 191 0040 C730      		cpi r28,lo8(7)
+ 192 0042 01F4      		brne .+2
+ 193 0044 00C0      		rjmp .L14
+ 194 0046 00F4      		brsh .L15
+ 195 0048 C630      		cpi r28,lo8(6)
+ 196 004a 01F0      		breq .+2
+ 197 004c 00C0      		rjmp .L9
+ 198:../../common/command.c ****             debug_keyboard = false;
+ 198               		.loc 1 198 0
+ 199 004e 8091 0000 		lds r24,debug_config
+ 201:../../common/command.c ****             command_console_help();
+ 200               		.loc 1 201 0
+ 201 0052 817F      		andi r24,lo8(-15)
+ 202 0054 8E7F      		andi r24,lo8(~(1<<0))
+ 203 0056 8093 0000 		sts debug_config,r24
+ 204               	.LBB96:
+ 205               	.LBB97:
+ 373:../../common/command.c ****     print("ESC/q:	quit\n");
+ 206               		.loc 1 373 0
+ 207 005a 80E0      		ldi r24,lo8(__c.4837)
+ 208 005c 90E0      		ldi r25,hi8(__c.4837)
+ 209 005e 0E94 0000 		call xputs
+ 210               	.LVL17:
+ 374:../../common/command.c **** #ifdef MOUSEKEY_ENABLE
+ 211               		.loc 1 374 0
+ 212 0062 80E0      		ldi r24,lo8(__c.4839)
+ 213 0064 90E0      		ldi r25,hi8(__c.4839)
+ 214 0066 0E94 0000 		call xputs
+ 215               	.LVL18:
+ 216               	.LBE97:
+ 217               	.LBE96:
+ 203:../../common/command.c ****             print("C> ");
+ 218               		.loc 1 203 0
+ 219 006a 80E0      		ldi r24,lo8(__c.4771)
+ 220 006c 90E0      		ldi r25,hi8(__c.4771)
+ 221 006e 0E94 0000 		call xputs
+ 222               	.LVL19:
+ 204:../../common/command.c ****             state = CONSOLE;
+ 223               		.loc 1 204 0
+ 224 0072 80E0      		ldi r24,lo8(__c.4773)
+ 225 0074 90E0      		ldi r25,hi8(__c.4773)
+ 226 0076 0E94 0000 		call xputs
+ 227               	.LVL20:
+ 205:../../common/command.c ****             break;
+ 228               		.loc 1 205 0
+ 229 007a 81E0      		ldi r24,lo8(1)
+ 230 007c 8093 0000 		sts state,r24
+ 231 0080 00C0      		rjmp .L44
+ 232               	.L15:
+ 168:../../common/command.c **** #ifdef SLEEP_LED_ENABLE
+ 233               		.loc 1 168 0
+ 234 0082 CB30      		cpi r28,lo8(11)
+ 235 0084 01F4      		brne .+2
+ 236 0086 00C0      		rjmp .L17
+ 237 0088 CE30      		cpi r28,lo8(14)
+ 238 008a 01F4      		brne .+2
+ 239 008c 00C0      		rjmp .L18
+ 240 008e 00C0      		rjmp .L9
+ 241               	.L13:
+ 242 0090 C631      		cpi r28,lo8(22)
+ 243 0092 01F4      		brne .+2
+ 244 0094 00C0      		rjmp .L19
+ 245 0096 00F4      		brsh .L20
+ 246 0098 C131      		cpi r28,lo8(17)
+ 247 009a 01F4      		brne .+2
+ 248 009c 00C0      		rjmp .L21
+ 249 009e 00C0      		rjmp .L9
+ 250               	.L20:
+ 251 00a0 C731      		cpi r28,lo8(23)
+ 252 00a2 01F4      		brne .+2
+ 253 00a4 00C0      		rjmp .L22
+ 254 00a6 C931      		cpi r28,lo8(25)
+ 255 00a8 01F0      		breq .+2
+ 256 00aa 00C0      		rjmp .L9
+ 254:../../common/command.c ****             print("DESC: " STR(DESCRIPTION) "\n");
+ 257               		.loc 1 254 0
+ 258 00ac 80E0      		ldi r24,lo8(__c.4801)
+ 259 00ae 90E0      		ldi r25,hi8(__c.4801)
+ 260 00b0 0E94 0000 		call xputs
+ 261               	.LVL21:
+ 255:../../common/command.c ****             print("VID: " STR(VENDOR_ID) "(" STR(MANUFACTURER) ") "
+ 262               		.loc 1 255 0
+ 263 00b4 80E0      		ldi r24,lo8(__c.4803)
+ 264 00b6 90E0      		ldi r25,hi8(__c.4803)
+ 265 00b8 0E94 0000 		call xputs
+ 266               	.LVL22:
+ 256:../../common/command.c ****                   "PID: " STR(PRODUCT_ID) "(" STR(PRODUCT) ") "
+ 267               		.loc 1 256 0
+ 268 00bc 80E0      		ldi r24,lo8(__c.4805)
+ 269 00be 90E0      		ldi r25,hi8(__c.4805)
+ 270 00c0 0E94 0000 		call xputs
+ 271               	.LVL23:
+ 259:../../common/command.c ****             /* build options */
+ 272               		.loc 1 259 0
+ 273 00c4 80E0      		ldi r24,lo8(__c.4807)
+ 274 00c6 90E0      		ldi r25,hi8(__c.4807)
+ 275 00c8 0E94 0000 		call xputs
+ 276               	.LVL24:
+ 261:../../common/command.c **** #ifdef PROTOCOL_PJRC
+ 277               		.loc 1 261 0
+ 278 00cc 80E0      		ldi r24,lo8(__c.4809)
+ 279 00ce 90E0      		ldi r25,hi8(__c.4809)
+ 280 00d0 0E94 0000 		call xputs
+ 281               	.LVL25:
+ 294:../../common/command.c ****                   " AVR-LIBC: " __AVR_LIBC_VERSION_STRING__
+ 282               		.loc 1 294 0
+ 283 00d4 80E0      		ldi r24,lo8(__c.4811)
+ 284 00d6 90E0      		ldi r25,hi8(__c.4811)
+ 285 00d8 00C0      		rjmp .L77
+ 286               	.L11:
+ 168:../../common/command.c **** #ifdef SLEEP_LED_ENABLE
+ 287               		.loc 1 168 0
+ 288 00da C533      		cpi r28,lo8(53)
+ 289 00dc 01F4      		brne .+2
+ 290 00de 00C0      		rjmp .L24
+ 291 00e0 00F4      		brsh .L25
+ 292 00e2 C732      		cpi r28,lo8(39)
+ 293 00e4 01F4      		brne .+2
+ 294 00e6 00C0      		rjmp .L24
+ 295 00e8 00F4      		brsh .L26
+ 296 00ea CE31      		cpi r28,lo8(30)
+ 297 00ec 00F4      		brsh .+2
+ 298 00ee 00C0      		rjmp .L9
+ 355:../../common/command.c ****             break;
+ 299               		.loc 1 355 0
+ 300 00f0 83EE      		ldi r24,lo8(-29)
+ 301 00f2 00C0      		rjmp .L75
+ 302               	.L26:
+ 168:../../common/command.c **** #ifdef SLEEP_LED_ENABLE
+ 303               		.loc 1 168 0
+ 304 00f4 C932      		cpi r28,lo8(41)
+ 305 00f6 01F4      		brne .+2
+ 306 00f8 00C0      		rjmp .L24
+ 307 00fa 00C0      		rjmp .L9
+ 308               	.L25:
+ 309 00fc C634      		cpi r28,lo8(70)
+ 310 00fe 00F4      		brsh .L28
+ 311 0100 CA33      		cpi r28,lo8(58)
+ 312 0102 00F0      		brlo .+2
+ 313 0104 00C0      		rjmp .L29
+ 314 0106 C833      		cpi r28,lo8(56)
+ 315 0108 01F0      		breq .L17
+ 316 010a C933      		cpi r28,lo8(57)
+ 317 010c 01F0      		breq .L30
+ 318 010e 00C0      		rjmp .L9
+ 319               	.L28:
+ 320 0110 C834      		cpi r28,lo8(72)
+ 321 0112 01F0      		breq .+2
+ 322 0114 00C0      		rjmp .L9
+ 208:../../common/command.c ****             print("\n\nJump to bootloader... ");
+ 323               		.loc 1 208 0
+ 324 0116 0E94 0000 		call clear_keyboard
+ 325               	.LVL26:
+ 209:../../common/command.c ****             _delay_ms(1000);
+ 326               		.loc 1 209 0
+ 327 011a 80E0      		ldi r24,lo8(__c.4776)
+ 328 011c 90E0      		ldi r25,hi8(__c.4776)
+ 329 011e 0E94 0000 		call xputs
+ 330               	.LVL27:
+ 331               	.LBB98:
+ 332               	.LBB99:
+ 333               		.file 2 "/usr/lib/avr/include/util/delay.h"
    1:/usr/lib/avr/include/util/delay.h **** /* Copyright (c) 2002, Marek Michalkiewicz
    2:/usr/lib/avr/include/util/delay.h ****    Copyright (c) 2004,2005,2007 Joerg Wunsch
    3:/usr/lib/avr/include/util/delay.h ****    Copyright (c) 2007  Florin-Viorel Petrov
@@ -1015,7 +1017,7 @@
   30:/usr/lib/avr/include/util/delay.h ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   31:/usr/lib/avr/include/util/delay.h ****   POSSIBILITY OF SUCH DAMAGE. */
   32:/usr/lib/avr/include/util/delay.h **** 
-  33:/usr/lib/avr/include/util/delay.h **** /* $Id: delay.h.in 2251 2011-09-14 08:20:33Z joerg_wunsch $ */
+  33:/usr/lib/avr/include/util/delay.h **** /* $Id$ */
   34:/usr/lib/avr/include/util/delay.h **** 
   35:/usr/lib/avr/include/util/delay.h **** #ifndef _UTIL_DELAY_H_
   36:/usr/lib/avr/include/util/delay.h **** #define _UTIL_DELAY_H_ 1
@@ -1126,919 +1128,918 @@
  141:/usr/lib/avr/include/util/delay.h **** void
  142:/usr/lib/avr/include/util/delay.h **** _delay_ms(double __ms)
  143:/usr/lib/avr/include/util/delay.h **** {
- 144:/usr/lib/avr/include/util/delay.h **** 	uint16_t __ticks;
- 145:/usr/lib/avr/include/util/delay.h **** 	double __tmp ; 
- 146:/usr/lib/avr/include/util/delay.h **** #if __HAS_DELAY_CYCLES && defined(__OPTIMIZE__) && \
- 147:/usr/lib/avr/include/util/delay.h ****   !defined(__DELAY_BACKWARD_COMPATIBLE__) &&	   \
- 148:/usr/lib/avr/include/util/delay.h ****   __STDC_HOSTED__
- 149:/usr/lib/avr/include/util/delay.h **** 	uint32_t __ticks_dc;
- 150:/usr/lib/avr/include/util/delay.h **** 	extern void __builtin_avr_delay_cycles(unsigned long);
- 151:/usr/lib/avr/include/util/delay.h **** 	__tmp = ((F_CPU) / 1e3) * __ms;
- 152:/usr/lib/avr/include/util/delay.h **** 
- 153:/usr/lib/avr/include/util/delay.h **** 	#if defined(__DELAY_ROUND_DOWN__)
- 154:/usr/lib/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)fabs(__tmp);
- 155:/usr/lib/avr/include/util/delay.h **** 
- 156:/usr/lib/avr/include/util/delay.h **** 	#elif defined(__DELAY_ROUND_CLOSEST__)
- 157:/usr/lib/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(fabs(__tmp)+0.5);
- 158:/usr/lib/avr/include/util/delay.h **** 
- 159:/usr/lib/avr/include/util/delay.h **** 	#else
- 160:/usr/lib/avr/include/util/delay.h **** 		//round up by default
- 161:/usr/lib/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
- 162:/usr/lib/avr/include/util/delay.h **** 	#endif
- 163:/usr/lib/avr/include/util/delay.h **** 
- 164:/usr/lib/avr/include/util/delay.h **** 	__builtin_avr_delay_cycles(__ticks_dc);
- 332               		.loc 2 164 0
- 333 0122 2FEF      		ldi r18,lo8(3199999)
- 334 0124 83ED      		ldi r24,hi8(3199999)
- 335 0126 90E3      		ldi r25,hlo8(3199999)
- 336 0128 2150      		1: subi r18,1
- 337 012a 8040      		sbci r24,0
- 338 012c 9040      		sbci r25,0
- 339 012e 01F4      		brne 1b
- 340 0130 00C0      		rjmp .
- 341 0132 0000      		nop
- 342               	.LBE99:
- 343               	.LBE98:
- 211:../../common/command.c ****             bootloader_jump(); // not return
- 344               		.loc 1 211 0
- 345 0134 0E94 0000 		call bootloader_jump
- 346               	.LVL28:
- 212:../../common/command.c ****             print("not supported.\n");
- 347               		.loc 1 212 0
- 348 0138 80E0      		ldi r24,lo8(__c.4760)
- 349 013a 90E0      		ldi r25,hi8(__c.4760)
- 350 013c 00C0      		rjmp .L77
- 351               	.LVL29:
- 352               	.L30:
- 184:../../common/command.c ****             if (host_get_driver()) {
- 353               		.loc 1 184 0
- 354 013e 0E94 0000 		call host_get_driver
- 355               	.LVL30:
- 356 0142 892B      		or r24,r25
- 357 0144 01F0      		breq .L32
- 185:../../common/command.c ****                 host_driver = host_get_driver();
- 358               		.loc 1 185 0
- 359 0146 0E94 0000 		call host_get_driver
- 360               	.LVL31:
- 361 014a 9093 0000 		sts host_driver.4743+1,r25
- 362 014e 8093 0000 		sts host_driver.4743,r24
- 186:../../common/command.c ****                 host_set_driver(0);
- 363               		.loc 1 186 0
- 364 0152 80E0      		ldi r24,0
- 365 0154 90E0      		ldi r25,0
- 366 0156 0E94 0000 		call host_set_driver
- 367               	.LVL32:
- 187:../../common/command.c ****                 print("Locked.\n");
- 368               		.loc 1 187 0
- 369 015a 80E0      		ldi r24,lo8(__c.4745)
- 370 015c 90E0      		ldi r25,hi8(__c.4745)
- 371 015e 00C0      		rjmp .L77
- 372               	.L32:
- 189:../../common/command.c ****                 host_set_driver(host_driver);
- 373               		.loc 1 189 0
- 374 0160 8091 0000 		lds r24,host_driver.4743
- 375 0164 9091 0000 		lds r25,host_driver.4743+1
- 376 0168 0E94 0000 		call host_set_driver
- 377               	.LVL33:
- 190:../../common/command.c ****                 print("Unlocked.\n");
- 378               		.loc 1 190 0
- 379 016c 80E0      		ldi r24,lo8(__c.4747)
- 380 016e 90E0      		ldi r25,hi8(__c.4747)
- 381 0170 00C0      		rjmp .L77
- 382               	.L17:
- 383               	.LBB100:
- 384               	.LBB101:
- 105:../../common/command.c ****     print("\n\n----- Command Help -----\n");
- 385               		.loc 1 105 0
- 386 0172 80E0      		ldi r24,lo8(__c.4702)
- 387 0174 90E0      		ldi r25,hi8(__c.4702)
- 388 0176 0E94 0000 		call xputs
- 389               	.LVL34:
- 106:../../common/command.c ****     print("c:	enter console mode\n");
- 390               		.loc 1 106 0
- 391 017a 80E0      		ldi r24,lo8(__c.4704)
- 392 017c 90E0      		ldi r25,hi8(__c.4704)
- 393 017e 0E94 0000 		call xputs
- 394               	.LVL35:
- 107:../../common/command.c ****     print("d:	toggle debug enable\n");
- 395               		.loc 1 107 0
- 396 0182 80E0      		ldi r24,lo8(__c.4706)
- 397 0184 90E0      		ldi r25,hi8(__c.4706)
- 398 0186 0E94 0000 		call xputs
- 399               	.LVL36:
- 108:../../common/command.c ****     print("x:	toggle matrix debug\n");
- 400               		.loc 1 108 0
- 401 018a 80E0      		ldi r24,lo8(__c.4708)
- 402 018c 90E0      		ldi r25,hi8(__c.4708)
- 403 018e 0E94 0000 		call xputs
- 404               	.LVL37:
- 109:../../common/command.c ****     print("k:	toggle keyboard debug\n");
- 405               		.loc 1 109 0
- 406 0192 80E0      		ldi r24,lo8(__c.4710)
- 407 0194 90E0      		ldi r25,hi8(__c.4710)
- 408 0196 0E94 0000 		call xputs
- 409               	.LVL38:
- 110:../../common/command.c ****     print("m:	toggle mouse debug\n");
- 410               		.loc 1 110 0
- 411 019a 80E0      		ldi r24,lo8(__c.4712)
- 412 019c 90E0      		ldi r25,hi8(__c.4712)
- 413 019e 0E94 0000 		call xputs
- 414               	.LVL39:
- 114:../../common/command.c ****     print("v:	print device version & info\n");
- 415               		.loc 1 114 0
- 416 01a2 80E0      		ldi r24,lo8(__c.4714)
- 417 01a4 90E0      		ldi r25,hi8(__c.4714)
- 418 01a6 0E94 0000 		call xputs
- 419               	.LVL40:
- 115:../../common/command.c ****     print("t:	print timer count\n");
- 420               		.loc 1 115 0
- 421 01aa 80E0      		ldi r24,lo8(__c.4716)
- 422 01ac 90E0      		ldi r25,hi8(__c.4716)
- 423 01ae 0E94 0000 		call xputs
- 424               	.LVL41:
- 116:../../common/command.c ****     print("s:	print status\n");
- 425               		.loc 1 116 0
- 426 01b2 80E0      		ldi r24,lo8(__c.4718)
- 427 01b4 90E0      		ldi r25,hi8(__c.4718)
- 428 01b6 0E94 0000 		call xputs
- 429               	.LVL42:
- 117:../../common/command.c ****     print("e:	print eeprom config\n");
- 430               		.loc 1 117 0
- 431 01ba 80E0      		ldi r24,lo8(__c.4720)
- 432 01bc 90E0      		ldi r25,hi8(__c.4720)
- 433 01be 0E94 0000 		call xputs
- 434               	.LVL43:
- 119:../../common/command.c ****     print("n:	toggle NKRO\n");
- 435               		.loc 1 119 0
- 436 01c2 80E0      		ldi r24,lo8(__c.4722)
- 437 01c4 90E0      		ldi r25,hi8(__c.4722)
- 438 01c6 0E94 0000 		call xputs
- 439               	.LVL44:
- 121:../../common/command.c ****     print("0/F10:	switch to Layer0 \n");
- 440               		.loc 1 121 0
- 441 01ca 80E0      		ldi r24,lo8(__c.4724)
- 442 01cc 90E0      		ldi r25,hi8(__c.4724)
- 443 01ce 0E94 0000 		call xputs
- 444               	.LVL45:
- 122:../../common/command.c ****     print("1/F1:	switch to Layer1 \n");
- 445               		.loc 1 122 0
- 446 01d2 80E0      		ldi r24,lo8(__c.4726)
- 447 01d4 90E0      		ldi r25,hi8(__c.4726)
- 448 01d6 0E94 0000 		call xputs
- 449               	.LVL46:
- 123:../../common/command.c ****     print("2/F2:	switch to Layer2 \n");
- 450               		.loc 1 123 0
- 451 01da 80E0      		ldi r24,lo8(__c.4728)
- 452 01dc 90E0      		ldi r25,hi8(__c.4728)
- 453 01de 0E94 0000 		call xputs
- 454               	.LVL47:
- 124:../../common/command.c ****     print("3/F3:	switch to Layer3 \n");
- 455               		.loc 1 124 0
- 456 01e2 80E0      		ldi r24,lo8(__c.4730)
- 457 01e4 90E0      		ldi r25,hi8(__c.4730)
- 458 01e6 0E94 0000 		call xputs
- 459               	.LVL48:
- 125:../../common/command.c ****     print("4/F4:	switch to Layer4 \n");
- 460               		.loc 1 125 0
- 461 01ea 80E0      		ldi r24,lo8(__c.4732)
- 462 01ec 90E0      		ldi r25,hi8(__c.4732)
- 463 01ee 0E94 0000 		call xputs
- 464               	.LVL49:
- 126:../../common/command.c ****     print("PScr:	power down/remote wake-up\n");
- 465               		.loc 1 126 0
- 466 01f2 80E0      		ldi r24,lo8(__c.4734)
- 467 01f4 90E0      		ldi r25,hi8(__c.4734)
- 468 01f6 0E94 0000 		call xputs
- 469               	.LVL50:
- 127:../../common/command.c ****     print("Caps:	Lock Keyboard(Child Proof)\n");
- 470               		.loc 1 127 0
- 471 01fa 80E0      		ldi r24,lo8(__c.4736)
- 472 01fc 90E0      		ldi r25,hi8(__c.4736)
- 473 01fe 0E94 0000 		call xputs
- 474               	.LVL51:
- 128:../../common/command.c ****     print("Paus:	jump to bootloader\n");
- 475               		.loc 1 128 0
- 476 0202 80E0      		ldi r24,lo8(__c.4738)
- 477 0204 90E0      		ldi r25,hi8(__c.4738)
- 478 0206 00C0      		rjmp .L77
- 479               	.L14:
- 480               	.LBE101:
- 481               	.LBE100:
- 215:../../common/command.c ****             if (debug_enable) {
- 482               		.loc 1 215 0
- 483 0208 8091 0000 		lds r24,debug_config
- 484 020c 80FF      		sbrs r24,0
- 485 020e 00C0      		rjmp .L34
- 216:../../common/command.c ****                 print("\nDEBUG: disabled.\n");
- 486               		.loc 1 216 0
- 487 0210 80E0      		ldi r24,lo8(__c.4763)
- 488 0212 90E0      		ldi r25,hi8(__c.4763)
- 489 0214 0E94 0000 		call xputs
- 490               	.LVL52:
- 217:../../common/command.c ****                 debug_matrix   = false;
- 491               		.loc 1 217 0
- 492 0218 8091 0000 		lds r24,debug_config
- 220:../../common/command.c ****                 debug_enable   = false;
- 493               		.loc 1 220 0
- 494 021c 817F      		andi r24,lo8(-15)
- 495 021e 8E7F      		andi r24,lo8(~(1<<0))
- 496 0220 00C0      		rjmp .L78
- 497               	.L34:
- 222:../../common/command.c ****                 print("\nDEBUG: enabled.\n");
- 498               		.loc 1 222 0
- 499 0222 80E0      		ldi r24,lo8(__c.4765)
- 500 0224 90E0      		ldi r25,hi8(__c.4765)
- 501 0226 00C0      		rjmp .L79
- 502               	.L10:
- 227:../../common/command.c ****             debug_matrix = !debug_matrix;
- 503               		.loc 1 227 0
- 504 0228 9091 0000 		lds r25,debug_config
- 505 022c 91FB      		bst r25,1
- 506 022e 8827      		clr r24
- 507 0230 80F9      		bld r24,0
- 508 0232 21E0      		ldi r18,lo8(1)
- 509 0234 8227      		eor r24,r18
- 510 0236 80FB      		bst r24,0
- 511 0238 91F9      		bld r25,1
- 512 023a 9093 0000 		sts debug_config,r25
- 228:../../common/command.c ****             if (debug_matrix) {
- 513               		.loc 1 228 0
- 514 023e 8823      		tst r24
- 515 0240 01F0      		breq .L35
- 229:../../common/command.c ****                 print("\nDEBUG: matrix enabled.\n");
- 516               		.loc 1 229 0
- 517 0242 80E0      		ldi r24,lo8(__c.4768)
- 518 0244 90E0      		ldi r25,hi8(__c.4768)
- 519 0246 00C0      		rjmp .L79
- 520               	.L35:
- 232:../../common/command.c ****                 print("\nDEBUG: matrix disabled.\n");
- 521               		.loc 1 232 0
- 522 0248 80E0      		ldi r24,lo8(__c.4770)
- 523 024a 90E0      		ldi r25,hi8(__c.4770)
- 524 024c 00C0      		rjmp .L77
- 525               	.L18:
- 236:../../common/command.c ****             debug_keyboard = !debug_keyboard;
- 526               		.loc 1 236 0
- 527 024e 9091 0000 		lds r25,debug_config
- 528 0252 92FB      		bst r25,2
- 529 0254 8827      		clr r24
- 530 0256 80F9      		bld r24,0
- 531 0258 21E0      		ldi r18,lo8(1)
- 532 025a 8227      		eor r24,r18
- 533 025c 80FB      		bst r24,0
- 534 025e 92F9      		bld r25,2
- 535 0260 9093 0000 		sts debug_config,r25
- 237:../../common/command.c ****             if (debug_keyboard) {
- 536               		.loc 1 237 0
- 537 0264 8823      		tst r24
- 538 0266 01F0      		breq .L36
- 238:../../common/command.c ****                 print("\nDEBUG: keyboard enabled.\n");
- 539               		.loc 1 238 0
- 540 0268 80E0      		ldi r24,lo8(__c.4773)
- 541 026a 90E0      		ldi r25,hi8(__c.4773)
- 542 026c 00C0      		rjmp .L79
- 543               	.L36:
- 241:../../common/command.c ****                 print("\nDEBUG: keyboard disabled.\n");
- 544               		.loc 1 241 0
- 545 026e 80E0      		ldi r24,lo8(__c.4775)
- 546 0270 90E0      		ldi r25,hi8(__c.4775)
- 547 0272 00C0      		rjmp .L77
- 548               	.L12:
- 245:../../common/command.c ****             debug_mouse = !debug_mouse;
- 549               		.loc 1 245 0
- 550 0274 9091 0000 		lds r25,debug_config
- 551 0278 93FB      		bst r25,3
- 552 027a 8827      		clr r24
- 553 027c 80F9      		bld r24,0
- 554 027e 21E0      		ldi r18,lo8(1)
- 555 0280 8227      		eor r24,r18
- 556 0282 80FB      		bst r24,0
- 557 0284 93F9      		bld r25,3
- 558 0286 9093 0000 		sts debug_config,r25
- 246:../../common/command.c ****             if (debug_mouse) {
- 559               		.loc 1 246 0
- 560 028a 8823      		tst r24
- 561 028c 01F0      		breq .L37
- 247:../../common/command.c ****                 print("\nDEBUG: mouse enabled.\n");
- 562               		.loc 1 247 0
- 563 028e 80E0      		ldi r24,lo8(__c.4778)
- 564 0290 90E0      		ldi r25,hi8(__c.4778)
- 565               	.L79:
- 566 0292 0E94 0000 		call xputs
- 567               	.LVL53:
- 248:../../common/command.c ****                 debug_enable = true;
- 568               		.loc 1 248 0
- 569 0296 8091 0000 		lds r24,debug_config
- 570 029a 8160      		ori r24,lo8(1<<0)
- 571               	.L78:
- 572 029c 8093 0000 		sts debug_config,r24
- 573 02a0 00C0      		rjmp .L44
- 574               	.L37:
- 250:../../common/command.c ****                 print("\nDEBUG: mouse disabled.\n");
- 575               		.loc 1 250 0
- 576 02a2 80E0      		ldi r24,lo8(__c.4780)
- 577 02a4 90E0      		ldi r25,hi8(__c.4780)
- 578 02a6 00C0      		rjmp .L77
- 579               	.L22:
- 299:../../common/command.c ****             print_val_hex32(timer_count);
- 580               		.loc 1 299 0
- 581 02a8 8091 0000 		lds r24,timer_count
- 582 02ac 9091 0000 		lds r25,timer_count+1
- 583 02b0 A091 0000 		lds r26,timer_count+2
- 584 02b4 B091 0000 		lds r27,timer_count+3
- 585 02b8 BF93      		push r27
- 586               	.LCFI11:
- 587               		.cfi_def_cfa_offset 4
- 588 02ba AF93      		push r26
- 589               	.LCFI12:
- 590               		.cfi_def_cfa_offset 5
- 591 02bc 9F93      		push r25
- 592               	.LCFI13:
- 593               		.cfi_def_cfa_offset 6
- 594 02be 8F93      		push r24
- 595               	.LCFI14:
- 596               		.cfi_def_cfa_offset 7
- 597 02c0 80E0      		ldi r24,lo8(__c.4796)
- 598 02c2 90E0      		ldi r25,hi8(__c.4796)
- 599 02c4 9F93      		push r25
- 600               	.LCFI15:
- 601               		.cfi_def_cfa_offset 8
- 602 02c6 8F93      		push r24
- 603               	.LCFI16:
- 604               		.cfi_def_cfa_offset 9
- 605 02c8 0E94 0000 		call __xprintf
- 606               	.LVL54:
- 607 02cc 0F90      		pop __tmp_reg__
- 608 02ce 0F90      		pop __tmp_reg__
- 609 02d0 0F90      		pop __tmp_reg__
- 610 02d2 0F90      		pop __tmp_reg__
- 611 02d4 0F90      		pop __tmp_reg__
- 612 02d6 0F90      		pop __tmp_reg__
- 613               	.LCFI17:
- 614               		.cfi_def_cfa_offset 3
- 615 02d8 00C0      		rjmp .L44
- 616               	.L19:
- 302:../../common/command.c ****             print("\n\n----- Status -----\n");
- 617               		.loc 1 302 0
- 618 02da 80E0      		ldi r24,lo8(__c.4799)
- 619 02dc 90E0      		ldi r25,hi8(__c.4799)
- 620 02de 0E94 0000 		call xputs
- 621               	.LVL55:
- 303:../../common/command.c ****             print_val_hex8(host_keyboard_leds());
- 622               		.loc 1 303 0
- 623 02e2 0E94 0000 		call host_keyboard_leds
- 624               	.LVL56:
- 625 02e6 1F92      		push __zero_reg__
- 626               	.LCFI18:
- 627               		.cfi_def_cfa_offset 4
- 628 02e8 8F93      		push r24
- 629               	.LCFI19:
- 630               		.cfi_def_cfa_offset 5
- 631 02ea 80E0      		ldi r24,lo8(__c.4801)
- 632 02ec 90E0      		ldi r25,hi8(__c.4801)
- 633 02ee 9F93      		push r25
- 634               	.LCFI20:
- 635               		.cfi_def_cfa_offset 6
- 636 02f0 8F93      		push r24
- 637               	.LCFI21:
- 638               		.cfi_def_cfa_offset 7
- 639 02f2 0E94 0000 		call __xprintf
- 640               	.LVL57:
- 641 02f6 0F90      		pop __tmp_reg__
- 642 02f8 0F90      		pop __tmp_reg__
- 643 02fa 0F90      		pop __tmp_reg__
- 644 02fc 0F90      		pop __tmp_reg__
- 645               	.LCFI22:
- 646               		.cfi_def_cfa_offset 3
- 647 02fe 00C0      		rjmp .L44
- 648               	.L21:
- 322:../../common/command.c ****             clear_keyboard(); //Prevents stuck keys.
- 649               		.loc 1 322 0
- 650 0300 0E94 0000 		call clear_keyboard
- 651               	.LVL58:
- 323:../../common/command.c ****             keyboard_nkro = !keyboard_nkro;
- 652               		.loc 1 323 0
- 653 0304 8091 0000 		lds r24,keyboard_nkro
- 654 0308 91E0      		ldi r25,lo8(1)
- 655 030a 8927      		eor r24,r25
- 656 030c 8093 0000 		sts keyboard_nkro,r24
- 324:../../common/command.c ****             if (keyboard_nkro)
- 657               		.loc 1 324 0
- 658 0310 8823      		tst r24
- 659 0312 01F0      		breq .L38
- 325:../../common/command.c ****                 print("NKRO: enabled\n");
- 660               		.loc 1 325 0
- 661 0314 80E0      		ldi r24,lo8(__c.4804)
- 662 0316 90E0      		ldi r25,hi8(__c.4804)
- 663 0318 00C0      		rjmp .L77
- 664               	.L38:
- 327:../../common/command.c ****                 print("NKRO: disabled\n");
- 665               		.loc 1 327 0
- 666 031a 80E0      		ldi r24,lo8(__c.4806)
- 667 031c 90E0      		ldi r25,hi8(__c.4806)
- 668               	.L77:
- 669 031e 0E94 0000 		call xputs
- 670               	.LVL59:
- 671 0322 00C0      		rjmp .L44
- 672               	.L24:
- 352:../../common/command.c ****             switch_default_layer(0);
- 673               		.loc 1 352 0
- 674 0324 80E0      		ldi r24,0
- 675 0326 00C0      		rjmp .L76
- 676               	.L29:
- 358:../../common/command.c ****             switch_default_layer((code - KC_F1) + 1);
- 677               		.loc 1 358 0
- 678 0328 87EC      		ldi r24,lo8(-57)
- 679               	.L75:
- 680 032a 8C0F      		add r24,r28
- 681               	.L76:
- 682 032c 0E94 0000 		call switch_default_layer
- 683               	.LVL60:
- 684 0330 00C0      		rjmp .L44
- 685               	.L9:
- 361:../../common/command.c ****             print("?");
- 686               		.loc 1 361 0
- 687 0332 80E0      		ldi r24,lo8(__c.4814)
- 688 0334 90E0      		ldi r25,hi8(__c.4814)
- 689 0336 0E94 0000 		call xputs
- 690               	.LVL61:
- 691               	.LBE95:
- 692               	.LBE94:
-  76:../../common/command.c ****             return (command_extra(code) || command_common(code));
- 693               		.loc 1 76 0
- 694 033a 80E0      		ldi r24,0
- 695 033c 00C0      		rjmp .L8
- 696               	.LVL62:
- 697               	.L44:
- 698 033e 81E0      		ldi r24,lo8(1)
- 699               	.L8:
-  76:../../common/command.c ****             return (command_extra(code) || command_common(code));
- 700               		.loc 1 76 0 is_stmt 0 discriminator 4
- 701 0340 8170      		andi r24,lo8(1)
- 702 0342 00C0      		rjmp .L74
- 703               	.L6:
- 704               	.LVL63:
- 705               	.LBB102:
- 706               	.LBB103:
- 382:../../common/command.c ****     switch (code) {
- 707               		.loc 1 382 0 is_stmt 1
- 708 0344 C431      		cpi r28,lo8(20)
- 709 0346 01F0      		breq .L40
- 710 0348 00F4      		brsh .L41
- 711 034a CB30      		cpi r28,lo8(11)
- 712 034c 01F0      		breq .L42
- 713 034e 00C0      		rjmp .L39
- 714               	.L41:
- 715 0350 C932      		cpi r28,lo8(41)
- 716 0352 01F0      		breq .L40
- 717 0354 C833      		cpi r28,lo8(56)
- 718 0356 01F4      		brne .L39
- 719               	.L42:
- 720               	.LBB104:
- 721               	.LBB105:
- 373:../../common/command.c ****     print("\n\n----- Console Help -----\n");
- 722               		.loc 1 373 0
- 723 0358 80E0      		ldi r24,lo8(__c.4819)
- 724 035a 90E0      		ldi r25,hi8(__c.4819)
- 725 035c 0E94 0000 		call xputs
- 726               	.LVL64:
- 374:../../common/command.c ****     print("ESC/q:	quit\n");
- 727               		.loc 1 374 0
- 728 0360 80E0      		ldi r24,lo8(__c.4821)
- 729 0362 90E0      		ldi r25,hi8(__c.4821)
- 730 0364 0E94 0000 		call xputs
- 731               	.LVL65:
- 732               	.LBE105:
- 733               	.LBE104:
- 404:../../common/command.c ****     print("C> ");
- 734               		.loc 1 404 0
- 735 0368 80E0      		ldi r24,lo8(__c.4836)
- 736 036a 90E0      		ldi r25,hi8(__c.4836)
- 737 036c 00C0      		rjmp .L80
- 738               	.L40:
- 389:../../common/command.c ****             print("\nQuit Console Mode\n");
- 739               		.loc 1 389 0
- 740 036e 80E0      		ldi r24,lo8(__c.4831)
- 741 0370 90E0      		ldi r25,hi8(__c.4831)
- 742 0372 0E94 0000 		call xputs
- 743               	.LVL66:
- 390:../../common/command.c ****             state = ONESHOT;
- 744               		.loc 1 390 0
- 745 0376 1092 0000 		sts state,__zero_reg__
- 746 037a 00C0      		rjmp .L81
- 747               	.L39:
- 401:../../common/command.c ****             print("?");
- 748               		.loc 1 401 0
- 749 037c 80E0      		ldi r24,lo8(__c.4834)
- 750 037e 90E0      		ldi r25,hi8(__c.4834)
- 751               	.L80:
- 752 0380 0E94 0000 		call xputs
- 753               	.LVL67:
- 754               	.L81:
- 755               	.LBE103:
- 756               	.LBE102:
-  89:../../common/command.c ****     return true;
- 757               		.loc 1 89 0
- 758 0384 81E0      		ldi r24,lo8(1)
- 759 0386 00C0      		rjmp .L74
- 760               	.LVL68:
- 761               	.L83:
-  86:../../common/command.c ****             state = ONESHOT;
- 762               		.loc 1 86 0
- 763 0388 1092 0000 		sts state,__zero_reg__
- 764               	.L43:
-  75:../../common/command.c ****                 return false;
- 765               		.loc 1 75 0
- 766 038c 80E0      		ldi r24,0
- 767               	.L74:
- 768               	/* epilogue start */
-  90:../../common/command.c **** }
- 769               		.loc 1 90 0
- 770 038e CF91      		pop r28
- 771               	.LVL69:
- 772 0390 0895      		ret
- 773               		.cfi_endproc
- 774               	.LFE102:
- 776               		.section	.progmem.data,"a",@progbits
- 779               	__c.4834:
- 780 0000 3F00      		.string	"?"
- 783               	__c.4831:
- 784 0002 0A51 7569 		.string	"\nQuit Console Mode\n"
- 784      7420 436F 
- 784      6E73 6F6C 
- 784      6520 4D6F 
- 784      6465 0A00 
- 787               	__c.4836:
- 788 0016 433E 2000 		.string	"C> "
- 791               	__c.4862:
- 792 001a 0A00      		.string	"\n"
- 795               	__c.4860:
- 796 001c 2575 00   		.string	"%u"
- 799               	__c.4858:
- 800 001f 2074 6F20 		.string	" to "
- 800      00
- 803               	__c.4856:
- 804 0024 2575 00   		.string	"%u"
- 807               	__c.4854:
- 808 0027 7377 6974 		.string	"switch_default_layer: "
- 808      6368 5F64 
- 808      6566 6175 
- 808      6C74 5F6C 
- 808      6179 6572 
- 811               	__c.4821:
- 812 003e 4553 432F 		.string	"ESC/q:\tquit\n"
- 812      713A 0971 
- 812      7569 740A 
- 812      00
- 815               	__c.4819:
- 816 004b 0A0A 2D2D 		.string	"\n\n----- Console Help -----\n"
- 816      2D2D 2D20 
- 816      436F 6E73 
- 816      6F6C 6520 
- 816      4865 6C70 
- 819               	__c.4738:
- 820 0067 5061 7573 		.string	"Paus:\tjump to bootloader\n"
- 820      3A09 6A75 
- 820      6D70 2074 
- 820      6F20 626F 
- 820      6F74 6C6F 
- 823               	__c.4736:
- 824 0081 4361 7073 		.string	"Caps:\tLock Keyboard(Child Proof)\n"
- 824      3A09 4C6F 
- 824      636B 204B 
- 824      6579 626F 
- 824      6172 6428 
- 827               	__c.4734:
- 828 00a3 5053 6372 		.string	"PScr:\tpower down/remote wake-up\n"
- 828      3A09 706F 
- 828      7765 7220 
- 828      646F 776E 
- 828      2F72 656D 
- 831               	__c.4732:
- 832 00c4 342F 4634 		.string	"4/F4:\tswitch to Layer4 \n"
- 832      3A09 7377 
- 832      6974 6368 
- 832      2074 6F20 
- 832      4C61 7965 
- 835               	__c.4730:
- 836 00dd 332F 4633 		.string	"3/F3:\tswitch to Layer3 \n"
- 836      3A09 7377 
- 836      6974 6368 
- 836      2074 6F20 
- 836      4C61 7965 
- 839               	__c.4728:
- 840 00f6 322F 4632 		.string	"2/F2:\tswitch to Layer2 \n"
- 840      3A09 7377 
- 840      6974 6368 
- 840      2074 6F20 
- 840      4C61 7965 
- 843               	__c.4726:
- 844 010f 312F 4631 		.string	"1/F1:\tswitch to Layer1 \n"
- 844      3A09 7377 
- 844      6974 6368 
- 844      2074 6F20 
- 844      4C61 7965 
- 847               	__c.4724:
- 848 0128 302F 4631 		.string	"0/F10:\tswitch to Layer0 \n"
- 848      303A 0973 
- 848      7769 7463 
- 848      6820 746F 
- 848      204C 6179 
- 851               	__c.4722:
- 852 0142 6E3A 0974 		.string	"n:\ttoggle NKRO\n"
- 852      6F67 676C 
- 852      6520 4E4B 
- 852      524F 0A00 
- 855               	__c.4720:
- 856 0152 653A 0970 		.string	"e:\tprint eeprom config\n"
- 856      7269 6E74 
- 856      2065 6570 
- 856      726F 6D20 
- 856      636F 6E66 
- 859               	__c.4718:
- 860 016a 733A 0970 		.string	"s:\tprint status\n"
- 860      7269 6E74 
- 860      2073 7461 
- 860      7475 730A 
- 860      00
- 863               	__c.4716:
- 864 017b 743A 0970 		.string	"t:\tprint timer count\n"
- 864      7269 6E74 
- 864      2074 696D 
- 864      6572 2063 
- 864      6F75 6E74 
- 867               	__c.4714:
- 868 0191 763A 0970 		.string	"v:\tprint device version & info\n"
- 868      7269 6E74 
- 868      2064 6576 
- 868      6963 6520 
- 868      7665 7273 
- 871               	__c.4712:
- 872 01b1 6D3A 0974 		.string	"m:\ttoggle mouse debug\n"
- 872      6F67 676C 
- 872      6520 6D6F 
- 872      7573 6520 
- 872      6465 6275 
- 875               	__c.4710:
- 876 01c8 6B3A 0974 		.string	"k:\ttoggle keyboard debug\n"
- 876      6F67 676C 
- 876      6520 6B65 
- 876      7962 6F61 
- 876      7264 2064 
- 879               	__c.4708:
- 880 01e2 783A 0974 		.string	"x:\ttoggle matrix debug\n"
- 880      6F67 676C 
- 880      6520 6D61 
- 880      7472 6978 
- 880      2064 6562 
- 883               	__c.4706:
- 884 01fa 643A 0974 		.string	"d:\ttoggle debug enable\n"
- 884      6F67 676C 
- 884      6520 6465 
- 884      6275 6720 
- 884      656E 6162 
- 887               	__c.4704:
- 888 0212 633A 0965 		.string	"c:\tenter console mode\n"
- 888      6E74 6572 
- 888      2063 6F6E 
- 888      736F 6C65 
- 888      206D 6F64 
- 891               	__c.4702:
- 892 0229 0A0A 2D2D 		.string	"\n\n----- Command Help -----\n"
- 892      2D2D 2D20 
- 892      436F 6D6D 
- 892      616E 6420 
- 892      4865 6C70 
- 895               	__c.4814:
- 896 0245 3F00      		.string	"?"
- 899               	__c.4806:
- 900 0247 4E4B 524F 		.string	"NKRO: disabled\n"
- 900      3A20 6469 
- 900      7361 626C 
- 900      6564 0A00 
- 903               	__c.4804:
- 904 0257 4E4B 524F 		.string	"NKRO: enabled\n"
- 904      3A20 656E 
- 904      6162 6C65 
- 904      640A 00
- 907               	__c.4801:
- 908 0266 686F 7374 		.string	"host_keyboard_leds(): %X\n"
- 908      5F6B 6579 
- 908      626F 6172 
- 908      645F 6C65 
- 908      6473 2829 
- 911               	__c.4799:
- 912 0280 0A0A 2D2D 		.string	"\n\n----- Status -----\n"
- 912      2D2D 2D20 
- 912      5374 6174 
- 912      7573 202D 
- 912      2D2D 2D2D 
- 915               	__c.4796:
- 916 0296 7469 6D65 		.string	"timer_count: %04lX\n"
- 916      725F 636F 
- 916      756E 743A 
- 916      2025 3034 
- 916      6C58 0A00 
- 919               	__c.4793:
- 920 02aa 4743 433A 		.string	"GCC: 4.8.2 AVR-LIBC: 1.8.0 AVR_ARCH: avr5\n"
- 920      2034 2E38 
- 920      2E32 2041 
- 920      5652 2D4C 
- 920      4942 433A 
- 923               	__c.4791:
- 924 02d5 4F50 5449 		.string	"OPTIONS: LUFA CONSOLE COMMAND NKRO 4096\n"
- 924      4F4E 533A 
- 924      204C 5546 
- 924      4120 434F 
- 924      4E53 4F4C 
- 927               	__c.4789:
- 928 02fe 4255 494C 		.string	"BUILD: 84aec74-dirty (00:15:25 Aug  7 2016)\n"
- 928      443A 2038 
- 928      3461 6563 
- 928      3734 2D64 
- 928      6972 7479 
- 931               	__c.4787:
- 932 032b 5649 443A 		.string	"VID: 0x16C0(technomancy) PID: 0x047C(Atreus) VER: 36\n"
- 932      2030 7831 
- 932      3643 3028 
- 932      7465 6368 
- 932      6E6F 6D61 
- 935               	__c.4785:
- 936 0361 4445 5343 		.string	"DESC: TMK keyboard firmware for Atreus\n"
- 936      3A20 544D 
- 936      4B20 6B65 
- 936      7962 6F61 
- 936      7264 2066 
- 939               	__c.4783:
- 940 0389 0A0A 2D2D 		.string	"\n\n----- Version -----\n"
- 940      2D2D 2D20 
- 940      5665 7273 
- 940      696F 6E20 
- 940      2D2D 2D2D 
- 943               	__c.4780:
- 944 03a0 0A44 4542 		.string	"\nDEBUG: mouse disabled.\n"
- 944      5547 3A20 
- 944      6D6F 7573 
- 944      6520 6469 
- 944      7361 626C 
- 947               	__c.4778:
- 948 03b9 0A44 4542 		.string	"\nDEBUG: mouse enabled.\n"
- 948      5547 3A20 
- 948      6D6F 7573 
- 948      6520 656E 
- 948      6162 6C65 
- 951               	__c.4775:
- 952 03d1 0A44 4542 		.string	"\nDEBUG: keyboard disabled.\n"
- 952      5547 3A20 
- 952      6B65 7962 
- 952      6F61 7264 
- 952      2064 6973 
- 955               	__c.4773:
- 956 03ed 0A44 4542 		.string	"\nDEBUG: keyboard enabled.\n"
- 956      5547 3A20 
- 956      6B65 7962 
- 956      6F61 7264 
- 956      2065 6E61 
- 959               	__c.4770:
- 960 0408 0A44 4542 		.string	"\nDEBUG: matrix disabled.\n"
- 960      5547 3A20 
- 960      6D61 7472 
- 960      6978 2064 
- 960      6973 6162 
- 963               	__c.4768:
- 964 0422 0A44 4542 		.string	"\nDEBUG: matrix enabled.\n"
- 964      5547 3A20 
- 964      6D61 7472 
- 964      6978 2065 
- 964      6E61 626C 
- 967               	__c.4765:
- 968 043b 0A44 4542 		.string	"\nDEBUG: enabled.\n"
- 968      5547 3A20 
- 968      656E 6162 
- 968      6C65 642E 
- 968      0A00 
- 971               	__c.4763:
- 972 044d 0A44 4542 		.string	"\nDEBUG: disabled.\n"
- 972      5547 3A20 
- 972      6469 7361 
- 972      626C 6564 
- 972      2E0A 00
- 975               	__c.4760:
- 976 0460 6E6F 7420 		.string	"not supported.\n"
- 976      7375 7070 
- 976      6F72 7465 
- 976      642E 0A00 
- 979               	__c.4758:
- 980 0470 0A0A 4A75 		.string	"\n\nJump to bootloader... "
- 980      6D70 2074 
- 980      6F20 626F 
- 980      6F74 6C6F 
- 980      6164 6572 
- 983               	__c.4755:
- 984 0489 433E 2000 		.string	"C> "
- 987               	__c.4753:
- 988 048d 0A45 6E74 		.string	"\nEnter Console Mode\n"
- 988      6572 2043 
- 988      6F6E 736F 
- 988      6C65 204D 
- 988      6F64 650A 
- 991               	__c.4747:
- 992 04a2 556E 6C6F 		.string	"Unlocked.\n"
- 992      636B 6564 
- 992      2E0A 00
- 995               	__c.4745:
- 996 04ad 4C6F 636B 		.string	"Locked.\n"
- 996      6564 2E0A 
- 996      00
- 997               		.local	host_driver.4743
- 998               		.comm	host_driver.4743,2,1
- 999               		.local	state
- 1000               		.comm	state,1,1
- 1001               		.comm	debug_config,1,1
- 1002               		.text
- 1003               	.Letext0:
- 1004               		.file 3 "/usr/lib/avr/include/stdint.h"
- 1005               		.file 4 "../../common/report.h"
- 1006               		.file 5 "../../common/host_driver.h"
- 1007               		.file 6 "../../common/debug_config.h"
- 1008               		.file 7 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBTask.h"
- 1009               		.file 8 "../../common/host.h"
- 1010               		.file 9 "../../common/timer.h"
- 1011               		.file 10 "../../common/action_layer.h"
- 1012               		.file 11 "../../common/action_util.h"
- 1013               		.file 12 "../../common/xprintf.h"
- 1014               		.file 13 "../../common/action.h"
- 1015               		.file 14 "../../common/bootloader.h"
- 1016               		.file 15 "../../common/keycode.h"
- 1017               		.file 16 "../../common/util.h"
+ 144:/usr/lib/avr/include/util/delay.h **** 	double __tmp ; 
+ 145:/usr/lib/avr/include/util/delay.h **** #if __HAS_DELAY_CYCLES && defined(__OPTIMIZE__) && \
+ 146:/usr/lib/avr/include/util/delay.h ****   !defined(__DELAY_BACKWARD_COMPATIBLE__) &&	   \
+ 147:/usr/lib/avr/include/util/delay.h ****   __STDC_HOSTED__
+ 148:/usr/lib/avr/include/util/delay.h **** 	uint32_t __ticks_dc;
+ 149:/usr/lib/avr/include/util/delay.h **** 	extern void __builtin_avr_delay_cycles(unsigned long);
+ 150:/usr/lib/avr/include/util/delay.h **** 	__tmp = ((F_CPU) / 1e3) * __ms;
+ 151:/usr/lib/avr/include/util/delay.h **** 
+ 152:/usr/lib/avr/include/util/delay.h **** 	#if defined(__DELAY_ROUND_DOWN__)
+ 153:/usr/lib/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)fabs(__tmp);
+ 154:/usr/lib/avr/include/util/delay.h **** 
+ 155:/usr/lib/avr/include/util/delay.h **** 	#elif defined(__DELAY_ROUND_CLOSEST__)
+ 156:/usr/lib/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(fabs(__tmp)+0.5);
+ 157:/usr/lib/avr/include/util/delay.h **** 
+ 158:/usr/lib/avr/include/util/delay.h **** 	#else
+ 159:/usr/lib/avr/include/util/delay.h **** 		//round up by default
+ 160:/usr/lib/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+ 161:/usr/lib/avr/include/util/delay.h **** 	#endif
+ 162:/usr/lib/avr/include/util/delay.h **** 
+ 163:/usr/lib/avr/include/util/delay.h **** 	__builtin_avr_delay_cycles(__ticks_dc);
+ 334               		.loc 2 163 0
+ 335 0122 2FEF      		ldi r18,lo8(3199999)
+ 336 0124 83ED      		ldi r24,hi8(3199999)
+ 337 0126 90E3      		ldi r25,hlo8(3199999)
+ 338 0128 2150      	1:	subi r18,1
+ 339 012a 8040      		sbci r24,0
+ 340 012c 9040      		sbci r25,0
+ 341 012e 01F4      		brne 1b
+ 342 0130 00C0      		rjmp .
+ 343 0132 0000      		nop
+ 344               	.LBE99:
+ 345               	.LBE98:
+ 211:../../common/command.c ****             print("not supported.\n");
+ 346               		.loc 1 211 0
+ 347 0134 0E94 0000 		call bootloader_jump
+ 348               	.LVL28:
+ 212:../../common/command.c ****             break;
+ 349               		.loc 1 212 0
+ 350 0138 80E0      		ldi r24,lo8(__c.4778)
+ 351 013a 90E0      		ldi r25,hi8(__c.4778)
+ 352 013c 00C0      		rjmp .L77
+ 353               	.LVL29:
+ 354               	.L30:
+ 184:../../common/command.c ****                 host_driver = host_get_driver();
+ 355               		.loc 1 184 0
+ 356 013e 0E94 0000 		call host_get_driver
+ 357               	.LVL30:
+ 358 0142 892B      		or r24,r25
+ 359 0144 01F0      		breq .L32
+ 185:../../common/command.c ****                 host_set_driver(0);
+ 360               		.loc 1 185 0
+ 361 0146 0E94 0000 		call host_get_driver
+ 362               	.LVL31:
+ 363 014a 9093 0000 		sts host_driver.4761+1,r25
+ 364 014e 8093 0000 		sts host_driver.4761,r24
+ 186:../../common/command.c ****                 print("Locked.\n");
+ 365               		.loc 1 186 0
+ 366 0152 80E0      		ldi r24,0
+ 367 0154 90E0      		ldi r25,0
+ 368 0156 0E94 0000 		call host_set_driver
+ 369               	.LVL32:
+ 187:../../common/command.c ****             } else {
+ 370               		.loc 1 187 0
+ 371 015a 80E0      		ldi r24,lo8(__c.4763)
+ 372 015c 90E0      		ldi r25,hi8(__c.4763)
+ 373 015e 00C0      		rjmp .L77
+ 374               	.L32:
+ 189:../../common/command.c ****                 print("Unlocked.\n");
+ 375               		.loc 1 189 0
+ 376 0160 8091 0000 		lds r24,host_driver.4761
+ 377 0164 9091 0000 		lds r25,host_driver.4761+1
+ 378 0168 0E94 0000 		call host_set_driver
+ 379               	.LVL33:
+ 190:../../common/command.c ****             }
+ 380               		.loc 1 190 0
+ 381 016c 80E0      		ldi r24,lo8(__c.4765)
+ 382 016e 90E0      		ldi r25,hi8(__c.4765)
+ 383 0170 00C0      		rjmp .L77
+ 384               	.L17:
+ 385               	.LBB100:
+ 386               	.LBB101:
+ 105:../../common/command.c ****     print("c:	enter console mode\n");
+ 387               		.loc 1 105 0
+ 388 0172 80E0      		ldi r24,lo8(__c.4720)
+ 389 0174 90E0      		ldi r25,hi8(__c.4720)
+ 390 0176 0E94 0000 		call xputs
+ 391               	.LVL34:
+ 106:../../common/command.c ****     print("d:	toggle debug enable\n");
+ 392               		.loc 1 106 0
+ 393 017a 80E0      		ldi r24,lo8(__c.4722)
+ 394 017c 90E0      		ldi r25,hi8(__c.4722)
+ 395 017e 0E94 0000 		call xputs
+ 396               	.LVL35:
+ 107:../../common/command.c ****     print("x:	toggle matrix debug\n");
+ 397               		.loc 1 107 0
+ 398 0182 80E0      		ldi r24,lo8(__c.4724)
+ 399 0184 90E0      		ldi r25,hi8(__c.4724)
+ 400 0186 0E94 0000 		call xputs
+ 401               	.LVL36:
+ 108:../../common/command.c ****     print("k:	toggle keyboard debug\n");
+ 402               		.loc 1 108 0
+ 403 018a 80E0      		ldi r24,lo8(__c.4726)
+ 404 018c 90E0      		ldi r25,hi8(__c.4726)
+ 405 018e 0E94 0000 		call xputs
+ 406               	.LVL37:
+ 109:../../common/command.c ****     print("m:	toggle mouse debug\n");
+ 407               		.loc 1 109 0
+ 408 0192 80E0      		ldi r24,lo8(__c.4728)
+ 409 0194 90E0      		ldi r25,hi8(__c.4728)
+ 410 0196 0E94 0000 		call xputs
+ 411               	.LVL38:
+ 110:../../common/command.c **** #ifdef SLEEP_LED_ENABLE
+ 412               		.loc 1 110 0
+ 413 019a 80E0      		ldi r24,lo8(__c.4730)
+ 414 019c 90E0      		ldi r25,hi8(__c.4730)
+ 415 019e 0E94 0000 		call xputs
+ 416               	.LVL39:
+ 114:../../common/command.c ****     print("t:	print timer count\n");
+ 417               		.loc 1 114 0
+ 418 01a2 80E0      		ldi r24,lo8(__c.4732)
+ 419 01a4 90E0      		ldi r25,hi8(__c.4732)
+ 420 01a6 0E94 0000 		call xputs
+ 421               	.LVL40:
+ 115:../../common/command.c ****     print("s:	print status\n");
+ 422               		.loc 1 115 0
+ 423 01aa 80E0      		ldi r24,lo8(__c.4734)
+ 424 01ac 90E0      		ldi r25,hi8(__c.4734)
+ 425 01ae 0E94 0000 		call xputs
+ 426               	.LVL41:
+ 116:../../common/command.c ****     print("e:	print eeprom config\n");
+ 427               		.loc 1 116 0
+ 428 01b2 80E0      		ldi r24,lo8(__c.4736)
+ 429 01b4 90E0      		ldi r25,hi8(__c.4736)
+ 430 01b6 0E94 0000 		call xputs
+ 431               	.LVL42:
+ 117:../../common/command.c **** #ifdef NKRO_ENABLE
+ 432               		.loc 1 117 0
+ 433 01ba 80E0      		ldi r24,lo8(__c.4738)
+ 434 01bc 90E0      		ldi r25,hi8(__c.4738)
+ 435 01be 0E94 0000 		call xputs
+ 436               	.LVL43:
+ 119:../../common/command.c **** #endif
+ 437               		.loc 1 119 0
+ 438 01c2 80E0      		ldi r24,lo8(__c.4740)
+ 439 01c4 90E0      		ldi r25,hi8(__c.4740)
+ 440 01c6 0E94 0000 		call xputs
+ 441               	.LVL44:
+ 121:../../common/command.c ****     print("1/F1:	switch to Layer1 \n");
+ 442               		.loc 1 121 0
+ 443 01ca 80E0      		ldi r24,lo8(__c.4742)
+ 444 01cc 90E0      		ldi r25,hi8(__c.4742)
+ 445 01ce 0E94 0000 		call xputs
+ 446               	.LVL45:
+ 122:../../common/command.c ****     print("2/F2:	switch to Layer2 \n");
+ 447               		.loc 1 122 0
+ 448 01d2 80E0      		ldi r24,lo8(__c.4744)
+ 449 01d4 90E0      		ldi r25,hi8(__c.4744)
+ 450 01d6 0E94 0000 		call xputs
+ 451               	.LVL46:
+ 123:../../common/command.c ****     print("3/F3:	switch to Layer3 \n");
+ 452               		.loc 1 123 0
+ 453 01da 80E0      		ldi r24,lo8(__c.4746)
+ 454 01dc 90E0      		ldi r25,hi8(__c.4746)
+ 455 01de 0E94 0000 		call xputs
+ 456               	.LVL47:
+ 124:../../common/command.c ****     print("4/F4:	switch to Layer4 \n");
+ 457               		.loc 1 124 0
+ 458 01e2 80E0      		ldi r24,lo8(__c.4748)
+ 459 01e4 90E0      		ldi r25,hi8(__c.4748)
+ 460 01e6 0E94 0000 		call xputs
+ 461               	.LVL48:
+ 125:../../common/command.c ****     print("PScr:	power down/remote wake-up\n");
+ 462               		.loc 1 125 0
+ 463 01ea 80E0      		ldi r24,lo8(__c.4750)
+ 464 01ec 90E0      		ldi r25,hi8(__c.4750)
+ 465 01ee 0E94 0000 		call xputs
+ 466               	.LVL49:
+ 126:../../common/command.c ****     print("Caps:	Lock Keyboard(Child Proof)\n");
+ 467               		.loc 1 126 0
+ 468 01f2 80E0      		ldi r24,lo8(__c.4752)
+ 469 01f4 90E0      		ldi r25,hi8(__c.4752)
+ 470 01f6 0E94 0000 		call xputs
+ 471               	.LVL50:
+ 127:../../common/command.c ****     print("Paus:	jump to bootloader\n");
+ 472               		.loc 1 127 0
+ 473 01fa 80E0      		ldi r24,lo8(__c.4754)
+ 474 01fc 90E0      		ldi r25,hi8(__c.4754)
+ 475 01fe 0E94 0000 		call xputs
+ 476               	.LVL51:
+ 128:../../common/command.c **** }
+ 477               		.loc 1 128 0
+ 478 0202 80E0      		ldi r24,lo8(__c.4756)
+ 479 0204 90E0      		ldi r25,hi8(__c.4756)
+ 480 0206 00C0      		rjmp .L77
+ 481               	.L14:
+ 482               	.LBE101:
+ 483               	.LBE100:
+ 215:../../common/command.c ****                 print("\nDEBUG: disabled.\n");
+ 484               		.loc 1 215 0
+ 485 0208 8091 0000 		lds r24,debug_config
+ 486 020c 80FF      		sbrs r24,0
+ 487 020e 00C0      		rjmp .L34
+ 216:../../common/command.c ****                 debug_matrix   = false;
+ 488               		.loc 1 216 0
+ 489 0210 80E0      		ldi r24,lo8(__c.4781)
+ 490 0212 90E0      		ldi r25,hi8(__c.4781)
+ 491 0214 0E94 0000 		call xputs
+ 492               	.LVL52:
+ 217:../../common/command.c ****                 debug_keyboard = false;
+ 493               		.loc 1 217 0
+ 494 0218 8091 0000 		lds r24,debug_config
+ 220:../../common/command.c ****             } else {
+ 495               		.loc 1 220 0
+ 496 021c 817F      		andi r24,lo8(-15)
+ 497 021e 8E7F      		andi r24,lo8(~(1<<0))
+ 498 0220 00C0      		rjmp .L78
+ 499               	.L34:
+ 222:../../common/command.c ****                 debug_enable   = true;
+ 500               		.loc 1 222 0
+ 501 0222 80E0      		ldi r24,lo8(__c.4783)
+ 502 0224 90E0      		ldi r25,hi8(__c.4783)
+ 503 0226 00C0      		rjmp .L79
+ 504               	.L10:
+ 227:../../common/command.c ****             if (debug_matrix) {
+ 505               		.loc 1 227 0
+ 506 0228 8091 0000 		lds r24,debug_config
+ 507 022c 81FB      		bst r24,1
+ 508 022e 2227      		clr r18
+ 509 0230 20F9      		bld r18,0
+ 510 0232 91E0      		ldi r25,lo8(1)
+ 511 0234 9227      		eor r25,r18
+ 512 0236 90FB      		bst r25,0
+ 513 0238 81F9      		bld r24,1
+ 514 023a 8093 0000 		sts debug_config,r24
+ 228:../../common/command.c ****                 print("\nDEBUG: matrix enabled.\n");
+ 515               		.loc 1 228 0
+ 516 023e 9923      		tst r25
+ 517 0240 01F0      		breq .L35
+ 229:../../common/command.c ****                 debug_enable = true;
+ 518               		.loc 1 229 0
+ 519 0242 80E0      		ldi r24,lo8(__c.4786)
+ 520 0244 90E0      		ldi r25,hi8(__c.4786)
+ 521 0246 00C0      		rjmp .L79
+ 522               	.L35:
+ 232:../../common/command.c ****             }
+ 523               		.loc 1 232 0
+ 524 0248 80E0      		ldi r24,lo8(__c.4788)
+ 525 024a 90E0      		ldi r25,hi8(__c.4788)
+ 526 024c 00C0      		rjmp .L77
+ 527               	.L18:
+ 236:../../common/command.c ****             if (debug_keyboard) {
+ 528               		.loc 1 236 0
+ 529 024e 8091 0000 		lds r24,debug_config
+ 530 0252 82FB      		bst r24,2
+ 531 0254 2227      		clr r18
+ 532 0256 20F9      		bld r18,0
+ 533 0258 91E0      		ldi r25,lo8(1)
+ 534 025a 9227      		eor r25,r18
+ 535 025c 90FB      		bst r25,0
+ 536 025e 82F9      		bld r24,2
+ 537 0260 8093 0000 		sts debug_config,r24
+ 237:../../common/command.c ****                 print("\nDEBUG: keyboard enabled.\n");
+ 538               		.loc 1 237 0
+ 539 0264 9923      		tst r25
+ 540 0266 01F0      		breq .L36
+ 238:../../common/command.c ****                 debug_enable = true;
+ 541               		.loc 1 238 0
+ 542 0268 80E0      		ldi r24,lo8(__c.4791)
+ 543 026a 90E0      		ldi r25,hi8(__c.4791)
+ 544 026c 00C0      		rjmp .L79
+ 545               	.L36:
+ 241:../../common/command.c ****             }
+ 546               		.loc 1 241 0
+ 547 026e 80E0      		ldi r24,lo8(__c.4793)
+ 548 0270 90E0      		ldi r25,hi8(__c.4793)
+ 549 0272 00C0      		rjmp .L77
+ 550               	.L12:
+ 245:../../common/command.c ****             if (debug_mouse) {
+ 551               		.loc 1 245 0
+ 552 0274 8091 0000 		lds r24,debug_config
+ 553 0278 83FB      		bst r24,3
+ 554 027a 2227      		clr r18
+ 555 027c 20F9      		bld r18,0
+ 556 027e 91E0      		ldi r25,lo8(1)
+ 557 0280 9227      		eor r25,r18
+ 558 0282 90FB      		bst r25,0
+ 559 0284 83F9      		bld r24,3
+ 560 0286 8093 0000 		sts debug_config,r24
+ 246:../../common/command.c ****                 print("\nDEBUG: mouse enabled.\n");
+ 561               		.loc 1 246 0
+ 562 028a 9923      		tst r25
+ 563 028c 01F0      		breq .L37
+ 247:../../common/command.c ****                 debug_enable = true;
+ 564               		.loc 1 247 0
+ 565 028e 80E0      		ldi r24,lo8(__c.4796)
+ 566 0290 90E0      		ldi r25,hi8(__c.4796)
+ 567               	.L79:
+ 568 0292 0E94 0000 		call xputs
+ 569               	.LVL53:
+ 248:../../common/command.c ****             } else {
+ 570               		.loc 1 248 0
+ 571 0296 8091 0000 		lds r24,debug_config
+ 572 029a 8160      		ori r24,lo8(1<<0)
+ 573               	.L78:
+ 574 029c 8093 0000 		sts debug_config,r24
+ 575 02a0 00C0      		rjmp .L44
+ 576               	.L37:
+ 250:../../common/command.c ****             }
+ 577               		.loc 1 250 0
+ 578 02a2 80E0      		ldi r24,lo8(__c.4798)
+ 579 02a4 90E0      		ldi r25,hi8(__c.4798)
+ 580 02a6 00C0      		rjmp .L77
+ 581               	.L22:
+ 299:../../common/command.c ****             break;
+ 582               		.loc 1 299 0
+ 583 02a8 8091 0000 		lds r24,timer_count
+ 584 02ac 9091 0000 		lds r25,timer_count+1
+ 585 02b0 A091 0000 		lds r26,timer_count+2
+ 586 02b4 B091 0000 		lds r27,timer_count+3
+ 587 02b8 BF93      		push r27
+ 588               	.LCFI11:
+ 589               		.cfi_def_cfa_offset 4
+ 590 02ba AF93      		push r26
+ 591               	.LCFI12:
+ 592               		.cfi_def_cfa_offset 5
+ 593 02bc 9F93      		push r25
+ 594               	.LCFI13:
+ 595               		.cfi_def_cfa_offset 6
+ 596 02be 8F93      		push r24
+ 597               	.LCFI14:
+ 598               		.cfi_def_cfa_offset 7
+ 599 02c0 80E0      		ldi r24,lo8(__c.4814)
+ 600 02c2 90E0      		ldi r25,hi8(__c.4814)
+ 601 02c4 9F93      		push r25
+ 602               	.LCFI15:
+ 603               		.cfi_def_cfa_offset 8
+ 604 02c6 8F93      		push r24
+ 605               	.LCFI16:
+ 606               		.cfi_def_cfa_offset 9
+ 607 02c8 0E94 0000 		call __xprintf
+ 608               	.LVL54:
+ 609 02cc 0F90      		pop __tmp_reg__
+ 610 02ce 0F90      		pop __tmp_reg__
+ 611 02d0 0F90      		pop __tmp_reg__
+ 612 02d2 0F90      		pop __tmp_reg__
+ 613 02d4 0F90      		pop __tmp_reg__
+ 614 02d6 0F90      		pop __tmp_reg__
+ 615               	.LCFI17:
+ 616               		.cfi_def_cfa_offset 3
+ 617 02d8 00C0      		rjmp .L44
+ 618               	.L19:
+ 302:../../common/command.c ****             print_val_hex8(host_keyboard_leds());
+ 619               		.loc 1 302 0
+ 620 02da 80E0      		ldi r24,lo8(__c.4817)
+ 621 02dc 90E0      		ldi r25,hi8(__c.4817)
+ 622 02de 0E94 0000 		call xputs
+ 623               	.LVL55:
+ 303:../../common/command.c **** #ifdef PROTOCOL_PJRC
+ 624               		.loc 1 303 0
+ 625 02e2 0E94 0000 		call host_keyboard_leds
+ 626               	.LVL56:
+ 627 02e6 1F92      		push __zero_reg__
+ 628               	.LCFI18:
+ 629               		.cfi_def_cfa_offset 4
+ 630 02e8 8F93      		push r24
+ 631               	.LCFI19:
+ 632               		.cfi_def_cfa_offset 5
+ 633 02ea 80E0      		ldi r24,lo8(__c.4819)
+ 634 02ec 90E0      		ldi r25,hi8(__c.4819)
+ 635 02ee 9F93      		push r25
+ 636               	.LCFI20:
+ 637               		.cfi_def_cfa_offset 6
+ 638 02f0 8F93      		push r24
+ 639               	.LCFI21:
+ 640               		.cfi_def_cfa_offset 7
+ 641 02f2 0E94 0000 		call __xprintf
+ 642               	.LVL57:
+ 643 02f6 0F90      		pop __tmp_reg__
+ 644 02f8 0F90      		pop __tmp_reg__
+ 645 02fa 0F90      		pop __tmp_reg__
+ 646 02fc 0F90      		pop __tmp_reg__
+ 647               	.LCFI22:
+ 648               		.cfi_def_cfa_offset 3
+ 649 02fe 00C0      		rjmp .L44
+ 650               	.L21:
+ 322:../../common/command.c ****             keyboard_nkro = !keyboard_nkro;
+ 651               		.loc 1 322 0
+ 652 0300 0E94 0000 		call clear_keyboard
+ 653               	.LVL58:
+ 323:../../common/command.c ****             if (keyboard_nkro)
+ 654               		.loc 1 323 0
+ 655 0304 9091 0000 		lds r25,keyboard_nkro
+ 656 0308 81E0      		ldi r24,lo8(1)
+ 657 030a 8927      		eor r24,r25
+ 658 030c 8093 0000 		sts keyboard_nkro,r24
+ 324:../../common/command.c ****                 print("NKRO: enabled\n");
+ 659               		.loc 1 324 0
+ 660 0310 8823      		tst r24
+ 661 0312 01F0      		breq .L38
+ 325:../../common/command.c ****             else
+ 662               		.loc 1 325 0
+ 663 0314 80E0      		ldi r24,lo8(__c.4822)
+ 664 0316 90E0      		ldi r25,hi8(__c.4822)
+ 665 0318 00C0      		rjmp .L77
+ 666               	.L38:
+ 327:../../common/command.c ****             break;
+ 667               		.loc 1 327 0
+ 668 031a 80E0      		ldi r24,lo8(__c.4824)
+ 669 031c 90E0      		ldi r25,hi8(__c.4824)
+ 670               	.L77:
+ 671 031e 0E94 0000 		call xputs
+ 672               	.LVL59:
+ 673 0322 00C0      		rjmp .L44
+ 674               	.L24:
+ 352:../../common/command.c ****             break;
+ 675               		.loc 1 352 0
+ 676 0324 80E0      		ldi r24,0
+ 677 0326 00C0      		rjmp .L76
+ 678               	.L29:
+ 358:../../common/command.c ****             break;
+ 679               		.loc 1 358 0
+ 680 0328 87EC      		ldi r24,lo8(-57)
+ 681               	.L75:
+ 682 032a 8C0F      		add r24,r28
+ 683               	.L76:
+ 684 032c 0E94 0000 		call switch_default_layer
+ 685               	.LVL60:
+ 686 0330 00C0      		rjmp .L44
+ 687               	.L9:
+ 361:../../common/command.c ****             return false;
+ 688               		.loc 1 361 0
+ 689 0332 80E0      		ldi r24,lo8(__c.4832)
+ 690 0334 90E0      		ldi r25,hi8(__c.4832)
+ 691 0336 0E94 0000 		call xputs
+ 692               	.LVL61:
+ 693               	.LBE95:
+ 694               	.LBE94:
+  76:../../common/command.c ****         case CONSOLE:
+ 695               		.loc 1 76 0
+ 696 033a 80E0      		ldi r24,0
+ 697 033c 00C0      		rjmp .L8
+ 698               	.LVL62:
+ 699               	.L44:
+ 700 033e 81E0      		ldi r24,lo8(1)
+ 701               	.L8:
+  76:../../common/command.c ****         case CONSOLE:
+ 702               		.loc 1 76 0 is_stmt 0 discriminator 6
+ 703 0340 8170      		andi r24,lo8(1)
+ 704 0342 00C0      		rjmp .L74
+ 705               	.L6:
+ 706               	.LVL63:
+ 707               	.LBB102:
+ 708               	.LBB103:
+ 382:../../common/command.c ****         case KC_H:
+ 709               		.loc 1 382 0 is_stmt 1
+ 710 0344 C431      		cpi r28,lo8(20)
+ 711 0346 01F0      		breq .L40
+ 712 0348 00F4      		brsh .L41
+ 713 034a CB30      		cpi r28,lo8(11)
+ 714 034c 01F0      		breq .L42
+ 715 034e 00C0      		rjmp .L39
+ 716               	.L41:
+ 717 0350 C932      		cpi r28,lo8(41)
+ 718 0352 01F0      		breq .L40
+ 719 0354 C833      		cpi r28,lo8(56)
+ 720 0356 01F4      		brne .L39
+ 721               	.L42:
+ 722               	.LBB104:
+ 723               	.LBB105:
+ 373:../../common/command.c ****     print("ESC/q:	quit\n");
+ 724               		.loc 1 373 0
+ 725 0358 80E0      		ldi r24,lo8(__c.4837)
+ 726 035a 90E0      		ldi r25,hi8(__c.4837)
+ 727 035c 0E94 0000 		call xputs
+ 728               	.LVL64:
+ 374:../../common/command.c **** #ifdef MOUSEKEY_ENABLE
+ 729               		.loc 1 374 0
+ 730 0360 80E0      		ldi r24,lo8(__c.4839)
+ 731 0362 90E0      		ldi r25,hi8(__c.4839)
+ 732 0364 0E94 0000 		call xputs
+ 733               	.LVL65:
+ 734               	.LBE105:
+ 735               	.LBE104:
+ 404:../../common/command.c ****     return true;
+ 736               		.loc 1 404 0
+ 737 0368 80E0      		ldi r24,lo8(__c.4854)
+ 738 036a 90E0      		ldi r25,hi8(__c.4854)
+ 739 036c 00C0      		rjmp .L80
+ 740               	.L40:
+ 389:../../common/command.c ****             state = ONESHOT;
+ 741               		.loc 1 389 0
+ 742 036e 80E0      		ldi r24,lo8(__c.4849)
+ 743 0370 90E0      		ldi r25,hi8(__c.4849)
+ 744 0372 0E94 0000 		call xputs
+ 745               	.LVL66:
+ 390:../../common/command.c ****             return false;
+ 746               		.loc 1 390 0
+ 747 0376 1092 0000 		sts state,__zero_reg__
+ 748 037a 00C0      		rjmp .L81
+ 749               	.L39:
+ 401:../../common/command.c ****             return false;
+ 750               		.loc 1 401 0
+ 751 037c 80E0      		ldi r24,lo8(__c.4852)
+ 752 037e 90E0      		ldi r25,hi8(__c.4852)
+ 753               	.L80:
+ 754 0380 0E94 0000 		call xputs
+ 755               	.LVL67:
+ 756               	.L81:
+ 757               	.LBE103:
+ 758               	.LBE102:
+  89:../../common/command.c **** }
+ 759               		.loc 1 89 0
+ 760 0384 81E0      		ldi r24,lo8(1)
+ 761 0386 00C0      		rjmp .L74
+ 762               	.LVL68:
+ 763               	.L83:
+  86:../../common/command.c ****             return false;
+ 764               		.loc 1 86 0
+ 765 0388 1092 0000 		sts state,__zero_reg__
+ 766               	.L43:
+  75:../../common/command.c ****             return (command_extra(code) || command_common(code));
+ 767               		.loc 1 75 0
+ 768 038c 80E0      		ldi r24,0
+ 769               	.L74:
+ 770               	/* epilogue start */
+  90:../../common/command.c **** 
+ 771               		.loc 1 90 0
+ 772 038e CF91      		pop r28
+ 773               	.LVL69:
+ 774 0390 0895      		ret
+ 775               		.cfi_endproc
+ 776               	.LFE102:
+ 778               		.section	.progmem.data,"a",@progbits
+ 781               	__c.4852:
+ 782 0000 3F00      		.string	"?"
+ 785               	__c.4849:
+ 786 0002 0A51 7569 		.string	"\nQuit Console Mode\n"
+ 786      7420 436F 
+ 786      6E73 6F6C 
+ 786      6520 4D6F 
+ 786      6465 0A00 
+ 789               	__c.4854:
+ 790 0016 433E 2000 		.string	"C> "
+ 793               	__c.4880:
+ 794 001a 0A00      		.string	"\n"
+ 797               	__c.4878:
+ 798 001c 2575 00   		.string	"%u"
+ 801               	__c.4876:
+ 802 001f 2074 6F20 		.string	" to "
+ 802      00
+ 805               	__c.4874:
+ 806 0024 2575 00   		.string	"%u"
+ 809               	__c.4872:
+ 810 0027 7377 6974 		.string	"switch_default_layer: "
+ 810      6368 5F64 
+ 810      6566 6175 
+ 810      6C74 5F6C 
+ 810      6179 6572 
+ 813               	__c.4839:
+ 814 003e 4553 432F 		.string	"ESC/q:\tquit\n"
+ 814      713A 0971 
+ 814      7569 740A 
+ 814      00
+ 817               	__c.4837:
+ 818 004b 0A0A 2D2D 		.string	"\n\n----- Console Help -----\n"
+ 818      2D2D 2D20 
+ 818      436F 6E73 
+ 818      6F6C 6520 
+ 818      4865 6C70 
+ 821               	__c.4756:
+ 822 0067 5061 7573 		.string	"Paus:\tjump to bootloader\n"
+ 822      3A09 6A75 
+ 822      6D70 2074 
+ 822      6F20 626F 
+ 822      6F74 6C6F 
+ 825               	__c.4754:
+ 826 0081 4361 7073 		.string	"Caps:\tLock Keyboard(Child Proof)\n"
+ 826      3A09 4C6F 
+ 826      636B 204B 
+ 826      6579 626F 
+ 826      6172 6428 
+ 829               	__c.4752:
+ 830 00a3 5053 6372 		.string	"PScr:\tpower down/remote wake-up\n"
+ 830      3A09 706F 
+ 830      7765 7220 
+ 830      646F 776E 
+ 830      2F72 656D 
+ 833               	__c.4750:
+ 834 00c4 342F 4634 		.string	"4/F4:\tswitch to Layer4 \n"
+ 834      3A09 7377 
+ 834      6974 6368 
+ 834      2074 6F20 
+ 834      4C61 7965 
+ 837               	__c.4748:
+ 838 00dd 332F 4633 		.string	"3/F3:\tswitch to Layer3 \n"
+ 838      3A09 7377 
+ 838      6974 6368 
+ 838      2074 6F20 
+ 838      4C61 7965 
+ 841               	__c.4746:
+ 842 00f6 322F 4632 		.string	"2/F2:\tswitch to Layer2 \n"
+ 842      3A09 7377 
+ 842      6974 6368 
+ 842      2074 6F20 
+ 842      4C61 7965 
+ 845               	__c.4744:
+ 846 010f 312F 4631 		.string	"1/F1:\tswitch to Layer1 \n"
+ 846      3A09 7377 
+ 846      6974 6368 
+ 846      2074 6F20 
+ 846      4C61 7965 
+ 849               	__c.4742:
+ 850 0128 302F 4631 		.string	"0/F10:\tswitch to Layer0 \n"
+ 850      303A 0973 
+ 850      7769 7463 
+ 850      6820 746F 
+ 850      204C 6179 
+ 853               	__c.4740:
+ 854 0142 6E3A 0974 		.string	"n:\ttoggle NKRO\n"
+ 854      6F67 676C 
+ 854      6520 4E4B 
+ 854      524F 0A00 
+ 857               	__c.4738:
+ 858 0152 653A 0970 		.string	"e:\tprint eeprom config\n"
+ 858      7269 6E74 
+ 858      2065 6570 
+ 858      726F 6D20 
+ 858      636F 6E66 
+ 861               	__c.4736:
+ 862 016a 733A 0970 		.string	"s:\tprint status\n"
+ 862      7269 6E74 
+ 862      2073 7461 
+ 862      7475 730A 
+ 862      00
+ 865               	__c.4734:
+ 866 017b 743A 0970 		.string	"t:\tprint timer count\n"
+ 866      7269 6E74 
+ 866      2074 696D 
+ 866      6572 2063 
+ 866      6F75 6E74 
+ 869               	__c.4732:
+ 870 0191 763A 0970 		.string	"v:\tprint device version & info\n"
+ 870      7269 6E74 
+ 870      2064 6576 
+ 870      6963 6520 
+ 870      7665 7273 
+ 873               	__c.4730:
+ 874 01b1 6D3A 0974 		.string	"m:\ttoggle mouse debug\n"
+ 874      6F67 676C 
+ 874      6520 6D6F 
+ 874      7573 6520 
+ 874      6465 6275 
+ 877               	__c.4728:
+ 878 01c8 6B3A 0974 		.string	"k:\ttoggle keyboard debug\n"
+ 878      6F67 676C 
+ 878      6520 6B65 
+ 878      7962 6F61 
+ 878      7264 2064 
+ 881               	__c.4726:
+ 882 01e2 783A 0974 		.string	"x:\ttoggle matrix debug\n"
+ 882      6F67 676C 
+ 882      6520 6D61 
+ 882      7472 6978 
+ 882      2064 6562 
+ 885               	__c.4724:
+ 886 01fa 643A 0974 		.string	"d:\ttoggle debug enable\n"
+ 886      6F67 676C 
+ 886      6520 6465 
+ 886      6275 6720 
+ 886      656E 6162 
+ 889               	__c.4722:
+ 890 0212 633A 0965 		.string	"c:\tenter console mode\n"
+ 890      6E74 6572 
+ 890      2063 6F6E 
+ 890      736F 6C65 
+ 890      206D 6F64 
+ 893               	__c.4720:
+ 894 0229 0A0A 2D2D 		.string	"\n\n----- Command Help -----\n"
+ 894      2D2D 2D20 
+ 894      436F 6D6D 
+ 894      616E 6420 
+ 894      4865 6C70 
+ 897               	__c.4832:
+ 898 0245 3F00      		.string	"?"
+ 901               	__c.4824:
+ 902 0247 4E4B 524F 		.string	"NKRO: disabled\n"
+ 902      3A20 6469 
+ 902      7361 626C 
+ 902      6564 0A00 
+ 905               	__c.4822:
+ 906 0257 4E4B 524F 		.string	"NKRO: enabled\n"
+ 906      3A20 656E 
+ 906      6162 6C65 
+ 906      640A 00
+ 909               	__c.4819:
+ 910 0266 686F 7374 		.string	"host_keyboard_leds(): %X\n"
+ 910      5F6B 6579 
+ 910      626F 6172 
+ 910      645F 6C65 
+ 910      6473 2829 
+ 913               	__c.4817:
+ 914 0280 0A0A 2D2D 		.string	"\n\n----- Status -----\n"
+ 914      2D2D 2D20 
+ 914      5374 6174 
+ 914      7573 202D 
+ 914      2D2D 2D2D 
+ 917               	__c.4814:
+ 918 0296 7469 6D65 		.string	"timer_count: %04lX\n"
+ 918      725F 636F 
+ 918      756E 743A 
+ 918      2025 3034 
+ 918      6C58 0A00 
+ 921               	__c.4811:
+ 922 02aa 4743 433A 		.string	"GCC: 4.9.2 AVR-LIBC: 1.8.0svn AVR_ARCH: avr5\n"
+ 922      2034 2E39 
+ 922      2E32 2041 
+ 922      5652 2D4C 
+ 922      4942 433A 
+ 925               	__c.4809:
+ 926 02d8 4F50 5449 		.string	"OPTIONS: LUFA CONSOLE COMMAND NKRO 4096\n"
+ 926      4F4E 533A 
+ 926      204C 5546 
+ 926      4120 434F 
+ 926      4E53 4F4C 
+ 929               	__c.4807:
+ 930 0301 4255 494C 		.string	"BUILD: a803933-dirty (21:24:34 Aug 11 2016)\n"
+ 930      443A 2061 
+ 930      3830 3339 
+ 930      3333 2D64 
+ 930      6972 7479 
+ 933               	__c.4805:
+ 934 032e 5649 443A 		.string	"VID: 0x16C0(technomancy) PID: 0x047C(Atreus) VER: 36\n"
+ 934      2030 7831 
+ 934      3643 3028 
+ 934      7465 6368 
+ 934      6E6F 6D61 
+ 937               	__c.4803:
+ 938 0364 4445 5343 		.string	"DESC: TMK keyboard firmware for Atreus\n"
+ 938      3A20 544D 
+ 938      4B20 6B65 
+ 938      7962 6F61 
+ 938      7264 2066 
+ 941               	__c.4801:
+ 942 038c 0A0A 2D2D 		.string	"\n\n----- Version -----\n"
+ 942      2D2D 2D20 
+ 942      5665 7273 
+ 942      696F 6E20 
+ 942      2D2D 2D2D 
+ 945               	__c.4798:
+ 946 03a3 0A44 4542 		.string	"\nDEBUG: mouse disabled.\n"
+ 946      5547 3A20 
+ 946      6D6F 7573 
+ 946      6520 6469 
+ 946      7361 626C 
+ 949               	__c.4796:
+ 950 03bc 0A44 4542 		.string	"\nDEBUG: mouse enabled.\n"
+ 950      5547 3A20 
+ 950      6D6F 7573 
+ 950      6520 656E 
+ 950      6162 6C65 
+ 953               	__c.4793:
+ 954 03d4 0A44 4542 		.string	"\nDEBUG: keyboard disabled.\n"
+ 954      5547 3A20 
+ 954      6B65 7962 
+ 954      6F61 7264 
+ 954      2064 6973 
+ 957               	__c.4791:
+ 958 03f0 0A44 4542 		.string	"\nDEBUG: keyboard enabled.\n"
+ 958      5547 3A20 
+ 958      6B65 7962 
+ 958      6F61 7264 
+ 958      2065 6E61 
+ 961               	__c.4788:
+ 962 040b 0A44 4542 		.string	"\nDEBUG: matrix disabled.\n"
+ 962      5547 3A20 
+ 962      6D61 7472 
+ 962      6978 2064 
+ 962      6973 6162 
+ 965               	__c.4786:
+ 966 0425 0A44 4542 		.string	"\nDEBUG: matrix enabled.\n"
+ 966      5547 3A20 
+ 966      6D61 7472 
+ 966      6978 2065 
+ 966      6E61 626C 
+ 969               	__c.4783:
+ 970 043e 0A44 4542 		.string	"\nDEBUG: enabled.\n"
+ 970      5547 3A20 
+ 970      656E 6162 
+ 970      6C65 642E 
+ 970      0A00 
+ 973               	__c.4781:
+ 974 0450 0A44 4542 		.string	"\nDEBUG: disabled.\n"
+ 974      5547 3A20 
+ 974      6469 7361 
+ 974      626C 6564 
+ 974      2E0A 00
+ 977               	__c.4778:
+ 978 0463 6E6F 7420 		.string	"not supported.\n"
+ 978      7375 7070 
+ 978      6F72 7465 
+ 978      642E 0A00 
+ 981               	__c.4776:
+ 982 0473 0A0A 4A75 		.string	"\n\nJump to bootloader... "
+ 982      6D70 2074 
+ 982      6F20 626F 
+ 982      6F74 6C6F 
+ 982      6164 6572 
+ 985               	__c.4773:
+ 986 048c 433E 2000 		.string	"C> "
+ 989               	__c.4771:
+ 990 0490 0A45 6E74 		.string	"\nEnter Console Mode\n"
+ 990      6572 2043 
+ 990      6F6E 736F 
+ 990      6C65 204D 
+ 990      6F64 650A 
+ 993               	__c.4765:
+ 994 04a5 556E 6C6F 		.string	"Unlocked.\n"
+ 994      636B 6564 
+ 994      2E0A 00
+ 997               	__c.4763:
+ 998 04b0 4C6F 636B 		.string	"Locked.\n"
+ 998      6564 2E0A 
+ 998      00
+ 999               		.local	host_driver.4761
+ 1000               		.comm	host_driver.4761,2,1
+ 1001               		.local	state
+ 1002               		.comm	state,1,1
+ 1003               		.comm	debug_config,1,1
+ 1004               		.text
+ 1005               	.Letext0:
+ 1006               		.file 3 "/usr/lib/avr/include/stdint.h"
+ 1007               		.file 4 "../../common/report.h"
+ 1008               		.file 5 "../../common/host_driver.h"
+ 1009               		.file 6 "../../common/debug_config.h"
+ 1010               		.file 7 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBTask.h"
+ 1011               		.file 8 "../../common/host.h"
+ 1012               		.file 9 "../../common/timer.h"
+ 1013               		.file 10 "../../common/action_layer.h"
+ 1014               		.file 11 "../../common/action_util.h"
+ 1015               		.file 12 "../../common/xprintf.h"
+ 1016               		.file 13 "../../common/action.h"
+ 1017               		.file 14 "../../common/bootloader.h"
+ 1018               		.file 15 "../../common/keycode.h"
+ 1019               		.file 16 "../../common/util.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 command.c
-     /tmp/ccfYKP3F.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccfYKP3F.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccfYKP3F.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccfYKP3F.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccfYKP3F.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccfYKP3F.s:12     .text.switch_default_layer:0000000000000000 switch_default_layer
-     /tmp/ccfYKP3F.s:807    .progmem.data:0000000000000027 __c.4854
-     /tmp/ccfYKP3F.s:803    .progmem.data:0000000000000024 __c.4856
-     /tmp/ccfYKP3F.s:799    .progmem.data:000000000000001f __c.4858
-     /tmp/ccfYKP3F.s:795    .progmem.data:000000000000001c __c.4860
-     /tmp/ccfYKP3F.s:791    .progmem.data:000000000000001a __c.4862
-     /tmp/ccfYKP3F.s:120    .text.command_extra:0000000000000000 command_extra
-     /tmp/ccfYKP3F.s:139    .text.command_proc:0000000000000000 command_proc
-     /tmp/ccfYKP3F.s:998    .bss:0000000000000002 state
+     /tmp/ccGaIADp.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccGaIADp.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccGaIADp.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccGaIADp.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccGaIADp.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccGaIADp.s:12     .text.switch_default_layer:0000000000000000 switch_default_layer
+     /tmp/ccGaIADp.s:809    .progmem.data:0000000000000027 __c.4872
+     /tmp/ccGaIADp.s:805    .progmem.data:0000000000000024 __c.4874
+     /tmp/ccGaIADp.s:801    .progmem.data:000000000000001f __c.4876
+     /tmp/ccGaIADp.s:797    .progmem.data:000000000000001c __c.4878
+     /tmp/ccGaIADp.s:793    .progmem.data:000000000000001a __c.4880
+     /tmp/ccGaIADp.s:122    .text.command_extra:0000000000000000 command_extra
+     /tmp/ccGaIADp.s:141    .text.command_proc:0000000000000000 command_proc
+     /tmp/ccGaIADp.s:1000   .bss:0000000000000002 state
                             *COM*:0000000000000001 debug_config
-     /tmp/ccfYKP3F.s:815    .progmem.data:000000000000004b __c.4819
-     /tmp/ccfYKP3F.s:811    .progmem.data:000000000000003e __c.4821
-     /tmp/ccfYKP3F.s:987    .progmem.data:000000000000048d __c.4753
-     /tmp/ccfYKP3F.s:983    .progmem.data:0000000000000489 __c.4755
-     /tmp/ccfYKP3F.s:939    .progmem.data:0000000000000389 __c.4783
-     /tmp/ccfYKP3F.s:935    .progmem.data:0000000000000361 __c.4785
-     /tmp/ccfYKP3F.s:931    .progmem.data:000000000000032b __c.4787
-     /tmp/ccfYKP3F.s:927    .progmem.data:00000000000002fe __c.4789
-     /tmp/ccfYKP3F.s:923    .progmem.data:00000000000002d5 __c.4791
-     /tmp/ccfYKP3F.s:919    .progmem.data:00000000000002aa __c.4793
-     /tmp/ccfYKP3F.s:979    .progmem.data:0000000000000470 __c.4758
-     /tmp/ccfYKP3F.s:975    .progmem.data:0000000000000460 __c.4760
-                             .bss:0000000000000000 host_driver.4743
-     /tmp/ccfYKP3F.s:995    .progmem.data:00000000000004ad __c.4745
-     /tmp/ccfYKP3F.s:991    .progmem.data:00000000000004a2 __c.4747
-     /tmp/ccfYKP3F.s:891    .progmem.data:0000000000000229 __c.4702
-     /tmp/ccfYKP3F.s:887    .progmem.data:0000000000000212 __c.4704
-     /tmp/ccfYKP3F.s:883    .progmem.data:00000000000001fa __c.4706
-     /tmp/ccfYKP3F.s:879    .progmem.data:00000000000001e2 __c.4708
-     /tmp/ccfYKP3F.s:875    .progmem.data:00000000000001c8 __c.4710
-     /tmp/ccfYKP3F.s:871    .progmem.data:00000000000001b1 __c.4712
-     /tmp/ccfYKP3F.s:867    .progmem.data:0000000000000191 __c.4714
-     /tmp/ccfYKP3F.s:863    .progmem.data:000000000000017b __c.4716
-     /tmp/ccfYKP3F.s:859    .progmem.data:000000000000016a __c.4718
-     /tmp/ccfYKP3F.s:855    .progmem.data:0000000000000152 __c.4720
-     /tmp/ccfYKP3F.s:851    .progmem.data:0000000000000142 __c.4722
-     /tmp/ccfYKP3F.s:847    .progmem.data:0000000000000128 __c.4724
-     /tmp/ccfYKP3F.s:843    .progmem.data:000000000000010f __c.4726
-     /tmp/ccfYKP3F.s:839    .progmem.data:00000000000000f6 __c.4728
-     /tmp/ccfYKP3F.s:835    .progmem.data:00000000000000dd __c.4730
-     /tmp/ccfYKP3F.s:831    .progmem.data:00000000000000c4 __c.4732
-     /tmp/ccfYKP3F.s:827    .progmem.data:00000000000000a3 __c.4734
-     /tmp/ccfYKP3F.s:823    .progmem.data:0000000000000081 __c.4736
-     /tmp/ccfYKP3F.s:819    .progmem.data:0000000000000067 __c.4738
-     /tmp/ccfYKP3F.s:971    .progmem.data:000000000000044d __c.4763
-     /tmp/ccfYKP3F.s:967    .progmem.data:000000000000043b __c.4765
-     /tmp/ccfYKP3F.s:963    .progmem.data:0000000000000422 __c.4768
-     /tmp/ccfYKP3F.s:959    .progmem.data:0000000000000408 __c.4770
-     /tmp/ccfYKP3F.s:955    .progmem.data:00000000000003ed __c.4773
-     /tmp/ccfYKP3F.s:951    .progmem.data:00000000000003d1 __c.4775
-     /tmp/ccfYKP3F.s:947    .progmem.data:00000000000003b9 __c.4778
-     /tmp/ccfYKP3F.s:943    .progmem.data:00000000000003a0 __c.4780
-     /tmp/ccfYKP3F.s:915    .progmem.data:0000000000000296 __c.4796
-     /tmp/ccfYKP3F.s:911    .progmem.data:0000000000000280 __c.4799
-     /tmp/ccfYKP3F.s:907    .progmem.data:0000000000000266 __c.4801
-     /tmp/ccfYKP3F.s:903    .progmem.data:0000000000000257 __c.4804
-     /tmp/ccfYKP3F.s:899    .progmem.data:0000000000000247 __c.4806
-     /tmp/ccfYKP3F.s:895    .progmem.data:0000000000000245 __c.4814
-     /tmp/ccfYKP3F.s:787    .progmem.data:0000000000000016 __c.4836
-     /tmp/ccfYKP3F.s:783    .progmem.data:0000000000000002 __c.4831
-     /tmp/ccfYKP3F.s:779    .progmem.data:0000000000000000 __c.4834
+     /tmp/ccGaIADp.s:817    .progmem.data:000000000000004b __c.4837
+     /tmp/ccGaIADp.s:813    .progmem.data:000000000000003e __c.4839
+     /tmp/ccGaIADp.s:989    .progmem.data:0000000000000490 __c.4771
+     /tmp/ccGaIADp.s:985    .progmem.data:000000000000048c __c.4773
+     /tmp/ccGaIADp.s:941    .progmem.data:000000000000038c __c.4801
+     /tmp/ccGaIADp.s:937    .progmem.data:0000000000000364 __c.4803
+     /tmp/ccGaIADp.s:933    .progmem.data:000000000000032e __c.4805
+     /tmp/ccGaIADp.s:929    .progmem.data:0000000000000301 __c.4807
+     /tmp/ccGaIADp.s:925    .progmem.data:00000000000002d8 __c.4809
+     /tmp/ccGaIADp.s:921    .progmem.data:00000000000002aa __c.4811
+     /tmp/ccGaIADp.s:981    .progmem.data:0000000000000473 __c.4776
+     /tmp/ccGaIADp.s:977    .progmem.data:0000000000000463 __c.4778
+                             .bss:0000000000000000 host_driver.4761
+     /tmp/ccGaIADp.s:997    .progmem.data:00000000000004b0 __c.4763
+     /tmp/ccGaIADp.s:993    .progmem.data:00000000000004a5 __c.4765
+     /tmp/ccGaIADp.s:893    .progmem.data:0000000000000229 __c.4720
+     /tmp/ccGaIADp.s:889    .progmem.data:0000000000000212 __c.4722
+     /tmp/ccGaIADp.s:885    .progmem.data:00000000000001fa __c.4724
+     /tmp/ccGaIADp.s:881    .progmem.data:00000000000001e2 __c.4726
+     /tmp/ccGaIADp.s:877    .progmem.data:00000000000001c8 __c.4728
+     /tmp/ccGaIADp.s:873    .progmem.data:00000000000001b1 __c.4730
+     /tmp/ccGaIADp.s:869    .progmem.data:0000000000000191 __c.4732
+     /tmp/ccGaIADp.s:865    .progmem.data:000000000000017b __c.4734
+     /tmp/ccGaIADp.s:861    .progmem.data:000000000000016a __c.4736
+     /tmp/ccGaIADp.s:857    .progmem.data:0000000000000152 __c.4738
+     /tmp/ccGaIADp.s:853    .progmem.data:0000000000000142 __c.4740
+     /tmp/ccGaIADp.s:849    .progmem.data:0000000000000128 __c.4742
+     /tmp/ccGaIADp.s:845    .progmem.data:000000000000010f __c.4744
+     /tmp/ccGaIADp.s:841    .progmem.data:00000000000000f6 __c.4746
+     /tmp/ccGaIADp.s:837    .progmem.data:00000000000000dd __c.4748
+     /tmp/ccGaIADp.s:833    .progmem.data:00000000000000c4 __c.4750
+     /tmp/ccGaIADp.s:829    .progmem.data:00000000000000a3 __c.4752
+     /tmp/ccGaIADp.s:825    .progmem.data:0000000000000081 __c.4754
+     /tmp/ccGaIADp.s:821    .progmem.data:0000000000000067 __c.4756
+     /tmp/ccGaIADp.s:973    .progmem.data:0000000000000450 __c.4781
+     /tmp/ccGaIADp.s:969    .progmem.data:000000000000043e __c.4783
+     /tmp/ccGaIADp.s:965    .progmem.data:0000000000000425 __c.4786
+     /tmp/ccGaIADp.s:961    .progmem.data:000000000000040b __c.4788
+     /tmp/ccGaIADp.s:957    .progmem.data:00000000000003f0 __c.4791
+     /tmp/ccGaIADp.s:953    .progmem.data:00000000000003d4 __c.4793
+     /tmp/ccGaIADp.s:949    .progmem.data:00000000000003bc __c.4796
+     /tmp/ccGaIADp.s:945    .progmem.data:00000000000003a3 __c.4798
+     /tmp/ccGaIADp.s:917    .progmem.data:0000000000000296 __c.4814
+     /tmp/ccGaIADp.s:913    .progmem.data:0000000000000280 __c.4817
+     /tmp/ccGaIADp.s:909    .progmem.data:0000000000000266 __c.4819
+     /tmp/ccGaIADp.s:905    .progmem.data:0000000000000257 __c.4822
+     /tmp/ccGaIADp.s:901    .progmem.data:0000000000000247 __c.4824
+     /tmp/ccGaIADp.s:897    .progmem.data:0000000000000245 __c.4832
+     /tmp/ccGaIADp.s:789    .progmem.data:0000000000000016 __c.4854
+     /tmp/ccGaIADp.s:785    .progmem.data:0000000000000002 __c.4849
+     /tmp/ccGaIADp.s:781    .progmem.data:0000000000000000 __c.4852
 
 UNDEFINED SYMBOLS
 xputs

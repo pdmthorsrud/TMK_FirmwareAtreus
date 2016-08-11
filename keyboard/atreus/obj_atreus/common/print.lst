@@ -73,125 +73,128 @@
   35               		.loc 1 41 0
   36               		.cfi_startproc
   37               	.LVL1:
-  38 0000 1F93      		push r17
+  38 0000 0F93      		push r16
   39               	.LCFI0:
   40               		.cfi_def_cfa_offset 3
-  41               		.cfi_offset 17, -2
-  42 0002 CF93      		push r28
+  41               		.cfi_offset 16, -2
+  42 0002 1F93      		push r17
   43               	.LCFI1:
   44               		.cfi_def_cfa_offset 4
-  45               		.cfi_offset 28, -3
-  46 0004 DF93      		push r29
+  45               		.cfi_offset 17, -3
+  46 0004 CF93      		push r28
   47               	.LCFI2:
   48               		.cfi_def_cfa_offset 5
-  49               		.cfi_offset 29, -4
+  49               		.cfi_offset 28, -4
   50               	/* prologue: function */
   51               	/* frame size = 0 */
   52               	/* stack size = 3 */
   53               	.L__stack_usage = 3
-  54 0006 EC01      		movw r28,r24
+  54 0006 8C01      		movw r16,r24
   55               	.LVL2:
   56               	.L5:
   42:../../common/print.c ****     uint8_t c;
   43:../../common/print.c ****     while (1) {
   44:../../common/print.c ****         c = *s++;
   57               		.loc 1 44 0
-  58 0008 1991      		ld r17,Y+
-  59               	.LVL3:
+  58 0008 F801      		movw r30,r16
+  59 000a C191      		ld r28,Z+
+  60               	.LVL3:
+  61 000c 8F01      		movw r16,r30
+  62               	.LVL4:
   45:../../common/print.c ****         if (!c) break;
-  60               		.loc 1 45 0
-  61 000a 1123      		tst r17
-  62 000c 01F0      		breq .L2
+  63               		.loc 1 45 0
+  64 000e CC23      		tst r28
+  65 0010 01F0      		breq .L2
   46:../../common/print.c ****         if (c == '\n') sendchar('\r');
-  63               		.loc 1 46 0
-  64 000e 1A30      		cpi r17,lo8(10)
-  65 0010 01F4      		brne .L4
-  66               		.loc 1 46 0 is_stmt 0 discriminator 1
-  67 0012 8DE0      		ldi r24,lo8(13)
-  68 0014 0E94 0000 		call xputc
-  69               	.LVL4:
-  70               	.L4:
+  66               		.loc 1 46 0
+  67 0012 CA30      		cpi r28,lo8(10)
+  68 0014 01F4      		brne .L4
+  69               		.loc 1 46 0 is_stmt 0 discriminator 1
+  70 0016 8DE0      		ldi r24,lo8(13)
+  71 0018 0E94 0000 		call xputc
+  72               	.LVL5:
+  73               	.L4:
   47:../../common/print.c ****         sendchar(c);
-  71               		.loc 1 47 0 is_stmt 1
-  72 0018 812F      		mov r24,r17
-  73 001a 0E94 0000 		call xputc
-  74               	.LVL5:
+  74               		.loc 1 47 0 is_stmt 1
+  75 001c 8C2F      		mov r24,r28
+  76 001e 0E94 0000 		call xputc
+  77               	.LVL6:
   48:../../common/print.c ****     }
-  75               		.loc 1 48 0
-  76 001e 00C0      		rjmp .L5
-  77               	.L2:
-  78               	/* epilogue start */
+  78               		.loc 1 48 0
+  79 0022 00C0      		rjmp .L5
+  80               	.L2:
+  81               	/* epilogue start */
   49:../../common/print.c **** }
-  79               		.loc 1 49 0
-  80 0020 DF91      		pop r29
-  81 0022 CF91      		pop r28
-  82               	.LVL6:
-  83 0024 1F91      		pop r17
+  82               		.loc 1 49 0
+  83 0024 CF91      		pop r28
   84               	.LVL7:
-  85 0026 0895      		ret
-  86               		.cfi_endproc
-  87               	.LFE2:
-  89               		.section	.text.print_lf,"ax",@progbits
-  90               	.global	print_lf
-  92               	print_lf:
-  93               	.LFB3:
+  85 0026 1F91      		pop r17
+  86 0028 0F91      		pop r16
+  87               	.LVL8:
+  88 002a 0895      		ret
+  89               		.cfi_endproc
+  90               	.LFE2:
+  92               		.section	.text.print_lf,"ax",@progbits
+  93               	.global	print_lf
+  95               	print_lf:
+  96               	.LFB3:
   50:../../common/print.c **** 
   51:../../common/print.c **** void print_lf(void)
   52:../../common/print.c **** {
-  94               		.loc 1 52 0
-  95               		.cfi_startproc
-  96               	/* prologue: function */
-  97               	/* frame size = 0 */
-  98               	/* stack size = 0 */
-  99               	.L__stack_usage = 0
+  97               		.loc 1 52 0
+  98               		.cfi_startproc
+  99               	/* prologue: function */
+ 100               	/* frame size = 0 */
+ 101               	/* stack size = 0 */
+ 102               	.L__stack_usage = 0
   53:../../common/print.c ****     sendchar('\n');
- 100               		.loc 1 53 0
- 101 0000 8AE0      		ldi r24,lo8(10)
- 102 0002 0C94 0000 		jmp xputc
- 103               	.LVL8:
- 104               		.cfi_endproc
- 105               	.LFE3:
- 107               		.section	.text.print_crlf,"ax",@progbits
- 108               	.global	print_crlf
- 110               	print_crlf:
- 111               	.LFB4:
+ 103               		.loc 1 53 0
+ 104 0000 8AE0      		ldi r24,lo8(10)
+ 105 0002 0C94 0000 		jmp xputc
+ 106               	.LVL9:
+ 107               		.cfi_endproc
+ 108               	.LFE3:
+ 110               		.section	.text.print_crlf,"ax",@progbits
+ 111               	.global	print_crlf
+ 113               	print_crlf:
+ 114               	.LFB4:
   54:../../common/print.c **** }
   55:../../common/print.c **** 
   56:../../common/print.c **** void print_crlf(void)
   57:../../common/print.c **** {
- 112               		.loc 1 57 0
- 113               		.cfi_startproc
- 114               	/* prologue: function */
- 115               	/* frame size = 0 */
- 116               	/* stack size = 0 */
- 117               	.L__stack_usage = 0
+ 115               		.loc 1 57 0
+ 116               		.cfi_startproc
+ 117               	/* prologue: function */
+ 118               	/* frame size = 0 */
+ 119               	/* stack size = 0 */
+ 120               	.L__stack_usage = 0
   58:../../common/print.c ****     sendchar('\r');
- 118               		.loc 1 58 0
- 119 0000 8DE0      		ldi r24,lo8(13)
- 120 0002 0E94 0000 		call xputc
- 121               	.LVL9:
+ 121               		.loc 1 58 0
+ 122 0000 8DE0      		ldi r24,lo8(13)
+ 123 0002 0E94 0000 		call xputc
+ 124               	.LVL10:
   59:../../common/print.c ****     sendchar('\n');
- 122               		.loc 1 59 0
- 123 0006 8AE0      		ldi r24,lo8(10)
- 124 0008 0C94 0000 		jmp xputc
- 125               	.LVL10:
- 126               		.cfi_endproc
- 127               	.LFE4:
- 129               		.text
- 130               	.Letext0:
- 131               		.file 2 "/usr/lib/avr/include/stdint.h"
- 132               		.file 3 "../../common/xprintf.h"
+ 125               		.loc 1 59 0
+ 126 0006 8AE0      		ldi r24,lo8(10)
+ 127 0008 0C94 0000 		jmp xputc
+ 128               	.LVL11:
+ 129               		.cfi_endproc
+ 130               	.LFE4:
+ 132               		.text
+ 133               	.Letext0:
+ 134               		.file 2 "/usr/lib/avr/include/stdint.h"
+ 135               		.file 3 "../../common/xprintf.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 print.c
-     /tmp/ccA0oVmr.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccA0oVmr.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccA0oVmr.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccA0oVmr.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccA0oVmr.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccA0oVmr.s:13     .text.print_set_sendchar:0000000000000000 print_set_sendchar
-     /tmp/ccA0oVmr.s:33     .text.print_S:0000000000000000 print_S
-     /tmp/ccA0oVmr.s:92     .text.print_lf:0000000000000000 print_lf
-     /tmp/ccA0oVmr.s:110    .text.print_crlf:0000000000000000 print_crlf
+     /tmp/ccSkJ9rd.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccSkJ9rd.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccSkJ9rd.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccSkJ9rd.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccSkJ9rd.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccSkJ9rd.s:13     .text.print_set_sendchar:0000000000000000 print_set_sendchar
+     /tmp/ccSkJ9rd.s:33     .text.print_S:0000000000000000 print_S
+     /tmp/ccSkJ9rd.s:95     .text.print_lf:0000000000000000 print_lf
+     /tmp/ccSkJ9rd.s:113    .text.print_crlf:0000000000000000 print_crlf
 
 UNDEFINED SYMBOLS
 xfunc_out

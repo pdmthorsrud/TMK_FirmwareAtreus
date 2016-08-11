@@ -48,21 +48,21 @@
   24 0000 81FF      		sbrs r24,1
   25 0002 00C0      		rjmp .L2
   26:led.c         ****         // output low
-  27:led.c         ****         DDRD |= (1<<5);
+  27:led.c         ****         DDRD |= (1<<4);
   26               		.loc 1 27 0
-  27 0004 559A      		sbi 0xa,5
+  27 0004 549A      		sbi 0xa,4
   28 0006 00C0      		rjmp .L4
   29               	.L2:
-  28:led.c         ****         PORTD &= ~(1<<5);
+  28:led.c         ****         PORTD &= ~(1<<4);
   29:led.c         ****     } else {
   30:led.c         ****         // Hi-Z
-  31:led.c         ****         DDRD &= ~(1<<5);
+  31:led.c         ****         DDRD &= ~(1<<4);
   30               		.loc 1 31 0
-  31 0008 5598      		cbi 0xa,5
+  31 0008 5498      		cbi 0xa,4
   32               	.L4:
-  32:led.c         ****         PORTD &= ~(1<<5);
+  32:led.c         ****         PORTD &= ~(1<<4);
   33               		.loc 1 32 0
-  34 000a 5D98      		cbi 0xb,5
+  34 000a 5C98      		cbi 0xb,4
   35 000c 0895      		ret
   36               		.cfi_endproc
   37               	.LFE0:
@@ -71,11 +71,11 @@
   41               		.file 2 "/usr/lib/avr/include/stdint.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 led.c
-     /tmp/ccPYWyiC.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccPYWyiC.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccPYWyiC.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccPYWyiC.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccPYWyiC.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccPYWyiC.s:13     .text.led_set:0000000000000000 led_set
+     /tmp/ccJxaegE.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccJxaegE.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccJxaegE.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccJxaegE.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccJxaegE.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccJxaegE.s:13     .text.led_set:0000000000000000 led_set
 
 NO UNDEFINED SYMBOLS

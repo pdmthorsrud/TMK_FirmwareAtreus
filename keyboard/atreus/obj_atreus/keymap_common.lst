@@ -95,19 +95,19 @@
   70 0002 F0E0      		ldi r31,0
   71 0004 EE0F      		lsl r30
   72 0006 FF1F      		rol r31
-  73 0008 E050      		subi r30,lo8(-(fn_actions-384))
-  74 000a F040      		sbci r31,hi8(-(fn_actions-384))
-  75               	.LVL4:
-  76               	.LBE7:
+  73               	.LVL4:
+  74 0008 E050      		subi r30,lo8(-(fn_actions-384))
+  75 000a F040      		sbci r31,hi8(-(fn_actions-384))
+  76               	.LVL5:
+  77               	.LBE7:
   29:keymap_common.c **** }
-  77               		.loc 1 29 0
-  78               	/* #APP */
-  79               	 ;  28 "keymap_common.c" 1
-  80 000c 8591      		lpm r24, Z+
-  81 000e 9491      		lpm r25, Z
-  82               		
-  83               	 ;  0 "" 2
-  84               	.LVL5:
+  78               		.loc 1 29 0
+  79               	/* #APP */
+  80               	 ;  28 "keymap_common.c" 1
+  81 000c 8591      		lpm r24, Z+
+  82 000e 9491      		lpm r25, Z
+  83               		
+  84               	 ;  0 "" 2
   85               	/* #NOAPP */
   86 0010 0895      		ret
   87               		.cfi_endproc
@@ -130,8 +130,8 @@
  103               	.LVL6:
   33:keymap_common.c ****   print("\n\nJump to bootloader... ");
  104               		.loc 1 33 0
- 105 0004 80E0      		ldi r24,lo8(__c.4553)
- 106 0006 90E0      		ldi r25,hi8(__c.4553)
+ 105 0004 80E0      		ldi r24,lo8(__c.4571)
+ 106 0006 90E0      		ldi r25,hi8(__c.4571)
  107 0008 0E94 0000 		call xputs
  108               	.LVL7:
  109               	.LBB8:
@@ -169,7 +169,7 @@
   30:/usr/lib/avr/include/util/delay.h ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   31:/usr/lib/avr/include/util/delay.h ****   POSSIBILITY OF SUCH DAMAGE. */
   32:/usr/lib/avr/include/util/delay.h **** 
-  33:/usr/lib/avr/include/util/delay.h **** /* $Id: delay.h.in 2251 2011-09-14 08:20:33Z joerg_wunsch $ */
+  33:/usr/lib/avr/include/util/delay.h **** /* $Id$ */
   34:/usr/lib/avr/include/util/delay.h **** 
   35:/usr/lib/avr/include/util/delay.h **** #ifndef _UTIL_DELAY_H_
   36:/usr/lib/avr/include/util/delay.h **** #define _UTIL_DELAY_H_ 1
@@ -280,32 +280,31 @@
  141:/usr/lib/avr/include/util/delay.h **** void
  142:/usr/lib/avr/include/util/delay.h **** _delay_ms(double __ms)
  143:/usr/lib/avr/include/util/delay.h **** {
- 144:/usr/lib/avr/include/util/delay.h **** 	uint16_t __ticks;
- 145:/usr/lib/avr/include/util/delay.h **** 	double __tmp ; 
- 146:/usr/lib/avr/include/util/delay.h **** #if __HAS_DELAY_CYCLES && defined(__OPTIMIZE__) && \
- 147:/usr/lib/avr/include/util/delay.h ****   !defined(__DELAY_BACKWARD_COMPATIBLE__) &&	   \
- 148:/usr/lib/avr/include/util/delay.h ****   __STDC_HOSTED__
- 149:/usr/lib/avr/include/util/delay.h **** 	uint32_t __ticks_dc;
- 150:/usr/lib/avr/include/util/delay.h **** 	extern void __builtin_avr_delay_cycles(unsigned long);
- 151:/usr/lib/avr/include/util/delay.h **** 	__tmp = ((F_CPU) / 1e3) * __ms;
- 152:/usr/lib/avr/include/util/delay.h **** 
- 153:/usr/lib/avr/include/util/delay.h **** 	#if defined(__DELAY_ROUND_DOWN__)
- 154:/usr/lib/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)fabs(__tmp);
- 155:/usr/lib/avr/include/util/delay.h **** 
- 156:/usr/lib/avr/include/util/delay.h **** 	#elif defined(__DELAY_ROUND_CLOSEST__)
- 157:/usr/lib/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(fabs(__tmp)+0.5);
- 158:/usr/lib/avr/include/util/delay.h **** 
- 159:/usr/lib/avr/include/util/delay.h **** 	#else
- 160:/usr/lib/avr/include/util/delay.h **** 		//round up by default
- 161:/usr/lib/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
- 162:/usr/lib/avr/include/util/delay.h **** 	#endif
- 163:/usr/lib/avr/include/util/delay.h **** 
- 164:/usr/lib/avr/include/util/delay.h **** 	__builtin_avr_delay_cycles(__ticks_dc);
- 112               		.loc 2 164 0
+ 144:/usr/lib/avr/include/util/delay.h **** 	double __tmp ; 
+ 145:/usr/lib/avr/include/util/delay.h **** #if __HAS_DELAY_CYCLES && defined(__OPTIMIZE__) && \
+ 146:/usr/lib/avr/include/util/delay.h ****   !defined(__DELAY_BACKWARD_COMPATIBLE__) &&	   \
+ 147:/usr/lib/avr/include/util/delay.h ****   __STDC_HOSTED__
+ 148:/usr/lib/avr/include/util/delay.h **** 	uint32_t __ticks_dc;
+ 149:/usr/lib/avr/include/util/delay.h **** 	extern void __builtin_avr_delay_cycles(unsigned long);
+ 150:/usr/lib/avr/include/util/delay.h **** 	__tmp = ((F_CPU) / 1e3) * __ms;
+ 151:/usr/lib/avr/include/util/delay.h **** 
+ 152:/usr/lib/avr/include/util/delay.h **** 	#if defined(__DELAY_ROUND_DOWN__)
+ 153:/usr/lib/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)fabs(__tmp);
+ 154:/usr/lib/avr/include/util/delay.h **** 
+ 155:/usr/lib/avr/include/util/delay.h **** 	#elif defined(__DELAY_ROUND_CLOSEST__)
+ 156:/usr/lib/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(fabs(__tmp)+0.5);
+ 157:/usr/lib/avr/include/util/delay.h **** 
+ 158:/usr/lib/avr/include/util/delay.h **** 	#else
+ 159:/usr/lib/avr/include/util/delay.h **** 		//round up by default
+ 160:/usr/lib/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+ 161:/usr/lib/avr/include/util/delay.h **** 	#endif
+ 162:/usr/lib/avr/include/util/delay.h **** 
+ 163:/usr/lib/avr/include/util/delay.h **** 	__builtin_avr_delay_cycles(__ticks_dc);
+ 112               		.loc 2 163 0
  113 000c 2FEF      		ldi r18,lo8(799999)
  114 000e 84E3      		ldi r24,hi8(799999)
  115 0010 9CE0      		ldi r25,hlo8(799999)
- 116 0012 2150      		1: subi r18,1
+ 116 0012 2150      	1:	subi r18,1
  117 0014 8040      		sbci r24,0
  118 0016 9040      		sbci r25,0
  119 0018 01F4      		brne 1b
@@ -338,19 +337,19 @@
  131               	.LVL8:
   49:keymap_common.c ****   print("not supported.\n");
  132               		.loc 1 49 0
- 133 002e 80E0      		ldi r24,lo8(__c.4556)
- 134 0030 90E0      		ldi r25,hi8(__c.4556)
+ 133 002e 80E0      		ldi r24,lo8(__c.4574)
+ 134 0030 90E0      		ldi r25,hi8(__c.4574)
  135 0032 0C94 0000 		jmp xputs
  136               	.LVL9:
  137               		.cfi_endproc
  138               	.LFE104:
  140               		.section	.progmem.data,"a",@progbits
- 143               	__c.4556:
+ 143               	__c.4574:
  144 0000 6E6F 7420 		.string	"not supported.\n"
  144      7375 7070 
  144      6F72 7465 
  144      642E 0A00 
- 147               	__c.4553:
+ 147               	__c.4571:
  148 0010 0A0A 4A75 		.string	"\n\nJump to bootloader... "
  148      6D70 2074 
  148      6F20 626F 
@@ -370,16 +369,16 @@
  160               		.file 11 "../../common/keycode.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 keymap_common.c
-     /tmp/cc86xjXv.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/cc86xjXv.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/cc86xjXv.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/cc86xjXv.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/cc86xjXv.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/cc86xjXv.s:13     .text.actionmap_key_to_action:0000000000000000 actionmap_key_to_action
-     /tmp/cc86xjXv.s:58     .text.keymap_fn_to_action:0000000000000000 keymap_fn_to_action
-     /tmp/cc86xjXv.s:93     .text.bootloader:0000000000000000 bootloader
-     /tmp/cc86xjXv.s:147    .progmem.data:0000000000000010 __c.4553
-     /tmp/cc86xjXv.s:143    .progmem.data:0000000000000000 __c.4556
+     /tmp/ccBUXGgt.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccBUXGgt.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccBUXGgt.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccBUXGgt.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccBUXGgt.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccBUXGgt.s:13     .text.actionmap_key_to_action:0000000000000000 actionmap_key_to_action
+     /tmp/ccBUXGgt.s:58     .text.keymap_fn_to_action:0000000000000000 keymap_fn_to_action
+     /tmp/ccBUXGgt.s:93     .text.bootloader:0000000000000000 bootloader
+     /tmp/ccBUXGgt.s:147    .progmem.data:0000000000000010 __c.4571
+     /tmp/ccBUXGgt.s:143    .progmem.data:0000000000000000 __c.4574
                             *COM*:0000000000000001 debug_config
 
 UNDEFINED SYMBOLS

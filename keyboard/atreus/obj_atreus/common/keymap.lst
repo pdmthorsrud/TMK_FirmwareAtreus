@@ -147,14 +147,14 @@
   97               		.file 10 "../../common/keymap.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 keymap.c
-     /tmp/cczZmIQk.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/cczZmIQk.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/cczZmIQk.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/cczZmIQk.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/cczZmIQk.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/cczZmIQk.s:13     .text.action_for_key:0000000000000000 action_for_key
-     /tmp/cczZmIQk.s:53     .text.action_get_macro:0000000000000000 action_get_macro
-     /tmp/cczZmIQk.s:73     .text.action_function:0000000000000000 action_function
+     /tmp/ccieM8h8.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccieM8h8.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccieM8h8.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccieM8h8.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccieM8h8.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccieM8h8.s:13     .text.action_for_key:0000000000000000 action_for_key
+     /tmp/ccieM8h8.s:53     .text.action_get_macro:0000000000000000 action_get_macro
+     /tmp/ccieM8h8.s:73     .text.action_function:0000000000000000 action_function
                             *COM*:0000000000000001 debug_config
 
 UNDEFINED SYMBOLS
