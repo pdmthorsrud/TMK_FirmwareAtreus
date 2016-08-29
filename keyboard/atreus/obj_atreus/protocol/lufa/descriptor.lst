@@ -548,28 +548,27 @@
   21               	/* stack size = 0 */
   22               	.L__stack_usage = 0
  529:../../protocol/lufa/descriptor.c ****     const uint8_t  DescriptorType   = (wValue >> 8);
-  23               		.loc 1 529 0
-  24 0000 292F      		mov r18,r25
-  25 0002 3327      		clr r19
  530:../../protocol/lufa/descriptor.c ****     const uint8_t  DescriptorIndex  = (wValue & 0xFF);
  531:../../protocol/lufa/descriptor.c **** 
  532:../../protocol/lufa/descriptor.c ****     const void* Address = NULL;
  533:../../protocol/lufa/descriptor.c ****     uint16_t    Size    = NO_DESCRIPTOR;
  534:../../protocol/lufa/descriptor.c **** 
  535:../../protocol/lufa/descriptor.c ****     switch (DescriptorType)
-  26               		.loc 1 535 0
-  27 0004 2330      		cpi r18,3
-  28 0006 3105      		cpc r19,__zero_reg__
-  29 0008 01F0      		breq .L3
-  30 000a 04F4      		brge .L4
-  31 000c 2130      		cpi r18,1
-  32 000e 3105      		cpc r19,__zero_reg__
-  33 0010 01F0      		breq .L5
-  34 0012 2230      		cpi r18,2
-  35 0014 3105      		cpc r19,__zero_reg__
-  36 0016 01F0      		breq .+2
-  37 0018 00C0      		rjmp .L15
-  38               	.LVL1:
+  23               		.loc 1 535 0
+  24 0000 292F      		mov r18,r25
+  25 0002 3327      		clr r19
+  26 0004 2330      		cpi r18,3
+  27 0006 3105      		cpc r19,__zero_reg__
+  28 0008 01F0      		breq .L3
+  29 000a 00F4      		brsh .L4
+  30 000c 2130      		cpi r18,1
+  31 000e 3105      		cpc r19,__zero_reg__
+  32 0010 01F0      		breq .L5
+  33 0012 2230      		cpi r18,2
+  34 0014 3105      		cpc r19,__zero_reg__
+  35 0016 01F0      		breq .+2
+  36 0018 00C0      		rjmp .L15
+  37               	.LVL1:
  536:../../protocol/lufa/descriptor.c ****     {
  537:../../protocol/lufa/descriptor.c ****         case DTYPE_Device:
  538:../../protocol/lufa/descriptor.c ****             Address = &DeviceDescriptor;
@@ -578,145 +577,148 @@
  541:../../protocol/lufa/descriptor.c ****         case DTYPE_Configuration:
  542:../../protocol/lufa/descriptor.c ****             Address = &ConfigurationDescriptor;
  543:../../protocol/lufa/descriptor.c ****             Size    = sizeof(USB_Descriptor_Configuration_t);
-  39               		.loc 1 543 0
-  40 001a 8BE5      		ldi r24,lo8(91)
-  41 001c 90E0      		ldi r25,0
-  42               	.LVL2:
+  38               		.loc 1 543 0
+  39 001a 8BE5      		ldi r24,lo8(91)
+  40 001c 90E0      		ldi r25,0
+  41               	.LVL2:
  542:../../protocol/lufa/descriptor.c ****             Size    = sizeof(USB_Descriptor_Configuration_t);
-  43               		.loc 1 542 0
-  44 001e 20E0      		ldi r18,lo8(ConfigurationDescriptor)
-  45 0020 30E0      		ldi r19,hi8(ConfigurationDescriptor)
+  42               		.loc 1 542 0
+  43 001e 20E0      		ldi r18,lo8(ConfigurationDescriptor)
+  44 0020 30E0      		ldi r19,hi8(ConfigurationDescriptor)
  544:../../protocol/lufa/descriptor.c ****             break;
-  46               		.loc 1 544 0
-  47 0022 00C0      		rjmp .L2
-  48               	.LVL3:
-  49               	.L4:
+  45               		.loc 1 544 0
+  46 0022 00C0      		rjmp .L2
+  47               	.LVL3:
+  48               	.L4:
  535:../../protocol/lufa/descriptor.c ****     {
-  50               		.loc 1 535 0
-  51 0024 2132      		cpi r18,33
-  52 0026 3105      		cpc r19,__zero_reg__
-  53 0028 01F0      		breq .L7
-  54 002a 2232      		cpi r18,34
-  55 002c 3105      		cpc r19,__zero_reg__
-  56 002e 01F0      		breq .L8
-  57 0030 00C0      		rjmp .L15
-  58               	.L5:
+  49               		.loc 1 535 0
+  50 0024 2132      		cpi r18,33
+  51 0026 3105      		cpc r19,__zero_reg__
+  52 0028 01F0      		breq .L7
+  53 002a 2232      		cpi r18,34
+  54 002c 3105      		cpc r19,__zero_reg__
+  55 002e 01F0      		breq .L8
+  56 0030 00C0      		rjmp .L15
+  57               	.L5:
  539:../../protocol/lufa/descriptor.c ****             break;
-  59               		.loc 1 539 0
-  60 0032 82E1      		ldi r24,lo8(18)
-  61 0034 90E0      		ldi r25,0
-  62               	.LVL4:
+  58               		.loc 1 539 0
+  59 0032 82E1      		ldi r24,lo8(18)
+  60 0034 90E0      		ldi r25,0
+  61               	.LVL4:
  538:../../protocol/lufa/descriptor.c ****             Size    = sizeof(USB_Descriptor_Device_t);
-  63               		.loc 1 538 0
-  64 0036 20E0      		ldi r18,lo8(DeviceDescriptor)
-  65 0038 30E0      		ldi r19,hi8(DeviceDescriptor)
-  66 003a 00C0      		rjmp .L2
-  67               	.LVL5:
-  68               	.L3:
-  69 003c 9927      		clr r25
-  70               	.LVL6:
+  62               		.loc 1 538 0
+  63 0036 20E0      		ldi r18,lo8(DeviceDescriptor)
+  64 0038 30E0      		ldi r19,hi8(DeviceDescriptor)
+  65 003a 00C0      		rjmp .L2
+  66               	.LVL5:
+  67               	.L3:
  545:../../protocol/lufa/descriptor.c ****         case DTYPE_String:
  546:../../protocol/lufa/descriptor.c ****             switch (DescriptorIndex )
-  71               		.loc 1 546 0
-  72 003e 8130      		cpi r24,1
-  73 0040 9105      		cpc r25,__zero_reg__
-  74 0042 01F0      		breq .L9
-  75 0044 8230      		cpi r24,2
-  76 0046 9105      		cpc r25,__zero_reg__
-  77 0048 01F0      		breq .L10
-  78 004a 892B      		or r24,r25
-  79 004c 01F4      		brne .L15
-  80               	.LVL7:
-  81               	.LBB2:
+  68               		.loc 1 546 0
+  69 003c 9927      		clr r25
+  70               	.LVL6:
+  71 003e 8130      		cpi r24,1
+  72 0040 9105      		cpc r25,__zero_reg__
+  73 0042 01F0      		breq .L9
+  74 0044 00F0      		brlo .L10
+  75 0046 0297      		sbiw r24,2
+  76 0048 01F4      		brne .L15
+  77               	.LVL7:
+  78               	.LBB2:
  547:../../protocol/lufa/descriptor.c ****             {
  548:../../protocol/lufa/descriptor.c ****                 case 0x00:
  549:../../protocol/lufa/descriptor.c ****                     Address = &LanguageString;
  550:../../protocol/lufa/descriptor.c ****                     Size    = pgm_read_byte(&LanguageString.Header.Size);
-  82               		.loc 1 550 0
-  83 004e E0E0      		ldi r30,lo8(LanguageString)
-  84 0050 F0E0      		ldi r31,hi8(LanguageString)
-  85 0052 00C0      		rjmp .L17
-  86               	.LVL8:
-  87               	.L9:
-  88               	.LBE2:
-  89               	.LBB3:
  551:../../protocol/lufa/descriptor.c ****                     break;
  552:../../protocol/lufa/descriptor.c ****                 case 0x01:
  553:../../protocol/lufa/descriptor.c ****                     Address = &ManufacturerString;
  554:../../protocol/lufa/descriptor.c ****                     Size    = pgm_read_byte(&ManufacturerString.Header.Size);
-  90               		.loc 1 554 0
-  91 0054 E0E0      		ldi r30,lo8(ManufacturerString)
-  92 0056 F0E0      		ldi r31,hi8(ManufacturerString)
-  93 0058 00C0      		rjmp .L17
-  94               	.LVL9:
-  95               	.L10:
-  96               	.LBE3:
-  97               	.LBB4:
  555:../../protocol/lufa/descriptor.c ****                     break;
  556:../../protocol/lufa/descriptor.c ****                 case 0x02:
  557:../../protocol/lufa/descriptor.c ****                     Address = &ProductString;
  558:../../protocol/lufa/descriptor.c ****                     Size    = pgm_read_byte(&ProductString.Header.Size);
-  98               		.loc 1 558 0
-  99 005a E0E0      		ldi r30,lo8(ProductString)
- 100 005c F0E0      		ldi r31,hi8(ProductString)
- 101               	.LVL10:
- 102               	.L17:
+  79               		.loc 1 558 0
+  80 004a E0E0      		ldi r30,lo8(ProductString)
+  81 004c F0E0      		ldi r31,hi8(ProductString)
+  82 004e 00C0      		rjmp .L17
+  83               	.LVL8:
+  84               	.L10:
+  85               	.LBE2:
+  86               	.LBB3:
+ 550:../../protocol/lufa/descriptor.c ****                     break;
+  87               		.loc 1 550 0
+  88 0050 E0E0      		ldi r30,lo8(LanguageString)
+  89 0052 F0E0      		ldi r31,hi8(LanguageString)
+  90 0054 00C0      		rjmp .L17
+  91               	.LVL9:
+  92               	.L9:
+  93               	.LBE3:
+  94               	.LBB4:
+ 554:../../protocol/lufa/descriptor.c ****                     break;
+  95               		.loc 1 554 0
+  96 0056 E0E0      		ldi r30,lo8(ManufacturerString)
+  97 0058 F0E0      		ldi r31,hi8(ManufacturerString)
+  98               	.LVL10:
+  99               	.L17:
+ 100               	.LBE4:
+ 101               	.LBB5:
+ 102               		.loc 1 558 0
  103               	/* #APP */
  104               	 ;  558 "../../protocol/lufa/descriptor.c" 1
- 105 005e 8491      		lpm r24, Z
+ 105 005a 8491      		lpm r24, Z
  106               		
  107               	 ;  0 "" 2
  108               	.LVL11:
  109               	/* #NOAPP */
- 110               	.LBE4:
- 111 0060 90E0      		ldi r25,0
+ 110               	.LBE5:
+ 111 005c 90E0      		ldi r25,0
  112               	.LVL12:
  557:../../protocol/lufa/descriptor.c ****                     Size    = pgm_read_byte(&ProductString.Header.Size);
  113               		.loc 1 557 0
- 114 0062 9F01      		movw r18,r30
+ 114 005e 9F01      		movw r18,r30
  559:../../protocol/lufa/descriptor.c ****                     break;
  115               		.loc 1 559 0
- 116 0064 00C0      		rjmp .L2
+ 116 0060 00C0      		rjmp .L2
  117               	.LVL13:
  118               	.L7:
- 119 0066 6330      		cpi r22,lo8(3)
- 120 0068 00F4      		brsh .L15
- 121 006a E62F      		mov r30,r22
- 122 006c F0E0      		ldi r31,0
- 123 006e EE0F      		lsl r30
- 124 0070 FF1F      		rol r31
- 125 0072 E050      		subi r30,lo8(-(CSWTCH.1))
- 126 0074 F040      		sbci r31,hi8(-(CSWTCH.1))
- 127 0076 2081      		ld r18,Z
- 128 0078 3181      		ldd r19,Z+1
- 129 007a 89E0      		ldi r24,lo8(9)
- 130 007c 90E0      		ldi r25,0
+ 119 0062 6330      		cpi r22,lo8(3)
+ 120 0064 00F4      		brsh .L15
+ 121 0066 E62F      		mov r30,r22
+ 122 0068 F0E0      		ldi r31,0
+ 123 006a EE0F      		lsl r30
+ 124 006c FF1F      		rol r31
+ 125 006e E050      		subi r30,lo8(-(CSWTCH.1))
+ 126 0070 F040      		sbci r31,hi8(-(CSWTCH.1))
+ 127 0072 2081      		ld r18,Z
+ 128 0074 3181      		ldd r19,Z+1
+ 129 0076 89E0      		ldi r24,lo8(9)
+ 130 0078 90E0      		ldi r25,0
  131               	.LVL14:
- 132 007e 00C0      		rjmp .L2
+ 132 007a 00C0      		rjmp .L2
  133               	.LVL15:
  134               	.L8:
- 135 0080 6330      		cpi r22,lo8(3)
- 136 0082 00F4      		brsh .L15
- 137 0084 70E0      		ldi r23,0
- 138 0086 FB01      		movw r30,r22
- 139 0088 EE0F      		lsl r30
- 140 008a FF1F      		rol r31
+ 135 007c 6330      		cpi r22,lo8(3)
+ 136 007e 00F4      		brsh .L15
+ 137 0080 70E0      		ldi r23,0
+ 138 0082 FB01      		movw r30,r22
+ 139 0084 EE0F      		lsl r30
+ 140 0086 FF1F      		rol r31
  141               	.LVL16:
- 142 008c E050      		subi r30,lo8(-(CSWTCH.2))
- 143 008e F040      		sbci r31,hi8(-(CSWTCH.2))
- 144 0090 2081      		ld r18,Z
- 145 0092 3181      		ldd r19,Z+1
- 146 0094 FB01      		movw r30,r22
- 147 0096 E050      		subi r30,lo8(-(CSWTCH.3))
- 148 0098 F040      		sbci r31,hi8(-(CSWTCH.3))
- 149 009a 8081      		ld r24,Z
- 150 009c 90E0      		ldi r25,0
- 151 009e 00C0      		rjmp .L2
+ 142 0088 E050      		subi r30,lo8(-(CSWTCH.2))
+ 143 008a F040      		sbci r31,hi8(-(CSWTCH.2))
+ 144 008c 2081      		ld r18,Z
+ 145 008e 3181      		ldd r19,Z+1
+ 146 0090 FB01      		movw r30,r22
+ 147 0092 E050      		subi r30,lo8(-(CSWTCH.3))
+ 148 0094 F040      		sbci r31,hi8(-(CSWTCH.3))
+ 149 0096 8081      		ld r24,Z
+ 150 0098 90E0      		ldi r25,0
+ 151 009a 00C0      		rjmp .L2
  152               	.L15:
- 153 00a0 80E0      		ldi r24,0
- 154 00a2 90E0      		ldi r25,0
- 155 00a4 20E0      		ldi r18,0
- 156 00a6 30E0      		ldi r19,0
+ 153 009c 80E0      		ldi r24,0
+ 154 009e 90E0      		ldi r25,0
+ 155 00a0 20E0      		ldi r18,0
+ 156 00a2 30E0      		ldi r19,0
  157               	.LVL17:
  158               	.L2:
  560:../../protocol/lufa/descriptor.c ****             }
@@ -789,13 +791,13 @@
  627:../../protocol/lufa/descriptor.c **** 
  628:../../protocol/lufa/descriptor.c ****     *DescriptorAddress = Address;
  159               		.loc 1 628 0
- 160 00a8 FA01      		movw r30,r20
- 161 00aa 3183      		std Z+1,r19
- 162 00ac 2083      		st Z,r18
+ 160 00a4 FA01      		movw r30,r20
+ 161 00a6 3183      		std Z+1,r19
+ 162 00a8 2083      		st Z,r18
  629:../../protocol/lufa/descriptor.c ****     return Size;
  630:../../protocol/lufa/descriptor.c **** }
  163               		.loc 1 630 0
- 164 00ae 0895      		ret
+ 164 00aa 0895      		ret
  165               		.cfi_endproc
  166               	.LFE99:
  168               		.section	.rodata
@@ -1104,31 +1106,31 @@
  493 0132 C0        		.byte	-64
  494               		.text
  495               	.Letext0:
- 496               		.file 2 "/usr/lib/avr/include/stdint.h"
- 497               		.file 3 "/usr/lib/gcc/avr/4.9.2/include/stddef.h"
+ 496               		.file 2 "/usr/avr/include/stdint.h"
+ 497               		.file 3 "/usr/lib/gcc/avr/5.3.0/include/stddef.h"
  498               		.file 4 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../StdDescriptors.h"
  499               		.file 5 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/../Common/HIDClassCommon.h"
  500               		.file 6 "../../protocol/lufa/descriptor.h"
  501               		.file 7 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBTask.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 descriptor.c
-     /tmp/cc4gQMjK.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/cc4gQMjK.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/cc4gQMjK.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/cc4gQMjK.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/cc4gQMjK.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/cc4gQMjK.s:13     .text.CALLBACK_USB_GetDescriptor:0000000000000000 CALLBACK_USB_GetDescriptor
-     /tmp/cc4gQMjK.s:231    .progmem.data:000000000000002e ConfigurationDescriptor
-     /tmp/cc4gQMjK.s:315    .progmem.data:0000000000000089 DeviceDescriptor
-     /tmp/cc4gQMjK.s:224    .progmem.data:000000000000002a LanguageString
-     /tmp/cc4gQMjK.s:205    .progmem.data:0000000000000010 ManufacturerString
-     /tmp/cc4gQMjK.s:191    .progmem.data:0000000000000000 ProductString
-     /tmp/cc4gQMjK.s:183    .rodata:0000000000000009 CSWTCH.1
-     /tmp/cc4gQMjK.s:177    .rodata:0000000000000003 CSWTCH.2
-     /tmp/cc4gQMjK.s:171    .rodata:0000000000000000 CSWTCH.3
-     /tmp/cc4gQMjK.s:430    .progmem.data:00000000000000f4 KeyboardReport
-     /tmp/cc4gQMjK.s:394    .progmem.data:00000000000000d4 ConsoleReport
-     /tmp/cc4gQMjK.s:333    .progmem.data:000000000000009b NKROReport
+     /tmp/cc41yOOj.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cc41yOOj.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cc41yOOj.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cc41yOOj.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cc41yOOj.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cc41yOOj.s:13     .text.CALLBACK_USB_GetDescriptor:0000000000000000 CALLBACK_USB_GetDescriptor
+     /tmp/cc41yOOj.s:231    .progmem.data:000000000000002e ConfigurationDescriptor
+     /tmp/cc41yOOj.s:315    .progmem.data:0000000000000089 DeviceDescriptor
+     /tmp/cc41yOOj.s:191    .progmem.data:0000000000000000 ProductString
+     /tmp/cc41yOOj.s:224    .progmem.data:000000000000002a LanguageString
+     /tmp/cc41yOOj.s:205    .progmem.data:0000000000000010 ManufacturerString
+     /tmp/cc41yOOj.s:183    .rodata:0000000000000009 CSWTCH.1
+     /tmp/cc41yOOj.s:177    .rodata:0000000000000003 CSWTCH.2
+     /tmp/cc41yOOj.s:171    .rodata:0000000000000000 CSWTCH.3
+     /tmp/cc41yOOj.s:430    .progmem.data:00000000000000f4 KeyboardReport
+     /tmp/cc41yOOj.s:394    .progmem.data:00000000000000d4 ConsoleReport
+     /tmp/cc41yOOj.s:333    .progmem.data:000000000000009b NKROReport
 
 UNDEFINED SYMBOLS
 __do_copy_data

@@ -502,10 +502,10 @@
  125 0016 8091 0000 		lds r24,waiting_buffer_tail
  126               	.LVL7:
  127 001a A091 0000 		lds r26,waiting_buffer_head
- 128 001e 6091 0000 		lds r22,tapping_key
- 129 0022 7091 0000 		lds r23,tapping_key+1
- 130 0026 4091 0000 		lds r20,tapping_key+3
- 131 002a 5091 0000 		lds r21,tapping_key+3+1
+ 128 001e 4091 0000 		lds r20,tapping_key+3
+ 129 0022 5091 0000 		lds r21,tapping_key+3+1
+ 130 0026 6091 0000 		lds r22,tapping_key
+ 131 002a 7091 0000 		lds r23,tapping_key+1
  344:../../common/action_tapping.c ****                 !waiting_buffer[i].event.pressed &&
  132               		.loc 1 344 0
  133 002e B6E0      		ldi r27,lo8(6)
@@ -592,12 +592,12 @@
  162 0050 E050      		subi r30,lo8(-(waiting_buffer))
  163 0052 F040      		sbci r31,hi8(-(waiting_buffer))
  164 0054 2181      		ldd r18,Z+1
- 165 0056 7213      		cpse r23,r18
+ 165 0056 2713      		cpse r18,r23
  166 0058 00C0      		rjmp .L10
  344:../../common/action_tapping.c ****                 !waiting_buffer[i].event.pressed &&
  167               		.loc 1 344 0 discriminator 2
  168 005a 2081      		ld r18,Z
- 169 005c 6213      		cpse r22,r18
+ 169 005c 2613      		cpse r18,r22
  170 005e 00C0      		rjmp .L10
  344:../../common/action_tapping.c ****                 !waiting_buffer[i].event.pressed &&
  171               		.loc 1 344 0 discriminator 3
@@ -611,11 +611,11 @@
  178 006a 2417      		cp r18,r20
  179 006c 3507      		cpc r19,r21
  180 006e 00F4      		brsh .L28
- 181 0070 2150      		subi r18,1
- 182 0072 3109      		sbc r19,__zero_reg__
- 183               	.L28:
  346:../../common/action_tapping.c ****             tapping_key.tap.count = 1;
- 184               		.loc 1 346 0 is_stmt 0 discriminator 2
+ 181               		.loc 1 346 0 is_stmt 0 discriminator 2
+ 182 0070 2150      		subi r18,1
+ 183 0072 3109      		sbc r19,__zero_reg__
+ 184               	.L28:
  185 0074 241B      		sub r18,r20
  186 0076 350B      		sbc r19,r21
  187 0078 283C      		cpi r18,-56
@@ -741,951 +741,955 @@
  302               	.LVL16:
  303 003c 1296      		adiw r26,2
  304 003e 6C91      		ld r22,X
- 305 0040 1297      		sbiw r26,2
- 306               	.LVL17:
- 307 0042 1396      		adiw r26,3
- 308 0044 CD90      		ld r12,X+
- 309 0046 DC90      		ld r13,X
- 310 0048 1497      		sbiw r26,3+1
- 311               	.LVL18:
- 312 004a 3091 0000 		lds r19,tapping_key
- 313 004e 7091 0000 		lds r23,tapping_key+1
- 314 0052 8091 0000 		lds r24,tapping_key+3
- 315 0056 9091 0000 		lds r25,tapping_key+3+1
- 316               	.LBB20:
- 317               	.LBB21:
- 318               		.loc 2 49 0
- 319 005a 0097      		sbiw r24,0
- 320 005c 01F4      		brne .+2
- 321 005e 00C0      		rjmp .L30
- 322 0060 7F3F      		cpi r23,lo8(-1)
- 323 0062 01F4      		brne .L31
- 324               	.LBE21:
- 325               	.LBE20:
+ 305               	.LVL17:
+ 306 0040 8091 0000 		lds r24,tapping_key+3
+ 307 0044 9091 0000 		lds r25,tapping_key+3+1
+ 308               	.LBB20:
+ 309               	.LBB21:
+ 310               		.loc 2 49 0
+ 311 0048 0097      		sbiw r24,0
+ 312 004a 01F4      		brne .+2
+ 313 004c 00C0      		rjmp .L30
+ 314 004e 3091 0000 		lds r19,tapping_key
+ 315 0052 7091 0000 		lds r23,tapping_key+1
+ 316 0056 7F3F      		cpi r23,lo8(-1)
+ 317 0058 01F4      		brne .L31
+ 318               	.LBE21:
+ 319               	.LBE20:
   84:../../common/action_tapping.c ****         if (WITHIN_TAPPING_TERM(event)) {
- 326               		.loc 1 84 0
- 327 0064 3F3F      		cpi r19,lo8(-1)
- 328 0066 01F4      		brne .+2
- 329 0068 00C0      		rjmp .L30
- 330               	.L31:
+ 320               		.loc 1 84 0
+ 321 005a 3F3F      		cpi r19,lo8(-1)
+ 322 005c 01F4      		brne .+2
+ 323 005e 00C0      		rjmp .L30
+ 324               	.L31:
+  81:../../common/action_tapping.c **** 
+ 325               		.loc 1 81 0 discriminator 1
+ 326 0060 F801      		movw r30,r16
+ 327 0062 C380      		ldd r12,Z+3
+ 328 0064 D480      		ldd r13,Z+4
   84:../../common/action_tapping.c ****         if (WITHIN_TAPPING_TERM(event)) {
- 331               		.loc 1 84 0 is_stmt 0 discriminator 1
- 332 006a E090 0000 		lds r14,tapping_key+2
- 333 006e EE20      		tst r14
- 334 0070 01F4      		brne .+2
- 335 0072 00C0      		rjmp .L32
- 336 0074 2091 0000 		lds r18,tapping_key+5
+ 329               		.loc 1 84 0 discriminator 1
+ 330 0066 E090 0000 		lds r14,tapping_key+2
+ 331 006a EE20      		tst r14
+ 332 006c 01F4      		brne .+2
+ 333 006e 00C0      		rjmp .L32
+ 334 0070 2091 0000 		lds r18,tapping_key+5
   85:../../common/action_tapping.c ****             if (tapping_key.tap.count == 0) {
- 337               		.loc 1 85 0 is_stmt 1
- 338 0078 C816      		cp r12,r24
- 339 007a D906      		cpc r13,r25
- 340 007c 00F0      		brlo .L33
+ 335               		.loc 1 85 0
+ 336 0074 C816      		cp r12,r24
+ 337 0076 D906      		cpc r13,r25
+ 338 0078 00F0      		brlo .L33
   85:../../common/action_tapping.c ****             if (tapping_key.tap.count == 0) {
- 341               		.loc 1 85 0 is_stmt 0 discriminator 1
- 342 007e F601      		movw r30,r12
- 343 0080 E81B      		sub r30,r24
- 344 0082 F90B      		sbc r31,r25
- 345 0084 CF01      		movw r24,r30
- 346 0086 00C0      		rjmp .L133
- 347               	.L33:
- 348 0088 8095      		com r24
- 349 008a 9095      		com r25
+ 339               		.loc 1 85 0 is_stmt 0 discriminator 1
+ 340 007a D601      		movw r26,r12
+ 341 007c A81B      		sub r26,r24
+ 342 007e B90B      		sbc r27,r25
+ 343 0080 CD01      		movw r24,r26
+ 344 0082 00C0      		rjmp .L133
+ 345               	.L33:
   85:../../common/action_tapping.c ****             if (tapping_key.tap.count == 0) {
- 350               		.loc 1 85 0 discriminator 2
- 351 008c 8C0D      		add r24,r12
- 352 008e 9D1D      		adc r25,r13
- 353               	.L133:
- 354 0090 FF24      		clr r15
- 355 0092 F394      		inc r15
- 356 0094 883C      		cpi r24,-56
- 357 0096 9105      		cpc r25,__zero_reg__
- 358 0098 00F0      		brlo .L86
- 359 009a F12C      		mov r15,__zero_reg__
+ 346               		.loc 1 85 0 discriminator 2
+ 347 0084 8095      		com r24
+ 348 0086 9095      		com r25
+ 349 0088 8C0D      		add r24,r12
+ 350 008a 9D1D      		adc r25,r13
+ 351               	.L133:
+ 352 008c FF24      		clr r15
+ 353 008e F394      		inc r15
+ 354 0090 883C      		cpi r24,-56
+ 355 0092 9105      		cpc r25,__zero_reg__
+ 356 0094 00F0      		brlo .L86
+ 357 0096 F12C      		mov r15,__zero_reg__
  185:../../common/action_tapping.c ****                 debug("Tapping: End. Timeout. Not tap(0): ");
- 360               		.loc 1 185 0 is_stmt 1 discriminator 2
- 361 009c 207F      		andi r18,lo8(-16)
- 362 009e 01F0      		breq .+2
- 363 00a0 00C0      		rjmp .L57
+ 358               		.loc 1 185 0 is_stmt 1 discriminator 2
+ 359 0098 207F      		andi r18,lo8(-16)
+ 360 009a 01F0      		breq .+2
+ 361 009c 00C0      		rjmp .L57
  187:../../common/action_tapping.c ****                 process_action(&tapping_key);
- 364               		.loc 1 187 0
- 365 00a2 7C2D      		mov r23,r12
- 366 00a4 D98A      		std Y+17,r13
- 367 00a6 C88A      		std Y+16,r12
- 368 00a8 8989      		ldd r24,Y+17
- 369 00aa 0E94 0000 		call debug_event
- 370               	.LVL19:
+ 362               		.loc 1 187 0
+ 363 009e 7C2D      		mov r23,r12
+ 364 00a0 D98A      		std Y+17,r13
+ 365 00a2 C88A      		std Y+16,r12
+ 366 00a4 8989      		ldd r24,Y+17
+ 367 00a6 0E94 0000 		call debug_event
+ 368               	.LVL18:
  188:../../common/action_tapping.c ****                 tapping_key = (keyrecord_t){};
- 371               		.loc 1 188 0
- 372 00ae 80E0      		ldi r24,lo8(tapping_key)
- 373 00b0 90E0      		ldi r25,hi8(tapping_key)
- 374 00b2 0E94 0000 		call process_action
+ 369               		.loc 1 188 0
+ 370 00aa 80E0      		ldi r24,lo8(tapping_key)
+ 371 00ac 90E0      		ldi r25,hi8(tapping_key)
+ 372 00ae 0E94 0000 		call process_action
+ 373               	.LVL19:
+ 374 00b2 00C0      		rjmp .L131
  375               	.LVL20:
- 376 00b6 00C0      		rjmp .L131
- 377               	.LVL21:
- 378               	.L86:
+ 376               	.L86:
   86:../../common/action_tapping.c ****                 if (IS_TAPPING_KEY(event.key) && !event.pressed) {
- 379               		.loc 1 86 0
- 380 00b8 822F      		mov r24,r18
- 381 00ba 807F      		andi r24,lo8(-16)
- 382 00bc 01F0      		breq .+2
- 383 00be 00C0      		rjmp .L38
+ 377               		.loc 1 86 0
+ 378 00b4 822F      		mov r24,r18
+ 379 00b6 807F      		andi r24,lo8(-16)
+ 380 00b8 01F0      		breq .+2
+ 381 00ba 00C0      		rjmp .L38
   87:../../common/action_tapping.c ****                     // first tap!
- 384               		.loc 1 87 0 discriminator 1
- 385 00c0 7513      		cpse r23,r21
- 386 00c2 00C0      		rjmp .L39
+ 382               		.loc 1 87 0 discriminator 1
+ 383 00bc 5713      		cpse r21,r23
+ 384 00be 00C0      		rjmp .L39
   87:../../common/action_tapping.c ****                     // first tap!
- 387               		.loc 1 87 0 is_stmt 0 discriminator 2
- 388 00c4 3413      		cpse r19,r20
- 389 00c6 00C0      		rjmp .L39
+ 385               		.loc 1 87 0 is_stmt 0 discriminator 2
+ 386 00c0 4313      		cpse r20,r19
+ 387 00c2 00C0      		rjmp .L39
   87:../../common/action_tapping.c ****                     // first tap!
- 390               		.loc 1 87 0 discriminator 3
- 391 00c8 6111      		cpse r22,__zero_reg__
- 392 00ca 00C0      		rjmp .L39
+ 388               		.loc 1 87 0 discriminator 3
+ 389 00c4 6111      		cpse r22,__zero_reg__
+ 390 00c6 00C0      		rjmp .L39
   90:../../common/action_tapping.c ****                     debug_tapping_key();
- 393               		.loc 1 90 0 is_stmt 1
- 394 00cc 2F70      		andi r18,lo8(15)
- 395 00ce 2061      		ori r18,lo8(16)
- 396 00d0 2093 0000 		sts tapping_key+5,r18
+ 391               		.loc 1 90 0 is_stmt 1
+ 392 00c8 2F70      		andi r18,lo8(15)
+ 393 00ca 2061      		ori r18,lo8(16)
+ 394 00cc 2093 0000 		sts tapping_key+5,r18
+ 395               	.LVL21:
   91:../../common/action_tapping.c ****                     process_action(&tapping_key);
- 397               		.loc 1 91 0
- 398 00d4 0E94 0000 		call debug_tapping_key
- 399               	.LVL22:
+ 396               		.loc 1 91 0
+ 397 00d0 0E94 0000 		call debug_tapping_key
+ 398               	.LVL22:
   92:../../common/action_tapping.c **** 
- 400               		.loc 1 92 0
- 401 00d8 80E0      		ldi r24,lo8(tapping_key)
- 402 00da 90E0      		ldi r25,hi8(tapping_key)
- 403 00dc 0E94 0000 		call process_action
- 404               	.LVL23:
+ 399               		.loc 1 92 0
+ 400 00d4 80E0      		ldi r24,lo8(tapping_key)
+ 401 00d6 90E0      		ldi r25,hi8(tapping_key)
+ 402 00d8 0E94 0000 		call process_action
+ 403               	.LVL23:
   95:../../common/action_tapping.c ****                     // enqueue
- 405               		.loc 1 95 0
- 406 00e0 8091 0000 		lds r24,tapping_key+5
- 407 00e4 D801      		movw r26,r16
- 408 00e6 1596      		adiw r26,5
- 409 00e8 8C93      		st X,r24
- 410 00ea 00C0      		rjmp .L128
- 411               	.LVL24:
- 412               	.L39:
- 413               	.LBB22:
- 414               	.LBB23:
- 415               	.LBB24:
- 416               	.LBB25:
- 417               		.loc 2 49 0
- 418 00ec CD28      		or r12,r13
- 419 00ee 01F0      		breq .L41
- 420 00f0 5F3F      		cpi r21,lo8(-1)
- 421 00f2 01F4      		brne .L42
- 422               	.LBE25:
- 423               	.LBE24:
+ 404               		.loc 1 95 0
+ 405 00dc 8091 0000 		lds r24,tapping_key+5
+ 406 00e0 F801      		movw r30,r16
+ 407 00e2 8583      		std Z+5,r24
+ 408 00e4 00C0      		rjmp .L128
+ 409               	.LVL24:
+ 410               	.L39:
+ 411               	.LBB22:
+ 412               	.LBB23:
+ 413               	.LBB24:
+ 414               	.LBB25:
+ 415               		.loc 2 49 0
+ 416 00e6 CD28      		or r12,r13
+ 417 00e8 01F0      		breq .L41
+ 418 00ea 5F3F      		cpi r21,lo8(-1)
+ 419 00ec 01F4      		brne .L42
+ 420               	.LBE25:
+ 421               	.LBE24:
   50:../../common/keyboard.h **** static inline bool IS_PRESSED(keyevent_t event) { return (!IS_NOEVENT(event) && event.pressed); }
   51:../../common/keyboard.h **** static inline bool IS_RELEASED(keyevent_t event) { return (!IS_NOEVENT(event) && !event.pressed); }
- 424               		.loc 2 51 0
- 425 00f4 4F3F      		cpi r20,lo8(-1)
- 426 00f6 01F0      		breq .L41
- 427               	.L42:
- 428 00f8 F62E      		mov r15,r22
- 429 00fa 6111      		cpse r22,__zero_reg__
- 430 00fc 00C0      		rjmp .L41
- 431               	.LVL25:
- 432               	.LBE23:
- 433               	.LBE22:
- 434               	.LBB26:
- 435               	.LBB27:
+ 422               		.loc 2 51 0
+ 423 00ee 4F3F      		cpi r20,lo8(-1)
+ 424 00f0 01F0      		breq .L41
+ 425               	.L42:
+ 426 00f2 F62E      		mov r15,r22
+ 427 00f4 6111      		cpse r22,__zero_reg__
+ 428 00f6 00C0      		rjmp .L41
+ 429               	.LVL25:
+ 430               	.LBE23:
+ 431               	.LBE22:
+ 432               	.LBB26:
+ 433               	.LBB27:
  319:../../common/action_tapping.c ****         if (KEYEQ(event.key, waiting_buffer[i].event.key) && event.pressed !=  waiting_buffer[i].ev
- 436               		.loc 1 319 0 discriminator 1
- 437 00fe 8091 0000 		lds r24,waiting_buffer_tail
- 438               	.LVL26:
- 439 0102 2091 0000 		lds r18,waiting_buffer_head
+ 434               		.loc 1 319 0 discriminator 1
+ 435 00f8 8091 0000 		lds r24,waiting_buffer_tail
+ 436               	.LVL26:
+ 437 00fc 2091 0000 		lds r18,waiting_buffer_head
  320:../../common/action_tapping.c ****             return true;
- 440               		.loc 1 320 0 discriminator 1
- 441 0106 36E0      		ldi r19,lo8(6)
- 442               	.LVL27:
- 443               	.L43:
+ 438               		.loc 1 320 0 discriminator 1
+ 439 0100 36E0      		ldi r19,lo8(6)
+ 440               	.LVL27:
+ 441               	.L43:
  319:../../common/action_tapping.c ****         if (KEYEQ(event.key, waiting_buffer[i].event.key) && event.pressed !=  waiting_buffer[i].ev
- 444               		.loc 1 319 0
- 445 0108 8217      		cp r24,r18
- 446 010a 01F4      		brne .+2
- 447 010c 00C0      		rjmp .L137
+ 442               		.loc 1 319 0
+ 443 0102 8217      		cp r24,r18
+ 444 0104 01F4      		brne .+2
+ 445 0106 00C0      		rjmp .L136
  320:../../common/action_tapping.c ****             return true;
- 448               		.loc 1 320 0
- 449 010e 90E0      		ldi r25,0
- 450 0110 389F      		mul r19,r24
- 451 0112 F001      		movw r30,r0
- 452 0114 399F      		mul r19,r25
- 453 0116 F00D      		add r31,r0
- 454 0118 1124      		clr __zero_reg__
- 455 011a E050      		subi r30,lo8(-(waiting_buffer))
- 456 011c F040      		sbci r31,hi8(-(waiting_buffer))
- 457 011e 7181      		ldd r23,Z+1
- 458 0120 5713      		cpse r21,r23
- 459 0122 00C0      		rjmp .L44
- 460 0124 7081      		ld r23,Z
- 461 0126 4713      		cpse r20,r23
- 462 0128 00C0      		rjmp .L44
- 463 012a 7281      		ldd r23,Z+2
- 464 012c 7111      		cpse r23,__zero_reg__
- 465 012e 00C0      		rjmp .L41
- 466               	.L44:
+ 446               		.loc 1 320 0
+ 447 0108 90E0      		ldi r25,0
+ 448 010a 389F      		mul r19,r24
+ 449 010c F001      		movw r30,r0
+ 450 010e 399F      		mul r19,r25
+ 451 0110 F00D      		add r31,r0
+ 452 0112 1124      		clr __zero_reg__
+ 453 0114 E050      		subi r30,lo8(-(waiting_buffer))
+ 454 0116 F040      		sbci r31,hi8(-(waiting_buffer))
+ 455 0118 7181      		ldd r23,Z+1
+ 456 011a 5713      		cpse r21,r23
+ 457 011c 00C0      		rjmp .L44
+ 458 011e 7081      		ld r23,Z
+ 459 0120 4713      		cpse r20,r23
+ 460 0122 00C0      		rjmp .L44
+ 461 0124 7281      		ldd r23,Z+2
+ 462 0126 7111      		cpse r23,__zero_reg__
+ 463 0128 00C0      		rjmp .L41
+ 464               	.L44:
  319:../../common/action_tapping.c ****         if (KEYEQ(event.key, waiting_buffer[i].event.key) && event.pressed !=  waiting_buffer[i].ev
- 467               		.loc 1 319 0
- 468 0130 0196      		adiw r24,1
- 469               	.LVL28:
- 470 0132 8770      		andi r24,lo8(7)
- 471 0134 00C0      		rjmp .L43
- 472               	.LVL29:
- 473               	.L41:
- 474               	.LBE27:
- 475               	.LBE26:
+ 465               		.loc 1 319 0
+ 466 012a 0196      		adiw r24,1
+ 467               	.LVL28:
+ 468 012c 8770      		andi r24,lo8(7)
+ 469 012e 00C0      		rjmp .L43
+ 470               	.LVL29:
+ 471               	.L41:
+ 472               	.LBE27:
+ 473               	.LBE26:
  139:../../common/action_tapping.c ****                         tapping_key.tap.interrupted = true;
- 476               		.loc 1 139 0
- 477 0136 F62E      		mov r15,r22
- 478 0138 6623      		tst r22
- 479 013a 01F4      		brne .+2
- 480 013c 00C0      		rjmp .L88
- 481               	.LVL30:
+ 474               		.loc 1 139 0
+ 475 0130 F62E      		mov r15,r22
+ 476 0132 6623      		tst r22
+ 477 0134 01F4      		brne .+2
+ 478 0136 00C0      		rjmp .L88
+ 479               	.LVL30:
  140:../../common/action_tapping.c ****                     }
- 482               		.loc 1 140 0
- 483 013e 8091 0000 		lds r24,tapping_key+5
- 484 0142 8160      		ori r24,lo8(1<<0)
- 485 0144 8093 0000 		sts tapping_key+5,r24
- 486               	.LVL31:
- 487               	.L128:
+ 480               		.loc 1 140 0
+ 481 0138 8091 0000 		lds r24,tapping_key+5
+ 482 013c 8160      		ori r24,lo8(1<<0)
+ 483 013e 8093 0000 		sts tapping_key+5,r24
+ 484               	.LVL31:
+ 485               	.L128:
  143:../../common/action_tapping.c ****                 }
- 488               		.loc 1 143 0
- 489 0148 F12C      		mov r15,__zero_reg__
- 490 014a 00C0      		rjmp .L88
- 491               	.LVL32:
- 492               	.L38:
+ 486               		.loc 1 143 0
+ 487 0142 F12C      		mov r15,__zero_reg__
+ 488 0144 00C0      		rjmp .L88
+ 489               	.LVL32:
+ 490               	.L38:
  148:../../common/action_tapping.c ****                     debug("Tapping: Tap release("); debug_dec(tapping_key.tap.count); debug(")\n");
- 493               		.loc 1 148 0 discriminator 1
- 494 014c 7513      		cpse r23,r21
- 495 014e 00C0      		rjmp .L53
+ 491               		.loc 1 148 0 discriminator 1
+ 492 0146 5713      		cpse r21,r23
+ 493 0148 00C0      		rjmp .L53
  148:../../common/action_tapping.c ****                     debug("Tapping: Tap release("); debug_dec(tapping_key.tap.count); debug(")\n");
- 496               		.loc 1 148 0 is_stmt 0 discriminator 2
- 497 0150 3413      		cpse r19,r20
- 498 0152 00C0      		rjmp .L53
+ 494               		.loc 1 148 0 is_stmt 0 discriminator 2
+ 495 014a 4313      		cpse r20,r19
+ 496 014c 00C0      		rjmp .L53
  148:../../common/action_tapping.c ****                     debug("Tapping: Tap release("); debug_dec(tapping_key.tap.count); debug(")\n");
- 499               		.loc 1 148 0 discriminator 3
- 500 0154 6111      		cpse r22,__zero_reg__
- 501 0156 00C0      		rjmp .L53
+ 497               		.loc 1 148 0 discriminator 3
+ 498 014e 6111      		cpse r22,__zero_reg__
+ 499 0150 00C0      		rjmp .L53
  150:../../common/action_tapping.c ****                     process_action(keyp);
- 502               		.loc 1 150 0 is_stmt 1
- 503 0158 8091 0000 		lds r24,tapping_key+5
- 504 015c D801      		movw r26,r16
- 505 015e 00C0      		rjmp .L134
- 506               	.L53:
+ 500               		.loc 1 150 0 is_stmt 1
+ 501 0152 8091 0000 		lds r24,tapping_key+5
+ 502 0156 F801      		movw r30,r16
+ 503 0158 8583      		std Z+5,r24
+ 504 015a 00C0      		rjmp .L68
+ 505               	.L53:
  156:../../common/action_tapping.c ****                     if (tapping_key.tap.count > 1) {
- 507               		.loc 1 156 0
- 508 0160 4D87      		std Y+13,r20
- 509 0162 5E87      		std Y+14,r21
- 510 0164 8D85      		ldd r24,Y+13
- 511 0166 9E85      		ldd r25,Y+14
- 512 0168 6A8B      		std Y+18,r22
- 513 016a 0E94 0000 		call is_tap_key
- 514               	.LVL33:
- 515 016e 6A89      		ldd r22,Y+18
- 516 0170 8823      		tst r24
- 517 0172 01F0      		breq .L65
+ 506               		.loc 1 156 0
+ 507 015c 4D87      		std Y+13,r20
+ 508 015e 5E87      		std Y+14,r21
+ 509 0160 8D85      		ldd r24,Y+13
+ 510 0162 9E85      		ldd r25,Y+14
+ 511 0164 6A8B      		std Y+18,r22
+ 512               	.LVL33:
+ 513 0166 0E94 0000 		call is_tap_key
+ 514               	.LVL34:
+ 515 016a 6A89      		ldd r22,Y+18
+ 516 016c 8823      		tst r24
+ 517 016e 01F0      		breq .L65
  156:../../common/action_tapping.c ****                     if (tapping_key.tap.count > 1) {
  518               		.loc 1 156 0 is_stmt 0 discriminator 1
- 519 0174 6623      		tst r22
- 520 0176 01F0      		breq .L65
+ 519 0170 6623      		tst r22
+ 520 0172 01F0      		breq .L65
  157:../../common/action_tapping.c ****                         debug("Tapping: Start new tap with releasing last tap(>1).\n");
  521               		.loc 1 157 0 is_stmt 1
- 522 0178 2091 0000 		lds r18,tapping_key+5
- 523 017c 822F      		mov r24,r18
- 524 017e 8295      		swap r24
- 525 0180 8F70      		andi r24,lo8(15)
- 526 0182 90E0      		ldi r25,0
- 527 0184 0297      		sbiw r24,2
- 528 0186 04F0      		brlt .L56
+ 522 0174 2091 0000 		lds r18,tapping_key+5
+ 523 0178 822F      		mov r24,r18
+ 524 017a 8295      		swap r24
+ 525 017c 8F70      		andi r24,lo8(15)
+ 526 017e 90E0      		ldi r25,0
+ 527 0180 0297      		sbiw r24,2
+ 528 0182 04F0      		brlt .L56
  160:../../common/action_tapping.c ****                                 .tap = tapping_key.tap,
  529               		.loc 1 160 0
- 530 0188 8091 0000 		lds r24,tapping_key
- 531 018c 9091 0000 		lds r25,tapping_key+1
- 532 0190 9887      		std Y+8,r25
- 533 0192 8F83      		std Y+7,r24
- 534 0194 1986      		std Y+9,__zero_reg__
- 535 0196 DB86      		std Y+11,r13
- 536 0198 CA86      		std Y+10,r12
- 537 019a 2C87      		std Y+12,r18
- 538 019c CE01      		movw r24,r28
- 539 019e 0796      		adiw r24,7
+ 530 0184 8091 0000 		lds r24,tapping_key
+ 531 0188 9091 0000 		lds r25,tapping_key+1
+ 532 018c 9887      		std Y+8,r25
+ 533 018e 8F83      		std Y+7,r24
+ 534 0190 1986      		std Y+9,__zero_reg__
+ 535 0192 DB86      		std Y+11,r13
+ 536 0194 CA86      		std Y+10,r12
+ 537 0196 2C87      		std Y+12,r18
+ 538 0198 CE01      		movw r24,r28
+ 539 019a 0796      		adiw r24,7
  540               	.L125:
- 541 01a0 0E94 0000 		call process_action
- 542               	.LVL34:
+ 541 019c 0E94 0000 		call process_action
+ 542               	.LVL35:
  543               	.L56:
  169:../../common/action_tapping.c ****                     waiting_buffer_scan_tap();
  544               		.loc 1 169 0
- 545 01a4 86E0      		ldi r24,lo8(6)
- 546 01a6 F801      		movw r30,r16
- 547 01a8 A0E0      		ldi r26,lo8(tapping_key)
- 548 01aa B0E0      		ldi r27,hi8(tapping_key)
+ 545 01a0 86E0      		ldi r24,lo8(6)
+ 546 01a2 F801      		movw r30,r16
+ 547 01a4 A0E0      		ldi r26,lo8(tapping_key)
+ 548 01a6 B0E0      		ldi r27,hi8(tapping_key)
  549               		0:
- 550 01ac 0190      		ld r0,Z+
- 551 01ae 0D92      		st X+,r0
- 552 01b0 8A95      		dec r24
- 553 01b2 01F4      		brne 0b
+ 550 01a8 0190      		ld r0,Z+
+ 551 01aa 0D92      		st X+,r0
+ 552 01ac 8A95      		dec r24
+ 553 01ae 01F4      		brne 0b
  170:../../common/action_tapping.c ****                     debug_tapping_key();
  554               		.loc 1 170 0
- 555 01b4 0E94 0000 		call waiting_buffer_scan_tap
- 556               	.LVL35:
+ 555 01b0 0E94 0000 		call waiting_buffer_scan_tap
+ 556               	.LVL36:
  171:../../common/action_tapping.c ****                     return true;
  557               		.loc 1 171 0
- 558 01b8 0E94 0000 		call debug_tapping_key
- 559               	.LVL36:
+ 558 01b4 0E94 0000 		call debug_tapping_key
+ 559               	.LVL37:
  560               	.L129:
  172:../../common/action_tapping.c ****                 }
  561               		.loc 1 172 0
- 562 01bc FF24      		clr r15
- 563 01be F394      		inc r15
- 564 01c0 00C0      		rjmp .L88
- 565               	.LVL37:
- 566               	.L137:
+ 562 01b8 FF24      		clr r15
+ 563 01ba F394      		inc r15
+ 564 01bc 00C0      		rjmp .L88
+ 565               	.LVL38:
+ 566               	.L136:
  567               	.LBB28:
  119:../../common/action_tapping.c ****                     switch (action.kind.id) {
  568               		.loc 1 119 0
- 569 01c2 4D87      		std Y+13,r20
- 570 01c4 5E87      		std Y+14,r21
- 571 01c6 8D85      		ldd r24,Y+13
- 572 01c8 9E85      		ldd r25,Y+14
- 573               	.LVL38:
- 574 01ca 0E94 0000 		call layer_switch_get_action
- 575               	.LVL39:
+ 569 01be 4D87      		std Y+13,r20
+ 570 01c0 5E87      		std Y+14,r21
+ 571 01c2 8D85      		ldd r24,Y+13
+ 572 01c4 9E85      		ldd r25,Y+14
+ 573 01c6 0E94 0000 		call layer_switch_get_action
+ 574               	.LVL39:
  120:../../common/action_tapping.c ****                         case ACT_LMODS:
- 576               		.loc 1 120 0
- 577 01ce 292F      		mov r18,r25
- 578 01d0 2295      		swap r18
- 579 01d2 2F70      		andi r18,lo8(15)
- 580 01d4 30E0      		ldi r19,0
- 581 01d6 2230      		cpi r18,2
- 582 01d8 3105      		cpc r19,__zero_reg__
- 583 01da 04F0      		brlt .+2
- 584 01dc 00C0      		rjmp .L138
+ 575               		.loc 1 120 0
+ 576 01ca 292F      		mov r18,r25
+ 577 01cc 2295      		swap r18
+ 578 01ce 2F70      		andi r18,lo8(15)
+ 579 01d0 2230      		cpi r18,lo8(2)
+ 580 01d2 00F0      		brlo .+2
+ 581 01d4 00C0      		rjmp .L137
  123:../../common/action_tapping.c ****                             if (IS_MOD(action.key.code)) return false;
- 585               		.loc 1 123 0
- 586 01de 9F70      		andi r25,lo8(15)
- 587               	.LVL40:
- 588 01e0 01F0      		breq .+2
- 589 01e2 00C0      		rjmp .L139
- 590               	.L52:
+ 582               		.loc 1 123 0
+ 583 01d6 9F70      		andi r25,lo8(15)
+ 584               	.LVL40:
+ 585 01d8 01F0      		breq .+2
+ 586 01da 00C0      		rjmp .L138
+ 587               	.L52:
  129:../../common/action_tapping.c ****                             break;
- 591               		.loc 1 129 0
- 592 01e4 805E      		subi r24,lo8(-(32))
- 593               	.LVL41:
- 594 01e6 8830      		cpi r24,lo8(8)
- 595 01e8 00F4      		brsh .+2
- 596 01ea 00C0      		rjmp .L88
- 597               	.LVL42:
- 598               	.L65:
- 599               	.LBE28:
+ 588               		.loc 1 129 0
+ 589 01dc 805E      		subi r24,lo8(-(32))
+ 590               	.LVL41:
+ 591 01de 8830      		cpi r24,lo8(8)
+ 592 01e0 00F4      		brsh .+2
+ 593 01e2 00C0      		rjmp .L88
+ 594               	.LVL42:
+ 595               	.L65:
+ 596               	.LBE28:
  178:../../common/action_tapping.c ****                     return true;
- 600               		.loc 1 178 0
- 601 01ec C801      		movw r24,r16
- 602               	.LVL43:
- 603 01ee 0E94 0000 		call process_action
- 604               	.LVL44:
- 605 01f2 00C0      		rjmp .L129
- 606               	.LVL45:
- 607               	.L32:
+ 597               		.loc 1 178 0
+ 598 01e4 C801      		movw r24,r16
+ 599               	.LVL43:
+ 600 01e6 0E94 0000 		call process_action
+ 601               	.LVL44:
+ 602 01ea 00C0      		rjmp .L129
+ 603               	.LVL45:
+ 604               	.L32:
  228:../../common/action_tapping.c ****             if (event.pressed) {
- 608               		.loc 1 228 0
- 609 01f4 C816      		cp r12,r24
- 610 01f6 D906      		cpc r13,r25
- 611 01f8 00F4      		brsh .+2
- 612 01fa 00C0      		rjmp .L60
+ 605               		.loc 1 228 0
+ 606 01ec C816      		cp r12,r24
+ 607 01ee D906      		cpc r13,r25
+ 608 01f0 00F4      		brsh .+2
+ 609 01f2 00C0      		rjmp .L60
  228:../../common/action_tapping.c ****             if (event.pressed) {
- 613               		.loc 1 228 0 is_stmt 0 discriminator 1
- 614 01fc F601      		movw r30,r12
- 615 01fe E81B      		sub r30,r24
- 616 0200 F90B      		sbc r31,r25
- 617 0202 CF01      		movw r24,r30
- 618               	.L136:
+ 610               		.loc 1 228 0 is_stmt 0 discriminator 1
+ 611 01f4 F601      		movw r30,r12
+ 612 01f6 E81B      		sub r30,r24
+ 613 01f8 F90B      		sbc r31,r25
+ 614 01fa CF01      		movw r24,r30
+ 615               	.L135:
  228:../../common/action_tapping.c ****             if (event.pressed) {
- 619               		.loc 1 228 0 discriminator 2
- 620 0204 883C      		cpi r24,-56
- 621 0206 9105      		cpc r25,__zero_reg__
- 622 0208 00F4      		brsh .+2
- 623 020a 00C0      		rjmp .L87
- 624 020c F12C      		mov r15,__zero_reg__
+ 616               		.loc 1 228 0 discriminator 2
+ 617 01fc 883C      		cpi r24,-56
+ 618 01fe 9105      		cpc r25,__zero_reg__
+ 619 0200 00F4      		brsh .+2
+ 620 0202 00C0      		rjmp .L87
+ 621 0204 F12C      		mov r15,__zero_reg__
  268:../../common/action_tapping.c ****             tapping_key = (keyrecord_t){};
- 625               		.loc 1 268 0 is_stmt 1 discriminator 2
- 626 020e 7C2D      		mov r23,r12
- 627 0210 D98A      		std Y+17,r13
- 628 0212 C88A      		std Y+16,r12
- 629 0214 8989      		ldd r24,Y+17
- 630 0216 0E94 0000 		call debug_event
- 631               	.LVL46:
- 632               	.L131:
+ 622               		.loc 1 268 0 is_stmt 1 discriminator 2
+ 623 0206 7C2D      		mov r23,r12
+ 624 0208 D98A      		std Y+17,r13
+ 625 020a C88A      		std Y+16,r12
+ 626 020c 8989      		ldd r24,Y+17
+ 627 020e 0E94 0000 		call debug_event
+ 628               	.LVL46:
+ 629               	.L131:
  189:../../common/action_tapping.c ****                 debug_tapping_key();
- 633               		.loc 1 189 0
- 634 021a E0E0      		ldi r30,lo8(tapping_key)
- 635 021c F0E0      		ldi r31,hi8(tapping_key)
- 636 021e 86E0      		ldi r24,lo8(6)
- 637 0220 DF01      		movw r26,r30
- 638               		0:
- 639 0222 1D92      		st X+,__zero_reg__
- 640 0224 8A95      		dec r24
- 641 0226 01F4      		brne 0b
- 642               	.L130:
+ 630               		.loc 1 189 0
+ 631 0212 E0E0      		ldi r30,lo8(tapping_key)
+ 632 0214 F0E0      		ldi r31,hi8(tapping_key)
+ 633 0216 86E0      		ldi r24,lo8(6)
+ 634 0218 DF01      		movw r26,r30
+ 635               		0:
+ 636 021a 1D92      		st X+,__zero_reg__
+ 637 021c 8A95      		dec r24
+ 638 021e 01F4      		brne 0b
+ 639               	.L130:
  190:../../common/action_tapping.c ****                 return false;
- 643               		.loc 1 190 0
- 644 0228 0E94 0000 		call debug_tapping_key
- 645               	.LVL47:
+ 640               		.loc 1 190 0
+ 641 0220 0E94 0000 		call debug_tapping_key
+ 642               	.LVL47:
  191:../../common/action_tapping.c ****             }  else {
- 646               		.loc 1 191 0
- 647 022c 00C0      		rjmp .L88
- 648               	.LVL48:
- 649               	.L57:
+ 643               		.loc 1 191 0
+ 644 0224 00C0      		rjmp .L88
+ 645               	.LVL48:
+ 646               	.L57:
  193:../../common/action_tapping.c ****                     debug("Tapping: End. last timeout tap release(>0).");
- 650               		.loc 1 193 0 discriminator 1
- 651 022e 7513      		cpse r23,r21
- 652 0230 00C0      		rjmp .L58
+ 647               		.loc 1 193 0 discriminator 1
+ 648 0226 5713      		cpse r21,r23
+ 649 0228 00C0      		rjmp .L58
  193:../../common/action_tapping.c ****                     debug("Tapping: End. last timeout tap release(>0).");
- 653               		.loc 1 193 0 is_stmt 0 discriminator 2
- 654 0232 3413      		cpse r19,r20
- 655 0234 00C0      		rjmp .L58
+ 650               		.loc 1 193 0 is_stmt 0 discriminator 2
+ 651 022a 4313      		cpse r20,r19
+ 652 022c 00C0      		rjmp .L58
  193:../../common/action_tapping.c ****                     debug("Tapping: End. last timeout tap release(>0).");
- 656               		.loc 1 193 0 discriminator 3
- 657 0236 6111      		cpse r22,__zero_reg__
- 658 0238 00C0      		rjmp .L58
+ 653               		.loc 1 193 0 discriminator 3
+ 654 022e 6111      		cpse r22,__zero_reg__
+ 655 0230 00C0      		rjmp .L58
  195:../../common/action_tapping.c ****                     process_action(keyp);
- 659               		.loc 1 195 0 is_stmt 1
- 660 023a 8091 0000 		lds r24,tapping_key+5
- 661 023e F801      		movw r30,r16
- 662 0240 8583      		std Z+5,r24
+ 656               		.loc 1 195 0 is_stmt 1
+ 657 0232 8091 0000 		lds r24,tapping_key+5
+ 658 0236 F801      		movw r30,r16
+ 659 0238 8583      		std Z+5,r24
  196:../../common/action_tapping.c ****                     tapping_key = (keyrecord_t){};
- 663               		.loc 1 196 0
- 664 0242 C801      		movw r24,r16
- 665 0244 0E94 0000 		call process_action
- 666               	.LVL49:
+ 660               		.loc 1 196 0
+ 661 023a C801      		movw r24,r16
+ 662 023c 0E94 0000 		call process_action
+ 663               	.LVL49:
  197:../../common/action_tapping.c ****                     return true;
- 667               		.loc 1 197 0
- 668 0248 86E0      		ldi r24,lo8(6)
- 669 024a E0E0      		ldi r30,lo8(tapping_key)
- 670 024c F0E0      		ldi r31,hi8(tapping_key)
- 671 024e DF01      		movw r26,r30
- 672               		0:
- 673 0250 1D92      		st X+,__zero_reg__
- 674 0252 8A95      		dec r24
- 675 0254 01F4      		brne 0b
+ 664               		.loc 1 197 0
+ 665 0240 86E0      		ldi r24,lo8(6)
+ 666 0242 E0E0      		ldi r30,lo8(tapping_key)
+ 667 0244 F0E0      		ldi r31,hi8(tapping_key)
+ 668 0246 DF01      		movw r26,r30
+ 669               		0:
+ 670 0248 1D92      		st X+,__zero_reg__
+ 671 024a 8A95      		dec r24
+ 672 024c 01F4      		brne 0b
  198:../../common/action_tapping.c ****                 }
- 676               		.loc 1 198 0
- 677 0256 FE2C      		mov r15,r14
- 678 0258 00C0      		rjmp .L88
- 679               	.LVL50:
- 680               	.L58:
+ 673               		.loc 1 198 0
+ 674 024e FE2C      		mov r15,r14
+ 675 0250 00C0      		rjmp .L88
+ 676               	.LVL50:
+ 677               	.L58:
  200:../../common/action_tapping.c ****                     if (tapping_key.tap.count > 1) {
- 681               		.loc 1 200 0
- 682 025a 4D87      		std Y+13,r20
- 683 025c 5E87      		std Y+14,r21
- 684 025e 8D85      		ldd r24,Y+13
- 685 0260 9E85      		ldd r25,Y+14
- 686 0262 6A8B      		std Y+18,r22
- 687 0264 0E94 0000 		call is_tap_key
- 688               	.LVL51:
- 689 0268 6A89      		ldd r22,Y+18
- 690 026a 8823      		tst r24
- 691 026c 01F4      		brne .+2
- 692 026e 00C0      		rjmp .L65
+ 678               		.loc 1 200 0
+ 679 0252 4D87      		std Y+13,r20
+ 680 0254 5E87      		std Y+14,r21
+ 681 0256 8D85      		ldd r24,Y+13
+ 682 0258 9E85      		ldd r25,Y+14
+ 683 025a 6A8B      		std Y+18,r22
+ 684               	.LVL51:
+ 685 025c 0E94 0000 		call is_tap_key
+ 686               	.LVL52:
+ 687 0260 6A89      		ldd r22,Y+18
+ 688 0262 8823      		tst r24
+ 689 0264 01F4      		brne .+2
+ 690 0266 00C0      		rjmp .L65
  200:../../common/action_tapping.c ****                     if (tapping_key.tap.count > 1) {
- 693               		.loc 1 200 0 is_stmt 0 discriminator 1
- 694 0270 6623      		tst r22
- 695 0272 01F4      		brne .+2
- 696 0274 00C0      		rjmp .L65
+ 691               		.loc 1 200 0 is_stmt 0 discriminator 1
+ 692 0268 6623      		tst r22
+ 693 026a 01F4      		brne .+2
+ 694 026c 00C0      		rjmp .L65
  201:../../common/action_tapping.c ****                         debug("Tapping: Start new tap with releasing last timeout tap(>1).\n");
- 697               		.loc 1 201 0 is_stmt 1
- 698 0276 2091 0000 		lds r18,tapping_key+5
- 699 027a 822F      		mov r24,r18
- 700 027c 8295      		swap r24
- 701 027e 8F70      		andi r24,lo8(15)
- 702 0280 90E0      		ldi r25,0
- 703 0282 0297      		sbiw r24,2
- 704 0284 04F4      		brge .+2
- 705 0286 00C0      		rjmp .L56
+ 695               		.loc 1 201 0 is_stmt 1
+ 696 026e 2091 0000 		lds r18,tapping_key+5
+ 697 0272 822F      		mov r24,r18
+ 698 0274 8295      		swap r24
+ 699 0276 8F70      		andi r24,lo8(15)
+ 700 0278 90E0      		ldi r25,0
+ 701 027a 0297      		sbiw r24,2
+ 702 027c 04F4      		brge .+2
+ 703 027e 00C0      		rjmp .L56
  204:../../common/action_tapping.c ****                                 .tap = tapping_key.tap,
- 706               		.loc 1 204 0
- 707 0288 8091 0000 		lds r24,tapping_key
- 708 028c 9091 0000 		lds r25,tapping_key+1
- 709 0290 9A83      		std Y+2,r25
- 710 0292 8983      		std Y+1,r24
- 711 0294 1B82      		std Y+3,__zero_reg__
- 712 0296 DD82      		std Y+5,r13
- 713 0298 CC82      		std Y+4,r12
- 714 029a 2E83      		std Y+6,r18
- 715 029c CE01      		movw r24,r28
- 716 029e 0196      		adiw r24,1
- 717 02a0 00C0      		rjmp .L125
- 718               	.LVL52:
- 719               	.L60:
- 720 02a2 8095      		com r24
- 721 02a4 9095      		com r25
+ 704               		.loc 1 204 0
+ 705 0280 8091 0000 		lds r24,tapping_key
+ 706 0284 9091 0000 		lds r25,tapping_key+1
+ 707 0288 9A83      		std Y+2,r25
+ 708 028a 8983      		std Y+1,r24
+ 709 028c 1B82      		std Y+3,__zero_reg__
+ 710 028e DD82      		std Y+5,r13
+ 711 0290 CC82      		std Y+4,r12
+ 712 0292 2E83      		std Y+6,r18
+ 713 0294 CE01      		movw r24,r28
+ 714 0296 0196      		adiw r24,1
+ 715 0298 00C0      		rjmp .L125
+ 716               	.LVL53:
+ 717               	.L60:
  228:../../common/action_tapping.c ****             if (event.pressed) {
- 722               		.loc 1 228 0 discriminator 2
- 723 02a6 8C0D      		add r24,r12
- 724 02a8 9D1D      		adc r25,r13
- 725 02aa 00C0      		rjmp .L136
- 726               	.L87:
+ 718               		.loc 1 228 0 discriminator 2
+ 719 029a 8095      		com r24
+ 720 029c 9095      		com r25
+ 721 029e 8C0D      		add r24,r12
+ 722 02a0 9D1D      		adc r25,r13
+ 723 02a2 00C0      		rjmp .L135
+ 724               	.L87:
  229:../../common/action_tapping.c ****                 if (IS_TAPPING_KEY(event.key)) {
- 727               		.loc 1 229 0
- 728 02ac F62E      		mov r15,r22
- 729 02ae 6623      		tst r22
- 730 02b0 01F4      		brne .+2
- 731 02b2 00C0      		rjmp .L65
- 732               	.LVL53:
+ 725               		.loc 1 229 0
+ 726 02a4 F62E      		mov r15,r22
+ 727 02a6 6623      		tst r22
+ 728 02a8 01F4      		brne .+2
+ 729 02aa 00C0      		rjmp .L65
+ 730               	.LVL54:
  230:../../common/action_tapping.c ****                     if (!tapping_key.tap.interrupted && tapping_key.tap.count > 0) {
- 733               		.loc 1 230 0 discriminator 1
- 734 02b4 7513      		cpse r23,r21
- 735 02b6 00C0      		rjmp .L66
+ 731               		.loc 1 230 0 discriminator 1
+ 732 02ac 5713      		cpse r21,r23
+ 733 02ae 00C0      		rjmp .L66
  230:../../common/action_tapping.c ****                     if (!tapping_key.tap.interrupted && tapping_key.tap.count > 0) {
- 736               		.loc 1 230 0 is_stmt 0 discriminator 2
- 737 02b8 3413      		cpse r19,r20
- 738 02ba 00C0      		rjmp .L66
+ 734               		.loc 1 230 0 is_stmt 0 discriminator 2
+ 735 02b0 4313      		cpse r20,r19
+ 736 02b2 00C0      		rjmp .L66
  231:../../common/action_tapping.c ****                         // sequential tap.
- 739               		.loc 1 231 0 is_stmt 1
- 740 02bc 2091 0000 		lds r18,tapping_key+5
- 741 02c0 20FD      		sbrc r18,0
- 742 02c2 00C0      		rjmp .L67
+ 737               		.loc 1 231 0 is_stmt 1
+ 738 02b4 2091 0000 		lds r18,tapping_key+5
+ 739 02b8 20FD      		sbrc r18,0
+ 740 02ba 00C0      		rjmp .L67
  231:../../common/action_tapping.c ****                         // sequential tap.
- 743               		.loc 1 231 0 is_stmt 0 discriminator 1
- 744 02c4 822F      		mov r24,r18
- 745 02c6 8295      		swap r24
- 746 02c8 8F70      		andi r24,lo8(15)
- 747 02ca 01F0      		breq .L67
+ 741               		.loc 1 231 0 is_stmt 0 discriminator 1
+ 742 02bc 822F      		mov r24,r18
+ 743 02be 8295      		swap r24
+ 744 02c0 8F70      		andi r24,lo8(15)
+ 745 02c2 482F      		mov r20,r24
+ 746               	.LVL55:
+ 747 02c4 50E0      		ldi r21,0
+ 748               	.LVL56:
+ 749 02c6 4115      		cp r20,__zero_reg__
+ 750 02c8 5105      		cpc r21,__zero_reg__
+ 751 02ca 01F0      		breq .L67
  233:../../common/action_tapping.c ****                         if (keyp->tap.count < 15) keyp->tap.count += 1;
- 748               		.loc 1 233 0 is_stmt 1
- 749 02cc D801      		movw r26,r16
- 750 02ce 1596      		adiw r26,5
- 751 02d0 2C93      		st X,r18
- 752 02d2 1597      		sbiw r26,5
+ 752               		.loc 1 233 0 is_stmt 1
+ 753 02cc D801      		movw r26,r16
+ 754 02ce 1596      		adiw r26,5
+ 755 02d0 2C93      		st X,r18
+ 756 02d2 1597      		sbiw r26,5
  234:../../common/action_tapping.c ****                         debug("Tapping: Tap press("); debug_dec(keyp->tap.count); debug(")\n");
- 753               		.loc 1 234 0
- 754 02d4 8F30      		cpi r24,lo8(15)
- 755 02d6 01F0      		breq .L68
+ 757               		.loc 1 234 0
+ 758 02d4 4F30      		cpi r20,15
+ 759 02d6 5105      		cpc r21,__zero_reg__
+ 760 02d8 01F0      		breq .L68
  234:../../common/action_tapping.c ****                         debug("Tapping: Tap press("); debug_dec(keyp->tap.count); debug(")\n");
- 756               		.loc 1 234 0 is_stmt 0 discriminator 1
- 757 02d8 8F5F      		subi r24,lo8(-(1))
- 758 02da 982F      		mov r25,r24
- 759 02dc 9295      		swap r25
- 760 02de 907F      		andi r25,lo8(-16)
- 761 02e0 822F      		mov r24,r18
- 762 02e2 8F70      		andi r24,lo8(15)
- 763 02e4 892B      		or r24,r25
- 764               	.LVL54:
- 765               	.L134:
- 766 02e6 1596      		adiw r26,5
- 767 02e8 8C93      		st X,r24
- 768               	.L68:
+ 761               		.loc 1 234 0 is_stmt 0 discriminator 1
+ 762 02da 8F5F      		subi r24,lo8(-(1))
+ 763 02dc 982F      		mov r25,r24
+ 764 02de 9295      		swap r25
+ 765 02e0 907F      		andi r25,lo8(-16)
+ 766 02e2 822F      		mov r24,r18
+ 767 02e4 8F70      		andi r24,lo8(15)
+ 768 02e6 892B      		or r24,r25
+ 769 02e8 1596      		adiw r26,5
+ 770 02ea 8C93      		st X,r24
+ 771               	.LVL57:
+ 772               	.L68:
  236:../../common/action_tapping.c ****                         tapping_key = *keyp;
- 769               		.loc 1 236 0 is_stmt 1
- 770 02ea C801      		movw r24,r16
- 771 02ec 0E94 0000 		call process_action
- 772               	.LVL55:
+ 773               		.loc 1 236 0 is_stmt 1
+ 774 02ec C801      		movw r24,r16
+ 775 02ee 0E94 0000 		call process_action
+ 776               	.LVL58:
  237:../../common/action_tapping.c ****                         debug_tapping_key();
- 773               		.loc 1 237 0
- 774 02f0 86E0      		ldi r24,lo8(6)
- 775 02f2 F801      		movw r30,r16
- 776 02f4 A0E0      		ldi r26,lo8(tapping_key)
- 777 02f6 B0E0      		ldi r27,hi8(tapping_key)
- 778               		0:
- 779 02f8 0190      		ld r0,Z+
- 780 02fa 0D92      		st X+,r0
- 781 02fc 8A95      		dec r24
- 782 02fe 01F4      		brne 0b
- 783 0300 00C0      		rjmp .L130
- 784               	.LVL56:
- 785               	.L67:
+ 777               		.loc 1 237 0
+ 778 02f2 86E0      		ldi r24,lo8(6)
+ 779 02f4 F801      		movw r30,r16
+ 780 02f6 A0E0      		ldi r26,lo8(tapping_key)
+ 781 02f8 B0E0      		ldi r27,hi8(tapping_key)
+ 782               		0:
+ 783 02fa 0190      		ld r0,Z+
+ 784 02fc 0D92      		st X+,r0
+ 785 02fe 8A95      		dec r24
+ 786 0300 01F4      		brne 0b
+ 787 0302 00C0      		rjmp .L130
+ 788               	.LVL59:
+ 789               	.L67:
  242:../../common/action_tapping.c ****                         return true;
- 786               		.loc 1 242 0
- 787 0302 86E0      		ldi r24,lo8(6)
- 788 0304 F801      		movw r30,r16
- 789 0306 A0E0      		ldi r26,lo8(tapping_key)
- 790 0308 B0E0      		ldi r27,hi8(tapping_key)
- 791               		0:
- 792 030a 0190      		ld r0,Z+
- 793 030c 0D92      		st X+,r0
- 794 030e 8A95      		dec r24
- 795 0310 01F4      		brne 0b
+ 790               		.loc 1 242 0
+ 791 0304 86E0      		ldi r24,lo8(6)
+ 792 0306 F801      		movw r30,r16
+ 793 0308 A0E0      		ldi r26,lo8(tapping_key)
+ 794 030a B0E0      		ldi r27,hi8(tapping_key)
+ 795               		0:
+ 796 030c 0190      		ld r0,Z+
+ 797 030e 0D92      		st X+,r0
+ 798 0310 8A95      		dec r24
+ 799 0312 01F4      		brne 0b
  243:../../common/action_tapping.c ****                     }
- 796               		.loc 1 243 0
- 797 0312 00C0      		rjmp .L88
- 798               	.L66:
+ 800               		.loc 1 243 0
+ 801 0314 00C0      		rjmp .L88
+ 802               	.LVL60:
+ 803               	.L66:
  245:../../common/action_tapping.c ****                     // Sequential tap can be interfered with other tap key.
- 799               		.loc 1 245 0
- 800 0314 4D87      		std Y+13,r20
- 801 0316 5E87      		std Y+14,r21
- 802 0318 8D85      		ldd r24,Y+13
- 803 031a 9E85      		ldd r25,Y+14
- 804 031c 0E94 0000 		call is_tap_key
- 805               	.LVL57:
- 806 0320 8111      		cpse r24,__zero_reg__
- 807 0322 00C0      		rjmp .L56
+ 804               		.loc 1 245 0
+ 805 0316 4D87      		std Y+13,r20
+ 806 0318 5E87      		std Y+14,r21
+ 807 031a 8D85      		ldd r24,Y+13
+ 808 031c 9E85      		ldd r25,Y+14
+ 809 031e 0E94 0000 		call is_tap_key
+ 810               	.LVL61:
+ 811 0322 8111      		cpse r24,__zero_reg__
+ 812 0324 00C0      		rjmp .L56
  255:../../common/action_tapping.c ****                     process_action(keyp);
- 808               		.loc 1 255 0
- 809 0324 8091 0000 		lds r24,tapping_key+5
- 810 0328 8160      		ori r24,lo8(1<<0)
- 811 032a 8093 0000 		sts tapping_key+5,r24
+ 813               		.loc 1 255 0
+ 814 0326 8091 0000 		lds r24,tapping_key+5
+ 815 032a 8160      		ori r24,lo8(1<<0)
+ 816 032c 8093 0000 		sts tapping_key+5,r24
  256:../../common/action_tapping.c ****                     return true;
- 812               		.loc 1 256 0
- 813 032e C801      		movw r24,r16
- 814 0330 0E94 0000 		call process_action
- 815               	.LVL58:
+ 817               		.loc 1 256 0
+ 818 0330 C801      		movw r24,r16
+ 819 0332 0E94 0000 		call process_action
+ 820               	.LVL62:
  257:../../common/action_tapping.c ****                 }
- 816               		.loc 1 257 0
- 817 0334 00C0      		rjmp .L88
- 818               	.LVL59:
- 819               	.L30:
+ 821               		.loc 1 257 0
+ 822 0336 00C0      		rjmp .L88
+ 823               	.LVL63:
+ 824               	.L30:
  276:../../common/action_tapping.c ****             debug("Tapping: Start(Press tap key).\n");
- 820               		.loc 1 276 0
- 821 0336 6623      		tst r22
- 822 0338 01F4      		brne .+2
- 823 033a 00C0      		rjmp .L65
+ 825               		.loc 1 276 0
+ 826 0338 6623      		tst r22
+ 827 033a 01F4      		brne .+2
+ 828 033c 00C0      		rjmp .L65
  276:../../common/action_tapping.c ****             debug("Tapping: Start(Press tap key).\n");
- 824               		.loc 1 276 0 is_stmt 0 discriminator 1
- 825 033c 4D87      		std Y+13,r20
- 826 033e 5E87      		std Y+14,r21
- 827 0340 8D85      		ldd r24,Y+13
- 828 0342 9E85      		ldd r25,Y+14
- 829 0344 0E94 0000 		call is_tap_key
- 830               	.LVL60:
- 831 0348 8823      		tst r24
- 832 034a 01F4      		brne .+2
- 833 034c 00C0      		rjmp .L65
- 834 034e 00C0      		rjmp .L56
- 835               	.LVL61:
- 836               	.L139:
- 837               	.LBB29:
+ 829               		.loc 1 276 0 is_stmt 0 discriminator 1
+ 830 033e 4D87      		std Y+13,r20
+ 831 0340 5E87      		std Y+14,r21
+ 832 0342 8D85      		ldd r24,Y+13
+ 833 0344 9E85      		ldd r25,Y+14
+ 834 0346 0E94 0000 		call is_tap_key
+ 835               	.LVL64:
+ 836 034a 8823      		tst r24
+ 837 034c 01F4      		brne .+2
+ 838 034e 00C0      		rjmp .L65
+ 839 0350 00C0      		rjmp .L56
+ 840               	.LVL65:
+ 841               	.L138:
+ 842               	.LBB29:
  123:../../common/action_tapping.c ****                             if (IS_MOD(action.key.code)) return false;
- 838               		.loc 1 123 0 is_stmt 1 discriminator 1
- 839 0350 8111      		cpse r24,__zero_reg__
- 840 0352 00C0      		rjmp .L52
- 841 0354 00C0      		rjmp .L88
- 842               	.LVL62:
- 843               	.L138:
+ 843               		.loc 1 123 0 is_stmt 1 discriminator 1
+ 844 0352 8111      		cpse r24,__zero_reg__
+ 845 0354 00C0      		rjmp .L52
+ 846 0356 00C0      		rjmp .L88
+ 847               	.LVL66:
+ 848               	.L137:
  120:../../common/action_tapping.c ****                         case ACT_LMODS:
- 844               		.loc 1 120 0
- 845 0356 2430      		cpi r18,4
- 846 0358 3105      		cpc r19,__zero_reg__
- 847 035a 04F0      		brlt .+2
- 848 035c 00C0      		rjmp .L65
+ 849               		.loc 1 120 0
+ 850 0358 2430      		cpi r18,lo8(4)
+ 851 035a 00F0      		brlo .+2
+ 852 035c 00C0      		rjmp .L65
  128:../../common/action_tapping.c ****                             if (IS_MOD(action.key.code)) return false;
- 849               		.loc 1 128 0
- 850 035e 9F70      		andi r25,lo8(15)
- 851               	.LVL63:
- 852 0360 01F4      		brne .+2
- 853 0362 00C0      		rjmp .L52
+ 853               		.loc 1 128 0
+ 854 035e 9F70      		andi r25,lo8(15)
+ 855               	.LVL67:
+ 856 0360 01F4      		brne .+2
+ 857 0362 00C0      		rjmp .L52
  128:../../common/action_tapping.c ****                             if (IS_MOD(action.key.code)) return false;
- 854               		.loc 1 128 0 is_stmt 0 discriminator 1
- 855 0364 F801      		movw r30,r16
- 856 0366 9581      		ldd r25,Z+5
- 857 0368 907F      		andi r25,lo8(-16)
- 858 036a 01F0      		breq .+2
- 859 036c 00C0      		rjmp .L52
- 860               	.LVL64:
- 861               	.L88:
- 862               	.LBE29:
+ 858               		.loc 1 128 0 is_stmt 0 discriminator 1
+ 859 0364 D801      		movw r26,r16
+ 860 0366 1596      		adiw r26,5
+ 861 0368 9C91      		ld r25,X
+ 862 036a 907F      		andi r25,lo8(-16)
+ 863 036c 01F0      		breq .+2
+ 864 036e 00C0      		rjmp .L52
+ 865               	.LVL68:
+ 866               	.L88:
+ 867               	.LBE29:
  287:../../common/action_tapping.c **** 
- 863               		.loc 1 287 0 is_stmt 1
- 864 036e 8F2D      		mov r24,r15
- 865               	.LVL65:
- 866               	/* epilogue start */
- 867 0370 6296      		adiw r28,18
- 868 0372 0FB6      		in __tmp_reg__,__SREG__
- 869 0374 F894      		cli
- 870 0376 DEBF      		out __SP_H__,r29
- 871 0378 0FBE      		out __SREG__,__tmp_reg__
- 872 037a CDBF      		out __SP_L__,r28
- 873 037c DF91      		pop r29
- 874 037e CF91      		pop r28
- 875 0380 1F91      		pop r17
- 876 0382 0F91      		pop r16
- 877               	.LVL66:
- 878 0384 FF90      		pop r15
- 879 0386 EF90      		pop r14
- 880 0388 DF90      		pop r13
- 881 038a CF90      		pop r12
- 882               	.LVL67:
- 883 038c 0895      		ret
- 884               		.cfi_endproc
- 885               	.LFE5:
- 887               		.section	.text.action_tapping_process,"ax",@progbits
- 888               	.global	action_tapping_process
- 890               	action_tapping_process:
- 891               	.LFB4:
+ 868               		.loc 1 287 0 is_stmt 1
+ 869 0370 8F2D      		mov r24,r15
+ 870               	.LVL69:
+ 871               	/* epilogue start */
+ 872 0372 6296      		adiw r28,18
+ 873 0374 0FB6      		in __tmp_reg__,__SREG__
+ 874 0376 F894      		cli
+ 875 0378 DEBF      		out __SP_H__,r29
+ 876 037a 0FBE      		out __SREG__,__tmp_reg__
+ 877 037c CDBF      		out __SP_L__,r28
+ 878 037e DF91      		pop r29
+ 879 0380 CF91      		pop r28
+ 880 0382 1F91      		pop r17
+ 881 0384 0F91      		pop r16
+ 882               	.LVL70:
+ 883 0386 FF90      		pop r15
+ 884 0388 EF90      		pop r14
+ 885 038a DF90      		pop r13
+ 886 038c CF90      		pop r12
+ 887 038e 0895      		ret
+ 888               		.cfi_endproc
+ 889               	.LFE5:
+ 891               		.section	.text.action_tapping_process,"ax",@progbits
+ 892               	.global	action_tapping_process
+ 894               	action_tapping_process:
+ 895               	.LFB4:
   40:../../common/action_tapping.c ****     if (process_tapping(&record)) {
- 892               		.loc 1 40 0
- 893               		.cfi_startproc
- 894 0000 1F93      		push r17
- 895               	.LCFI13:
- 896               		.cfi_def_cfa_offset 3
- 897               		.cfi_offset 17, -2
- 898 0002 CF93      		push r28
- 899               	.LCFI14:
- 900               		.cfi_def_cfa_offset 4
- 901               		.cfi_offset 28, -3
- 902 0004 DF93      		push r29
- 903               	.LCFI15:
- 904               		.cfi_def_cfa_offset 5
- 905               		.cfi_offset 29, -4
- 906 0006 CDB7      		in r28,__SP_L__
- 907 0008 DEB7      		in r29,__SP_H__
- 908               	.LCFI16:
- 909               		.cfi_def_cfa_register 28
- 910 000a 2C97      		sbiw r28,12
- 911               	.LCFI17:
- 912               		.cfi_def_cfa_offset 17
- 913 000c 0FB6      		in __tmp_reg__,__SREG__
- 914 000e F894      		cli
- 915 0010 DEBF      		out __SP_H__,r29
- 916 0012 0FBE      		out __SREG__,__tmp_reg__
- 917 0014 CDBF      		out __SP_L__,r28
- 918               	/* prologue: function */
- 919               	/* frame size = 12 */
- 920               	/* stack size = 15 */
- 921               	.L__stack_usage = 15
- 922 0016 4F83      		std Y+7,r20
- 923 0018 5887      		std Y+8,r21
- 924 001a 6987      		std Y+9,r22
- 925 001c 7A87      		std Y+10,r23
- 926 001e 8B87      		std Y+11,r24
- 927 0020 9C87      		std Y+12,r25
+ 896               		.loc 1 40 0
+ 897               		.cfi_startproc
+ 898 0000 1F93      		push r17
+ 899               	.LCFI13:
+ 900               		.cfi_def_cfa_offset 3
+ 901               		.cfi_offset 17, -2
+ 902 0002 CF93      		push r28
+ 903               	.LCFI14:
+ 904               		.cfi_def_cfa_offset 4
+ 905               		.cfi_offset 28, -3
+ 906 0004 DF93      		push r29
+ 907               	.LCFI15:
+ 908               		.cfi_def_cfa_offset 5
+ 909               		.cfi_offset 29, -4
+ 910 0006 CDB7      		in r28,__SP_L__
+ 911 0008 DEB7      		in r29,__SP_H__
+ 912               	.LCFI16:
+ 913               		.cfi_def_cfa_register 28
+ 914 000a 2C97      		sbiw r28,12
+ 915               	.LCFI17:
+ 916               		.cfi_def_cfa_offset 17
+ 917 000c 0FB6      		in __tmp_reg__,__SREG__
+ 918 000e F894      		cli
+ 919 0010 DEBF      		out __SP_H__,r29
+ 920 0012 0FBE      		out __SREG__,__tmp_reg__
+ 921 0014 CDBF      		out __SP_L__,r28
+ 922               	/* prologue: function */
+ 923               	/* frame size = 12 */
+ 924               	/* stack size = 15 */
+ 925               	.L__stack_usage = 15
+ 926 0016 4F83      		std Y+7,r20
+ 927 0018 5887      		std Y+8,r21
+ 928 001a 6987      		std Y+9,r22
+ 929 001c 7A87      		std Y+10,r23
+ 930 001e 8B87      		std Y+11,r24
+ 931 0020 9C87      		std Y+12,r25
   41:../../common/action_tapping.c ****         if (!IS_NOEVENT(record.event)) {
- 928               		.loc 1 41 0
- 929 0022 CE01      		movw r24,r28
- 930 0024 0796      		adiw r24,7
- 931 0026 0E94 0000 		call process_tapping
- 932               	.LVL68:
- 933 002a 8823      		tst r24
- 934 002c 01F0      		breq .L141
- 935 002e 8F81      		ldd r24,Y+7
- 936 0030 9885      		ldd r25,Y+8
- 937               	.LBB38:
- 938               	.LBB39:
+ 932               		.loc 1 41 0
+ 933 0022 CE01      		movw r24,r28
+ 934 0024 0796      		adiw r24,7
+ 935 0026 0E94 0000 		call process_tapping
+ 936               	.LVL71:
+ 937 002a 8823      		tst r24
+ 938 002c 01F0      		breq .L140
+ 939               	.LBB38:
+ 940               	.LBB39:
   49:../../common/keyboard.h **** static inline bool IS_PRESSED(keyevent_t event) { return (!IS_NOEVENT(event) && event.pressed); }
- 939               		.loc 2 49 0
- 940 0032 2A85      		ldd r18,Y+10
- 941 0034 3B85      		ldd r19,Y+11
- 942 0036 232B      		or r18,r19
- 943 0038 01F0      		breq .L142
- 944 003a 9F3F      		cpi r25,lo8(-1)
- 945 003c 01F0      		breq .+2
- 946 003e 00C0      		rjmp .L143
- 947 0040 8F3F      		cpi r24,lo8(-1)
- 948 0042 01F0      		breq .+2
- 949 0044 00C0      		rjmp .L143
- 950 0046 00C0      		rjmp .L142
- 951               	.L141:
- 952 0048 86E0      		ldi r24,lo8(6)
- 953 004a FE01      		movw r30,r28
- 954 004c 3796      		adiw r30,7
- 955 004e DE01      		movw r26,r28
- 956 0050 1196      		adiw r26,1
- 957               		0:
- 958 0052 0190      		ld r0,Z+
- 959 0054 0D92      		st X+,r0
- 960 0056 8A95      		dec r24
- 961 0058 01F4      		brne 0b
- 962 005a 6F81      		ldd r22,Y+7
- 963               	.LVL69:
- 964 005c 7885      		ldd r23,Y+8
- 965               	.LVL70:
- 966 005e EA85      		ldd r30,Y+10
- 967 0060 FB85      		ldd r31,Y+11
- 968               	.LVL71:
- 969               	.LBE39:
- 970               	.LBE38:
- 971               	.LBB40:
- 972               	.LBB41:
- 973               	.LBB42:
- 974               	.LBB43:
- 975 0062 3097      		sbiw r30,0
- 976 0064 01F0      		breq .L142
- 977 0066 7F3F      		cpi r23,lo8(-1)
- 978 0068 01F4      		brne .L145
- 979 006a 6F3F      		cpi r22,lo8(-1)
- 980 006c 01F0      		breq .L142
- 981               	.L145:
- 982               	.LBE43:
- 983               	.LBE42:
+ 941               		.loc 2 49 0
+ 942 002e 8A85      		ldd r24,Y+10
+ 943 0030 9B85      		ldd r25,Y+11
+ 944 0032 892B      		or r24,r25
+ 945 0034 01F4      		brne .+2
+ 946 0036 00C0      		rjmp .L149
+ 947 0038 8885      		ldd r24,Y+8
+ 948 003a 8F3F      		cpi r24,lo8(-1)
+ 949 003c 01F0      		breq .+2
+ 950 003e 00C0      		rjmp .L142
+ 951 0040 8F81      		ldd r24,Y+7
+ 952 0042 8F3F      		cpi r24,lo8(-1)
+ 953 0044 01F0      		breq .+2
+ 954 0046 00C0      		rjmp .L142
+ 955 0048 00C0      		rjmp .L149
+ 956               	.L140:
+ 957 004a 86E0      		ldi r24,lo8(6)
+ 958 004c FE01      		movw r30,r28
+ 959 004e 3796      		adiw r30,7
+ 960 0050 DE01      		movw r26,r28
+ 961 0052 1196      		adiw r26,1
+ 962               		0:
+ 963 0054 0190      		ld r0,Z+
+ 964 0056 0D92      		st X+,r0
+ 965 0058 8A95      		dec r24
+ 966 005a 01F4      		brne 0b
+ 967               	.LVL72:
+ 968 005c 6A85      		ldd r22,Y+10
+ 969 005e 7B85      		ldd r23,Y+11
+ 970               	.LVL73:
+ 971               	.LBE39:
+ 972               	.LBE38:
+ 973               	.LBB40:
+ 974               	.LBB41:
+ 975               	.LBB42:
+ 976               	.LBB43:
+ 977 0060 6115      		cp r22,__zero_reg__
+ 978 0062 7105      		cpc r23,__zero_reg__
+ 979 0064 01F0      		breq .L149
+ 980 0066 FF81      		ldd r31,Y+7
+ 981 0068 E885      		ldd r30,Y+8
+ 982 006a EF3F      		cpi r30,lo8(-1)
+ 983 006c 01F4      		brne .L143
+ 984 006e FF3F      		cpi r31,lo8(-1)
+ 985 0070 01F0      		breq .L149
+ 986               	.L143:
+ 987               	.LBE43:
+ 988               	.LBE42:
  299:../../common/action_tapping.c ****         debug("waiting_buffer_enq: Over flow.\n");
- 984               		.loc 1 299 0
- 985 006e 2091 0000 		lds r18,waiting_buffer_head
- 986 0072 30E0      		ldi r19,0
- 987 0074 C901      		movw r24,r18
- 988 0076 0196      		adiw r24,1
- 989 0078 8770      		andi r24,7
- 990 007a 9927      		clr r25
- 991 007c 4091 0000 		lds r20,waiting_buffer_tail
- 992 0080 50E0      		ldi r21,0
- 993 0082 8417      		cp r24,r20
- 994 0084 9507      		cpc r25,r21
- 995 0086 01F4      		brne .+2
- 996 0088 00C0      		rjmp .L165
+ 989               		.loc 1 299 0
+ 990 0072 2091 0000 		lds r18,waiting_buffer_head
+ 991 0076 30E0      		ldi r19,0
+ 992 0078 C901      		movw r24,r18
+ 993 007a 0196      		adiw r24,1
+ 994 007c 8770      		andi r24,7
+ 995 007e 9927      		clr r25
+ 996 0080 4091 0000 		lds r20,waiting_buffer_tail
+ 997 0084 50E0      		ldi r21,0
+ 998 0086 8417      		cp r24,r20
+ 999 0088 9507      		cpc r25,r21
+ 1000 008a 01F4      		brne .+2
+ 1001 008c 00C0      		rjmp .L165
  304:../../common/action_tapping.c ****     waiting_buffer_head = (waiting_buffer_head + 1) % WAITING_BUFFER_SIZE;
- 997               		.loc 1 304 0
- 998 008a 6983      		std Y+1,r22
- 999 008c 7A83      		std Y+2,r23
- 1000 008e FD83      		std Y+5,r31
- 1001 0090 EC83      		std Y+4,r30
- 1002 0092 96E0      		ldi r25,lo8(6)
- 1003 0094 929F      		mul r25,r18
- 1004 0096 D001      		movw r26,r0
- 1005 0098 939F      		mul r25,r19
- 1006 009a B00D      		add r27,r0
- 1007 009c 1124      		clr __zero_reg__
- 1008 009e A050      		subi r26,lo8(-(waiting_buffer))
- 1009 00a0 B040      		sbci r27,hi8(-(waiting_buffer))
- 1010 00a2 FE01      		movw r30,r28
- 1011               	.LVL72:
- 1012 00a4 3196      		adiw r30,1
- 1013               		0:
- 1014 00a6 0190      		ld r0,Z+
- 1015 00a8 0D92      		st X+,r0
- 1016 00aa 9A95      		dec r25
- 1017 00ac 01F4      		brne 0b
+ 1002               		.loc 1 304 0
+ 1003 008e F983      		std Y+1,r31
+ 1004 0090 EA83      		std Y+2,r30
+ 1005 0092 7D83      		std Y+5,r23
+ 1006 0094 6C83      		std Y+4,r22
+ 1007 0096 96E0      		ldi r25,lo8(6)
+ 1008 0098 929F      		mul r25,r18
+ 1009 009a D001      		movw r26,r0
+ 1010 009c 939F      		mul r25,r19
+ 1011 009e B00D      		add r27,r0
+ 1012 00a0 1124      		clr __zero_reg__
+ 1013 00a2 A050      		subi r26,lo8(-(waiting_buffer))
+ 1014 00a4 B040      		sbci r27,hi8(-(waiting_buffer))
+ 1015 00a6 FE01      		movw r30,r28
+ 1016 00a8 3196      		adiw r30,1
+ 1017               		0:
+ 1018 00aa 0190      		ld r0,Z+
+ 1019 00ac 0D92      		st X+,r0
+ 1020 00ae 9A95      		dec r25
+ 1021 00b0 01F4      		brne 0b
  305:../../common/action_tapping.c **** 
- 1018               		.loc 1 305 0
- 1019 00ae 8093 0000 		sts waiting_buffer_head,r24
+ 1022               		.loc 1 305 0
+ 1023 00b2 8093 0000 		sts waiting_buffer_head,r24
  307:../../common/action_tapping.c ****     return true;
- 1020               		.loc 1 307 0
- 1021 00b2 0E94 0000 		call debug_waiting_buffer
- 1022               	.LVL73:
- 1023               	.L142:
- 1024               	.LBE41:
- 1025               	.LBE40:
+ 1024               		.loc 1 307 0
+ 1025 00b6 0E94 0000 		call debug_waiting_buffer
+ 1026               	.LVL74:
+ 1027               	.L149:
+ 1028               	.LBE41:
+ 1029               	.LBE40:
   60:../../common/action_tapping.c ****             debug("processed: waiting_buffer["); debug_dec(waiting_buffer_tail); debug("] = ");
- 1026               		.loc 1 60 0 discriminator 1
- 1027 00b6 16E0      		ldi r17,lo8(6)
- 1028               	.L146:
+ 1030               		.loc 1 60 0 discriminator 1
+ 1031 00ba 16E0      		ldi r17,lo8(6)
+ 1032               	.L144:
   59:../../common/action_tapping.c ****         if (process_tapping(&waiting_buffer[waiting_buffer_tail])) {
- 1029               		.loc 1 59 0 discriminator 1
- 1030 00b8 8091 0000 		lds r24,waiting_buffer_tail
- 1031 00bc 9091 0000 		lds r25,waiting_buffer_head
- 1032 00c0 8917      		cp r24,r25
- 1033 00c2 01F0      		breq .L140
+ 1033               		.loc 1 59 0 discriminator 1
+ 1034 00bc 8091 0000 		lds r24,waiting_buffer_tail
+ 1035 00c0 9091 0000 		lds r25,waiting_buffer_head
+ 1036 00c4 8917      		cp r24,r25
+ 1037 00c6 01F0      		breq .L139
   60:../../common/action_tapping.c ****             debug("processed: waiting_buffer["); debug_dec(waiting_buffer_tail); debug("] = ");
- 1034               		.loc 1 60 0
- 1035 00c4 189F      		mul r17,r24
- 1036 00c6 C001      		movw r24,r0
- 1037 00c8 1124      		clr __zero_reg__
- 1038 00ca 8050      		subi r24,lo8(-(waiting_buffer))
- 1039 00cc 9040      		sbci r25,hi8(-(waiting_buffer))
- 1040 00ce 0E94 0000 		call process_tapping
- 1041               	.LVL74:
- 1042 00d2 8823      		tst r24
- 1043 00d4 01F0      		breq .L140
+ 1038               		.loc 1 60 0
+ 1039 00c8 189F      		mul r17,r24
+ 1040 00ca C001      		movw r24,r0
+ 1041 00cc 1124      		clr __zero_reg__
+ 1042 00ce 8050      		subi r24,lo8(-(waiting_buffer))
+ 1043 00d0 9040      		sbci r25,hi8(-(waiting_buffer))
+ 1044 00d2 0E94 0000 		call process_tapping
+ 1045               	.LVL75:
+ 1046 00d6 8823      		tst r24
+ 1047 00d8 01F0      		breq .L139
   62:../../common/action_tapping.c ****         } else {
- 1044               		.loc 1 62 0
- 1045 00d6 E091 0000 		lds r30,waiting_buffer_tail
- 1046 00da 1E9F      		mul r17,r30
- 1047 00dc F001      		movw r30,r0
- 1048 00de 1124      		clr __zero_reg__
- 1049 00e0 E050      		subi r30,lo8(-(waiting_buffer))
- 1050 00e2 F040      		sbci r31,hi8(-(waiting_buffer))
- 1051 00e4 4081      		ld r20,Z
- 1052 00e6 5181      		ldd r21,Z+1
- 1053 00e8 6281      		ldd r22,Z+2
- 1054 00ea 7381      		ldd r23,Z+3
- 1055 00ec 8481      		ldd r24,Z+4
- 1056 00ee 9581      		ldd r25,Z+5
- 1057 00f0 0E94 0000 		call debug_record
- 1058               	.LVL75:
+ 1048               		.loc 1 62 0
+ 1049 00da E091 0000 		lds r30,waiting_buffer_tail
+ 1050 00de 1E9F      		mul r17,r30
+ 1051 00e0 F001      		movw r30,r0
+ 1052 00e2 1124      		clr __zero_reg__
+ 1053 00e4 E050      		subi r30,lo8(-(waiting_buffer))
+ 1054 00e6 F040      		sbci r31,hi8(-(waiting_buffer))
+ 1055 00e8 4081      		ld r20,Z
+ 1056 00ea 5181      		ldd r21,Z+1
+ 1057 00ec 6281      		ldd r22,Z+2
+ 1058 00ee 7381      		ldd r23,Z+3
+ 1059 00f0 8481      		ldd r24,Z+4
+ 1060 00f2 9581      		ldd r25,Z+5
+ 1061 00f4 0E94 0000 		call debug_record
+ 1062               	.LVL76:
   59:../../common/action_tapping.c ****         if (process_tapping(&waiting_buffer[waiting_buffer_tail])) {
- 1059               		.loc 1 59 0
- 1060 00f4 8091 0000 		lds r24,waiting_buffer_tail
- 1061 00f8 90E0      		ldi r25,0
- 1062 00fa 0196      		adiw r24,1
- 1063 00fc 8770      		andi r24,7
- 1064 00fe 9927      		clr r25
- 1065 0100 8093 0000 		sts waiting_buffer_tail,r24
- 1066 0104 00C0      		rjmp .L146
- 1067               	.L143:
+ 1063               		.loc 1 59 0
+ 1064 00f8 8091 0000 		lds r24,waiting_buffer_tail
+ 1065 00fc 90E0      		ldi r25,0
+ 1066 00fe 0196      		adiw r24,1
+ 1067 0100 8770      		andi r24,7
+ 1068 0102 9927      		clr r25
+ 1069 0104 8093 0000 		sts waiting_buffer_tail,r24
+ 1070 0108 00C0      		rjmp .L144
+ 1071               	.L142:
   43:../../common/action_tapping.c ****         }
- 1068               		.loc 1 43 0
- 1069 0106 4F81      		ldd r20,Y+7
- 1070 0108 5885      		ldd r21,Y+8
- 1071 010a 6985      		ldd r22,Y+9
- 1072 010c 7A85      		ldd r23,Y+10
- 1073 010e 8B85      		ldd r24,Y+11
- 1074 0110 9C85      		ldd r25,Y+12
- 1075 0112 0E94 0000 		call debug_record
- 1076               	.LVL76:
- 1077 0116 00C0      		rjmp .L142
- 1078               	.LVL77:
- 1079               	.L165:
-  49:../../common/action_tapping.c ****             waiting_buffer_clear();
- 1080               		.loc 1 49 0
- 1081 0118 0E94 0000 		call clear_keyboard
+ 1072               		.loc 1 43 0
+ 1073 010a 4F81      		ldd r20,Y+7
+ 1074 010c 5885      		ldd r21,Y+8
+ 1075 010e 6985      		ldd r22,Y+9
+ 1076 0110 7A85      		ldd r23,Y+10
+ 1077 0112 8B85      		ldd r24,Y+11
+ 1078 0114 9C85      		ldd r25,Y+12
+ 1079 0116 0E94 0000 		call debug_record
+ 1080               	.LVL77:
+ 1081 011a 00C0      		rjmp .L149
  1082               	.LVL78:
- 1083               	.LBB44:
- 1084               	.LBB45:
+ 1083               	.L165:
+  49:../../common/action_tapping.c ****             waiting_buffer_clear();
+ 1084               		.loc 1 49 0
+ 1085 011c 0E94 0000 		call clear_keyboard
+ 1086               	.LVL79:
+ 1087               	.LBB44:
+ 1088               	.LBB45:
  313:../../common/action_tapping.c ****     waiting_buffer_tail = 0;
- 1085               		.loc 1 313 0
- 1086 011c 1092 0000 		sts waiting_buffer_head,__zero_reg__
+ 1089               		.loc 1 313 0
+ 1090 0120 1092 0000 		sts waiting_buffer_head,__zero_reg__
  314:../../common/action_tapping.c **** }
- 1087               		.loc 1 314 0
- 1088 0120 1092 0000 		sts waiting_buffer_tail,__zero_reg__
- 1089               	.LBE45:
- 1090               	.LBE44:
+ 1091               		.loc 1 314 0
+ 1092 0124 1092 0000 		sts waiting_buffer_tail,__zero_reg__
+ 1093               	.LBE45:
+ 1094               	.LBE44:
   51:../../common/action_tapping.c ****         }
- 1091               		.loc 1 51 0
- 1092 0124 E0E0      		ldi r30,lo8(tapping_key)
- 1093 0126 F0E0      		ldi r31,hi8(tapping_key)
- 1094 0128 86E0      		ldi r24,lo8(6)
- 1095 012a DF01      		movw r26,r30
- 1096               		0:
- 1097 012c 1D92      		st X+,__zero_reg__
- 1098 012e 8A95      		dec r24
- 1099 0130 01F4      		brne 0b
- 1100 0132 00C0      		rjmp .L142
- 1101               	.L140:
- 1102               	/* epilogue start */
+ 1095               		.loc 1 51 0
+ 1096 0128 E0E0      		ldi r30,lo8(tapping_key)
+ 1097 012a F0E0      		ldi r31,hi8(tapping_key)
+ 1098 012c 86E0      		ldi r24,lo8(6)
+ 1099 012e DF01      		movw r26,r30
+ 1100               		0:
+ 1101 0130 1D92      		st X+,__zero_reg__
+ 1102 0132 8A95      		dec r24
+ 1103 0134 01F4      		brne 0b
+ 1104               	.L139:
+ 1105               	/* epilogue start */
   70:../../common/action_tapping.c **** 
- 1103               		.loc 1 70 0
- 1104 0134 2C96      		adiw r28,12
- 1105 0136 0FB6      		in __tmp_reg__,__SREG__
- 1106 0138 F894      		cli
- 1107 013a DEBF      		out __SP_H__,r29
- 1108 013c 0FBE      		out __SREG__,__tmp_reg__
- 1109 013e CDBF      		out __SP_L__,r28
- 1110 0140 DF91      		pop r29
- 1111 0142 CF91      		pop r28
- 1112 0144 1F91      		pop r17
- 1113 0146 0895      		ret
- 1114               		.cfi_endproc
- 1115               	.LFE4:
- 1117               		.local	waiting_buffer_tail
- 1118               		.comm	waiting_buffer_tail,1,1
- 1119               		.local	waiting_buffer_head
- 1120               		.comm	waiting_buffer_head,1,1
- 1121               		.local	waiting_buffer
- 1122               		.comm	waiting_buffer,48,1
- 1123               		.local	tapping_key
- 1124               		.comm	tapping_key,6,1
- 1125               		.comm	debug_config,1,1
- 1126               		.text
- 1127               	.Letext0:
- 1128               		.file 3 "/usr/lib/avr/include/stdint.h"
- 1129               		.file 4 "../../common/keycode.h"
- 1130               		.file 5 "../../common/action_code.h"
- 1131               		.file 6 "../../common/action.h"
- 1132               		.file 7 "../../common/debug_config.h"
- 1133               		.file 8 "../../common/action_layer.h"
+ 1106               		.loc 1 70 0
+ 1107 0136 2C96      		adiw r28,12
+ 1108 0138 0FB6      		in __tmp_reg__,__SREG__
+ 1109 013a F894      		cli
+ 1110 013c DEBF      		out __SP_H__,r29
+ 1111 013e 0FBE      		out __SREG__,__tmp_reg__
+ 1112 0140 CDBF      		out __SP_L__,r28
+ 1113 0142 DF91      		pop r29
+ 1114 0144 CF91      		pop r28
+ 1115 0146 1F91      		pop r17
+ 1116 0148 0895      		ret
+ 1117               		.cfi_endproc
+ 1118               	.LFE4:
+ 1120               		.local	waiting_buffer_tail
+ 1121               		.comm	waiting_buffer_tail,1,1
+ 1122               		.local	waiting_buffer_head
+ 1123               		.comm	waiting_buffer_head,1,1
+ 1124               		.local	waiting_buffer
+ 1125               		.comm	waiting_buffer,48,1
+ 1126               		.local	tapping_key
+ 1127               		.comm	tapping_key,6,1
+ 1128               		.comm	debug_config,1,1
+ 1129               		.text
+ 1130               	.Letext0:
+ 1131               		.file 3 "/usr/avr/include/stdint.h"
+ 1132               		.file 4 "../../common/keycode.h"
+ 1133               		.file 5 "../../common/action_code.h"
+ 1134               		.file 6 "../../common/action.h"
+ 1135               		.file 7 "../../common/debug_config.h"
+ 1136               		.file 8 "../../common/action_layer.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 action_tapping.c
-     /tmp/ccdgoJTO.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccdgoJTO.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccdgoJTO.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccdgoJTO.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccdgoJTO.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccdgoJTO.s:12     .text.debug_waiting_buffer:0000000000000000 debug_waiting_buffer
+     /tmp/cckcPPJs.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cckcPPJs.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cckcPPJs.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cckcPPJs.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cckcPPJs.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cckcPPJs.s:12     .text.debug_waiting_buffer:0000000000000000 debug_waiting_buffer
                              .bss:0000000000000000 waiting_buffer_tail
-     /tmp/ccdgoJTO.s:1118   .bss:0000000000000001 waiting_buffer_head
-     /tmp/ccdgoJTO.s:1120   .bss:0000000000000002 waiting_buffer
-     /tmp/ccdgoJTO.s:82     .text.debug_tapping_key:0000000000000000 debug_tapping_key
-     /tmp/ccdgoJTO.s:1122   .bss:0000000000000032 tapping_key
-     /tmp/ccdgoJTO.s:104    .text.waiting_buffer_scan_tap:0000000000000000 waiting_buffer_scan_tap
-     /tmp/ccdgoJTO.s:231    .text.process_tapping:0000000000000000 process_tapping
-     /tmp/ccdgoJTO.s:890    .text.action_tapping_process:0000000000000000 action_tapping_process
+     /tmp/cckcPPJs.s:1121   .bss:0000000000000001 waiting_buffer_head
+     /tmp/cckcPPJs.s:1123   .bss:0000000000000002 waiting_buffer
+     /tmp/cckcPPJs.s:82     .text.debug_tapping_key:0000000000000000 debug_tapping_key
+     /tmp/cckcPPJs.s:1125   .bss:0000000000000032 tapping_key
+     /tmp/cckcPPJs.s:104    .text.waiting_buffer_scan_tap:0000000000000000 waiting_buffer_scan_tap
+     /tmp/cckcPPJs.s:231    .text.process_tapping:0000000000000000 process_tapping
+     /tmp/cckcPPJs.s:894    .text.action_tapping_process:0000000000000000 action_tapping_process
                             *COM*:0000000000000001 debug_config
 
 UNDEFINED SYMBOLS

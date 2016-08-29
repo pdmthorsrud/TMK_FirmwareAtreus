@@ -146,19 +146,19 @@
   94               	.LFE8:
   96               		.text
   97               	.Letext0:
-  98               		.file 2 "/usr/lib/avr/include/stdint.h"
-  99               		.file 3 "../../common/matrix.h"
- 100               		.file 4 "../../common/action.h"
+  98               		.file 2 "../../common/matrix.h"
+  99               		.file 3 "../../common/action.h"
+ 100               		.file 4 "/usr/avr/include/stdint.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 suspend.c
-     /tmp/cc1fTSKl.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/cc1fTSKl.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/cc1fTSKl.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/cc1fTSKl.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/cc1fTSKl.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/cc1fTSKl.s:13     .text.suspend_power_down:0000000000000000 suspend_power_down
-     /tmp/cc1fTSKl.s:29     .text.suspend_wakeup_condition:0000000000000000 suspend_wakeup_condition
-     /tmp/cc1fTSKl.s:82     .text.suspend_wakeup_init:0000000000000000 suspend_wakeup_init
+     /tmp/ccVv72x0.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccVv72x0.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccVv72x0.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccVv72x0.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccVv72x0.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccVv72x0.s:13     .text.suspend_power_down:0000000000000000 suspend_power_down
+     /tmp/ccVv72x0.s:29     .text.suspend_wakeup_condition:0000000000000000 suspend_wakeup_condition
+     /tmp/ccVv72x0.s:82     .text.suspend_wakeup_init:0000000000000000 suspend_wakeup_init
 
 UNDEFINED SYMBOLS
 matrix_scan

@@ -504,14 +504,14 @@
   59               	.LFE84:
   61               		.text
   62               	.Letext0:
-  63               		.file 3 "/usr/lib/avr/include/stdint.h"
+  63               		.file 3 "/usr/avr/include/stdint.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 Device_AVR8.c
-     /tmp/ccHwNdjQ.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccHwNdjQ.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccHwNdjQ.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccHwNdjQ.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccHwNdjQ.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccHwNdjQ.s:13     .text.USB_Device_SendRemoteWakeup:0000000000000000 USB_Device_SendRemoteWakeup
+     /tmp/cclZ9i7l.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cclZ9i7l.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cclZ9i7l.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cclZ9i7l.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cclZ9i7l.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cclZ9i7l.s:13     .text.USB_Device_SendRemoteWakeup:0000000000000000 USB_Device_SendRemoteWakeup
 
 NO UNDEFINED SYMBOLS

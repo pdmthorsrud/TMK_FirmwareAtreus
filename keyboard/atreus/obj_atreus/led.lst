@@ -68,14 +68,14 @@
   37               	.LFE0:
   39               		.text
   40               	.Letext0:
-  41               		.file 2 "/usr/lib/avr/include/stdint.h"
+  41               		.file 2 "/usr/avr/include/stdint.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 led.c
-     /tmp/ccJxaegE.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccJxaegE.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccJxaegE.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccJxaegE.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccJxaegE.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccJxaegE.s:13     .text.led_set:0000000000000000 led_set
+     /tmp/cchK7fCh.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cchK7fCh.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cchK7fCh.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cchK7fCh.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cchK7fCh.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cchK7fCh.s:13     .text.led_set:0000000000000000 led_set
 
 NO UNDEFINED SYMBOLS

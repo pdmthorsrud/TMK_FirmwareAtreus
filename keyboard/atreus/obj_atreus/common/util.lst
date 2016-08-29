@@ -521,208 +521,207 @@
   86:../../common/util.c ****     bits = (bits & 0b00110011)<<2 | (bits & 0b11001100)>>2;
  443               		.loc 1 86 0
  444 0002 982F      		mov r25,r24
- 445 0004 9C7C      		andi r25,lo8(-52)
- 446 0006 392F      		mov r19,r25
- 447 0008 3695      		lsr r19
- 448 000a 3695      		lsr r19
- 449 000c 282F      		mov r18,r24
- 450 000e 2373      		andi r18,lo8(51)
- 451 0010 44E0      		ldi r20,lo8(4)
- 452 0012 249F      		mul r18,r20
- 453 0014 C001      		movw r24,r0
- 454 0016 1124      		clr __zero_reg__
- 455               	.LVL54:
- 456 0018 932F      		mov r25,r19
- 457 001a 982B      		or r25,r24
- 458               	.LVL55:
+ 445 0004 9373      		andi r25,lo8(51)
+ 446 0006 44E0      		ldi r20,lo8(4)
+ 447 0008 949F      		mul r25,r20
+ 448 000a 9001      		movw r18,r0
+ 449 000c 1124      		clr __zero_reg__
+ 450 000e 8C7C      		andi r24,lo8(-52)
+ 451               	.LVL54:
+ 452 0010 8695      		lsr r24
+ 453 0012 8695      		lsr r24
+ 454 0014 282B      		or r18,r24
+ 455               	.LVL55:
   87:../../common/util.c ****     bits = (bits & 0b01010101)<<1 | (bits & 0b10101010)>>1;
- 459               		.loc 1 87 0
- 460 001c 292F      		mov r18,r25
- 461 001e 2A7A      		andi r18,lo8(-86)
- 462 0020 2695      		lsr r18
- 463 0022 892F      		mov r24,r25
- 464 0024 8575      		andi r24,lo8(85)
- 465 0026 880F      		lsl r24
- 466               	.LVL56:
+ 456               		.loc 1 87 0
+ 457 0016 822F      		mov r24,r18
+ 458 0018 8575      		andi r24,lo8(85)
+ 459 001a 880F      		lsl r24
+ 460 001c 2A7A      		andi r18,lo8(-86)
+ 461               	.LVL56:
+ 462 001e 2695      		lsr r18
+ 463               	.LVL57:
   88:../../common/util.c ****     return bits;
   89:../../common/util.c **** }
- 467               		.loc 1 89 0
- 468 0028 822B      		or r24,r18
- 469               	.LVL57:
- 470 002a 0895      		ret
- 471               		.cfi_endproc
- 472               	.LFE6:
- 474               		.section	.text.bitrev16,"ax",@progbits
- 475               	.global	bitrev16
- 477               	bitrev16:
- 478               	.LFB7:
+ 464               		.loc 1 89 0
+ 465 0020 822B      		or r24,r18
+ 466               	.LVL58:
+ 467 0022 0895      		ret
+ 468               		.cfi_endproc
+ 469               	.LFE6:
+ 471               		.section	.text.bitrev16,"ax",@progbits
+ 472               	.global	bitrev16
+ 474               	bitrev16:
+ 475               	.LFB7:
   90:../../common/util.c **** 
   91:../../common/util.c **** uint16_t bitrev16(uint16_t bits)
   92:../../common/util.c **** {
- 479               		.loc 1 92 0
- 480               		.cfi_startproc
- 481               	.LVL58:
- 482 0000 1F93      		push r17
- 483               	.LCFI8:
- 484               		.cfi_def_cfa_offset 3
- 485               		.cfi_offset 17, -2
- 486 0002 CF93      		push r28
- 487               	.LCFI9:
- 488               		.cfi_def_cfa_offset 4
- 489               		.cfi_offset 28, -3
- 490 0004 DF93      		push r29
- 491               	.LCFI10:
- 492               		.cfi_def_cfa_offset 5
- 493               		.cfi_offset 29, -4
- 494 0006 1F92      		push __zero_reg__
- 495               	.LCFI11:
- 496               		.cfi_def_cfa_offset 6
- 497 0008 CDB7      		in r28,__SP_L__
- 498 000a DEB7      		in r29,__SP_H__
- 499               	.LCFI12:
- 500               		.cfi_def_cfa_register 28
- 501               	/* prologue: function */
- 502               	/* frame size = 1 */
- 503               	/* stack size = 4 */
- 504               	.L__stack_usage = 4
+ 476               		.loc 1 92 0
+ 477               		.cfi_startproc
+ 478               	.LVL59:
+ 479 0000 1F93      		push r17
+ 480               	.LCFI8:
+ 481               		.cfi_def_cfa_offset 3
+ 482               		.cfi_offset 17, -2
+ 483 0002 CF93      		push r28
+ 484               	.LCFI9:
+ 485               		.cfi_def_cfa_offset 4
+ 486               		.cfi_offset 28, -3
+ 487 0004 DF93      		push r29
+ 488               	.LCFI10:
+ 489               		.cfi_def_cfa_offset 5
+ 490               		.cfi_offset 29, -4
+ 491 0006 1F92      		push __zero_reg__
+ 492               	.LCFI11:
+ 493               		.cfi_def_cfa_offset 6
+ 494 0008 CDB7      		in r28,__SP_L__
+ 495 000a DEB7      		in r29,__SP_H__
+ 496               	.LCFI12:
+ 497               		.cfi_def_cfa_register 28
+ 498               	/* prologue: function */
+ 499               	/* frame size = 1 */
+ 500               	/* stack size = 4 */
+ 501               	.L__stack_usage = 4
   93:../../common/util.c ****     bits = bitrev(bits & 0x00ff)<<8 | bitrev((bits & 0xff00)>>8);
- 505               		.loc 1 93 0
- 506 000c 9983      		std Y+1,r25
- 507 000e 0E94 0000 		call bitrev
- 508               	.LVL59:
- 509 0012 182F      		mov r17,r24
- 510 0014 9981      		ldd r25,Y+1
- 511 0016 892F      		mov r24,r25
- 512 0018 0E94 0000 		call bitrev
- 513               	.LVL60:
- 514 001c 212F      		mov r18,r17
- 515 001e 30E0      		ldi r19,0
- 516 0020 322F      		mov r19,r18
- 517 0022 2227      		clr r18
+ 502               		.loc 1 93 0
+ 503 000c 9983      		std Y+1,r25
+ 504 000e 0E94 0000 		call bitrev
+ 505               	.LVL60:
+ 506 0012 182F      		mov r17,r24
+ 507 0014 9981      		ldd r25,Y+1
+ 508 0016 892F      		mov r24,r25
+ 509 0018 0E94 0000 		call bitrev
+ 510               	.LVL61:
   94:../../common/util.c ****     return bits;
+ 511               		.loc 1 94 0
+ 512 001c 212F      		mov r18,r17
+ 513 001e 30E0      		ldi r19,0
+ 514 0020 322F      		mov r19,r18
+ 515 0022 2227      		clr r18
   95:../../common/util.c **** }
- 518               		.loc 1 95 0
- 519 0024 A901      		movw r20,r18
- 520 0026 482B      		or r20,r24
- 521 0028 CA01      		movw r24,r20
- 522               	.LVL61:
- 523               	/* epilogue start */
- 524 002a 0F90      		pop __tmp_reg__
- 525 002c DF91      		pop r29
- 526 002e CF91      		pop r28
- 527 0030 1F91      		pop r17
- 528 0032 0895      		ret
- 529               		.cfi_endproc
- 530               	.LFE7:
- 532               		.section	.text.bitrev32,"ax",@progbits
- 533               	.global	bitrev32
- 535               	bitrev32:
- 536               	.LFB8:
+ 516               		.loc 1 95 0
+ 517 0024 A901      		movw r20,r18
+ 518 0026 482B      		or r20,r24
+ 519 0028 CA01      		movw r24,r20
+ 520               	.LVL62:
+ 521               	/* epilogue start */
+ 522 002a 0F90      		pop __tmp_reg__
+ 523 002c DF91      		pop r29
+ 524 002e CF91      		pop r28
+ 525 0030 1F91      		pop r17
+ 526 0032 0895      		ret
+ 527               		.cfi_endproc
+ 528               	.LFE7:
+ 530               		.section	.text.bitrev32,"ax",@progbits
+ 531               	.global	bitrev32
+ 533               	bitrev32:
+ 534               	.LFB8:
   96:../../common/util.c **** 
   97:../../common/util.c **** uint32_t bitrev32(uint32_t bits)
   98:../../common/util.c **** {
- 537               		.loc 1 98 0
- 538               		.cfi_startproc
- 539               	.LVL62:
- 540 0000 CF92      		push r12
- 541               	.LCFI13:
- 542               		.cfi_def_cfa_offset 3
- 543               		.cfi_offset 12, -2
- 544 0002 DF92      		push r13
- 545               	.LCFI14:
- 546               		.cfi_def_cfa_offset 4
- 547               		.cfi_offset 13, -3
- 548 0004 EF92      		push r14
- 549               	.LCFI15:
- 550               		.cfi_def_cfa_offset 5
- 551               		.cfi_offset 14, -4
- 552 0006 FF92      		push r15
- 553               	.LCFI16:
- 554               		.cfi_def_cfa_offset 6
- 555               		.cfi_offset 15, -5
- 556 0008 0F93      		push r16
- 557               	.LCFI17:
- 558               		.cfi_def_cfa_offset 7
- 559               		.cfi_offset 16, -6
- 560 000a 1F93      		push r17
- 561               	.LCFI18:
- 562               		.cfi_def_cfa_offset 8
- 563               		.cfi_offset 17, -7
- 564 000c CF93      		push r28
- 565               	.LCFI19:
- 566               		.cfi_def_cfa_offset 9
- 567               		.cfi_offset 28, -8
- 568 000e DF93      		push r29
- 569               	.LCFI20:
- 570               		.cfi_def_cfa_offset 10
- 571               		.cfi_offset 29, -9
- 572               	/* prologue: function */
- 573               	/* frame size = 0 */
- 574               	/* stack size = 8 */
- 575               	.L__stack_usage = 8
- 576 0010 6B01      		movw r12,r22
- 577 0012 7C01      		movw r14,r24
+ 535               		.loc 1 98 0
+ 536               		.cfi_startproc
+ 537               	.LVL63:
+ 538 0000 CF92      		push r12
+ 539               	.LCFI13:
+ 540               		.cfi_def_cfa_offset 3
+ 541               		.cfi_offset 12, -2
+ 542 0002 DF92      		push r13
+ 543               	.LCFI14:
+ 544               		.cfi_def_cfa_offset 4
+ 545               		.cfi_offset 13, -3
+ 546 0004 EF92      		push r14
+ 547               	.LCFI15:
+ 548               		.cfi_def_cfa_offset 5
+ 549               		.cfi_offset 14, -4
+ 550 0006 FF92      		push r15
+ 551               	.LCFI16:
+ 552               		.cfi_def_cfa_offset 6
+ 553               		.cfi_offset 15, -5
+ 554 0008 0F93      		push r16
+ 555               	.LCFI17:
+ 556               		.cfi_def_cfa_offset 7
+ 557               		.cfi_offset 16, -6
+ 558 000a 1F93      		push r17
+ 559               	.LCFI18:
+ 560               		.cfi_def_cfa_offset 8
+ 561               		.cfi_offset 17, -7
+ 562 000c CF93      		push r28
+ 563               	.LCFI19:
+ 564               		.cfi_def_cfa_offset 9
+ 565               		.cfi_offset 28, -8
+ 566 000e DF93      		push r29
+ 567               	.LCFI20:
+ 568               		.cfi_def_cfa_offset 10
+ 569               		.cfi_offset 29, -9
+ 570               	/* prologue: function */
+ 571               	/* frame size = 0 */
+ 572               	/* stack size = 8 */
+ 573               	.L__stack_usage = 8
+ 574 0010 6B01      		movw r12,r22
+ 575 0012 7C01      		movw r14,r24
   99:../../common/util.c ****     bits = (uint32_t)bitrev16(bits & 0x0000ffff)<<16 | bitrev16((bits & 0xffff0000)>>16);
- 578               		.loc 1 99 0
- 579 0014 CB01      		movw r24,r22
- 580 0016 0E94 0000 		call bitrev16
- 581               	.LVL63:
- 582 001a EC01      		movw r28,r24
- 583 001c C701      		movw r24,r14
- 584 001e 0E94 0000 		call bitrev16
- 585               	.LVL64:
- 586 0022 AC01      		movw r20,r24
- 587               	.LVL65:
- 588 0024 CE01      		movw r24,r28
- 589 0026 A0E0      		ldi r26,0
- 590 0028 B0E0      		ldi r27,0
- 591 002a DC01      		movw r26,r24
- 592 002c 9927      		clr r25
- 593 002e 8827      		clr r24
- 594 0030 60E0      		ldi r22,0
- 595 0032 70E0      		ldi r23,0
- 596 0034 8C01      		movw r16,r24
- 597 0036 9D01      		movw r18,r26
- 598 0038 042B      		or r16,r20
- 599 003a 152B      		or r17,r21
- 600 003c 262B      		or r18,r22
- 601 003e 372B      		or r19,r23
- 602 0040 C901      		movw r24,r18
- 603 0042 B801      		movw r22,r16
- 604               	/* epilogue start */
+ 576               		.loc 1 99 0
+ 577 0014 CB01      		movw r24,r22
+ 578 0016 0E94 0000 		call bitrev16
+ 579               	.LVL64:
+ 580 001a EC01      		movw r28,r24
+ 581 001c C701      		movw r24,r14
+ 582 001e 0E94 0000 		call bitrev16
+ 583               	.LVL65:
+ 584 0022 AC01      		movw r20,r24
+ 585               	.LVL66:
  100:../../common/util.c ****     return bits;
+ 586               		.loc 1 100 0
+ 587 0024 CE01      		movw r24,r28
+ 588 0026 A0E0      		ldi r26,0
+ 589 0028 B0E0      		ldi r27,0
+ 590 002a DC01      		movw r26,r24
+ 591 002c 9927      		clr r25
+ 592 002e 8827      		clr r24
+ 593 0030 60E0      		ldi r22,0
+ 594 0032 70E0      		ldi r23,0
+ 595 0034 8C01      		movw r16,r24
+ 596 0036 9D01      		movw r18,r26
+ 597 0038 042B      		or r16,r20
+ 598 003a 152B      		or r17,r21
+ 599 003c 262B      		or r18,r22
+ 600 003e 372B      		or r19,r23
+ 601 0040 C901      		movw r24,r18
+ 602 0042 B801      		movw r22,r16
+ 603               	/* epilogue start */
  101:../../common/util.c **** }
- 605               		.loc 1 101 0
- 606 0044 DF91      		pop r29
- 607 0046 CF91      		pop r28
- 608               	.LVL66:
- 609 0048 1F91      		pop r17
- 610 004a 0F91      		pop r16
- 611 004c FF90      		pop r15
- 612 004e EF90      		pop r14
- 613 0050 DF90      		pop r13
- 614 0052 CF90      		pop r12
- 615 0054 0895      		ret
- 616               		.cfi_endproc
- 617               	.LFE8:
- 619               		.text
- 620               	.Letext0:
- 621               		.file 2 "/usr/lib/avr/include/stdint.h"
+ 604               		.loc 1 101 0
+ 605 0044 DF91      		pop r29
+ 606 0046 CF91      		pop r28
+ 607               	.LVL67:
+ 608 0048 1F91      		pop r17
+ 609 004a 0F91      		pop r16
+ 610 004c FF90      		pop r15
+ 611 004e EF90      		pop r14
+ 612 0050 DF90      		pop r13
+ 613 0052 CF90      		pop r12
+ 614 0054 0895      		ret
+ 615               		.cfi_endproc
+ 616               	.LFE8:
+ 618               		.text
+ 619               	.Letext0:
+ 620               		.file 2 "/usr/avr/include/stdint.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 util.c
-     /tmp/ccJ6wCUm.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccJ6wCUm.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccJ6wCUm.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccJ6wCUm.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccJ6wCUm.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccJ6wCUm.s:13     .text.bitpop:0000000000000000 bitpop
-     /tmp/ccJ6wCUm.s:50     .text.bitpop16:0000000000000000 bitpop16
-     /tmp/ccJ6wCUm.s:88     .text.bitpop32:0000000000000000 bitpop32
-     /tmp/ccJ6wCUm.s:156    .text.biton:0000000000000000 biton
-     /tmp/ccJ6wCUm.s:210    .text.biton16:0000000000000000 biton16
-     /tmp/ccJ6wCUm.s:289    .text.biton32:0000000000000000 biton32
-     /tmp/ccJ6wCUm.s:431    .text.bitrev:0000000000000000 bitrev
-     /tmp/ccJ6wCUm.s:477    .text.bitrev16:0000000000000000 bitrev16
-     /tmp/ccJ6wCUm.s:535    .text.bitrev32:0000000000000000 bitrev32
+     /tmp/ccFT6Tb7.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccFT6Tb7.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccFT6Tb7.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccFT6Tb7.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccFT6Tb7.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccFT6Tb7.s:13     .text.bitpop:0000000000000000 bitpop
+     /tmp/ccFT6Tb7.s:50     .text.bitpop16:0000000000000000 bitpop16
+     /tmp/ccFT6Tb7.s:88     .text.bitpop32:0000000000000000 bitpop32
+     /tmp/ccFT6Tb7.s:156    .text.biton:0000000000000000 biton
+     /tmp/ccFT6Tb7.s:210    .text.biton16:0000000000000000 biton16
+     /tmp/ccFT6Tb7.s:289    .text.biton32:0000000000000000 biton32
+     /tmp/ccFT6Tb7.s:431    .text.bitrev:0000000000000000 bitrev
+     /tmp/ccFT6Tb7.s:474    .text.bitrev16:0000000000000000 bitrev16
+     /tmp/ccFT6Tb7.s:533    .text.bitrev32:0000000000000000 bitrev32
 
 NO UNDEFINED SYMBOLS

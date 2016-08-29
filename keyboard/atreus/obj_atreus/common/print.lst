@@ -182,19 +182,19 @@
  130               	.LFE4:
  132               		.text
  133               	.Letext0:
- 134               		.file 2 "/usr/lib/avr/include/stdint.h"
+ 134               		.file 2 "/usr/avr/include/stdint.h"
  135               		.file 3 "../../common/xprintf.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 print.c
-     /tmp/ccSkJ9rd.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccSkJ9rd.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccSkJ9rd.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccSkJ9rd.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccSkJ9rd.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccSkJ9rd.s:13     .text.print_set_sendchar:0000000000000000 print_set_sendchar
-     /tmp/ccSkJ9rd.s:33     .text.print_S:0000000000000000 print_S
-     /tmp/ccSkJ9rd.s:95     .text.print_lf:0000000000000000 print_lf
-     /tmp/ccSkJ9rd.s:113    .text.print_crlf:0000000000000000 print_crlf
+     /tmp/ccO6b0hX.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccO6b0hX.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccO6b0hX.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccO6b0hX.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccO6b0hX.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccO6b0hX.s:13     .text.print_set_sendchar:0000000000000000 print_set_sendchar
+     /tmp/ccO6b0hX.s:33     .text.print_S:0000000000000000 print_S
+     /tmp/ccO6b0hX.s:95     .text.print_lf:0000000000000000 print_lf
+     /tmp/ccO6b0hX.s:113    .text.print_crlf:0000000000000000 print_crlf
 
 UNDEFINED SYMBOLS
 xfunc_out

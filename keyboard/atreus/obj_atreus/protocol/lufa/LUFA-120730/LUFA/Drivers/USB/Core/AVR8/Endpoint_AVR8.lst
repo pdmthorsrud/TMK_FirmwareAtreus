@@ -100,7 +100,7 @@
   27               	.L2:
   28               		.loc 1 74 0 is_stmt 0 discriminator 1
   29 0002 9730      		cpi r25,lo8(7)
-  30 0004 00F4      		brsh .L12
+  30 0004 00F4      		brsh .L11
   31               	.LVL2:
   32               	.LBB48:
   33               	.LBB49:
@@ -378,8 +378,9 @@
  270:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 					UENUM = (Address & ENDPOINT_EPNUM_MASK);
   36               		.loc 2 270 0 is_stmt 1
   37 0006 9093 E900 		sts 233,r25
-  38               	.LBE50:
-  39               	.LBE49:
+  38               	.LVL3:
+  39               	.LBE50:
+  40               	.LBE49:
   75:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 	{
   76:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		uint8_t UECFG0XTemp;
   77:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		uint8_t UECFG1XTemp;
@@ -388,9 +389,9 @@
   80:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		Endpoint_SelectEndpoint(EPNum);
   81:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 
   82:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		if (EPNum == Number)
-  40               		.loc 1 82 0
-  41 000a 9817      		cp r25,r24
-  42 000c 01F0      		breq .L9
+  41               		.loc 1 82 0
+  42 000a 9817      		cp r25,r24
+  43 000c 01F0      		breq .L8
   83:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		{
   84:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 			UECFG0XTemp = UECFG0XData;
   85:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 			UECFG1XTemp = UECFG1XData;
@@ -399,39 +400,50 @@
   88:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		else
   89:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		{
   90:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 			UECFG0XTemp = UECFG0X;
-  43               		.loc 1 90 0
-  44 000e 7091 EC00 		lds r23,236
-  45               	.LVL3:
+  44               		.loc 1 90 0
+  45 000e 7091 EC00 		lds r23,236
+  46               	.LVL4:
   91:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 			UECFG1XTemp = UECFG1X;
-  46               		.loc 1 91 0
-  47 0012 2091 ED00 		lds r18,237
-  48               	.LVL4:
+  47               		.loc 1 91 0
+  48 0012 2091 ED00 		lds r18,237
+  49               	.LVL5:
   92:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 			UEIENXTemp  = UEIENX;
-  49               		.loc 1 92 0
-  50 0016 5091 F000 		lds r21,240
-  51               	.LVL5:
-  52 001a 00C0      		rjmp .L3
-  53               	.LVL6:
-  54               	.L9:
+  50               		.loc 1 92 0
+  51 0016 5091 F000 		lds r21,240
+  52               	.LVL6:
+  53 001a 00C0      		rjmp .L3
+  54               	.LVL7:
+  55               	.L8:
   85:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 			UEIENXTemp  = 0;
-  55               		.loc 1 85 0
-  56 001c 242F      		mov r18,r20
+  56               		.loc 1 85 0
+  57 001c 242F      		mov r18,r20
   84:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 			UECFG1XTemp = UECFG1XData;
-  57               		.loc 1 84 0
-  58 001e 762F      		mov r23,r22
+  58               		.loc 1 84 0
+  59 001e 762F      		mov r23,r22
   86:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		}
-  59               		.loc 1 86 0
-  60 0020 50E0      		ldi r21,0
-  61               	.L3:
-  62               	.LVL7:
+  60               		.loc 1 86 0
+  61 0020 50E0      		ldi r21,0
+  62               	.L3:
+  63               	.LVL8:
   93:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		}
   94:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 
   95:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		if (!(UECFG1XTemp & (1 << ALLOC)))
-  63               		.loc 1 95 0
-  64 0022 21FF      		sbrs r18,1
-  65 0024 00C0      		rjmp .L5
-  66               	.LBB51:
-  67               	.LBB52:
+  64               		.loc 1 95 0
+  65 0022 21FD      		sbrc r18,1
+  66 0024 00C0      		rjmp .L4
+  67               	.LVL9:
+  68               	.L6:
+  69               	.LBE48:
+  74:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 	{
+  70               		.loc 1 74 0
+  71 0026 9F5F      		subi r25,lo8(-(1))
+  72               	.LVL10:
+  73 0028 00C0      		rjmp .L2
+  74               	.LVL11:
+  75               	.L4:
+  76               	.LBB57:
+  77               	.LBB51:
+  78               	.LBB52:
  271:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 				#endif
  272:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 			}
  273:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 
@@ -465,42 +477,42 @@
  301:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 			static inline void Endpoint_DisableEndpoint(void)
  302:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 			{
  303:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 				UECONX &= ~(1 << EPEN);
-  68               		.loc 2 303 0
-  69 0026 3091 EB00 		lds r19,235
-  70 002a 3E7F      		andi r19,lo8(-2)
-  71 002c 3093 EB00 		sts 235,r19
-  72               	.LBE52:
-  73               	.LBE51:
+  79               		.loc 2 303 0
+  80 002a 3091 EB00 		lds r19,235
+  81 002e 3E7F      		andi r19,lo8(-2)
+  82 0030 3093 EB00 		sts 235,r19
+  83               	.LBE52:
+  84               	.LBE51:
   96:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		  continue;
   97:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 
   98:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		Endpoint_DisableEndpoint();
   99:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		UECFG1X &= ~(1 << ALLOC);
-  74               		.loc 1 99 0
-  75 0030 3091 ED00 		lds r19,237
-  76 0034 3D7F      		andi r19,lo8(-3)
-  77 0036 3093 ED00 		sts 237,r19
-  78               	.LBB53:
-  79               	.LBB54:
+  85               		.loc 1 99 0
+  86 0034 3091 ED00 		lds r19,237
+  87 0038 3D7F      		andi r19,lo8(-3)
+  88 003a 3093 ED00 		sts 237,r19
+  89               	.LBB53:
+  90               	.LBB54:
  294:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 			}
-  80               		.loc 2 294 0
-  81 003a 3091 EB00 		lds r19,235
-  82 003e 3160      		ori r19,lo8(1)
-  83 0040 3093 EB00 		sts 235,r19
-  84               	.LBE54:
-  85               	.LBE53:
+  91               		.loc 2 294 0
+  92 003e 3091 EB00 		lds r19,235
+  93 0042 3160      		ori r19,lo8(1)
+  94 0044 3093 EB00 		sts 235,r19
+  95               	.LBE54:
+  96               	.LBE53:
  100:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 
  101:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		Endpoint_EnableEndpoint();
  102:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		UECFG0X = UECFG0XTemp;
-  86               		.loc 1 102 0
-  87 0044 7093 EC00 		sts 236,r23
+  97               		.loc 1 102 0
+  98 0048 7093 EC00 		sts 236,r23
  103:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		UECFG1X = UECFG1XTemp;
-  88               		.loc 1 103 0
-  89 0048 2093 ED00 		sts 237,r18
+  99               		.loc 1 103 0
+ 100 004c 2093 ED00 		sts 237,r18
  104:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		UEIENX  = UEIENXTemp;
-  90               		.loc 1 104 0
-  91 004c 5093 F000 		sts 240,r21
-  92               	.LBB55:
-  93               	.LBB56:
+ 101               		.loc 1 104 0
+ 102 0050 5093 F000 		sts 240,r21
+ 103               	.LBB55:
+ 104               	.LBB56:
  304:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 			}
  305:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 
  306:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 			/** Determines if the currently selected endpoint is enabled, but not necessarily configured.
@@ -568,334 +580,307 @@
  368:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 			static inline bool Endpoint_IsConfigured(void)
  369:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 			{
  370:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 				return ((UESTA0X & (1 << CFGOK)) ? true : false);
-  94               		.loc 2 370 0
-  95 0050 2091 EE00 		lds r18,238
-  96               	.LVL8:
-  97               	.LBE56:
-  98               	.LBE55:
+ 105               		.loc 2 370 0
+ 106 0054 2091 EE00 		lds r18,238
+ 107               	.LVL12:
+ 108               	.LBE56:
+ 109               	.LBE55:
  105:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 
  106:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		if (!(Endpoint_IsConfigured()))
-  99               		.loc 1 106 0
- 100 0054 27FF      		sbrs r18,7
- 101 0056 00C0      		rjmp .L10
- 102               	.L5:
- 103               	.LBE48:
-  74:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 	{
- 104               		.loc 1 74 0 discriminator 2
- 105 0058 9F5F      		subi r25,lo8(-(1))
- 106               	.LVL9:
- 107 005a 00C0      		rjmp .L2
- 108               	.LVL10:
- 109               	.L12:
- 110               	.LBE47:
- 111               	.LBB58:
- 112               	.LBB59:
- 270:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 				#endif
- 113               		.loc 2 270 0
- 114 005c 8F70      		andi r24,lo8(15)
- 115               	.LVL11:
- 116 005e 8093 E900 		sts 233,r24
- 117               	.LBE59:
- 118               	.LBE58:
+ 110               		.loc 1 106 0
+ 111 0058 27FD      		sbrc r18,7
+ 112 005a 00C0      		rjmp .L6
  107:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		  return false;
+ 113               		.loc 1 107 0
+ 114 005c 80E0      		ldi r24,0
+ 115               	.LVL13:
+ 116               	.LBE57:
+ 117               	.LBE47:
  108:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 	}
  109:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 
  110:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 	Endpoint_SelectEndpoint(Number);
  111:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 	return true;
- 119               		.loc 1 111 0
- 120 0062 81E0      		ldi r24,lo8(1)
- 121 0064 0895      		ret
- 122               	.LVL12:
- 123               	.L10:
- 124               	.LBB60:
- 125               	.LBB57:
- 107:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		  return false;
- 126               		.loc 1 107 0
- 127 0066 80E0      		ldi r24,0
- 128               	.LVL13:
- 129               	.LBE57:
- 130               	.LBE60:
  112:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** #endif
  113:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** }
- 131               		.loc 1 113 0
- 132 0068 0895      		ret
- 133               		.cfi_endproc
- 134               	.LFE85:
- 136               		.section	.text.Endpoint_ConfigureEndpointTable,"ax",@progbits
- 137               	.global	Endpoint_ConfigureEndpointTable
- 139               	Endpoint_ConfigureEndpointTable:
- 140               	.LFB84:
+ 118               		.loc 1 113 0
+ 119 005e 0895      		ret
+ 120               	.LVL14:
+ 121               	.L11:
+ 122               	.LBB58:
+ 123               	.LBB59:
+ 270:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 				#endif
+ 124               		.loc 2 270 0
+ 125 0060 8F70      		andi r24,lo8(15)
+ 126               	.LVL15:
+ 127 0062 8093 E900 		sts 233,r24
+ 128               	.LVL16:
+ 129               	.LBE59:
+ 130               	.LBE58:
+ 111:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** #endif
+ 131               		.loc 1 111 0
+ 132 0066 81E0      		ldi r24,lo8(1)
+ 133 0068 0895      		ret
+ 134               		.cfi_endproc
+ 135               	.LFE85:
+ 137               		.section	.text.Endpoint_ConfigureEndpointTable,"ax",@progbits
+ 138               	.global	Endpoint_ConfigureEndpointTable
+ 140               	Endpoint_ConfigureEndpointTable:
+ 141               	.LFB84:
   47:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 	for (uint8_t i = 0; i < Entries; i++)
- 141               		.loc 1 47 0
- 142               		.cfi_startproc
- 143               	.LVL14:
- 144 0000 EF92      		push r14
- 145               	.LCFI0:
- 146               		.cfi_def_cfa_offset 3
- 147               		.cfi_offset 14, -2
- 148 0002 FF92      		push r15
- 149               	.LCFI1:
- 150               		.cfi_def_cfa_offset 4
- 151               		.cfi_offset 15, -3
- 152 0004 0F93      		push r16
- 153               	.LCFI2:
- 154               		.cfi_def_cfa_offset 5
- 155               		.cfi_offset 16, -4
- 156 0006 1F93      		push r17
- 157               	.LCFI3:
- 158               		.cfi_def_cfa_offset 6
- 159               		.cfi_offset 17, -5
- 160 0008 CF93      		push r28
- 161               	.LCFI4:
- 162               		.cfi_def_cfa_offset 7
- 163               		.cfi_offset 28, -6
- 164 000a DF93      		push r29
- 165               	.LCFI5:
- 166               		.cfi_def_cfa_offset 8
- 167               		.cfi_offset 29, -7
- 168               	/* prologue: function */
- 169               	/* frame size = 0 */
- 170               	/* stack size = 6 */
- 171               	.L__stack_usage = 6
- 172 000c E62E      		mov r14,r22
- 173               	.LVL15:
- 174 000e EC01      		movw r28,r24
- 175 0010 8C01      		movw r16,r24
- 176 0012 0C5F      		subi r16,-4
- 177 0014 1F4F      		sbci r17,-1
- 178               	.LBB61:
+ 142               		.loc 1 47 0
+ 143               		.cfi_startproc
+ 144               	.LVL17:
+ 145 0000 0F93      		push r16
+ 146               	.LCFI0:
+ 147               		.cfi_def_cfa_offset 3
+ 148               		.cfi_offset 16, -2
+ 149 0002 1F93      		push r17
+ 150               	.LCFI1:
+ 151               		.cfi_def_cfa_offset 4
+ 152               		.cfi_offset 17, -3
+ 153 0004 CF93      		push r28
+ 154               	.LCFI2:
+ 155               		.cfi_def_cfa_offset 5
+ 156               		.cfi_offset 28, -4
+ 157 0006 DF93      		push r29
+ 158               	.LCFI3:
+ 159               		.cfi_def_cfa_offset 6
+ 160               		.cfi_offset 29, -5
+ 161               	/* prologue: function */
+ 162               	/* frame size = 0 */
+ 163               	/* stack size = 4 */
+ 164               	.L__stack_usage = 4
+ 165 0008 062F      		mov r16,r22
+ 166               	.LVL18:
+ 167 000a EC01      		movw r28,r24
+ 168 000c 2496      		adiw r28,4
+ 169               	.LBB60:
   48:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 	{
- 179               		.loc 1 48 0
- 180 0016 F12C      		mov r15,__zero_reg__
- 181               	.LVL16:
- 182               	.L14:
+ 170               		.loc 1 48 0
+ 171 000e 10E0      		ldi r17,0
+ 172               	.LVL19:
+ 173               	.L13:
   48:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 	{
- 183               		.loc 1 48 0 is_stmt 0 discriminator 1
- 184 0018 FE14      		cp r15,r14
- 185 001a 01F0      		breq .L26
+ 174               		.loc 1 48 0 is_stmt 0 discriminator 1
+ 175 0010 1017      		cp r17,r16
+ 176 0012 01F0      		breq .L24
   50:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		  continue;
- 186               		.loc 1 50 0 is_stmt 1
- 187 001c 5881      		ld r21,Y
- 188 001e 5523      		tst r21
- 189 0020 01F0      		breq .L16
+ 177               		.loc 1 50 0 is_stmt 1
+ 178 0014 FE01      		movw r30,r28
+ 179 0016 3497      		sbiw r30,4
+ 180 0018 6081      		ld r22,Z
+ 181 001a 6111      		cpse r22,__zero_reg__
+ 182 001c 00C0      		rjmp .L14
+ 183               	.L20:
+  48:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 	{
+ 184               		.loc 1 48 0
+ 185 001e 1F5F      		subi r17,lo8(-(1))
+ 186               	.LVL20:
+ 187 0020 2596      		adiw r28,5
+ 188 0022 00C0      		rjmp .L13
+ 189               	.L14:
   53:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		  return false;
  190               		.loc 1 53 0
- 191 0022 F801      		movw r30,r16
- 192 0024 2081      		ld r18,Z
- 193 0026 6981      		ldd r22,Y+1
- 194 0028 7A81      		ldd r23,Y+2
- 195 002a 3197      		sbiw r30,1
- 196 002c 9081      		ld r25,Z
- 197               	.LVL17:
- 198               	.LBB62:
- 199               	.LBB63:
+ 191 0024 2881      		ld r18,Y
+ 192 0026 FE01      		movw r30,r28
+ 193 0028 3397      		sbiw r30,3
+ 194 002a A081      		ld r26,Z
+ 195 002c B181      		ldd r27,Z+1
+ 196 002e 3296      		adiw r30,2
+ 197 0030 9081      		ld r25,Z
+ 198               	.LVL21:
+ 199               	.LBB61:
+ 200               	.LBB62:
  205:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 			
- 200               		.loc 2 205 0
- 201 002e 852F      		mov r24,r21
- 202 0030 8F70      		andi r24,lo8(15)
- 203               	.LVL18:
+ 201               		.loc 2 205 0
+ 202 0032 862F      		mov r24,r22
+ 203 0034 8F70      		andi r24,lo8(15)
+ 204               	.LVL22:
  207:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 				  return false;
- 204               		.loc 2 207 0
- 205 0032 8730      		cpi r24,lo8(7)
- 206 0034 00F0      		brlo .L17
- 207               	.LVL19:
- 208               	.L23:
- 209               	.LBE63:
+ 205               		.loc 2 207 0
+ 206 0036 8730      		cpi r24,lo8(7)
+ 207 0038 00F0      		brlo .L15
+ 208               	.LVL23:
+ 209               	.L21:
  210               	.LBE62:
+ 211               	.LBE61:
   54:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 	}
- 211               		.loc 1 54 0
- 212 0036 80E0      		ldi r24,0
- 213 0038 00C0      		rjmp .L18
- 214               	.LVL20:
- 215               	.L17:
- 216               	.LBB67:
+ 212               		.loc 1 54 0
+ 213 003a 80E0      		ldi r24,0
+ 214 003c 00C0      		rjmp .L16
+ 215               	.LVL24:
+ 216               	.L15:
  217               	.LBB66:
+ 218               	.LBB65:
  210:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 				                                      ((Type << EPTYPE0) | ((Address & ENDPOINT_DIR_IN) ? (1 <<
- 218               		.loc 2 210 0
- 219 003a 2230      		cpi r18,lo8(2)
- 220 003c 00F4      		brsh .L25
- 221 003e 42E0      		ldi r20,lo8(2)
- 222 0040 00C0      		rjmp .L19
- 223               	.L25:
- 224 0042 46E0      		ldi r20,lo8(6)
- 225               	.L19:
- 226               	.LVL21:
- 227               	.LBB64:
- 228               	.LBB65:
+ 219               		.loc 2 210 0
+ 220 003e 2230      		cpi r18,lo8(2)
+ 221 0040 00F4      		brsh .L23
+ 222 0042 42E0      		ldi r20,lo8(2)
+ 223 0044 00C0      		rjmp .L17
+ 224               	.L23:
+ 225 0046 46E0      		ldi r20,lo8(6)
+ 226               	.L17:
+ 227               	.LVL25:
+ 228               	.LBB63:
+ 229               	.LBB64:
   98:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 
- 229               		.loc 2 98 0
- 230 0044 E8E0      		ldi r30,lo8(8)
- 231 0046 F0E0      		ldi r31,0
+ 230               		.loc 2 98 0
+ 231 0048 E8E0      		ldi r30,lo8(8)
+ 232 004a F0E0      		ldi r31,0
   97:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 				uint16_t CheckBytes = 8;
- 232               		.loc 2 97 0
- 233 0048 20E0      		ldi r18,0
- 234               	.LVL22:
- 235               	.L20:
+ 233               		.loc 2 97 0
+ 234 004c 20E0      		ldi r18,0
+ 235               	.LVL26:
+ 236               	.L18:
  100:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 				{
- 236               		.loc 2 100 0
- 237 004a E617      		cp r30,r22
- 238 004c F707      		cpc r31,r23
- 239 004e 00F4      		brsh .L27
+ 237               		.loc 2 100 0
+ 238 004e EA17      		cp r30,r26
+ 239 0050 FB07      		cpc r31,r27
+ 240 0052 00F4      		brsh .L25
  102:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 					CheckBytes <<= 1;
- 240               		.loc 2 102 0
- 241 0050 2F5F      		subi r18,lo8(-(1))
- 242               	.LVL23:
+ 241               		.loc 2 102 0
+ 242 0054 2F5F      		subi r18,lo8(-(1))
+ 243               	.LVL27:
  103:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 				}
- 243               		.loc 2 103 0
- 244 0052 EE0F      		lsl r30
- 245 0054 FF1F      		rol r31
- 246               	.LVL24:
- 247 0056 00C0      		rjmp .L20
- 248               	.L27:
- 106:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 			}
- 249               		.loc 2 106 0
- 250 0058 2295      		swap r18
- 251               	.LVL25:
- 252 005a 207F      		andi r18,lo8(-16)
- 253               	.LBE65:
- 254               	.LBE64:
+ 244               		.loc 2 103 0
+ 245 0056 EE0F      		lsl r30
+ 246 0058 FF1F      		rol r31
+ 247               	.LVL28:
+ 248 005a 00C0      		rjmp .L18
+ 249               	.L25:
+ 250               	.LVL29:
+ 251               	.LBE64:
+ 252               	.LBE63:
  210:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 				                                      ((Type << EPTYPE0) | ((Address & ENDPOINT_DIR_IN) ? (1 <<
- 255               		.loc 2 210 0
- 256 005c 422B      		or r20,r18
- 211:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 				                                      ((1 << ALLOC) | ((Banks > 1) ? (1 << EPBK0) : 0) | Endpoi
- 257               		.loc 2 211 0
- 258 005e F0E4      		ldi r31,lo8(64)
- 259 0060 9F9F      		mul r25,r31
- 260 0062 9001      		movw r18,r0
- 261 0064 1124      		clr __zero_reg__
- 262 0066 551F      		rol r21
- 263 0068 5527      		clr r21
- 264 006a 551F      		rol r21
- 265               	.LVL26:
- 210:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 				                                      ((Type << EPTYPE0) | ((Address & ENDPOINT_DIR_IN) ? (1 <<
- 266               		.loc 2 210 0
- 267 006c 652F      		mov r22,r21
- 268               	.LVL27:
- 269 006e 622B      		or r22,r18
- 270 0070 0E94 0000 		call Endpoint_ConfigureEndpoint_Prv
- 271               	.LVL28:
- 272               	.LBE66:
- 273               	.LBE67:
+ 253               		.loc 2 210 0
+ 254 005c 2295      		swap r18
+ 255 005e 207F      		andi r18,lo8(-16)
+ 256 0060 422B      		or r20,r18
+ 257 0062 50E4      		ldi r21,lo8(64)
+ 258 0064 959F      		mul r25,r21
+ 259 0066 9001      		movw r18,r0
+ 260 0068 1124      		clr __zero_reg__
+ 261 006a 661F      		rol r22
+ 262 006c 6627      		clr r22
+ 263 006e 661F      		rol r22
+ 264               	.LVL30:
+ 265 0070 622B      		or r22,r18
+ 266 0072 0E94 0000 		call Endpoint_ConfigureEndpoint_Prv
+ 267               	.LVL31:
+ 268               	.LBE65:
+ 269               	.LBE66:
   53:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		  return false;
- 274               		.loc 1 53 0
- 275 0074 8823      		tst r24
- 276 0076 01F0      		breq .L23
- 277               	.L16:
-  48:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 	{
- 278               		.loc 1 48 0 discriminator 2
- 279 0078 F394      		inc r15
- 280               	.LVL29:
- 281 007a 2596      		adiw r28,5
- 282 007c 0B5F      		subi r16,-5
- 283 007e 1F4F      		sbci r17,-1
- 284 0080 00C0      		rjmp .L14
- 285               	.L26:
- 286               	.LBE61:
+ 270               		.loc 1 53 0
+ 271 0076 8111      		cpse r24,__zero_reg__
+ 272 0078 00C0      		rjmp .L20
+ 273 007a 00C0      		rjmp .L21
+ 274               	.L24:
+ 275               	.LBE60:
   57:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** }
- 287               		.loc 1 57 0
- 288 0082 81E0      		ldi r24,lo8(1)
- 289               	.L18:
- 290               	/* epilogue start */
+ 276               		.loc 1 57 0
+ 277 007c 81E0      		ldi r24,lo8(1)
+ 278               	.L16:
+ 279               	/* epilogue start */
   58:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 
- 291               		.loc 1 58 0
- 292 0084 DF91      		pop r29
- 293 0086 CF91      		pop r28
- 294 0088 1F91      		pop r17
- 295 008a 0F91      		pop r16
- 296 008c FF90      		pop r15
- 297               	.LVL30:
- 298 008e EF90      		pop r14
- 299               	.LVL31:
- 300 0090 0895      		ret
- 301               		.cfi_endproc
- 302               	.LFE84:
- 304               		.section	.text.Endpoint_ClearEndpoints,"ax",@progbits
- 305               	.global	Endpoint_ClearEndpoints
- 307               	Endpoint_ClearEndpoints:
- 308               	.LFB86:
+ 280               		.loc 1 58 0
+ 281 007e DF91      		pop r29
+ 282 0080 CF91      		pop r28
+ 283 0082 1F91      		pop r17
+ 284               	.LVL32:
+ 285 0084 0F91      		pop r16
+ 286               	.LVL33:
+ 287 0086 0895      		ret
+ 288               		.cfi_endproc
+ 289               	.LFE84:
+ 291               		.section	.text.Endpoint_ClearEndpoints,"ax",@progbits
+ 292               	.global	Endpoint_ClearEndpoints
+ 294               	Endpoint_ClearEndpoints:
+ 295               	.LFB86:
  114:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 
  115:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** void Endpoint_ClearEndpoints(void)
  116:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** {
- 309               		.loc 1 116 0
- 310               		.cfi_startproc
- 311               	/* prologue: function */
- 312               	/* frame size = 0 */
- 313               	/* stack size = 0 */
- 314               	.L__stack_usage = 0
+ 296               		.loc 1 116 0
+ 297               		.cfi_startproc
+ 298               	/* prologue: function */
+ 299               	/* frame size = 0 */
+ 300               	/* stack size = 0 */
+ 301               	.L__stack_usage = 0
  117:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 	UEINT = 0;
- 315               		.loc 1 117 0
- 316 0000 1092 F400 		sts 244,__zero_reg__
- 317               	.LVL32:
- 318               	.LBB68:
+ 302               		.loc 1 117 0
+ 303 0000 1092 F400 		sts 244,__zero_reg__
+ 304               	.LVL34:
+ 305               	.LBB67:
  118:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 
  119:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 	for (uint8_t EPNum = 0; EPNum < ENDPOINT_TOTAL_ENDPOINTS; EPNum++)
- 319               		.loc 1 119 0
- 320 0004 80E0      		ldi r24,0
- 321               	.LVL33:
- 322               	.L29:
- 323               	.LBB69:
- 324               	.LBB70:
+ 306               		.loc 1 119 0
+ 307 0004 80E0      		ldi r24,0
+ 308               	.LVL35:
+ 309               	.L27:
+ 310               	.LBB68:
+ 311               	.LBB69:
  270:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 				#endif
- 325               		.loc 2 270 0
- 326 0006 8093 E900 		sts 233,r24
- 327               	.LBE70:
- 328               	.LBE69:
+ 312               		.loc 2 270 0
+ 313 0006 8093 E900 		sts 233,r24
+ 314               	.LVL36:
+ 315               	.LBE69:
+ 316               	.LBE68:
  120:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 	{
  121:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		Endpoint_SelectEndpoint(EPNum);
  122:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		UEIENX  = 0;
- 329               		.loc 1 122 0
- 330 000a 1092 F000 		sts 240,__zero_reg__
+ 317               		.loc 1 122 0
+ 318 000a 1092 F000 		sts 240,__zero_reg__
  123:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		UEINTX  = 0;
- 331               		.loc 1 123 0
- 332 000e 1092 E800 		sts 232,__zero_reg__
+ 319               		.loc 1 123 0
+ 320 000e 1092 E800 		sts 232,__zero_reg__
  124:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		UECFG1X = 0;
- 333               		.loc 1 124 0
- 334 0012 1092 ED00 		sts 237,__zero_reg__
- 335               	.LBB71:
- 336               	.LBB72:
+ 321               		.loc 1 124 0
+ 322 0012 1092 ED00 		sts 237,__zero_reg__
+ 323               	.LBB70:
+ 324               	.LBB71:
  303:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 			}
- 337               		.loc 2 303 0
- 338 0016 9091 EB00 		lds r25,235
- 339 001a 9E7F      		andi r25,lo8(-2)
- 340 001c 9093 EB00 		sts 235,r25
- 341               	.LBE72:
- 342               	.LBE71:
+ 325               		.loc 2 303 0
+ 326 0016 9091 EB00 		lds r25,235
+ 327 001a 9E7F      		andi r25,lo8(-2)
+ 328 001c 9093 EB00 		sts 235,r25
+ 329               	.LBE71:
+ 330               	.LBE70:
  119:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 	{
- 343               		.loc 1 119 0
- 344 0020 8F5F      		subi r24,lo8(-(1))
- 345               	.LVL34:
- 346 0022 8730      		cpi r24,lo8(7)
- 347 0024 01F4      		brne .L29
- 348               	/* epilogue start */
- 349               	.LBE68:
+ 331               		.loc 1 119 0
+ 332 0020 8F5F      		subi r24,lo8(-(1))
+ 333               	.LVL37:
+ 334 0022 8730      		cpi r24,lo8(7)
+ 335 0024 01F4      		brne .L27
+ 336               	/* epilogue start */
+ 337               	.LBE67:
  125:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		Endpoint_DisableEndpoint();
  126:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 	}
  127:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** }
- 350               		.loc 1 127 0
- 351 0026 0895      		ret
- 352               		.cfi_endproc
- 353               	.LFE86:
- 355               		.section	.text.Endpoint_ClearStatusStage,"ax",@progbits
- 356               	.global	Endpoint_ClearStatusStage
- 358               	Endpoint_ClearStatusStage:
- 359               	.LFB87:
+ 338               		.loc 1 127 0
+ 339 0026 0895      		ret
+ 340               		.cfi_endproc
+ 341               	.LFE86:
+ 343               		.section	.text.Endpoint_ClearStatusStage,"ax",@progbits
+ 344               	.global	Endpoint_ClearStatusStage
+ 346               	Endpoint_ClearStatusStage:
+ 347               	.LFB87:
  128:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 
  129:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** void Endpoint_ClearStatusStage(void)
  130:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** {
- 360               		.loc 1 130 0
- 361               		.cfi_startproc
- 362               	/* prologue: function */
- 363               	/* frame size = 0 */
- 364               	/* stack size = 0 */
- 365               	.L__stack_usage = 0
+ 348               		.loc 1 130 0
+ 349               		.cfi_startproc
+ 350               	/* prologue: function */
+ 351               	/* frame size = 0 */
+ 352               	/* stack size = 0 */
+ 353               	.L__stack_usage = 0
  131:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 	if (USB_ControlRequest.bmRequestType & REQDIR_DEVICETOHOST)
- 366               		.loc 1 131 0
- 367 0000 8091 0000 		lds r24,USB_ControlRequest
- 368 0004 87FF      		sbrs r24,7
- 369 0006 00C0      		rjmp .L33
- 370               	.L41:
- 371               	.LBB73:
- 372               	.LBB74:
+ 354               		.loc 1 131 0
+ 355 0000 8091 0000 		lds r24,USB_ControlRequest
+ 356 0004 87FF      		sbrs r24,7
+ 357 0006 00C0      		rjmp .L31
+ 358               	.L39:
+ 359               	.LBB72:
+ 360               	.LBB73:
  371:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 			}
  372:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 
  373:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 			/** Returns a mask indicating which INTERRUPT type endpoints have interrupted - i.e. their
@@ -945,25 +930,25 @@
  417:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 			static inline bool Endpoint_IsOUTReceived(void)
  418:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 			{
  419:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 				return ((UEINTX & (1 << RXOUTI)) ? true : false);
- 373               		.loc 2 419 0
- 374 0008 8091 E800 		lds r24,232
- 375               	.LBE74:
- 376               	.LBE73:
+ 361               		.loc 2 419 0
+ 362 0008 8091 E800 		lds r24,232
+ 363               	.LBE73:
+ 364               	.LBE72:
  132:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 	{
  133:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		while (!(Endpoint_IsOUTReceived()))
- 377               		.loc 1 133 0
- 378 000c 82FD      		sbrc r24,2
- 379 000e 00C0      		rjmp .L45
+ 365               		.loc 1 133 0
+ 366 000c 82FD      		sbrc r24,2
+ 367 000e 00C0      		rjmp .L43
  134:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		{
  135:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 			if (USB_DeviceState == DEVICE_STATE_Unattached)
- 380               		.loc 1 135 0
- 381 0010 8091 0000 		lds r24,USB_DeviceState
- 382 0014 8111      		cpse r24,__zero_reg__
- 383 0016 00C0      		rjmp .L41
- 384 0018 00C0      		rjmp .L31
- 385               	.L45:
- 386               	.LBB75:
- 387               	.LBB76:
+ 368               		.loc 1 135 0
+ 369 0010 8091 0000 		lds r24,USB_DeviceState
+ 370 0014 8111      		cpse r24,__zero_reg__
+ 371 0016 00C0      		rjmp .L39
+ 372 0018 00C0      		rjmp .L29
+ 373               	.L43:
+ 374               	.LBB74:
+ 375               	.LBB75:
  420:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 			}
  421:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 
  422:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 			/** Determines if the current CONTROL type endpoint has received a SETUP packet.
@@ -1016,13 +1001,13 @@
  469:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 			{
  470:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 				#if !defined(CONTROL_ONLY_DEVICE)
  471:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 					UEINTX &= ~((1 << RXOUTI) | (1 << FIFOCON));
- 388               		.loc 2 471 0
- 389 001a 8091 E800 		lds r24,232
- 390 001e 8B77      		andi r24,lo8(123)
- 391 0020 00C0      		rjmp .L44
- 392               	.L36:
- 393               	.LBE76:
- 394               	.LBE75:
+ 376               		.loc 2 471 0
+ 377 001a 8091 E800 		lds r24,232
+ 378 001e 8B77      		andi r24,lo8(123)
+ 379 0020 00C0      		rjmp .L42
+ 380               	.L34:
+ 381               	.LBE75:
+ 382               	.LBE74:
  136:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 			  return;
  137:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		}
  138:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 
@@ -1033,40 +1018,40 @@
  143:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		while (!(Endpoint_IsINReady()))
  144:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		{
  145:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 			if (USB_DeviceState == DEVICE_STATE_Unattached)
- 395               		.loc 1 145 0
- 396 0022 8091 0000 		lds r24,USB_DeviceState
- 397 0026 8823      		tst r24
- 398 0028 01F0      		breq .L31
- 399               	.L33:
- 400               	.LBB77:
- 401               	.LBB78:
+ 383               		.loc 1 145 0
+ 384 0022 8091 0000 		lds r24,USB_DeviceState
+ 385 0026 8823      		tst r24
+ 386 0028 01F0      		breq .L29
+ 387               	.L31:
+ 388               	.LBB76:
+ 389               	.LBB77:
  407:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 			}
- 402               		.loc 2 407 0
- 403 002a 8091 E800 		lds r24,232
- 404               	.LBE78:
- 405               	.LBE77:
+ 390               		.loc 2 407 0
+ 391 002a 8091 E800 		lds r24,232
+ 392               	.LBE77:
+ 393               	.LBE76:
  143:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		{
- 406               		.loc 1 143 0
- 407 002e 80FF      		sbrs r24,0
- 408 0030 00C0      		rjmp .L36
- 409               	.LBB79:
- 410               	.LBB80:
+ 394               		.loc 1 143 0
+ 395 002e 80FF      		sbrs r24,0
+ 396 0030 00C0      		rjmp .L34
+ 397               	.LBB78:
+ 398               	.LBB79:
  456:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 				#else
- 411               		.loc 2 456 0
- 412 0032 8091 E800 		lds r24,232
- 413 0036 8E77      		andi r24,lo8(126)
- 414               	.L44:
- 415 0038 8093 E800 		sts 232,r24
- 416               	.L31:
- 417 003c 0895      		ret
- 418               	.LBE80:
- 419               	.LBE79:
- 420               		.cfi_endproc
- 421               	.LFE87:
- 423               		.section	.text.Endpoint_WaitUntilReady,"ax",@progbits
- 424               	.global	Endpoint_WaitUntilReady
- 426               	Endpoint_WaitUntilReady:
- 427               	.LFB88:
+ 399               		.loc 2 456 0
+ 400 0032 8091 E800 		lds r24,232
+ 401 0036 8E77      		andi r24,lo8(126)
+ 402               	.L42:
+ 403 0038 8093 E800 		sts 232,r24
+ 404               	.L29:
+ 405 003c 0895      		ret
+ 406               	.LBE79:
+ 407               	.LBE78:
+ 408               		.cfi_endproc
+ 409               	.LFE87:
+ 411               		.section	.text.Endpoint_WaitUntilReady,"ax",@progbits
+ 412               	.global	Endpoint_WaitUntilReady
+ 414               	Endpoint_WaitUntilReady:
+ 415               	.LFB88:
  146:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 			  return;
  147:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		}
  148:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 
@@ -1077,16 +1062,16 @@
  153:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** #if !defined(CONTROL_ONLY_DEVICE)
  154:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** uint8_t Endpoint_WaitUntilReady(void)
  155:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** {
- 428               		.loc 1 155 0
- 429               		.cfi_startproc
- 430               	/* prologue: function */
- 431               	/* frame size = 0 */
- 432               	/* stack size = 0 */
- 433               	.L__stack_usage = 0
- 434               	.LVL35:
- 435               	.LBB81:
- 436               	.LBB82:
- 437               		.file 3 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../AVR8/../AVR8/Device
+ 416               		.loc 1 155 0
+ 417               		.cfi_startproc
+ 418               	/* prologue: function */
+ 419               	/* frame size = 0 */
+ 420               	/* stack size = 0 */
+ 421               	.L__stack_usage = 0
+ 422               	.LVL38:
+ 423               	.LBB80:
+ 424               	.LBB81:
+ 425               		.file 3 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../AVR8/../AVR8/Device
    1:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../AVR8/../AVR8/Device_AVR8.h **** /*
    2:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../AVR8/../AVR8/Device_AVR8.h ****              LUFA Library
    3:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../AVR8/../AVR8/Device_AVR8.h ****      Copyright (C) Dean Camera, 2012.
@@ -1252,33 +1237,33 @@
  163:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../AVR8/../AVR8/Device_AVR8.h **** 			static inline uint16_t USB_Device_GetFrameNumber(void)
  164:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../AVR8/../AVR8/Device_AVR8.h **** 			{
  165:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../AVR8/../AVR8/Device_AVR8.h **** 				return UDFNUM;
- 438               		.loc 3 165 0
- 439 0000 2091 E400 		lds r18,228
- 440 0004 3091 E500 		lds r19,228+1
- 441 0008 95E6      		ldi r25,lo8(101)
- 442               	.LVL36:
- 443               	.L50:
- 444               	.LBE82:
- 445               	.LBE81:
- 446               	.LBB83:
- 447               	.LBB84:
- 448               	.LBB85:
+ 426               		.loc 3 165 0
+ 427 0000 2091 E400 		lds r18,228
+ 428 0004 3091 E500 		lds r19,228+1
+ 429 0008 95E6      		ldi r25,lo8(101)
+ 430               	.LVL39:
+ 431               	.L48:
+ 432               	.LBE81:
+ 433               	.LBE80:
+ 434               	.LBB82:
+ 435               	.LBB83:
+ 436               	.LBB84:
  240:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 			}
- 449               		.loc 2 240 0
- 450 000a 4091 EC00 		lds r20,236
- 451 000e 842F      		mov r24,r20
- 452 0010 8170      		andi r24,lo8(1)
- 453 0012 40FF      		sbrs r20,0
- 454 0014 00C0      		rjmp .L61
- 455               	.LBE85:
- 456               	.LBE84:
- 457               	.LBB86:
- 458               	.LBB87:
+ 437               		.loc 2 240 0
+ 438 000a 4091 EC00 		lds r20,236
+ 439 000e 842F      		mov r24,r20
+ 440 0010 8170      		andi r24,lo8(1)
+ 441 0012 40FF      		sbrs r20,0
+ 442 0014 00C0      		rjmp .L59
+ 443               	.LBE84:
+ 444               	.LBE83:
+ 445               	.LBB85:
+ 446               	.LBB86:
  407:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 			}
- 459               		.loc 2 407 0
- 460 0016 8091 E800 		lds r24,232
- 461               	.LBE87:
- 462               	.LBE86:
+ 447               		.loc 2 407 0
+ 448 0016 8091 E800 		lds r24,232
+ 449               	.LBE86:
+ 450               	.LBE85:
  156:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 	#if (USB_STREAM_TIMEOUT_MS < 0xFF)
  157:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 	uint8_t  TimeoutMSRem = USB_STREAM_TIMEOUT_MS;
  158:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 	#else
@@ -1292,10 +1277,10 @@
  166:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		if (Endpoint_GetEndpointDirection() == ENDPOINT_DIR_IN)
  167:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		{
  168:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 			if (Endpoint_IsINReady())
- 463               		.loc 1 168 0
- 464 001a 80FD      		sbrc r24,0
- 465 001c 00C0      		rjmp .L62
- 466               	.L52:
+ 451               		.loc 1 168 0
+ 452 001a 80FD      		sbrc r24,0
+ 453 001c 00C0      		rjmp .L60
+ 454               	.L50:
  169:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 			  return ENDPOINT_READYWAIT_NoError;
  170:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		}
  171:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		else
@@ -1305,21 +1290,21 @@
  175:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		}
  176:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 
  177:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		uint8_t USB_DeviceState_LCL = USB_DeviceState;
- 467               		.loc 1 177 0
- 468 001e 8091 0000 		lds r24,USB_DeviceState
- 469               	.LVL37:
+ 455               		.loc 1 177 0
+ 456 001e 8091 0000 		lds r24,USB_DeviceState
+ 457               	.LVL40:
  178:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 
  179:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		if (USB_DeviceState_LCL == DEVICE_STATE_Unattached)
- 470               		.loc 1 179 0
- 471 0022 8823      		tst r24
- 472 0024 01F0      		breq .L53
+ 458               		.loc 1 179 0
+ 459 0022 8823      		tst r24
+ 460 0024 01F0      		breq .L51
  180:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		  return ENDPOINT_READYWAIT_DeviceDisconnected;
  181:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		else if (USB_DeviceState_LCL == DEVICE_STATE_Suspended)
- 473               		.loc 1 181 0
- 474 0026 8530      		cpi r24,lo8(5)
- 475 0028 01F0      		breq .L54
- 476               	.LBB88:
- 477               	.LBB89:
+ 461               		.loc 1 181 0
+ 462 0026 8530      		cpi r24,lo8(5)
+ 463 0028 01F0      		breq .L52
+ 464               	.LBB87:
+ 465               	.LBB88:
  472:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 				#else
  473:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 					UEINTX &= ~(1 << RXOUTI);
  474:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 				#endif
@@ -1362,115 +1347,122 @@
  511:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 			static inline bool Endpoint_IsStalled(void)
  512:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 			{
  513:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 				return ((UECONX & (1 << STALLRQ)) ? true : false);
- 478               		.loc 2 513 0
- 479 002a 8091 EB00 		lds r24,235
- 480               	.LVL38:
- 481               	.LBE89:
- 482               	.LBE88:
+ 466               		.loc 2 513 0
+ 467 002a 8091 EB00 		lds r24,235
+ 468               	.LVL41:
+ 469               	.LBE88:
+ 470               	.LBE87:
  182:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		  return ENDPOINT_READYWAIT_BusSuspended;
  183:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		else if (Endpoint_IsStalled())
- 483               		.loc 1 183 0
- 484 002e 85FD      		sbrc r24,5
- 485 0030 00C0      		rjmp .L55
- 486               	.LBB90:
- 487               	.LBB91:
- 488               		.loc 3 165 0
- 489 0032 4091 E400 		lds r20,228
- 490 0036 5091 E500 		lds r21,228+1
- 491               	.LVL39:
- 492               	.LBE91:
- 493               	.LBE90:
+ 471               		.loc 1 183 0
+ 472 002e 85FD      		sbrc r24,5
+ 473 0030 00C0      		rjmp .L53
+ 474               	.LBB89:
+ 475               	.LBB90:
+ 476               		.loc 3 165 0
+ 477 0032 4091 E400 		lds r20,228
+ 478 0036 5091 E500 		lds r21,228+1
+ 479               	.LVL42:
+ 480               	.LBE90:
+ 481               	.LBE89:
  184:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		  return ENDPOINT_READYWAIT_EndpointStalled;
  185:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 
  186:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		uint16_t CurrentFrameNumber = USB_Device_GetFrameNumber();
  187:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 
  188:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		if (CurrentFrameNumber != PreviousFrameNumber)
- 494               		.loc 1 188 0
- 495 003a 4217      		cp r20,r18
- 496 003c 5307      		cpc r21,r19
- 497 003e 01F0      		breq .L50
- 498 0040 9A01      		movw r18,r20
- 499               	.LVL40:
- 500 0042 9150      		subi r25,lo8(-(-1))
- 501               	.LVL41:
+ 482               		.loc 1 188 0
+ 483 003a 2417      		cp r18,r20
+ 484 003c 3507      		cpc r19,r21
+ 485 003e 01F0      		breq .L48
+ 486               	.LVL43:
+ 487 0040 9150      		subi r25,lo8(-(-1))
+ 488               	.LVL44:
  189:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		{
  190:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 			PreviousFrameNumber = CurrentFrameNumber;
  191:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 
  192:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 			if (!(TimeoutMSRem--))
- 502               		.loc 1 192 0
- 503 0044 01F4      		brne .L50
+ 489               		.loc 1 192 0
+ 490 0042 01F0      		breq .L61
+ 491               	.LBB92:
+ 492               	.LBB91:
+ 493               		.loc 3 165 0
+ 494 0044 9A01      		movw r18,r20
+ 495 0046 00C0      		rjmp .L48
+ 496               	.L61:
+ 497               	.LBE91:
+ 498               	.LBE92:
  193:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 			  return ENDPOINT_READYWAIT_Timeout;
- 504               		.loc 1 193 0
- 505 0046 84E0      		ldi r24,lo8(4)
- 506 0048 0895      		ret
- 507               	.LVL42:
- 508               	.L53:
+ 499               		.loc 1 193 0
+ 500 0048 84E0      		ldi r24,lo8(4)
+ 501 004a 0895      		ret
+ 502               	.LVL45:
+ 503               	.L51:
  180:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		else if (USB_DeviceState_LCL == DEVICE_STATE_Suspended)
- 509               		.loc 1 180 0
- 510 004a 82E0      		ldi r24,lo8(2)
- 511               	.LVL43:
- 512 004c 0895      		ret
- 513               	.LVL44:
- 514               	.L54:
+ 504               		.loc 1 180 0
+ 505 004c 82E0      		ldi r24,lo8(2)
+ 506               	.LVL46:
+ 507 004e 0895      		ret
+ 508               	.LVL47:
+ 509               	.L52:
  182:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		else if (Endpoint_IsStalled())
- 515               		.loc 1 182 0
- 516 004e 83E0      		ldi r24,lo8(3)
- 517               	.LVL45:
- 518 0050 0895      		ret
- 519               	.L55:
+ 510               		.loc 1 182 0
+ 511 0050 83E0      		ldi r24,lo8(3)
+ 512               	.LVL48:
+ 513 0052 0895      		ret
+ 514               	.L53:
  184:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 
- 520               		.loc 1 184 0
- 521 0052 81E0      		ldi r24,lo8(1)
- 522 0054 0895      		ret
- 523               	.L62:
+ 515               		.loc 1 184 0
+ 516 0054 81E0      		ldi r24,lo8(1)
+ 517 0056 0895      		ret
+ 518               	.L60:
  169:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		}
- 524               		.loc 1 169 0
- 525 0056 80E0      		ldi r24,0
- 526 0058 0895      		ret
- 527               	.L61:
- 528               	.LBB92:
- 529               	.LBB93:
+ 519               		.loc 1 169 0
+ 520 0058 80E0      		ldi r24,0
+ 521 005a 0895      		ret
+ 522               	.L59:
+ 523               	.LBB93:
+ 524               	.LBB94:
  419:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h **** 			}
- 530               		.loc 2 419 0
- 531 005a 4091 E800 		lds r20,232
- 532               	.LBE93:
- 533               	.LBE92:
+ 525               		.loc 2 419 0
+ 526 005c 4091 E800 		lds r20,232
+ 527               	.LBE94:
+ 528               	.LBE93:
  173:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 			  return ENDPOINT_READYWAIT_NoError;
- 534               		.loc 1 173 0
- 535 005e 42FF      		sbrs r20,2
- 536 0060 00C0      		rjmp .L52
- 537               	.LBE83:
+ 529               		.loc 1 173 0
+ 530 0060 42FF      		sbrs r20,2
+ 531 0062 00C0      		rjmp .L50
+ 532               	.LBE82:
  194:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 		}
  195:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** 	}
  196:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c **** }
- 538               		.loc 1 196 0
- 539 0062 0895      		ret
- 540               		.cfi_endproc
- 541               	.LFE88:
- 543               	.global	USB_Device_ControlEndpointSize
- 544               		.data
- 547               	USB_Device_ControlEndpointSize:
- 548 0000 08        		.byte	8
- 549               		.text
- 550               	.Letext0:
- 551               		.file 4 "/usr/lib/avr/include/stdint.h"
- 552               		.file 5 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../Endpoint.h"
- 553               		.file 6 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../AVR8/../StdRequestT
- 554               		.file 7 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../AVR8/../Device.h"
- 555               		.file 8 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../USBTask.h"
+ 533               		.loc 1 196 0
+ 534 0064 0895      		ret
+ 535               		.cfi_endproc
+ 536               	.LFE88:
+ 538               	.global	USB_Device_ControlEndpointSize
+ 539               		.data
+ 542               	USB_Device_ControlEndpointSize:
+ 543 0000 08        		.byte	8
+ 544               		.text
+ 545               	.Letext0:
+ 546               		.file 4 "/usr/avr/include/stdint.h"
+ 547               		.file 5 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../Endpoint.h"
+ 548               		.file 6 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../AVR8/../StdRequestT
+ 549               		.file 7 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../AVR8/../Device.h"
+ 550               		.file 8 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../USBTask.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 Endpoint_AVR8.c
-     /tmp/ccwjEowS.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccwjEowS.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccwjEowS.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccwjEowS.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccwjEowS.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccwjEowS.s:13     .text.Endpoint_ConfigureEndpoint_Prv:0000000000000000 Endpoint_ConfigureEndpoint_Prv
-     /tmp/ccwjEowS.s:139    .text.Endpoint_ConfigureEndpointTable:0000000000000000 Endpoint_ConfigureEndpointTable
-     /tmp/ccwjEowS.s:307    .text.Endpoint_ClearEndpoints:0000000000000000 Endpoint_ClearEndpoints
-     /tmp/ccwjEowS.s:358    .text.Endpoint_ClearStatusStage:0000000000000000 Endpoint_ClearStatusStage
-     /tmp/ccwjEowS.s:426    .text.Endpoint_WaitUntilReady:0000000000000000 Endpoint_WaitUntilReady
-     /tmp/ccwjEowS.s:547    .data:0000000000000000 USB_Device_ControlEndpointSize
+     /tmp/ccorlDkr.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccorlDkr.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccorlDkr.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccorlDkr.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccorlDkr.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccorlDkr.s:13     .text.Endpoint_ConfigureEndpoint_Prv:0000000000000000 Endpoint_ConfigureEndpoint_Prv
+     /tmp/ccorlDkr.s:140    .text.Endpoint_ConfigureEndpointTable:0000000000000000 Endpoint_ConfigureEndpointTable
+     /tmp/ccorlDkr.s:294    .text.Endpoint_ClearEndpoints:0000000000000000 Endpoint_ClearEndpoints
+     /tmp/ccorlDkr.s:346    .text.Endpoint_ClearStatusStage:0000000000000000 Endpoint_ClearStatusStage
+     /tmp/ccorlDkr.s:414    .text.Endpoint_WaitUntilReady:0000000000000000 Endpoint_WaitUntilReady
+     /tmp/ccorlDkr.s:542    .data:0000000000000000 USB_Device_ControlEndpointSize
 
 UNDEFINED SYMBOLS
 USB_ControlRequest

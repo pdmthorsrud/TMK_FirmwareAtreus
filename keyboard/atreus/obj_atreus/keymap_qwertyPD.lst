@@ -204,7 +204,7 @@
  179               		.comm	debug_config,1,1
  180               		.text
  181               	.Letext0:
- 182               		.file 2 "/usr/lib/avr/include/stdint.h"
+ 182               		.file 2 "/usr/avr/include/stdint.h"
  183               		.file 3 "../../common/keycode.h"
  184               		.file 4 "../../common/keyboard.h"
  185               		.file 5 "../../common/action_code.h"
@@ -214,14 +214,14 @@
  189               		.file 9 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBTask.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 keymap_qwertyPD.c
-     /tmp/ccHLUEIp.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccHLUEIp.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccHLUEIp.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccHLUEIp.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccHLUEIp.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccHLUEIp.s:13     .text.action_function:0000000000000000 action_function
-     /tmp/ccHLUEIp.s:38     .progmem.data:0000000000000000 fn_actions
-     /tmp/ccHLUEIp.s:46     .progmem.data:0000000000000008 keymaps
+     /tmp/ccOEA2K6.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccOEA2K6.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccOEA2K6.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccOEA2K6.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccOEA2K6.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccOEA2K6.s:13     .text.action_function:0000000000000000 action_function
+     /tmp/ccOEA2K6.s:38     .progmem.data:0000000000000000 fn_actions
+     /tmp/ccOEA2K6.s:46     .progmem.data:0000000000000008 keymaps
                             *COM*:0000000000000001 debug_config
 
 UNDEFINED SYMBOLS

@@ -135,360 +135,355 @@
   90               	.LCFI1:
   91               		.cfi_def_cfa_offset 4
   92               		.cfi_offset 15, -3
-  93 0004 0F93      		push r16
+  93 0004 1F93      		push r17
   94               	.LCFI2:
   95               		.cfi_def_cfa_offset 5
-  96               		.cfi_offset 16, -4
-  97 0006 1F93      		push r17
+  96               		.cfi_offset 17, -4
+  97 0006 CF93      		push r28
   98               	.LCFI3:
   99               		.cfi_def_cfa_offset 6
- 100               		.cfi_offset 17, -5
- 101 0008 CF93      		push r28
+ 100               		.cfi_offset 28, -5
+ 101 0008 DF93      		push r29
  102               	.LCFI4:
  103               		.cfi_def_cfa_offset 7
- 104               		.cfi_offset 28, -6
- 105 000a DF93      		push r29
- 106               	.LCFI5:
- 107               		.cfi_def_cfa_offset 8
- 108               		.cfi_offset 29, -7
- 109               	/* prologue: function */
- 110               	/* frame size = 0 */
- 111               	/* stack size = 6 */
- 112               	.L__stack_usage = 6
+ 104               		.cfi_offset 29, -6
+ 105               	/* prologue: function */
+ 106               	/* frame size = 0 */
+ 107               	/* stack size = 5 */
+ 108               	.L__stack_usage = 5
+ 109 000a F82E      		mov r15,r24
+ 110 000c 192F      		mov r17,r25
   53:../../common/host.c ****     if (!driver) return;
- 113               		.loc 1 53 0
- 114 000c E091 0000 		lds r30,driver
- 115 0010 F091 0000 		lds r31,driver+1
- 116 0014 3097      		sbiw r30,0
- 117 0016 01F0      		breq .L6
- 118 0018 8C01      		movw r16,r24
+ 111               		.loc 1 53 0
+ 112 000e E091 0000 		lds r30,driver
+ 113 0012 F091 0000 		lds r31,driver+1
+ 114 0016 3097      		sbiw r30,0
+ 115 0018 01F0      		breq .L6
   54:../../common/host.c ****     (*driver->send_keyboard)(report);
- 119               		.loc 1 54 0
- 120 001a 0280      		ldd __tmp_reg__,Z+2
- 121 001c F381      		ldd r31,Z+3
- 122 001e E02D      		mov r30,__tmp_reg__
- 123 0020 0995      		icall
- 124               	.LVL3:
+ 116               		.loc 1 54 0
+ 117 001a 0280      		ldd __tmp_reg__,Z+2
+ 118 001c F381      		ldd r31,Z+3
+ 119 001e E02D      		mov r30,__tmp_reg__
+ 120 0020 0995      		icall
+ 121               	.LVL3:
   55:../../common/host.c **** 
   56:../../common/host.c ****     if (debug_keyboard) {
- 125               		.loc 1 56 0
- 126 0022 8091 0000 		lds r24,debug_config
- 127 0026 82FF      		sbrs r24,2
- 128 0028 00C0      		rjmp .L6
+ 122               		.loc 1 56 0
+ 123 0022 8091 0000 		lds r24,debug_config
+ 124 0026 82FF      		sbrs r24,2
+ 125 0028 00C0      		rjmp .L6
   57:../../common/host.c ****         dprint("keyboard_report: ");
- 129               		.loc 1 57 0
- 130 002a 80FF      		sbrs r24,0
- 131 002c 00C0      		rjmp .L10
- 132               		.loc 1 57 0 is_stmt 0 discriminator 1
- 133 002e 80E0      		ldi r24,lo8(__c.4375)
- 134 0030 90E0      		ldi r25,hi8(__c.4375)
- 135 0032 0E94 0000 		call xputs
- 136               	.LVL4:
- 137               	.L10:
- 138 0036 E801      		movw r28,r16
+ 126               		.loc 1 57 0
+ 127 002a 80FF      		sbrs r24,0
+ 128 002c 00C0      		rjmp .L10
+ 129               		.loc 1 57 0 is_stmt 0 discriminator 1
+ 130 002e 80E0      		ldi r24,lo8(__c.4519)
+ 131 0030 90E0      		ldi r25,hi8(__c.4519)
+ 132 0032 0E94 0000 		call xputs
+ 133               	.LVL4:
+ 134               	.L10:
+ 135 0036 CF2D      		mov r28,r15
+ 136 0038 D12F      		mov r29,r17
   52:../../common/host.c ****     if (!driver) return;
- 139               		.loc 1 52 0 is_stmt 1 discriminator 1
- 140 0038 10E1      		ldi r17,lo8(16)
- 141               	.LBB2:
+ 137               		.loc 1 52 0 is_stmt 1 discriminator 1
+ 138 003a 10E1      		ldi r17,lo8(16)
+ 139               	.LBB2:
   58:../../common/host.c ****         for (uint8_t i = 0; i < REPORT_SIZE; i++) {
   59:../../common/host.c ****             dprintf("%02X ", report->raw[i]);
- 142               		.loc 1 59 0 discriminator 1
- 143 003a 80E0      		ldi r24,lo8(__c.4378)
- 144 003c E82E      		mov r14,r24
- 145 003e 80E0      		ldi r24,hi8(__c.4378)
- 146 0040 F82E      		mov r15,r24
- 147               	.LVL5:
- 148               	.L12:
- 149               		.loc 1 59 0 is_stmt 0
- 150 0042 8091 0000 		lds r24,debug_config
- 151 0046 80FF      		sbrs r24,0
- 152 0048 00C0      		rjmp .L11
- 153               		.loc 1 59 0 discriminator 1
- 154 004a 8881      		ld r24,Y
- 155 004c 1F92      		push __zero_reg__
- 156               	.LCFI6:
- 157               		.cfi_def_cfa_offset 9
- 158 004e 8F93      		push r24
- 159               	.LCFI7:
- 160               		.cfi_def_cfa_offset 10
- 161 0050 FF92      		push r15
- 162               	.LCFI8:
- 163               		.cfi_def_cfa_offset 11
- 164 0052 EF92      		push r14
- 165               	.LCFI9:
- 166               		.cfi_def_cfa_offset 12
- 167 0054 0E94 0000 		call __xprintf
- 168               	.LVL6:
- 169 0058 0F90      		pop __tmp_reg__
- 170 005a 0F90      		pop __tmp_reg__
- 171 005c 0F90      		pop __tmp_reg__
- 172 005e 0F90      		pop __tmp_reg__
- 173               	.LCFI10:
- 174               		.cfi_def_cfa_offset 8
- 175               	.L11:
- 176               	.LVL7:
- 177 0060 1150      		subi r17,lo8(-(-1))
- 178 0062 2196      		adiw r28,1
- 179               	.LVL8:
+ 140               		.loc 1 59 0 discriminator 1
+ 141 003c 80E0      		ldi r24,lo8(__c.4522)
+ 142 003e E82E      		mov r14,r24
+ 143 0040 80E0      		ldi r24,hi8(__c.4522)
+ 144 0042 F82E      		mov r15,r24
+ 145               	.LVL5:
+ 146               	.L12:
+ 147               		.loc 1 59 0 is_stmt 0
+ 148 0044 8091 0000 		lds r24,debug_config
+ 149 0048 80FF      		sbrs r24,0
+ 150 004a 00C0      		rjmp .L11
+ 151               		.loc 1 59 0 discriminator 1
+ 152 004c 8881      		ld r24,Y
+ 153 004e 1F92      		push __zero_reg__
+ 154               	.LCFI5:
+ 155               		.cfi_def_cfa_offset 8
+ 156 0050 8F93      		push r24
+ 157               	.LCFI6:
+ 158               		.cfi_def_cfa_offset 9
+ 159 0052 FF92      		push r15
+ 160               	.LCFI7:
+ 161               		.cfi_def_cfa_offset 10
+ 162 0054 EF92      		push r14
+ 163               	.LCFI8:
+ 164               		.cfi_def_cfa_offset 11
+ 165 0056 0E94 0000 		call __xprintf
+ 166               	.LVL6:
+ 167 005a 0F90      		pop __tmp_reg__
+ 168 005c 0F90      		pop __tmp_reg__
+ 169 005e 0F90      		pop __tmp_reg__
+ 170 0060 0F90      		pop __tmp_reg__
+ 171               	.LCFI9:
+ 172               		.cfi_def_cfa_offset 7
+ 173               	.L11:
+ 174               	.LVL7:
+ 175 0062 1150      		subi r17,lo8(-(-1))
+ 176 0064 2196      		adiw r28,1
+ 177               	.LVL8:
   58:../../common/host.c ****         for (uint8_t i = 0; i < REPORT_SIZE; i++) {
- 180               		.loc 1 58 0 is_stmt 1 discriminator 2
- 181 0064 1111      		cpse r17,__zero_reg__
- 182 0066 00C0      		rjmp .L12
- 183               	.LBE2:
+ 178               		.loc 1 58 0 is_stmt 1 discriminator 2
+ 179 0066 1111      		cpse r17,__zero_reg__
+ 180 0068 00C0      		rjmp .L12
+ 181               	.LBE2:
   60:../../common/host.c ****         }
   61:../../common/host.c ****         dprint("\n");
- 184               		.loc 1 61 0
- 185 0068 8091 0000 		lds r24,debug_config
- 186 006c 80FF      		sbrs r24,0
- 187 006e 00C0      		rjmp .L6
- 188               		.loc 1 61 0 is_stmt 0 discriminator 1
- 189 0070 80E0      		ldi r24,lo8(__c.4383)
- 190 0072 90E0      		ldi r25,hi8(__c.4383)
- 191               	/* epilogue start */
+ 182               		.loc 1 61 0
+ 183 006a 8091 0000 		lds r24,debug_config
+ 184 006e 80FF      		sbrs r24,0
+ 185 0070 00C0      		rjmp .L6
+ 186               		.loc 1 61 0 is_stmt 0 discriminator 1
+ 187 0072 80E0      		ldi r24,lo8(__c.4527)
+ 188 0074 90E0      		ldi r25,hi8(__c.4527)
+ 189               	/* epilogue start */
   62:../../common/host.c ****     }
   63:../../common/host.c **** }
- 192               		.loc 1 63 0 is_stmt 1 discriminator 1
- 193 0074 DF91      		pop r29
- 194 0076 CF91      		pop r28
- 195               	.LVL9:
- 196 0078 1F91      		pop r17
- 197 007a 0F91      		pop r16
- 198               	.LVL10:
- 199 007c FF90      		pop r15
- 200 007e EF90      		pop r14
+ 190               		.loc 1 63 0 is_stmt 1 discriminator 1
+ 191 0076 DF91      		pop r29
+ 192 0078 CF91      		pop r28
+ 193               	.LVL9:
+ 194 007a 1F91      		pop r17
+ 195 007c FF90      		pop r15
+ 196 007e EF90      		pop r14
   61:../../common/host.c ****     }
- 201               		.loc 1 61 0 discriminator 1
- 202 0080 0C94 0000 		jmp xputs
- 203               	.LVL11:
- 204               	.L6:
- 205               	/* epilogue start */
- 206               		.loc 1 63 0
- 207 0084 DF91      		pop r29
- 208 0086 CF91      		pop r28
- 209 0088 1F91      		pop r17
- 210 008a 0F91      		pop r16
- 211 008c FF90      		pop r15
- 212 008e EF90      		pop r14
- 213 0090 0895      		ret
- 214               		.cfi_endproc
- 215               	.LFE102:
- 217               		.section	.text.host_mouse_send,"ax",@progbits
- 218               	.global	host_mouse_send
- 220               	host_mouse_send:
- 221               	.LFB103:
+ 197               		.loc 1 61 0 discriminator 1
+ 198 0080 0C94 0000 		jmp xputs
+ 199               	.LVL10:
+ 200               	.L6:
+ 201               	/* epilogue start */
+ 202               		.loc 1 63 0
+ 203 0084 DF91      		pop r29
+ 204 0086 CF91      		pop r28
+ 205 0088 1F91      		pop r17
+ 206 008a FF90      		pop r15
+ 207 008c EF90      		pop r14
+ 208 008e 0895      		ret
+ 209               		.cfi_endproc
+ 210               	.LFE102:
+ 212               		.section	.text.host_mouse_send,"ax",@progbits
+ 213               	.global	host_mouse_send
+ 215               	host_mouse_send:
+ 216               	.LFB103:
   64:../../common/host.c **** 
   65:../../common/host.c **** void host_mouse_send(report_mouse_t *report)
   66:../../common/host.c **** {
- 222               		.loc 1 66 0
- 223               		.cfi_startproc
- 224               	.LVL12:
- 225               	/* prologue: function */
- 226               	/* frame size = 0 */
- 227               	/* stack size = 0 */
- 228               	.L__stack_usage = 0
+ 217               		.loc 1 66 0
+ 218               		.cfi_startproc
+ 219               	.LVL11:
+ 220               	/* prologue: function */
+ 221               	/* frame size = 0 */
+ 222               	/* stack size = 0 */
+ 223               	.L__stack_usage = 0
   67:../../common/host.c ****     if (!driver) return;
- 229               		.loc 1 67 0
- 230 0000 E091 0000 		lds r30,driver
- 231 0004 F091 0000 		lds r31,driver+1
- 232 0008 3097      		sbiw r30,0
- 233 000a 01F0      		breq .L26
+ 224               		.loc 1 67 0
+ 225 0000 E091 0000 		lds r30,driver
+ 226 0004 F091 0000 		lds r31,driver+1
+ 227 0008 3097      		sbiw r30,0
+ 228 000a 01F0      		breq .L26
   68:../../common/host.c ****     (*driver->send_mouse)(report);
- 234               		.loc 1 68 0
- 235 000c 0480      		ldd __tmp_reg__,Z+4
- 236 000e F581      		ldd r31,Z+5
- 237 0010 E02D      		mov r30,__tmp_reg__
- 238 0012 0994      		ijmp
- 239               	.LVL13:
- 240               	.L26:
- 241 0014 0895      		ret
- 242               		.cfi_endproc
- 243               	.LFE103:
- 245               		.section	.text.host_system_send,"ax",@progbits
- 246               	.global	host_system_send
- 248               	host_system_send:
- 249               	.LFB104:
+ 229               		.loc 1 68 0
+ 230 000c 0480      		ldd __tmp_reg__,Z+4
+ 231 000e F581      		ldd r31,Z+5
+ 232 0010 E02D      		mov r30,__tmp_reg__
+ 233 0012 0994      		ijmp
+ 234               	.LVL12:
+ 235               	.L26:
+ 236 0014 0895      		ret
+ 237               		.cfi_endproc
+ 238               	.LFE103:
+ 240               		.section	.text.host_system_send,"ax",@progbits
+ 241               	.global	host_system_send
+ 243               	host_system_send:
+ 244               	.LFB104:
   69:../../common/host.c **** }
   70:../../common/host.c **** 
   71:../../common/host.c **** void host_system_send(uint16_t report)
   72:../../common/host.c **** {
- 250               		.loc 1 72 0
- 251               		.cfi_startproc
- 252               	.LVL14:
- 253               	/* prologue: function */
- 254               	/* frame size = 0 */
- 255               	/* stack size = 0 */
- 256               	.L__stack_usage = 0
+ 245               		.loc 1 72 0
+ 246               		.cfi_startproc
+ 247               	.LVL13:
+ 248               	/* prologue: function */
+ 249               	/* frame size = 0 */
+ 250               	/* stack size = 0 */
+ 251               	.L__stack_usage = 0
   73:../../common/host.c ****     if (report == last_system_report) return;
- 257               		.loc 1 73 0
- 258 0000 2091 0000 		lds r18,last_system_report
- 259 0004 3091 0000 		lds r19,last_system_report+1
- 260 0008 8217      		cp r24,r18
- 261 000a 9307      		cpc r25,r19
- 262 000c 01F0      		breq .L28
+ 252               		.loc 1 73 0
+ 253 0000 2091 0000 		lds r18,last_system_report
+ 254 0004 3091 0000 		lds r19,last_system_report+1
+ 255 0008 2817      		cp r18,r24
+ 256 000a 3907      		cpc r19,r25
+ 257 000c 01F0      		breq .L28
   74:../../common/host.c ****     last_system_report = report;
- 263               		.loc 1 74 0
- 264 000e 9093 0000 		sts last_system_report+1,r25
- 265 0012 8093 0000 		sts last_system_report,r24
+ 258               		.loc 1 74 0
+ 259 000e 9093 0000 		sts last_system_report+1,r25
+ 260 0012 8093 0000 		sts last_system_report,r24
   75:../../common/host.c **** 
   76:../../common/host.c ****     if (!driver) return;
- 266               		.loc 1 76 0
- 267 0016 E091 0000 		lds r30,driver
- 268 001a F091 0000 		lds r31,driver+1
- 269 001e 3097      		sbiw r30,0
- 270 0020 01F0      		breq .L28
+ 261               		.loc 1 76 0
+ 262 0016 E091 0000 		lds r30,driver
+ 263 001a F091 0000 		lds r31,driver+1
+ 264 001e 3097      		sbiw r30,0
+ 265 0020 01F0      		breq .L28
   77:../../common/host.c ****     (*driver->send_system)(report);
- 271               		.loc 1 77 0
- 272 0022 0680      		ldd __tmp_reg__,Z+6
- 273 0024 F781      		ldd r31,Z+7
- 274 0026 E02D      		mov r30,__tmp_reg__
- 275 0028 0994      		ijmp
- 276               	.LVL15:
- 277               	.L28:
- 278 002a 0895      		ret
- 279               		.cfi_endproc
- 280               	.LFE104:
- 282               		.section	.text.host_consumer_send,"ax",@progbits
- 283               	.global	host_consumer_send
- 285               	host_consumer_send:
- 286               	.LFB105:
+ 266               		.loc 1 77 0
+ 267 0022 0680      		ldd __tmp_reg__,Z+6
+ 268 0024 F781      		ldd r31,Z+7
+ 269 0026 E02D      		mov r30,__tmp_reg__
+ 270 0028 0994      		ijmp
+ 271               	.LVL14:
+ 272               	.L28:
+ 273 002a 0895      		ret
+ 274               		.cfi_endproc
+ 275               	.LFE104:
+ 277               		.section	.text.host_consumer_send,"ax",@progbits
+ 278               	.global	host_consumer_send
+ 280               	host_consumer_send:
+ 281               	.LFB105:
   78:../../common/host.c **** }
   79:../../common/host.c **** 
   80:../../common/host.c **** void host_consumer_send(uint16_t report)
   81:../../common/host.c **** {
- 287               		.loc 1 81 0
- 288               		.cfi_startproc
- 289               	.LVL16:
- 290               	/* prologue: function */
- 291               	/* frame size = 0 */
- 292               	/* stack size = 0 */
- 293               	.L__stack_usage = 0
+ 282               		.loc 1 81 0
+ 283               		.cfi_startproc
+ 284               	.LVL15:
+ 285               	/* prologue: function */
+ 286               	/* frame size = 0 */
+ 287               	/* stack size = 0 */
+ 288               	.L__stack_usage = 0
   82:../../common/host.c ****     if (report == last_consumer_report) return;
- 294               		.loc 1 82 0
- 295 0000 2091 0000 		lds r18,last_consumer_report
- 296 0004 3091 0000 		lds r19,last_consumer_report+1
- 297 0008 8217      		cp r24,r18
- 298 000a 9307      		cpc r25,r19
- 299 000c 01F0      		breq .L35
+ 289               		.loc 1 82 0
+ 290 0000 2091 0000 		lds r18,last_consumer_report
+ 291 0004 3091 0000 		lds r19,last_consumer_report+1
+ 292 0008 2817      		cp r18,r24
+ 293 000a 3907      		cpc r19,r25
+ 294 000c 01F0      		breq .L35
   83:../../common/host.c ****     last_consumer_report = report;
- 300               		.loc 1 83 0
- 301 000e 9093 0000 		sts last_consumer_report+1,r25
- 302 0012 8093 0000 		sts last_consumer_report,r24
+ 295               		.loc 1 83 0
+ 296 000e 9093 0000 		sts last_consumer_report+1,r25
+ 297 0012 8093 0000 		sts last_consumer_report,r24
   84:../../common/host.c **** 
   85:../../common/host.c ****     if (!driver) return;
- 303               		.loc 1 85 0
- 304 0016 E091 0000 		lds r30,driver
- 305 001a F091 0000 		lds r31,driver+1
- 306 001e 3097      		sbiw r30,0
- 307 0020 01F0      		breq .L35
+ 298               		.loc 1 85 0
+ 299 0016 E091 0000 		lds r30,driver
+ 300 001a F091 0000 		lds r31,driver+1
+ 301 001e 3097      		sbiw r30,0
+ 302 0020 01F0      		breq .L35
   86:../../common/host.c ****     (*driver->send_consumer)(report);
- 308               		.loc 1 86 0
- 309 0022 0084      		ldd __tmp_reg__,Z+8
- 310 0024 F185      		ldd r31,Z+9
- 311 0026 E02D      		mov r30,__tmp_reg__
- 312 0028 0994      		ijmp
- 313               	.LVL17:
- 314               	.L35:
- 315 002a 0895      		ret
- 316               		.cfi_endproc
- 317               	.LFE105:
- 319               		.section	.text.host_last_sysytem_report,"ax",@progbits
- 320               	.global	host_last_sysytem_report
- 322               	host_last_sysytem_report:
- 323               	.LFB106:
+ 303               		.loc 1 86 0
+ 304 0022 0084      		ldd __tmp_reg__,Z+8
+ 305 0024 F185      		ldd r31,Z+9
+ 306 0026 E02D      		mov r30,__tmp_reg__
+ 307 0028 0994      		ijmp
+ 308               	.LVL16:
+ 309               	.L35:
+ 310 002a 0895      		ret
+ 311               		.cfi_endproc
+ 312               	.LFE105:
+ 314               		.section	.text.host_last_sysytem_report,"ax",@progbits
+ 315               	.global	host_last_sysytem_report
+ 317               	host_last_sysytem_report:
+ 318               	.LFB106:
   87:../../common/host.c **** }
   88:../../common/host.c **** 
   89:../../common/host.c **** uint16_t host_last_sysytem_report(void)
   90:../../common/host.c **** {
- 324               		.loc 1 90 0
- 325               		.cfi_startproc
- 326               	/* prologue: function */
- 327               	/* frame size = 0 */
- 328               	/* stack size = 0 */
- 329               	.L__stack_usage = 0
+ 319               		.loc 1 90 0
+ 320               		.cfi_startproc
+ 321               	/* prologue: function */
+ 322               	/* frame size = 0 */
+ 323               	/* stack size = 0 */
+ 324               	.L__stack_usage = 0
   91:../../common/host.c ****     return last_system_report;
   92:../../common/host.c **** }
- 330               		.loc 1 92 0
- 331 0000 8091 0000 		lds r24,last_system_report
- 332 0004 9091 0000 		lds r25,last_system_report+1
- 333 0008 0895      		ret
- 334               		.cfi_endproc
- 335               	.LFE106:
- 337               		.section	.text.host_last_consumer_report,"ax",@progbits
- 338               	.global	host_last_consumer_report
- 340               	host_last_consumer_report:
- 341               	.LFB107:
+ 325               		.loc 1 92 0
+ 326 0000 8091 0000 		lds r24,last_system_report
+ 327 0004 9091 0000 		lds r25,last_system_report+1
+ 328 0008 0895      		ret
+ 329               		.cfi_endproc
+ 330               	.LFE106:
+ 332               		.section	.text.host_last_consumer_report,"ax",@progbits
+ 333               	.global	host_last_consumer_report
+ 335               	host_last_consumer_report:
+ 336               	.LFB107:
   93:../../common/host.c **** 
   94:../../common/host.c **** uint16_t host_last_consumer_report(void)
   95:../../common/host.c **** {
- 342               		.loc 1 95 0
- 343               		.cfi_startproc
- 344               	/* prologue: function */
- 345               	/* frame size = 0 */
- 346               	/* stack size = 0 */
- 347               	.L__stack_usage = 0
+ 337               		.loc 1 95 0
+ 338               		.cfi_startproc
+ 339               	/* prologue: function */
+ 340               	/* frame size = 0 */
+ 341               	/* stack size = 0 */
+ 342               	.L__stack_usage = 0
   96:../../common/host.c ****     return last_consumer_report;
   97:../../common/host.c **** }
- 348               		.loc 1 97 0
- 349 0000 8091 0000 		lds r24,last_consumer_report
- 350 0004 9091 0000 		lds r25,last_consumer_report+1
- 351 0008 0895      		ret
- 352               		.cfi_endproc
- 353               	.LFE107:
- 355               		.section	.progmem.data,"a",@progbits
- 358               	__c.4383:
- 359 0000 0A00      		.string	"\n"
- 362               	__c.4378:
- 363 0002 2530 3258 		.string	"%02X "
- 363      2000 
- 366               	__c.4375:
- 367 0008 6B65 7962 		.string	"keyboard_report: "
- 367      6F61 7264 
- 367      5F72 6570 
- 367      6F72 743A 
- 367      2000 
- 368               		.local	last_consumer_report
- 369               		.comm	last_consumer_report,2,1
- 370               		.local	last_system_report
- 371               		.comm	last_system_report,2,1
- 372               		.local	driver
- 373               		.comm	driver,2,1
- 374               	.global	keyboard_nkro
- 375               		.section .bss
- 378               	keyboard_nkro:
- 379 0000 00        		.zero	1
- 380               		.comm	debug_config,1,1
- 381               		.text
- 382               	.Letext0:
- 383               		.file 2 "/usr/lib/avr/include/stdint.h"
- 384               		.file 3 "../../common/report.h"
- 385               		.file 4 "../../common/host_driver.h"
- 386               		.file 5 "../../common/debug_config.h"
- 387               		.file 6 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBTask.h"
- 388               		.file 7 "../../common/xprintf.h"
+ 343               		.loc 1 97 0
+ 344 0000 8091 0000 		lds r24,last_consumer_report
+ 345 0004 9091 0000 		lds r25,last_consumer_report+1
+ 346 0008 0895      		ret
+ 347               		.cfi_endproc
+ 348               	.LFE107:
+ 350               		.section	.progmem.data,"a",@progbits
+ 353               	__c.4527:
+ 354 0000 0A00      		.string	"\n"
+ 357               	__c.4522:
+ 358 0002 2530 3258 		.string	"%02X "
+ 358      2000 
+ 361               	__c.4519:
+ 362 0008 6B65 7962 		.string	"keyboard_report: "
+ 362      6F61 7264 
+ 362      5F72 6570 
+ 362      6F72 743A 
+ 362      2000 
+ 363               		.local	last_consumer_report
+ 364               		.comm	last_consumer_report,2,1
+ 365               		.local	last_system_report
+ 366               		.comm	last_system_report,2,1
+ 367               		.local	driver
+ 368               		.comm	driver,2,1
+ 369               	.global	keyboard_nkro
+ 370               		.section .bss
+ 373               	keyboard_nkro:
+ 374 0000 00        		.zero	1
+ 375               		.comm	debug_config,1,1
+ 376               		.text
+ 377               	.Letext0:
+ 378               		.file 2 "/usr/avr/include/stdint.h"
+ 379               		.file 3 "../../common/report.h"
+ 380               		.file 4 "../../common/host_driver.h"
+ 381               		.file 5 "../../common/debug_config.h"
+ 382               		.file 6 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBTask.h"
+ 383               		.file 7 "../../common/xprintf.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 host.c
-     /tmp/ccK29ErB.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccK29ErB.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccK29ErB.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccK29ErB.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccK29ErB.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccK29ErB.s:13     .text.host_set_driver:0000000000000000 host_set_driver
-     /tmp/ccK29ErB.s:371    .bss:0000000000000005 driver
-     /tmp/ccK29ErB.s:33     .text.host_get_driver:0000000000000000 host_get_driver
-     /tmp/ccK29ErB.s:51     .text.host_keyboard_leds:0000000000000000 host_keyboard_leds
-     /tmp/ccK29ErB.s:80     .text.host_keyboard_send:0000000000000000 host_keyboard_send
+     /tmp/cc3bhEro.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cc3bhEro.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cc3bhEro.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cc3bhEro.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cc3bhEro.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cc3bhEro.s:13     .text.host_set_driver:0000000000000000 host_set_driver
+     /tmp/cc3bhEro.s:366    .bss:0000000000000005 driver
+     /tmp/cc3bhEro.s:33     .text.host_get_driver:0000000000000000 host_get_driver
+     /tmp/cc3bhEro.s:51     .text.host_keyboard_leds:0000000000000000 host_keyboard_leds
+     /tmp/cc3bhEro.s:80     .text.host_keyboard_send:0000000000000000 host_keyboard_send
                             *COM*:0000000000000001 debug_config
-     /tmp/ccK29ErB.s:366    .progmem.data:0000000000000008 __c.4375
-     /tmp/ccK29ErB.s:362    .progmem.data:0000000000000002 __c.4378
-     /tmp/ccK29ErB.s:358    .progmem.data:0000000000000000 __c.4383
-     /tmp/ccK29ErB.s:220    .text.host_mouse_send:0000000000000000 host_mouse_send
-     /tmp/ccK29ErB.s:248    .text.host_system_send:0000000000000000 host_system_send
-     /tmp/ccK29ErB.s:369    .bss:0000000000000003 last_system_report
-     /tmp/ccK29ErB.s:285    .text.host_consumer_send:0000000000000000 host_consumer_send
+     /tmp/cc3bhEro.s:361    .progmem.data:0000000000000008 __c.4519
+     /tmp/cc3bhEro.s:357    .progmem.data:0000000000000002 __c.4522
+     /tmp/cc3bhEro.s:353    .progmem.data:0000000000000000 __c.4527
+     /tmp/cc3bhEro.s:215    .text.host_mouse_send:0000000000000000 host_mouse_send
+     /tmp/cc3bhEro.s:243    .text.host_system_send:0000000000000000 host_system_send
+     /tmp/cc3bhEro.s:364    .bss:0000000000000003 last_system_report
+     /tmp/cc3bhEro.s:280    .text.host_consumer_send:0000000000000000 host_consumer_send
                              .bss:0000000000000001 last_consumer_report
-     /tmp/ccK29ErB.s:322    .text.host_last_sysytem_report:0000000000000000 host_last_sysytem_report
-     /tmp/ccK29ErB.s:340    .text.host_last_consumer_report:0000000000000000 host_last_consumer_report
-     /tmp/ccK29ErB.s:378    .bss:0000000000000000 keyboard_nkro
+     /tmp/cc3bhEro.s:317    .text.host_last_sysytem_report:0000000000000000 host_last_sysytem_report
+     /tmp/cc3bhEro.s:335    .text.host_last_consumer_report:0000000000000000 host_last_consumer_report
+     /tmp/cc3bhEro.s:373    .bss:0000000000000000 keyboard_nkro
 
 UNDEFINED SYMBOLS
 xputs

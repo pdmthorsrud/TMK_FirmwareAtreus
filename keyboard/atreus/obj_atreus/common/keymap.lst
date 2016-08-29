@@ -81,80 +81,81 @@
   41               		.loc 1 41 0
   42 0016 C901      		movw r24,r18
   43 0018 9F70      		andi r25,lo8(15)
-  44               	.LBE2:
+  44               	.LVL5:
+  45               	.LBE2:
   42:../../common/keymap.c ****   }
   43:../../common/keymap.c **** }
-  45               		.loc 1 43 0
-  46 001a 0895      		ret
-  47               		.cfi_endproc
-  48               	.LFE102:
-  50               		.section	.text.action_get_macro,"ax",@progbits
-  51               		.weak	action_get_macro
-  53               	action_get_macro:
-  54               	.LFB103:
+  46               		.loc 1 43 0
+  47 001a 0895      		ret
+  48               		.cfi_endproc
+  49               	.LFE102:
+  51               		.section	.text.action_get_macro,"ax",@progbits
+  52               		.weak	action_get_macro
+  54               	action_get_macro:
+  55               	.LFB103:
   44:../../common/keymap.c **** 
   45:../../common/keymap.c **** 
   46:../../common/keymap.c **** /* Macro */
   47:../../common/keymap.c **** __attribute__ ((weak))
   48:../../common/keymap.c **** const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
   49:../../common/keymap.c **** {
-  55               		.loc 1 49 0
-  56               		.cfi_startproc
-  57               	.LVL5:
-  58               	/* prologue: function */
-  59               	/* frame size = 0 */
-  60               	/* stack size = 0 */
-  61               	.L__stack_usage = 0
+  56               		.loc 1 49 0
+  57               		.cfi_startproc
+  58               	.LVL6:
+  59               	/* prologue: function */
+  60               	/* frame size = 0 */
+  61               	/* stack size = 0 */
+  62               	.L__stack_usage = 0
   50:../../common/keymap.c ****     return MACRO_NONE;
   51:../../common/keymap.c **** }
-  62               		.loc 1 51 0
-  63 0000 80E0      		ldi r24,0
-  64 0002 90E0      		ldi r25,0
-  65               	.LVL6:
-  66 0004 0895      		ret
-  67               		.cfi_endproc
-  68               	.LFE103:
-  70               		.section	.text.action_function,"ax",@progbits
-  71               		.weak	action_function
-  73               	action_function:
-  74               	.LFB104:
+  63               		.loc 1 51 0
+  64 0000 80E0      		ldi r24,0
+  65 0002 90E0      		ldi r25,0
+  66               	.LVL7:
+  67 0004 0895      		ret
+  68               		.cfi_endproc
+  69               	.LFE103:
+  71               		.section	.text.action_function,"ax",@progbits
+  72               		.weak	action_function
+  74               	action_function:
+  75               	.LFB104:
   52:../../common/keymap.c **** 
   53:../../common/keymap.c **** /* Function */
   54:../../common/keymap.c **** __attribute__ ((weak))
   55:../../common/keymap.c **** void action_function(keyrecord_t *record, uint8_t id, uint8_t opt)
   56:../../common/keymap.c **** {
-  75               		.loc 1 56 0
-  76               		.cfi_startproc
-  77               	.LVL7:
-  78               	/* prologue: function */
-  79               	/* frame size = 0 */
-  80               	/* stack size = 0 */
-  81               	.L__stack_usage = 0
-  82 0000 0895      		ret
-  83               		.cfi_endproc
-  84               	.LFE104:
-  86               		.comm	debug_config,1,1
-  87               		.text
-  88               	.Letext0:
-  89               		.file 2 "/usr/lib/avr/include/stdint.h"
-  90               		.file 3 "../../common/keyboard.h"
-  91               		.file 4 "../../common/action_code.h"
-  92               		.file 5 "../../common/action_macro.h"
-  93               		.file 6 "../../common/action.h"
-  94               		.file 7 "../../common/debug_config.h"
-  95               		.file 8 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBTask.h"
-  96               		.file 9 "../../common/keycode.h"
-  97               		.file 10 "../../common/keymap.h"
+  76               		.loc 1 56 0
+  77               		.cfi_startproc
+  78               	.LVL8:
+  79               	/* prologue: function */
+  80               	/* frame size = 0 */
+  81               	/* stack size = 0 */
+  82               	.L__stack_usage = 0
+  83 0000 0895      		ret
+  84               		.cfi_endproc
+  85               	.LFE104:
+  87               		.comm	debug_config,1,1
+  88               		.text
+  89               	.Letext0:
+  90               		.file 2 "/usr/avr/include/stdint.h"
+  91               		.file 3 "../../common/keyboard.h"
+  92               		.file 4 "../../common/action_code.h"
+  93               		.file 5 "../../common/action_macro.h"
+  94               		.file 6 "../../common/action.h"
+  95               		.file 7 "../../common/debug_config.h"
+  96               		.file 8 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBTask.h"
+  97               		.file 9 "../../common/keymap.h"
+  98               		.file 10 "../../common/keycode.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 keymap.c
-     /tmp/ccieM8h8.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccieM8h8.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccieM8h8.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccieM8h8.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccieM8h8.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccieM8h8.s:13     .text.action_for_key:0000000000000000 action_for_key
-     /tmp/ccieM8h8.s:53     .text.action_get_macro:0000000000000000 action_get_macro
-     /tmp/ccieM8h8.s:73     .text.action_function:0000000000000000 action_function
+     /tmp/ccIhGQAQ.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccIhGQAQ.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccIhGQAQ.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccIhGQAQ.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccIhGQAQ.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccIhGQAQ.s:13     .text.action_for_key:0000000000000000 action_for_key
+     /tmp/ccIhGQAQ.s:54     .text.action_get_macro:0000000000000000 action_get_macro
+     /tmp/ccIhGQAQ.s:74     .text.action_function:0000000000000000 action_function
                             *COM*:0000000000000001 debug_config
 
 UNDEFINED SYMBOLS

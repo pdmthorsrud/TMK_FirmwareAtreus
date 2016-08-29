@@ -268,8 +268,8 @@
   68 0046 8F93      		push r24
   69               	.LCFI1:
   70               		.cfi_def_cfa_offset 4
-  71 0048 80E0      		ldi r24,lo8(__c.4518)
-  72 004a 90E0      		ldi r25,hi8(__c.4518)
+  71 0048 80E0      		ldi r24,lo8(__c.4662)
+  72 004a 90E0      		ldi r25,hi8(__c.4662)
   73               	.LVL4:
   74 004c 9F93      		push r25
   75               	.LCFI2:
@@ -304,7 +304,7 @@
  103               	.L6:
  104               	.LVL8:
  105 006e 5191      		ld r21,Z+
- 106 0070 5817      		cp r21,r24
+ 106 0070 8517      		cp r24,r21
  107 0072 01F0      		breq .L1
  175:../../common/action_util.c ****             empty = i;
  108               		.loc 1 175 0
@@ -412,8 +412,8 @@
  198 0048 8F93      		push r24
  199               	.LCFI6:
  200               		.cfi_def_cfa_offset 4
- 201 004a 80E0      		ldi r24,lo8(__c.4523)
- 202 004c 90E0      		ldi r25,hi8(__c.4523)
+ 201 004a 80E0      		ldi r24,lo8(__c.4667)
+ 202 004c 90E0      		ldi r25,hi8(__c.4667)
  203               	.LVL16:
  204 004e 9F93      		push r25
  205               	.LCFI7:
@@ -448,7 +448,7 @@
  233               	.L21:
  234               	.LVL20:
  235 0070 9081      		ld r25,Z
- 236 0072 9813      		cpse r25,r24
+ 236 0072 8913      		cpse r24,r25
  237 0074 00C0      		rjmp .L20
  190:../../common/action_util.c ****         }
  238               		.loc 1 190 0
@@ -942,13 +942,13 @@
  705               		.cfi_endproc
  706               	.LFE117:
  708               		.section	.progmem.data,"a",@progbits
- 711               	__c.4523:
+ 711               	__c.4667:
  712 0000 6465 6C5F 		.string	"del_key_bit: can't del: %02X\n"
  712      6B65 795F 
  712      6269 743A 
  712      2063 616E 
  712      2774 2064 
- 715               	__c.4518:
+ 715               	__c.4662:
  716 001e 6164 645F 		.string	"add_key_bit: can't add: %02X\n"
  716      6B65 795F 
  716      6269 743A 
@@ -969,7 +969,7 @@
  731               		.comm	debug_config,1,1
  732               		.text
  733               	.Letext0:
- 734               		.file 2 "/usr/lib/avr/include/stdint.h"
+ 734               		.file 2 "/usr/avr/include/stdint.h"
  735               		.file 3 "../../common/report.h"
  736               		.file 4 "../../common/debug_config.h"
  737               		.file 5 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBTask.h"
@@ -978,38 +978,38 @@
  740               		.file 8 "../../common/util.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 action_util.c
-     /tmp/ccwMwRj4.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccwMwRj4.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccwMwRj4.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccwMwRj4.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccwMwRj4.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccwMwRj4.s:13     .text.add_key:0000000000000000 add_key
-     /tmp/ccwMwRj4.s:723    .data:0000000000000000 keyboard_report
+     /tmp/ccvnrCVH.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccvnrCVH.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccvnrCVH.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccvnrCVH.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccvnrCVH.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccvnrCVH.s:13     .text.add_key:0000000000000000 add_key
+     /tmp/ccvnrCVH.s:723    .data:0000000000000000 keyboard_report
                             *COM*:0000000000000001 debug_config
-     /tmp/ccwMwRj4.s:715    .progmem.data:000000000000001e __c.4518
-     /tmp/ccwMwRj4.s:143    .text.del_key:0000000000000000 del_key
-     /tmp/ccwMwRj4.s:711    .progmem.data:0000000000000000 __c.4523
-     /tmp/ccwMwRj4.s:259    .text.clear_keys:0000000000000000 clear_keys
-     /tmp/ccwMwRj4.s:297    .text.get_mods:0000000000000000 get_mods
-     /tmp/ccwMwRj4.s:728    .bss:0000000000000012 real_mods
-     /tmp/ccwMwRj4.s:314    .text.add_mods:0000000000000000 add_mods
-     /tmp/ccwMwRj4.s:335    .text.del_mods:0000000000000000 del_mods
-     /tmp/ccwMwRj4.s:358    .text.set_mods:0000000000000000 set_mods
-     /tmp/ccwMwRj4.s:376    .text.clear_mods:0000000000000000 clear_mods
-     /tmp/ccwMwRj4.s:393    .text.get_weak_mods:0000000000000000 get_weak_mods
-     /tmp/ccwMwRj4.s:726    .bss:0000000000000011 weak_mods
-     /tmp/ccwMwRj4.s:410    .text.add_weak_mods:0000000000000000 add_weak_mods
-     /tmp/ccwMwRj4.s:431    .text.del_weak_mods:0000000000000000 del_weak_mods
-     /tmp/ccwMwRj4.s:454    .text.set_weak_mods:0000000000000000 set_weak_mods
-     /tmp/ccwMwRj4.s:472    .text.clear_weak_mods:0000000000000000 clear_weak_mods
-     /tmp/ccwMwRj4.s:489    .text.set_oneshot_mods:0000000000000000 set_oneshot_mods
+     /tmp/ccvnrCVH.s:715    .progmem.data:000000000000001e __c.4662
+     /tmp/ccvnrCVH.s:143    .text.del_key:0000000000000000 del_key
+     /tmp/ccvnrCVH.s:711    .progmem.data:0000000000000000 __c.4667
+     /tmp/ccvnrCVH.s:259    .text.clear_keys:0000000000000000 clear_keys
+     /tmp/ccvnrCVH.s:297    .text.get_mods:0000000000000000 get_mods
+     /tmp/ccvnrCVH.s:728    .bss:0000000000000012 real_mods
+     /tmp/ccvnrCVH.s:314    .text.add_mods:0000000000000000 add_mods
+     /tmp/ccvnrCVH.s:335    .text.del_mods:0000000000000000 del_mods
+     /tmp/ccvnrCVH.s:358    .text.set_mods:0000000000000000 set_mods
+     /tmp/ccvnrCVH.s:376    .text.clear_mods:0000000000000000 clear_mods
+     /tmp/ccvnrCVH.s:393    .text.get_weak_mods:0000000000000000 get_weak_mods
+     /tmp/ccvnrCVH.s:726    .bss:0000000000000011 weak_mods
+     /tmp/ccvnrCVH.s:410    .text.add_weak_mods:0000000000000000 add_weak_mods
+     /tmp/ccvnrCVH.s:431    .text.del_weak_mods:0000000000000000 del_weak_mods
+     /tmp/ccvnrCVH.s:454    .text.set_weak_mods:0000000000000000 set_weak_mods
+     /tmp/ccvnrCVH.s:472    .text.clear_weak_mods:0000000000000000 clear_weak_mods
+     /tmp/ccvnrCVH.s:489    .text.set_oneshot_mods:0000000000000000 set_oneshot_mods
                              .bss:0000000000000000 oneshot_mods
-     /tmp/ccwMwRj4.s:507    .text.clear_oneshot_mods:0000000000000000 clear_oneshot_mods
-     /tmp/ccwMwRj4.s:524    .text.has_anykey:0000000000000000 has_anykey
-     /tmp/ccwMwRj4.s:570    .text.send_keyboard_report:0000000000000000 send_keyboard_report
-     /tmp/ccwMwRj4.s:622    .text.has_anymod:0000000000000000 has_anymod
-     /tmp/ccwMwRj4.s:640    .text.get_first_key:0000000000000000 get_first_key
-     /tmp/ccwMwRj4.s:718    .bss:0000000000000001 __compound_literal.0
+     /tmp/ccvnrCVH.s:507    .text.clear_oneshot_mods:0000000000000000 clear_oneshot_mods
+     /tmp/ccvnrCVH.s:524    .text.has_anykey:0000000000000000 has_anykey
+     /tmp/ccvnrCVH.s:570    .text.send_keyboard_report:0000000000000000 send_keyboard_report
+     /tmp/ccvnrCVH.s:622    .text.has_anymod:0000000000000000 has_anymod
+     /tmp/ccvnrCVH.s:640    .text.get_first_key:0000000000000000 get_first_key
+     /tmp/ccvnrCVH.s:718    .bss:0000000000000001 __compound_literal.0
 
 UNDEFINED SYMBOLS
 keyboard_nkro

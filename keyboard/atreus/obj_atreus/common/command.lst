@@ -652,8 +652,8 @@
   26 0002 C82F      		mov r28,r24
  628:../../common/command.c ****     print("switch_default_layer: "); print_dec(biton32(default_layer_state));
   27               		.loc 1 628 0
-  28 0004 80E0      		ldi r24,lo8(__c.4872)
-  29 0006 90E0      		ldi r25,hi8(__c.4872)
+  28 0004 80E0      		ldi r24,lo8(__c.5016)
+  29 0006 90E0      		ldi r25,hi8(__c.5016)
   30               	.LVL1:
   31 0008 0E94 0000 		call xputs
   32               	.LVL2:
@@ -669,8 +669,8 @@
   42 0022 8F93      		push r24
   43               	.LCFI2:
   44               		.cfi_def_cfa_offset 5
-  45 0024 80E0      		ldi r24,lo8(__c.4874)
-  46 0026 90E0      		ldi r25,hi8(__c.4874)
+  45 0024 80E0      		ldi r24,lo8(__c.5018)
+  46 0026 90E0      		ldi r25,hi8(__c.5018)
   47 0028 9F93      		push r25
   48               	.LCFI3:
   49               		.cfi_def_cfa_offset 6
@@ -681,8 +681,8 @@
   54               	.LVL4:
  629:../../common/command.c ****     print(" to "); print_dec(layer); print("\n");
   55               		.loc 1 629 0
-  56 0030 80E0      		ldi r24,lo8(__c.4876)
-  57 0032 90E0      		ldi r25,hi8(__c.4876)
+  56 0030 80E0      		ldi r24,lo8(__c.5020)
+  57 0032 90E0      		ldi r25,hi8(__c.5020)
   58 0034 0E94 0000 		call xputs
   59               	.LVL5:
   60 0038 1F92      		push __zero_reg__
@@ -691,8 +691,8 @@
   63 003a CF93      		push r28
   64               	.LCFI6:
   65               		.cfi_def_cfa_offset 9
-  66 003c 80E0      		ldi r24,lo8(__c.4878)
-  67 003e 90E0      		ldi r25,hi8(__c.4878)
+  66 003c 80E0      		ldi r24,lo8(__c.5022)
+  67 003e 90E0      		ldi r25,hi8(__c.5022)
   68 0040 9F93      		push r25
   69               	.LCFI7:
   70               		.cfi_def_cfa_offset 10
@@ -701,8 +701,8 @@
   73               		.cfi_def_cfa_offset 11
   74 0044 0E94 0000 		call __xprintf
   75               	.LVL6:
-  76 0048 80E0      		ldi r24,lo8(__c.4880)
-  77 004a 90E0      		ldi r25,hi8(__c.4880)
+  76 0048 80E0      		ldi r24,lo8(__c.5024)
+  77 004a 90E0      		ldi r25,hi8(__c.5024)
   78 004c 0E94 0000 		call xputs
   79               	.LVL7:
  630:../../common/command.c ****     default_layer_set(1UL<<layer);
@@ -792,7 +792,7 @@
  160 000c 8130      		cpi r24,lo8(1)
  161 000e 01F4      		brne .+2
  162 0010 00C0      		rjmp .L6
- 163 0012 00C0      		rjmp .L83
+ 163 0012 00C0      		rjmp .L82
  164               	.L5:
   74:../../common/command.c ****                 return false;
  165               		.loc 1 74 0
@@ -808,7 +808,7 @@
  174 0026 0E94 0000 		call command_extra
  175               	.LVL15:
  176 002a 8111      		cpse r24,__zero_reg__
- 177 002c 00C0      		rjmp .L44
+ 177 002c 00C0      		rjmp .L8
  178               	.LVL16:
  179               	.LBB94:
  180               	.LBB95:
@@ -842,35 +842,35 @@
  205               	.LBB97:
  373:../../common/command.c ****     print("ESC/q:	quit\n");
  206               		.loc 1 373 0
- 207 005a 80E0      		ldi r24,lo8(__c.4837)
- 208 005c 90E0      		ldi r25,hi8(__c.4837)
+ 207 005a 80E0      		ldi r24,lo8(__c.4981)
+ 208 005c 90E0      		ldi r25,hi8(__c.4981)
  209 005e 0E94 0000 		call xputs
  210               	.LVL17:
  374:../../common/command.c **** #ifdef MOUSEKEY_ENABLE
  211               		.loc 1 374 0
- 212 0062 80E0      		ldi r24,lo8(__c.4839)
- 213 0064 90E0      		ldi r25,hi8(__c.4839)
+ 212 0062 80E0      		ldi r24,lo8(__c.4983)
+ 213 0064 90E0      		ldi r25,hi8(__c.4983)
  214 0066 0E94 0000 		call xputs
  215               	.LVL18:
  216               	.LBE97:
  217               	.LBE96:
  203:../../common/command.c ****             print("C> ");
  218               		.loc 1 203 0
- 219 006a 80E0      		ldi r24,lo8(__c.4771)
- 220 006c 90E0      		ldi r25,hi8(__c.4771)
+ 219 006a 80E0      		ldi r24,lo8(__c.4915)
+ 220 006c 90E0      		ldi r25,hi8(__c.4915)
  221 006e 0E94 0000 		call xputs
  222               	.LVL19:
  204:../../common/command.c ****             state = CONSOLE;
  223               		.loc 1 204 0
- 224 0072 80E0      		ldi r24,lo8(__c.4773)
- 225 0074 90E0      		ldi r25,hi8(__c.4773)
+ 224 0072 80E0      		ldi r24,lo8(__c.4917)
+ 225 0074 90E0      		ldi r25,hi8(__c.4917)
  226 0076 0E94 0000 		call xputs
  227               	.LVL20:
  205:../../common/command.c ****             break;
  228               		.loc 1 205 0
  229 007a 81E0      		ldi r24,lo8(1)
  230 007c 8093 0000 		sts state,r24
- 231 0080 00C0      		rjmp .L44
+ 231 0080 00C0      		rjmp .L8
  232               	.L15:
  168:../../common/command.c **** #ifdef SLEEP_LED_ENABLE
  233               		.loc 1 168 0
@@ -899,39 +899,39 @@
  256 00aa 00C0      		rjmp .L9
  254:../../common/command.c ****             print("DESC: " STR(DESCRIPTION) "\n");
  257               		.loc 1 254 0
- 258 00ac 80E0      		ldi r24,lo8(__c.4801)
- 259 00ae 90E0      		ldi r25,hi8(__c.4801)
+ 258 00ac 80E0      		ldi r24,lo8(__c.4945)
+ 259 00ae 90E0      		ldi r25,hi8(__c.4945)
  260 00b0 0E94 0000 		call xputs
  261               	.LVL21:
  255:../../common/command.c ****             print("VID: " STR(VENDOR_ID) "(" STR(MANUFACTURER) ") "
  262               		.loc 1 255 0
- 263 00b4 80E0      		ldi r24,lo8(__c.4803)
- 264 00b6 90E0      		ldi r25,hi8(__c.4803)
+ 263 00b4 80E0      		ldi r24,lo8(__c.4947)
+ 264 00b6 90E0      		ldi r25,hi8(__c.4947)
  265 00b8 0E94 0000 		call xputs
  266               	.LVL22:
  256:../../common/command.c ****                   "PID: " STR(PRODUCT_ID) "(" STR(PRODUCT) ") "
  267               		.loc 1 256 0
- 268 00bc 80E0      		ldi r24,lo8(__c.4805)
- 269 00be 90E0      		ldi r25,hi8(__c.4805)
+ 268 00bc 80E0      		ldi r24,lo8(__c.4949)
+ 269 00be 90E0      		ldi r25,hi8(__c.4949)
  270 00c0 0E94 0000 		call xputs
  271               	.LVL23:
  259:../../common/command.c ****             /* build options */
  272               		.loc 1 259 0
- 273 00c4 80E0      		ldi r24,lo8(__c.4807)
- 274 00c6 90E0      		ldi r25,hi8(__c.4807)
+ 273 00c4 80E0      		ldi r24,lo8(__c.4951)
+ 274 00c6 90E0      		ldi r25,hi8(__c.4951)
  275 00c8 0E94 0000 		call xputs
  276               	.LVL24:
  261:../../common/command.c **** #ifdef PROTOCOL_PJRC
  277               		.loc 1 261 0
- 278 00cc 80E0      		ldi r24,lo8(__c.4809)
- 279 00ce 90E0      		ldi r25,hi8(__c.4809)
+ 278 00cc 80E0      		ldi r24,lo8(__c.4953)
+ 279 00ce 90E0      		ldi r25,hi8(__c.4953)
  280 00d0 0E94 0000 		call xputs
  281               	.LVL25:
  294:../../common/command.c ****                   " AVR-LIBC: " __AVR_LIBC_VERSION_STRING__
  282               		.loc 1 294 0
- 283 00d4 80E0      		ldi r24,lo8(__c.4811)
- 284 00d6 90E0      		ldi r25,hi8(__c.4811)
- 285 00d8 00C0      		rjmp .L77
+ 283 00d4 80E0      		ldi r24,lo8(__c.4955)
+ 284 00d6 90E0      		ldi r25,hi8(__c.4955)
+ 285 00d8 00C0      		rjmp .L76
  286               	.L11:
  168:../../common/command.c **** #ifdef SLEEP_LED_ENABLE
  287               		.loc 1 168 0
@@ -949,7 +949,7 @@
  355:../../common/command.c ****             break;
  299               		.loc 1 355 0
  300 00f0 83EE      		ldi r24,lo8(-29)
- 301 00f2 00C0      		rjmp .L75
+ 301 00f2 00C0      		rjmp .L74
  302               	.L26:
  168:../../common/command.c **** #ifdef SLEEP_LED_ENABLE
  303               		.loc 1 168 0
@@ -978,177 +978,201 @@
  325               	.LVL26:
  209:../../common/command.c ****             _delay_ms(1000);
  326               		.loc 1 209 0
- 327 011a 80E0      		ldi r24,lo8(__c.4776)
- 328 011c 90E0      		ldi r25,hi8(__c.4776)
+ 327 011a 80E0      		ldi r24,lo8(__c.4920)
+ 328 011c 90E0      		ldi r25,hi8(__c.4920)
  329 011e 0E94 0000 		call xputs
  330               	.LVL27:
  331               	.LBB98:
  332               	.LBB99:
- 333               		.file 2 "/usr/lib/avr/include/util/delay.h"
-   1:/usr/lib/avr/include/util/delay.h **** /* Copyright (c) 2002, Marek Michalkiewicz
-   2:/usr/lib/avr/include/util/delay.h ****    Copyright (c) 2004,2005,2007 Joerg Wunsch
-   3:/usr/lib/avr/include/util/delay.h ****    Copyright (c) 2007  Florin-Viorel Petrov
-   4:/usr/lib/avr/include/util/delay.h ****    All rights reserved.
-   5:/usr/lib/avr/include/util/delay.h **** 
-   6:/usr/lib/avr/include/util/delay.h ****    Redistribution and use in source and binary forms, with or without
-   7:/usr/lib/avr/include/util/delay.h ****    modification, are permitted provided that the following conditions are met:
-   8:/usr/lib/avr/include/util/delay.h **** 
-   9:/usr/lib/avr/include/util/delay.h ****    * Redistributions of source code must retain the above copyright
-  10:/usr/lib/avr/include/util/delay.h ****      notice, this list of conditions and the following disclaimer.
-  11:/usr/lib/avr/include/util/delay.h **** 
-  12:/usr/lib/avr/include/util/delay.h ****    * Redistributions in binary form must reproduce the above copyright
-  13:/usr/lib/avr/include/util/delay.h ****      notice, this list of conditions and the following disclaimer in
-  14:/usr/lib/avr/include/util/delay.h ****      the documentation and/or other materials provided with the
-  15:/usr/lib/avr/include/util/delay.h ****      distribution.
-  16:/usr/lib/avr/include/util/delay.h **** 
-  17:/usr/lib/avr/include/util/delay.h ****    * Neither the name of the copyright holders nor the names of
-  18:/usr/lib/avr/include/util/delay.h ****      contributors may be used to endorse or promote products derived
-  19:/usr/lib/avr/include/util/delay.h ****      from this software without specific prior written permission.
-  20:/usr/lib/avr/include/util/delay.h **** 
-  21:/usr/lib/avr/include/util/delay.h ****   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-  22:/usr/lib/avr/include/util/delay.h ****   AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-  23:/usr/lib/avr/include/util/delay.h ****   IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-  24:/usr/lib/avr/include/util/delay.h ****   ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
-  25:/usr/lib/avr/include/util/delay.h ****   LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-  26:/usr/lib/avr/include/util/delay.h ****   CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-  27:/usr/lib/avr/include/util/delay.h ****   SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-  28:/usr/lib/avr/include/util/delay.h ****   INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-  29:/usr/lib/avr/include/util/delay.h ****   CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-  30:/usr/lib/avr/include/util/delay.h ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-  31:/usr/lib/avr/include/util/delay.h ****   POSSIBILITY OF SUCH DAMAGE. */
-  32:/usr/lib/avr/include/util/delay.h **** 
-  33:/usr/lib/avr/include/util/delay.h **** /* $Id$ */
-  34:/usr/lib/avr/include/util/delay.h **** 
-  35:/usr/lib/avr/include/util/delay.h **** #ifndef _UTIL_DELAY_H_
-  36:/usr/lib/avr/include/util/delay.h **** #define _UTIL_DELAY_H_ 1
-  37:/usr/lib/avr/include/util/delay.h **** 
-  38:/usr/lib/avr/include/util/delay.h **** #ifndef __HAS_DELAY_CYCLES
-  39:/usr/lib/avr/include/util/delay.h **** #define __HAS_DELAY_CYCLES 1
-  40:/usr/lib/avr/include/util/delay.h **** #endif
-  41:/usr/lib/avr/include/util/delay.h **** 
-  42:/usr/lib/avr/include/util/delay.h **** #include <inttypes.h>
-  43:/usr/lib/avr/include/util/delay.h **** #include <util/delay_basic.h>
-  44:/usr/lib/avr/include/util/delay.h **** #include <math.h>
-  45:/usr/lib/avr/include/util/delay.h **** 
-  46:/usr/lib/avr/include/util/delay.h **** /** \file */
-  47:/usr/lib/avr/include/util/delay.h **** /** \defgroup util_delay <util/delay.h>: Convenience functions for busy-wait delay loops
-  48:/usr/lib/avr/include/util/delay.h ****     \code
-  49:/usr/lib/avr/include/util/delay.h ****     #define F_CPU 1000000UL  // 1 MHz
-  50:/usr/lib/avr/include/util/delay.h ****     //#define F_CPU 14.7456E6
-  51:/usr/lib/avr/include/util/delay.h ****     #include <util/delay.h>
-  52:/usr/lib/avr/include/util/delay.h ****     \endcode
-  53:/usr/lib/avr/include/util/delay.h **** 
-  54:/usr/lib/avr/include/util/delay.h ****     \note As an alternative method, it is possible to pass the
-  55:/usr/lib/avr/include/util/delay.h ****     F_CPU macro down to the compiler from the Makefile.
-  56:/usr/lib/avr/include/util/delay.h ****     Obviously, in that case, no \c \#define statement should be
-  57:/usr/lib/avr/include/util/delay.h ****     used.
-  58:/usr/lib/avr/include/util/delay.h **** 
-  59:/usr/lib/avr/include/util/delay.h ****     The functions in this header file are wrappers around the basic
-  60:/usr/lib/avr/include/util/delay.h ****     busy-wait functions from <util/delay_basic.h>.  They are meant as
-  61:/usr/lib/avr/include/util/delay.h ****     convenience functions where actual time values can be specified
-  62:/usr/lib/avr/include/util/delay.h ****     rather than a number of cycles to wait for.  The idea behind is
-  63:/usr/lib/avr/include/util/delay.h ****     that compile-time constant expressions will be eliminated by
-  64:/usr/lib/avr/include/util/delay.h ****     compiler optimization so floating-point expressions can be used
-  65:/usr/lib/avr/include/util/delay.h ****     to calculate the number of delay cycles needed based on the CPU
-  66:/usr/lib/avr/include/util/delay.h ****     frequency passed by the macro F_CPU.
-  67:/usr/lib/avr/include/util/delay.h **** 
-  68:/usr/lib/avr/include/util/delay.h ****     \note In order for these functions to work as intended, compiler
-  69:/usr/lib/avr/include/util/delay.h ****     optimizations <em>must</em> be enabled, and the delay time
-  70:/usr/lib/avr/include/util/delay.h ****     <em>must</em> be an expression that is a known constant at
-  71:/usr/lib/avr/include/util/delay.h ****     compile-time.  If these requirements are not met, the resulting
-  72:/usr/lib/avr/include/util/delay.h ****     delay will be much longer (and basically unpredictable), and
-  73:/usr/lib/avr/include/util/delay.h ****     applications that otherwise do not use floating-point calculations
-  74:/usr/lib/avr/include/util/delay.h ****     will experience severe code bloat by the floating-point library
-  75:/usr/lib/avr/include/util/delay.h ****     routines linked into the application.
-  76:/usr/lib/avr/include/util/delay.h **** 
-  77:/usr/lib/avr/include/util/delay.h ****     The functions available allow the specification of microsecond, and
-  78:/usr/lib/avr/include/util/delay.h ****     millisecond delays directly, using the application-supplied macro
-  79:/usr/lib/avr/include/util/delay.h ****     F_CPU as the CPU clock frequency (in Hertz).
-  80:/usr/lib/avr/include/util/delay.h **** 
-  81:/usr/lib/avr/include/util/delay.h **** */
-  82:/usr/lib/avr/include/util/delay.h **** 
-  83:/usr/lib/avr/include/util/delay.h **** #if !defined(__DOXYGEN__)
-  84:/usr/lib/avr/include/util/delay.h **** static inline void _delay_us(double __us) __attribute__((always_inline));
-  85:/usr/lib/avr/include/util/delay.h **** static inline void _delay_ms(double __ms) __attribute__((always_inline));
-  86:/usr/lib/avr/include/util/delay.h **** #endif
-  87:/usr/lib/avr/include/util/delay.h **** 
-  88:/usr/lib/avr/include/util/delay.h **** #ifndef F_CPU
-  89:/usr/lib/avr/include/util/delay.h **** /* prevent compiler error by supplying a default */
-  90:/usr/lib/avr/include/util/delay.h **** # warning "F_CPU not defined for <util/delay.h>"
-  91:/usr/lib/avr/include/util/delay.h **** # define F_CPU 1000000UL
-  92:/usr/lib/avr/include/util/delay.h **** #endif
-  93:/usr/lib/avr/include/util/delay.h **** 
-  94:/usr/lib/avr/include/util/delay.h **** #ifndef __OPTIMIZE__
-  95:/usr/lib/avr/include/util/delay.h **** # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-  96:/usr/lib/avr/include/util/delay.h **** #endif
-  97:/usr/lib/avr/include/util/delay.h **** 
-  98:/usr/lib/avr/include/util/delay.h **** #if __HAS_DELAY_CYCLES && defined(__OPTIMIZE__) && \
-  99:/usr/lib/avr/include/util/delay.h ****   !defined(__DELAY_BACKWARD_COMPATIBLE__) &&	   \
- 100:/usr/lib/avr/include/util/delay.h ****   __STDC_HOSTED__
- 101:/usr/lib/avr/include/util/delay.h **** #  include <math.h>
- 102:/usr/lib/avr/include/util/delay.h **** #endif
- 103:/usr/lib/avr/include/util/delay.h **** 
- 104:/usr/lib/avr/include/util/delay.h **** /**
- 105:/usr/lib/avr/include/util/delay.h ****    \ingroup util_delay
- 106:/usr/lib/avr/include/util/delay.h **** 
- 107:/usr/lib/avr/include/util/delay.h ****    Perform a delay of \c __ms milliseconds, using _delay_loop_2().
- 108:/usr/lib/avr/include/util/delay.h **** 
- 109:/usr/lib/avr/include/util/delay.h ****    The macro F_CPU is supposed to be defined to a
- 110:/usr/lib/avr/include/util/delay.h ****    constant defining the CPU clock frequency (in Hertz).
- 111:/usr/lib/avr/include/util/delay.h **** 
- 112:/usr/lib/avr/include/util/delay.h ****    The maximal possible delay is 262.14 ms / F_CPU in MHz.
- 113:/usr/lib/avr/include/util/delay.h **** 
- 114:/usr/lib/avr/include/util/delay.h ****    When the user request delay which exceed the maximum possible one,
- 115:/usr/lib/avr/include/util/delay.h ****    _delay_ms() provides a decreased resolution functionality. In this
- 116:/usr/lib/avr/include/util/delay.h ****    mode _delay_ms() will work with a resolution of 1/10 ms, providing
- 117:/usr/lib/avr/include/util/delay.h ****    delays up to 6.5535 seconds (independent from CPU frequency).  The
- 118:/usr/lib/avr/include/util/delay.h ****    user will not be informed about decreased resolution.
- 119:/usr/lib/avr/include/util/delay.h **** 
- 120:/usr/lib/avr/include/util/delay.h ****    If the avr-gcc toolchain has __builtin_avr_delay_cycles(unsigned long)
- 121:/usr/lib/avr/include/util/delay.h ****    support, maximal possible delay is 4294967.295 ms/ F_CPU in MHz. For
- 122:/usr/lib/avr/include/util/delay.h ****    values greater than the maximal possible delay, overflows results in
- 123:/usr/lib/avr/include/util/delay.h ****    no delay i.e., 0ms.
- 124:/usr/lib/avr/include/util/delay.h **** 
- 125:/usr/lib/avr/include/util/delay.h ****    Conversion of __us into clock cycles may not always result in integer.
- 126:/usr/lib/avr/include/util/delay.h ****    By default, the clock cycles rounded up to next integer. This ensures that
- 127:/usr/lib/avr/include/util/delay.h ****    the user gets atleast __us microseconds of delay.
- 128:/usr/lib/avr/include/util/delay.h **** 
- 129:/usr/lib/avr/include/util/delay.h ****    Alternatively, user can define __DELAY_ROUND_DOWN__ and __DELAY_ROUND_CLOSEST__
- 130:/usr/lib/avr/include/util/delay.h ****    to round down and round to closest integer.
- 131:/usr/lib/avr/include/util/delay.h **** 
- 132:/usr/lib/avr/include/util/delay.h ****    Note: The new implementation of _delay_ms(double __ms) with 
- 133:/usr/lib/avr/include/util/delay.h ****     __builtin_avr_delay_cycles(unsigned long) support is not backward compatible. 
- 134:/usr/lib/avr/include/util/delay.h ****    User can define __DELAY_BACKWARD_COMPATIBLE__ to get a backward compatible delay.
- 135:/usr/lib/avr/include/util/delay.h ****    Also, the backward compatible
- 136:/usr/lib/avr/include/util/delay.h ****    algorithm will be chosen if the code is compiled in a <em>freestanding
- 137:/usr/lib/avr/include/util/delay.h ****    environment</em> (GCC option \c -ffreestanding), as the math functions
- 138:/usr/lib/avr/include/util/delay.h ****    required for rounding are not available to the compiler then.
- 139:/usr/lib/avr/include/util/delay.h **** 
- 140:/usr/lib/avr/include/util/delay.h ****  */
- 141:/usr/lib/avr/include/util/delay.h **** void
- 142:/usr/lib/avr/include/util/delay.h **** _delay_ms(double __ms)
- 143:/usr/lib/avr/include/util/delay.h **** {
- 144:/usr/lib/avr/include/util/delay.h **** 	double __tmp ; 
- 145:/usr/lib/avr/include/util/delay.h **** #if __HAS_DELAY_CYCLES && defined(__OPTIMIZE__) && \
- 146:/usr/lib/avr/include/util/delay.h ****   !defined(__DELAY_BACKWARD_COMPATIBLE__) &&	   \
- 147:/usr/lib/avr/include/util/delay.h ****   __STDC_HOSTED__
- 148:/usr/lib/avr/include/util/delay.h **** 	uint32_t __ticks_dc;
- 149:/usr/lib/avr/include/util/delay.h **** 	extern void __builtin_avr_delay_cycles(unsigned long);
- 150:/usr/lib/avr/include/util/delay.h **** 	__tmp = ((F_CPU) / 1e3) * __ms;
- 151:/usr/lib/avr/include/util/delay.h **** 
- 152:/usr/lib/avr/include/util/delay.h **** 	#if defined(__DELAY_ROUND_DOWN__)
- 153:/usr/lib/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)fabs(__tmp);
- 154:/usr/lib/avr/include/util/delay.h **** 
- 155:/usr/lib/avr/include/util/delay.h **** 	#elif defined(__DELAY_ROUND_CLOSEST__)
- 156:/usr/lib/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(fabs(__tmp)+0.5);
- 157:/usr/lib/avr/include/util/delay.h **** 
- 158:/usr/lib/avr/include/util/delay.h **** 	#else
- 159:/usr/lib/avr/include/util/delay.h **** 		//round up by default
- 160:/usr/lib/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
- 161:/usr/lib/avr/include/util/delay.h **** 	#endif
- 162:/usr/lib/avr/include/util/delay.h **** 
- 163:/usr/lib/avr/include/util/delay.h **** 	__builtin_avr_delay_cycles(__ticks_dc);
- 334               		.loc 2 163 0
+ 333               		.file 2 "/usr/avr/include/util/delay.h"
+   1:/usr/avr/include/util/delay.h **** /* Copyright (c) 2002, Marek Michalkiewicz
+   2:/usr/avr/include/util/delay.h ****    Copyright (c) 2004,2005,2007 Joerg Wunsch
+   3:/usr/avr/include/util/delay.h ****    Copyright (c) 2007  Florin-Viorel Petrov
+   4:/usr/avr/include/util/delay.h ****    All rights reserved.
+   5:/usr/avr/include/util/delay.h **** 
+   6:/usr/avr/include/util/delay.h ****    Redistribution and use in source and binary forms, with or without
+   7:/usr/avr/include/util/delay.h ****    modification, are permitted provided that the following conditions are met:
+   8:/usr/avr/include/util/delay.h **** 
+   9:/usr/avr/include/util/delay.h ****    * Redistributions of source code must retain the above copyright
+  10:/usr/avr/include/util/delay.h ****      notice, this list of conditions and the following disclaimer.
+  11:/usr/avr/include/util/delay.h **** 
+  12:/usr/avr/include/util/delay.h ****    * Redistributions in binary form must reproduce the above copyright
+  13:/usr/avr/include/util/delay.h ****      notice, this list of conditions and the following disclaimer in
+  14:/usr/avr/include/util/delay.h ****      the documentation and/or other materials provided with the
+  15:/usr/avr/include/util/delay.h ****      distribution.
+  16:/usr/avr/include/util/delay.h **** 
+  17:/usr/avr/include/util/delay.h ****    * Neither the name of the copyright holders nor the names of
+  18:/usr/avr/include/util/delay.h ****      contributors may be used to endorse or promote products derived
+  19:/usr/avr/include/util/delay.h ****      from this software without specific prior written permission.
+  20:/usr/avr/include/util/delay.h **** 
+  21:/usr/avr/include/util/delay.h ****   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  22:/usr/avr/include/util/delay.h ****   AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  23:/usr/avr/include/util/delay.h ****   IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  24:/usr/avr/include/util/delay.h ****   ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+  25:/usr/avr/include/util/delay.h ****   LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  26:/usr/avr/include/util/delay.h ****   CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  27:/usr/avr/include/util/delay.h ****   SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  28:/usr/avr/include/util/delay.h ****   INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  29:/usr/avr/include/util/delay.h ****   CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  30:/usr/avr/include/util/delay.h ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  31:/usr/avr/include/util/delay.h ****   POSSIBILITY OF SUCH DAMAGE. */
+  32:/usr/avr/include/util/delay.h **** 
+  33:/usr/avr/include/util/delay.h **** /* $Id: delay.h.in 2506 2016-02-08 10:05:45Z joerg_wunsch $ */
+  34:/usr/avr/include/util/delay.h **** 
+  35:/usr/avr/include/util/delay.h **** #ifndef _UTIL_DELAY_H_
+  36:/usr/avr/include/util/delay.h **** #define _UTIL_DELAY_H_ 1
+  37:/usr/avr/include/util/delay.h **** 
+  38:/usr/avr/include/util/delay.h **** #ifndef __DOXYGEN__
+  39:/usr/avr/include/util/delay.h **** #  ifndef __HAS_DELAY_CYCLES
+  40:/usr/avr/include/util/delay.h **** #    define __HAS_DELAY_CYCLES 1
+  41:/usr/avr/include/util/delay.h **** #  endif
+  42:/usr/avr/include/util/delay.h **** #endif  /* __DOXYGEN__ */
+  43:/usr/avr/include/util/delay.h **** 
+  44:/usr/avr/include/util/delay.h **** #include <inttypes.h>
+  45:/usr/avr/include/util/delay.h **** #include <util/delay_basic.h>
+  46:/usr/avr/include/util/delay.h **** #include <math.h>
+  47:/usr/avr/include/util/delay.h **** 
+  48:/usr/avr/include/util/delay.h **** /** \file */
+  49:/usr/avr/include/util/delay.h **** /** \defgroup util_delay <util/delay.h>: Convenience functions for busy-wait delay loops
+  50:/usr/avr/include/util/delay.h ****     \code
+  51:/usr/avr/include/util/delay.h ****     #define F_CPU 1000000UL  // 1 MHz
+  52:/usr/avr/include/util/delay.h ****     //#define F_CPU 14.7456E6
+  53:/usr/avr/include/util/delay.h ****     #include <util/delay.h>
+  54:/usr/avr/include/util/delay.h ****     \endcode
+  55:/usr/avr/include/util/delay.h **** 
+  56:/usr/avr/include/util/delay.h ****     \note As an alternative method, it is possible to pass the
+  57:/usr/avr/include/util/delay.h ****     F_CPU macro down to the compiler from the Makefile.
+  58:/usr/avr/include/util/delay.h ****     Obviously, in that case, no \c \#define statement should be
+  59:/usr/avr/include/util/delay.h ****     used.
+  60:/usr/avr/include/util/delay.h **** 
+  61:/usr/avr/include/util/delay.h ****     The functions in this header file are wrappers around the basic
+  62:/usr/avr/include/util/delay.h ****     busy-wait functions from <util/delay_basic.h>.  They are meant as
+  63:/usr/avr/include/util/delay.h ****     convenience functions where actual time values can be specified
+  64:/usr/avr/include/util/delay.h ****     rather than a number of cycles to wait for.  The idea behind is
+  65:/usr/avr/include/util/delay.h ****     that compile-time constant expressions will be eliminated by
+  66:/usr/avr/include/util/delay.h ****     compiler optimization so floating-point expressions can be used
+  67:/usr/avr/include/util/delay.h ****     to calculate the number of delay cycles needed based on the CPU
+  68:/usr/avr/include/util/delay.h ****     frequency passed by the macro F_CPU.
+  69:/usr/avr/include/util/delay.h **** 
+  70:/usr/avr/include/util/delay.h ****     \note In order for these functions to work as intended, compiler
+  71:/usr/avr/include/util/delay.h ****     optimizations <em>must</em> be enabled, and the delay time
+  72:/usr/avr/include/util/delay.h ****     <em>must</em> be an expression that is a known constant at
+  73:/usr/avr/include/util/delay.h ****     compile-time.  If these requirements are not met, the resulting
+  74:/usr/avr/include/util/delay.h ****     delay will be much longer (and basically unpredictable), and
+  75:/usr/avr/include/util/delay.h ****     applications that otherwise do not use floating-point calculations
+  76:/usr/avr/include/util/delay.h ****     will experience severe code bloat by the floating-point library
+  77:/usr/avr/include/util/delay.h ****     routines linked into the application.
+  78:/usr/avr/include/util/delay.h **** 
+  79:/usr/avr/include/util/delay.h ****     The functions available allow the specification of microsecond, and
+  80:/usr/avr/include/util/delay.h ****     millisecond delays directly, using the application-supplied macro
+  81:/usr/avr/include/util/delay.h ****     F_CPU as the CPU clock frequency (in Hertz).
+  82:/usr/avr/include/util/delay.h **** 
+  83:/usr/avr/include/util/delay.h **** */
+  84:/usr/avr/include/util/delay.h **** 
+  85:/usr/avr/include/util/delay.h **** #if !defined(__DOXYGEN__)
+  86:/usr/avr/include/util/delay.h **** static __inline__ void _delay_us(double __us) __attribute__((__always_inline__));
+  87:/usr/avr/include/util/delay.h **** static __inline__ void _delay_ms(double __ms) __attribute__((__always_inline__));
+  88:/usr/avr/include/util/delay.h **** #endif
+  89:/usr/avr/include/util/delay.h **** 
+  90:/usr/avr/include/util/delay.h **** #ifndef F_CPU
+  91:/usr/avr/include/util/delay.h **** /* prevent compiler error by supplying a default */
+  92:/usr/avr/include/util/delay.h **** # warning "F_CPU not defined for <util/delay.h>"
+  93:/usr/avr/include/util/delay.h **** /** \ingroup util_delay
+  94:/usr/avr/include/util/delay.h ****     \def F_CPU
+  95:/usr/avr/include/util/delay.h ****     \brief CPU frequency in Hz
+  96:/usr/avr/include/util/delay.h **** 
+  97:/usr/avr/include/util/delay.h ****     The macro F_CPU specifies the CPU frequency to be considered by
+  98:/usr/avr/include/util/delay.h ****     the delay macros.  This macro is normally supplied by the
+  99:/usr/avr/include/util/delay.h ****     environment (e.g. from within a project header, or the project's
+ 100:/usr/avr/include/util/delay.h ****     Makefile).  The value 1 MHz here is only provided as a "vanilla"
+ 101:/usr/avr/include/util/delay.h ****     fallback if no such user-provided definition could be found.
+ 102:/usr/avr/include/util/delay.h **** 
+ 103:/usr/avr/include/util/delay.h ****     In terms of the delay functions, the CPU frequency can be given as
+ 104:/usr/avr/include/util/delay.h ****     a floating-point constant (e.g. 3.6864E6 for 3.6864 MHz).
+ 105:/usr/avr/include/util/delay.h ****     However, the macros in <util/setbaud.h> require it to be an
+ 106:/usr/avr/include/util/delay.h ****     integer value.
+ 107:/usr/avr/include/util/delay.h ****  */
+ 108:/usr/avr/include/util/delay.h **** # define F_CPU 1000000UL
+ 109:/usr/avr/include/util/delay.h **** #endif
+ 110:/usr/avr/include/util/delay.h **** 
+ 111:/usr/avr/include/util/delay.h **** #ifndef __OPTIMIZE__
+ 112:/usr/avr/include/util/delay.h **** # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+ 113:/usr/avr/include/util/delay.h **** #endif
+ 114:/usr/avr/include/util/delay.h **** 
+ 115:/usr/avr/include/util/delay.h **** #if __HAS_DELAY_CYCLES && defined(__OPTIMIZE__) && \
+ 116:/usr/avr/include/util/delay.h ****   !defined(__DELAY_BACKWARD_COMPATIBLE__) &&	   \
+ 117:/usr/avr/include/util/delay.h ****   __STDC_HOSTED__
+ 118:/usr/avr/include/util/delay.h **** #  include <math.h>
+ 119:/usr/avr/include/util/delay.h **** #endif
+ 120:/usr/avr/include/util/delay.h **** 
+ 121:/usr/avr/include/util/delay.h **** /**
+ 122:/usr/avr/include/util/delay.h ****    \ingroup util_delay
+ 123:/usr/avr/include/util/delay.h **** 
+ 124:/usr/avr/include/util/delay.h ****    Perform a delay of \c __ms milliseconds, using _delay_loop_2().
+ 125:/usr/avr/include/util/delay.h **** 
+ 126:/usr/avr/include/util/delay.h ****    The macro F_CPU is supposed to be defined to a
+ 127:/usr/avr/include/util/delay.h ****    constant defining the CPU clock frequency (in Hertz).
+ 128:/usr/avr/include/util/delay.h **** 
+ 129:/usr/avr/include/util/delay.h ****    The maximal possible delay is 262.14 ms / F_CPU in MHz.
+ 130:/usr/avr/include/util/delay.h **** 
+ 131:/usr/avr/include/util/delay.h ****    When the user request delay which exceed the maximum possible one,
+ 132:/usr/avr/include/util/delay.h ****    _delay_ms() provides a decreased resolution functionality. In this
+ 133:/usr/avr/include/util/delay.h ****    mode _delay_ms() will work with a resolution of 1/10 ms, providing
+ 134:/usr/avr/include/util/delay.h ****    delays up to 6.5535 seconds (independent from CPU frequency).  The
+ 135:/usr/avr/include/util/delay.h ****    user will not be informed about decreased resolution.
+ 136:/usr/avr/include/util/delay.h **** 
+ 137:/usr/avr/include/util/delay.h ****    If the avr-gcc toolchain has __builtin_avr_delay_cycles()
+ 138:/usr/avr/include/util/delay.h ****    support, maximal possible delay is 4294967.295 ms/ F_CPU in MHz. For
+ 139:/usr/avr/include/util/delay.h ****    values greater than the maximal possible delay, overflows results in
+ 140:/usr/avr/include/util/delay.h ****    no delay i.e., 0ms.
+ 141:/usr/avr/include/util/delay.h **** 
+ 142:/usr/avr/include/util/delay.h ****    Conversion of \c __ms into clock cycles may not always result in
+ 143:/usr/avr/include/util/delay.h ****    integer.  By default, the clock cycles rounded up to next
+ 144:/usr/avr/include/util/delay.h ****    integer. This ensures that the user gets at least \c __ms
+ 145:/usr/avr/include/util/delay.h ****    microseconds of delay.
+ 146:/usr/avr/include/util/delay.h **** 
+ 147:/usr/avr/include/util/delay.h ****    Alternatively, by defining the macro \c __DELAY_ROUND_DOWN__, or
+ 148:/usr/avr/include/util/delay.h ****    \c __DELAY_ROUND_CLOSEST__, before including this header file, the
+ 149:/usr/avr/include/util/delay.h ****    algorithm can be made to round down, or round to closest integer,
+ 150:/usr/avr/include/util/delay.h ****    respectively.
+ 151:/usr/avr/include/util/delay.h **** 
+ 152:/usr/avr/include/util/delay.h ****    \note
+ 153:/usr/avr/include/util/delay.h **** 
+ 154:/usr/avr/include/util/delay.h ****    The implementation of _delay_ms() based on
+ 155:/usr/avr/include/util/delay.h ****    __builtin_avr_delay_cycles() is not backward compatible with older
+ 156:/usr/avr/include/util/delay.h ****    implementations.  In order to get functionality backward compatible
+ 157:/usr/avr/include/util/delay.h ****    with previous versions, the macro \c "__DELAY_BACKWARD_COMPATIBLE__"
+ 158:/usr/avr/include/util/delay.h ****    must be defined before including this header file. Also, the
+ 159:/usr/avr/include/util/delay.h ****    backward compatible algorithm will be chosen if the code is
+ 160:/usr/avr/include/util/delay.h ****    compiled in a <em>freestanding environment</em> (GCC option
+ 161:/usr/avr/include/util/delay.h ****    \c -ffreestanding), as the math functions required for rounding are
+ 162:/usr/avr/include/util/delay.h ****    not available to the compiler then.
+ 163:/usr/avr/include/util/delay.h **** 
+ 164:/usr/avr/include/util/delay.h ****  */
+ 165:/usr/avr/include/util/delay.h **** void
+ 166:/usr/avr/include/util/delay.h **** _delay_ms(double __ms)
+ 167:/usr/avr/include/util/delay.h **** {
+ 168:/usr/avr/include/util/delay.h **** 	double __tmp ;
+ 169:/usr/avr/include/util/delay.h **** #if __HAS_DELAY_CYCLES && defined(__OPTIMIZE__) && \
+ 170:/usr/avr/include/util/delay.h ****   !defined(__DELAY_BACKWARD_COMPATIBLE__) &&	   \
+ 171:/usr/avr/include/util/delay.h ****   __STDC_HOSTED__
+ 172:/usr/avr/include/util/delay.h **** 	uint32_t __ticks_dc;
+ 173:/usr/avr/include/util/delay.h **** 	extern void __builtin_avr_delay_cycles(unsigned long);
+ 174:/usr/avr/include/util/delay.h **** 	__tmp = ((F_CPU) / 1e3) * __ms;
+ 175:/usr/avr/include/util/delay.h **** 
+ 176:/usr/avr/include/util/delay.h **** 	#if defined(__DELAY_ROUND_DOWN__)
+ 177:/usr/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)fabs(__tmp);
+ 178:/usr/avr/include/util/delay.h **** 
+ 179:/usr/avr/include/util/delay.h **** 	#elif defined(__DELAY_ROUND_CLOSEST__)
+ 180:/usr/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(fabs(__tmp)+0.5);
+ 181:/usr/avr/include/util/delay.h **** 
+ 182:/usr/avr/include/util/delay.h **** 	#else
+ 183:/usr/avr/include/util/delay.h **** 		//round up by default
+ 184:/usr/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+ 185:/usr/avr/include/util/delay.h **** 	#endif
+ 186:/usr/avr/include/util/delay.h **** 
+ 187:/usr/avr/include/util/delay.h **** 	__builtin_avr_delay_cycles(__ticks_dc);
+ 334               		.loc 2 187 0
  335 0122 2FEF      		ldi r18,lo8(3199999)
  336 0124 83ED      		ldi r24,hi8(3199999)
  337 0126 90E3      		ldi r25,hlo8(3199999)
@@ -1158,18 +1182,18 @@
  341 012e 01F4      		brne 1b
  342 0130 00C0      		rjmp .
  343 0132 0000      		nop
- 344               	.LBE99:
- 345               	.LBE98:
+ 344               	.LVL28:
+ 345               	.LBE99:
+ 346               	.LBE98:
  211:../../common/command.c ****             print("not supported.\n");
- 346               		.loc 1 211 0
- 347 0134 0E94 0000 		call bootloader_jump
- 348               	.LVL28:
+ 347               		.loc 1 211 0
+ 348 0134 0E94 0000 		call bootloader_jump
+ 349               	.LVL29:
  212:../../common/command.c ****             break;
- 349               		.loc 1 212 0
- 350 0138 80E0      		ldi r24,lo8(__c.4778)
- 351 013a 90E0      		ldi r25,hi8(__c.4778)
- 352 013c 00C0      		rjmp .L77
- 353               	.LVL29:
+ 350               		.loc 1 212 0
+ 351 0138 80E0      		ldi r24,lo8(__c.4922)
+ 352 013a 90E0      		ldi r25,hi8(__c.4922)
+ 353 013c 00C0      		rjmp .L76
  354               	.L30:
  184:../../common/command.c ****                 host_driver = host_get_driver();
  355               		.loc 1 184 0
@@ -1181,8 +1205,8 @@
  360               		.loc 1 185 0
  361 0146 0E94 0000 		call host_get_driver
  362               	.LVL31:
- 363 014a 9093 0000 		sts host_driver.4761+1,r25
- 364 014e 8093 0000 		sts host_driver.4761,r24
+ 363 014a 9093 0000 		sts host_driver.4905+1,r25
+ 364 014e 8093 0000 		sts host_driver.4905,r24
  186:../../common/command.c ****                 print("Locked.\n");
  365               		.loc 1 186 0
  366 0152 80E0      		ldi r24,0
@@ -1191,137 +1215,137 @@
  369               	.LVL32:
  187:../../common/command.c ****             } else {
  370               		.loc 1 187 0
- 371 015a 80E0      		ldi r24,lo8(__c.4763)
- 372 015c 90E0      		ldi r25,hi8(__c.4763)
- 373 015e 00C0      		rjmp .L77
+ 371 015a 80E0      		ldi r24,lo8(__c.4907)
+ 372 015c 90E0      		ldi r25,hi8(__c.4907)
+ 373 015e 00C0      		rjmp .L76
  374               	.L32:
  189:../../common/command.c ****                 print("Unlocked.\n");
  375               		.loc 1 189 0
- 376 0160 8091 0000 		lds r24,host_driver.4761
- 377 0164 9091 0000 		lds r25,host_driver.4761+1
+ 376 0160 8091 0000 		lds r24,host_driver.4905
+ 377 0164 9091 0000 		lds r25,host_driver.4905+1
  378 0168 0E94 0000 		call host_set_driver
  379               	.LVL33:
  190:../../common/command.c ****             }
  380               		.loc 1 190 0
- 381 016c 80E0      		ldi r24,lo8(__c.4765)
- 382 016e 90E0      		ldi r25,hi8(__c.4765)
- 383 0170 00C0      		rjmp .L77
+ 381 016c 80E0      		ldi r24,lo8(__c.4909)
+ 382 016e 90E0      		ldi r25,hi8(__c.4909)
+ 383 0170 00C0      		rjmp .L76
  384               	.L17:
  385               	.LBB100:
  386               	.LBB101:
  105:../../common/command.c ****     print("c:	enter console mode\n");
  387               		.loc 1 105 0
- 388 0172 80E0      		ldi r24,lo8(__c.4720)
- 389 0174 90E0      		ldi r25,hi8(__c.4720)
+ 388 0172 80E0      		ldi r24,lo8(__c.4864)
+ 389 0174 90E0      		ldi r25,hi8(__c.4864)
  390 0176 0E94 0000 		call xputs
  391               	.LVL34:
  106:../../common/command.c ****     print("d:	toggle debug enable\n");
  392               		.loc 1 106 0
- 393 017a 80E0      		ldi r24,lo8(__c.4722)
- 394 017c 90E0      		ldi r25,hi8(__c.4722)
+ 393 017a 80E0      		ldi r24,lo8(__c.4866)
+ 394 017c 90E0      		ldi r25,hi8(__c.4866)
  395 017e 0E94 0000 		call xputs
  396               	.LVL35:
  107:../../common/command.c ****     print("x:	toggle matrix debug\n");
  397               		.loc 1 107 0
- 398 0182 80E0      		ldi r24,lo8(__c.4724)
- 399 0184 90E0      		ldi r25,hi8(__c.4724)
+ 398 0182 80E0      		ldi r24,lo8(__c.4868)
+ 399 0184 90E0      		ldi r25,hi8(__c.4868)
  400 0186 0E94 0000 		call xputs
  401               	.LVL36:
  108:../../common/command.c ****     print("k:	toggle keyboard debug\n");
  402               		.loc 1 108 0
- 403 018a 80E0      		ldi r24,lo8(__c.4726)
- 404 018c 90E0      		ldi r25,hi8(__c.4726)
+ 403 018a 80E0      		ldi r24,lo8(__c.4870)
+ 404 018c 90E0      		ldi r25,hi8(__c.4870)
  405 018e 0E94 0000 		call xputs
  406               	.LVL37:
  109:../../common/command.c ****     print("m:	toggle mouse debug\n");
  407               		.loc 1 109 0
- 408 0192 80E0      		ldi r24,lo8(__c.4728)
- 409 0194 90E0      		ldi r25,hi8(__c.4728)
+ 408 0192 80E0      		ldi r24,lo8(__c.4872)
+ 409 0194 90E0      		ldi r25,hi8(__c.4872)
  410 0196 0E94 0000 		call xputs
  411               	.LVL38:
  110:../../common/command.c **** #ifdef SLEEP_LED_ENABLE
  412               		.loc 1 110 0
- 413 019a 80E0      		ldi r24,lo8(__c.4730)
- 414 019c 90E0      		ldi r25,hi8(__c.4730)
+ 413 019a 80E0      		ldi r24,lo8(__c.4874)
+ 414 019c 90E0      		ldi r25,hi8(__c.4874)
  415 019e 0E94 0000 		call xputs
  416               	.LVL39:
  114:../../common/command.c ****     print("t:	print timer count\n");
  417               		.loc 1 114 0
- 418 01a2 80E0      		ldi r24,lo8(__c.4732)
- 419 01a4 90E0      		ldi r25,hi8(__c.4732)
+ 418 01a2 80E0      		ldi r24,lo8(__c.4876)
+ 419 01a4 90E0      		ldi r25,hi8(__c.4876)
  420 01a6 0E94 0000 		call xputs
  421               	.LVL40:
  115:../../common/command.c ****     print("s:	print status\n");
  422               		.loc 1 115 0
- 423 01aa 80E0      		ldi r24,lo8(__c.4734)
- 424 01ac 90E0      		ldi r25,hi8(__c.4734)
+ 423 01aa 80E0      		ldi r24,lo8(__c.4878)
+ 424 01ac 90E0      		ldi r25,hi8(__c.4878)
  425 01ae 0E94 0000 		call xputs
  426               	.LVL41:
  116:../../common/command.c ****     print("e:	print eeprom config\n");
  427               		.loc 1 116 0
- 428 01b2 80E0      		ldi r24,lo8(__c.4736)
- 429 01b4 90E0      		ldi r25,hi8(__c.4736)
+ 428 01b2 80E0      		ldi r24,lo8(__c.4880)
+ 429 01b4 90E0      		ldi r25,hi8(__c.4880)
  430 01b6 0E94 0000 		call xputs
  431               	.LVL42:
  117:../../common/command.c **** #ifdef NKRO_ENABLE
  432               		.loc 1 117 0
- 433 01ba 80E0      		ldi r24,lo8(__c.4738)
- 434 01bc 90E0      		ldi r25,hi8(__c.4738)
+ 433 01ba 80E0      		ldi r24,lo8(__c.4882)
+ 434 01bc 90E0      		ldi r25,hi8(__c.4882)
  435 01be 0E94 0000 		call xputs
  436               	.LVL43:
  119:../../common/command.c **** #endif
  437               		.loc 1 119 0
- 438 01c2 80E0      		ldi r24,lo8(__c.4740)
- 439 01c4 90E0      		ldi r25,hi8(__c.4740)
+ 438 01c2 80E0      		ldi r24,lo8(__c.4884)
+ 439 01c4 90E0      		ldi r25,hi8(__c.4884)
  440 01c6 0E94 0000 		call xputs
  441               	.LVL44:
  121:../../common/command.c ****     print("1/F1:	switch to Layer1 \n");
  442               		.loc 1 121 0
- 443 01ca 80E0      		ldi r24,lo8(__c.4742)
- 444 01cc 90E0      		ldi r25,hi8(__c.4742)
+ 443 01ca 80E0      		ldi r24,lo8(__c.4886)
+ 444 01cc 90E0      		ldi r25,hi8(__c.4886)
  445 01ce 0E94 0000 		call xputs
  446               	.LVL45:
  122:../../common/command.c ****     print("2/F2:	switch to Layer2 \n");
  447               		.loc 1 122 0
- 448 01d2 80E0      		ldi r24,lo8(__c.4744)
- 449 01d4 90E0      		ldi r25,hi8(__c.4744)
+ 448 01d2 80E0      		ldi r24,lo8(__c.4888)
+ 449 01d4 90E0      		ldi r25,hi8(__c.4888)
  450 01d6 0E94 0000 		call xputs
  451               	.LVL46:
  123:../../common/command.c ****     print("3/F3:	switch to Layer3 \n");
  452               		.loc 1 123 0
- 453 01da 80E0      		ldi r24,lo8(__c.4746)
- 454 01dc 90E0      		ldi r25,hi8(__c.4746)
+ 453 01da 80E0      		ldi r24,lo8(__c.4890)
+ 454 01dc 90E0      		ldi r25,hi8(__c.4890)
  455 01de 0E94 0000 		call xputs
  456               	.LVL47:
  124:../../common/command.c ****     print("4/F4:	switch to Layer4 \n");
  457               		.loc 1 124 0
- 458 01e2 80E0      		ldi r24,lo8(__c.4748)
- 459 01e4 90E0      		ldi r25,hi8(__c.4748)
+ 458 01e2 80E0      		ldi r24,lo8(__c.4892)
+ 459 01e4 90E0      		ldi r25,hi8(__c.4892)
  460 01e6 0E94 0000 		call xputs
  461               	.LVL48:
  125:../../common/command.c ****     print("PScr:	power down/remote wake-up\n");
  462               		.loc 1 125 0
- 463 01ea 80E0      		ldi r24,lo8(__c.4750)
- 464 01ec 90E0      		ldi r25,hi8(__c.4750)
+ 463 01ea 80E0      		ldi r24,lo8(__c.4894)
+ 464 01ec 90E0      		ldi r25,hi8(__c.4894)
  465 01ee 0E94 0000 		call xputs
  466               	.LVL49:
  126:../../common/command.c ****     print("Caps:	Lock Keyboard(Child Proof)\n");
  467               		.loc 1 126 0
- 468 01f2 80E0      		ldi r24,lo8(__c.4752)
- 469 01f4 90E0      		ldi r25,hi8(__c.4752)
+ 468 01f2 80E0      		ldi r24,lo8(__c.4896)
+ 469 01f4 90E0      		ldi r25,hi8(__c.4896)
  470 01f6 0E94 0000 		call xputs
  471               	.LVL50:
  127:../../common/command.c ****     print("Paus:	jump to bootloader\n");
  472               		.loc 1 127 0
- 473 01fa 80E0      		ldi r24,lo8(__c.4754)
- 474 01fc 90E0      		ldi r25,hi8(__c.4754)
+ 473 01fa 80E0      		ldi r24,lo8(__c.4898)
+ 474 01fc 90E0      		ldi r25,hi8(__c.4898)
  475 01fe 0E94 0000 		call xputs
  476               	.LVL51:
  128:../../common/command.c **** }
  477               		.loc 1 128 0
- 478 0202 80E0      		ldi r24,lo8(__c.4756)
- 479 0204 90E0      		ldi r25,hi8(__c.4756)
- 480 0206 00C0      		rjmp .L77
+ 478 0202 80E0      		ldi r24,lo8(__c.4900)
+ 479 0204 90E0      		ldi r25,hi8(__c.4900)
+ 480 0206 00C0      		rjmp .L76
  481               	.L14:
  482               	.LBE101:
  483               	.LBE100:
@@ -1329,11 +1353,11 @@
  484               		.loc 1 215 0
  485 0208 8091 0000 		lds r24,debug_config
  486 020c 80FF      		sbrs r24,0
- 487 020e 00C0      		rjmp .L34
+ 487 020e 00C0      		rjmp .L33
  216:../../common/command.c ****                 debug_matrix   = false;
  488               		.loc 1 216 0
- 489 0210 80E0      		ldi r24,lo8(__c.4781)
- 490 0212 90E0      		ldi r25,hi8(__c.4781)
+ 489 0210 80E0      		ldi r24,lo8(__c.4925)
+ 490 0212 90E0      		ldi r25,hi8(__c.4925)
  491 0214 0E94 0000 		call xputs
  492               	.LVL52:
  217:../../common/command.c ****                 debug_keyboard = false;
@@ -1343,13 +1367,13 @@
  495               		.loc 1 220 0
  496 021c 817F      		andi r24,lo8(-15)
  497 021e 8E7F      		andi r24,lo8(~(1<<0))
- 498 0220 00C0      		rjmp .L78
- 499               	.L34:
+ 498 0220 00C0      		rjmp .L77
+ 499               	.L33:
  222:../../common/command.c ****                 debug_enable   = true;
  500               		.loc 1 222 0
- 501 0222 80E0      		ldi r24,lo8(__c.4783)
- 502 0224 90E0      		ldi r25,hi8(__c.4783)
- 503 0226 00C0      		rjmp .L79
+ 501 0222 80E0      		ldi r24,lo8(__c.4927)
+ 502 0224 90E0      		ldi r25,hi8(__c.4927)
+ 503 0226 00C0      		rjmp .L78
  504               	.L10:
  227:../../common/command.c ****             if (debug_matrix) {
  505               		.loc 1 227 0
@@ -1365,18 +1389,18 @@
  228:../../common/command.c ****                 print("\nDEBUG: matrix enabled.\n");
  515               		.loc 1 228 0
  516 023e 9923      		tst r25
- 517 0240 01F0      		breq .L35
+ 517 0240 01F0      		breq .L34
  229:../../common/command.c ****                 debug_enable = true;
  518               		.loc 1 229 0
- 519 0242 80E0      		ldi r24,lo8(__c.4786)
- 520 0244 90E0      		ldi r25,hi8(__c.4786)
- 521 0246 00C0      		rjmp .L79
- 522               	.L35:
+ 519 0242 80E0      		ldi r24,lo8(__c.4930)
+ 520 0244 90E0      		ldi r25,hi8(__c.4930)
+ 521 0246 00C0      		rjmp .L78
+ 522               	.L34:
  232:../../common/command.c ****             }
  523               		.loc 1 232 0
- 524 0248 80E0      		ldi r24,lo8(__c.4788)
- 525 024a 90E0      		ldi r25,hi8(__c.4788)
- 526 024c 00C0      		rjmp .L77
+ 524 0248 80E0      		ldi r24,lo8(__c.4932)
+ 525 024a 90E0      		ldi r25,hi8(__c.4932)
+ 526 024c 00C0      		rjmp .L76
  527               	.L18:
  236:../../common/command.c ****             if (debug_keyboard) {
  528               		.loc 1 236 0
@@ -1392,18 +1416,18 @@
  237:../../common/command.c ****                 print("\nDEBUG: keyboard enabled.\n");
  538               		.loc 1 237 0
  539 0264 9923      		tst r25
- 540 0266 01F0      		breq .L36
+ 540 0266 01F0      		breq .L35
  238:../../common/command.c ****                 debug_enable = true;
  541               		.loc 1 238 0
- 542 0268 80E0      		ldi r24,lo8(__c.4791)
- 543 026a 90E0      		ldi r25,hi8(__c.4791)
- 544 026c 00C0      		rjmp .L79
- 545               	.L36:
+ 542 0268 80E0      		ldi r24,lo8(__c.4935)
+ 543 026a 90E0      		ldi r25,hi8(__c.4935)
+ 544 026c 00C0      		rjmp .L78
+ 545               	.L35:
  241:../../common/command.c ****             }
  546               		.loc 1 241 0
- 547 026e 80E0      		ldi r24,lo8(__c.4793)
- 548 0270 90E0      		ldi r25,hi8(__c.4793)
- 549 0272 00C0      		rjmp .L77
+ 547 026e 80E0      		ldi r24,lo8(__c.4937)
+ 548 0270 90E0      		ldi r25,hi8(__c.4937)
+ 549 0272 00C0      		rjmp .L76
  550               	.L12:
  245:../../common/command.c ****             if (debug_mouse) {
  551               		.loc 1 245 0
@@ -1419,27 +1443,27 @@
  246:../../common/command.c ****                 print("\nDEBUG: mouse enabled.\n");
  561               		.loc 1 246 0
  562 028a 9923      		tst r25
- 563 028c 01F0      		breq .L37
+ 563 028c 01F0      		breq .L36
  247:../../common/command.c ****                 debug_enable = true;
  564               		.loc 1 247 0
- 565 028e 80E0      		ldi r24,lo8(__c.4796)
- 566 0290 90E0      		ldi r25,hi8(__c.4796)
- 567               	.L79:
+ 565 028e 80E0      		ldi r24,lo8(__c.4940)
+ 566 0290 90E0      		ldi r25,hi8(__c.4940)
+ 567               	.L78:
  568 0292 0E94 0000 		call xputs
  569               	.LVL53:
  248:../../common/command.c ****             } else {
  570               		.loc 1 248 0
  571 0296 8091 0000 		lds r24,debug_config
  572 029a 8160      		ori r24,lo8(1<<0)
- 573               	.L78:
+ 573               	.L77:
  574 029c 8093 0000 		sts debug_config,r24
- 575 02a0 00C0      		rjmp .L44
- 576               	.L37:
+ 575 02a0 00C0      		rjmp .L8
+ 576               	.L36:
  250:../../common/command.c ****             }
  577               		.loc 1 250 0
- 578 02a2 80E0      		ldi r24,lo8(__c.4798)
- 579 02a4 90E0      		ldi r25,hi8(__c.4798)
- 580 02a6 00C0      		rjmp .L77
+ 578 02a2 80E0      		ldi r24,lo8(__c.4942)
+ 579 02a4 90E0      		ldi r25,hi8(__c.4942)
+ 580 02a6 00C0      		rjmp .L76
  581               	.L22:
  299:../../common/command.c ****             break;
  582               		.loc 1 299 0
@@ -1459,8 +1483,8 @@
  596 02be 8F93      		push r24
  597               	.LCFI14:
  598               		.cfi_def_cfa_offset 7
- 599 02c0 80E0      		ldi r24,lo8(__c.4814)
- 600 02c2 90E0      		ldi r25,hi8(__c.4814)
+ 599 02c0 80E0      		ldi r24,lo8(__c.4958)
+ 600 02c2 90E0      		ldi r25,hi8(__c.4958)
  601 02c4 9F93      		push r25
  602               	.LCFI15:
  603               		.cfi_def_cfa_offset 8
@@ -1477,12 +1501,12 @@
  614 02d6 0F90      		pop __tmp_reg__
  615               	.LCFI17:
  616               		.cfi_def_cfa_offset 3
- 617 02d8 00C0      		rjmp .L44
+ 617 02d8 00C0      		rjmp .L8
  618               	.L19:
  302:../../common/command.c ****             print_val_hex8(host_keyboard_leds());
  619               		.loc 1 302 0
- 620 02da 80E0      		ldi r24,lo8(__c.4817)
- 621 02dc 90E0      		ldi r25,hi8(__c.4817)
+ 620 02da 80E0      		ldi r24,lo8(__c.4961)
+ 621 02dc 90E0      		ldi r25,hi8(__c.4961)
  622 02de 0E94 0000 		call xputs
  623               	.LVL55:
  303:../../common/command.c **** #ifdef PROTOCOL_PJRC
@@ -1495,8 +1519,8 @@
  630 02e8 8F93      		push r24
  631               	.LCFI19:
  632               		.cfi_def_cfa_offset 5
- 633 02ea 80E0      		ldi r24,lo8(__c.4819)
- 634 02ec 90E0      		ldi r25,hi8(__c.4819)
+ 633 02ea 80E0      		ldi r24,lo8(__c.4963)
+ 634 02ec 90E0      		ldi r25,hi8(__c.4963)
  635 02ee 9F93      		push r25
  636               	.LCFI20:
  637               		.cfi_def_cfa_offset 6
@@ -1511,7 +1535,7 @@
  646 02fc 0F90      		pop __tmp_reg__
  647               	.LCFI22:
  648               		.cfi_def_cfa_offset 3
- 649 02fe 00C0      		rjmp .L44
+ 649 02fe 00C0      		rjmp .L8
  650               	.L21:
  322:../../common/command.c ****             keyboard_nkro = !keyboard_nkro;
  651               		.loc 1 322 0
@@ -1526,41 +1550,41 @@
  324:../../common/command.c ****                 print("NKRO: enabled\n");
  659               		.loc 1 324 0
  660 0310 8823      		tst r24
- 661 0312 01F0      		breq .L38
+ 661 0312 01F0      		breq .L37
  325:../../common/command.c ****             else
  662               		.loc 1 325 0
- 663 0314 80E0      		ldi r24,lo8(__c.4822)
- 664 0316 90E0      		ldi r25,hi8(__c.4822)
- 665 0318 00C0      		rjmp .L77
- 666               	.L38:
+ 663 0314 80E0      		ldi r24,lo8(__c.4966)
+ 664 0316 90E0      		ldi r25,hi8(__c.4966)
+ 665 0318 00C0      		rjmp .L76
+ 666               	.L37:
  327:../../common/command.c ****             break;
  667               		.loc 1 327 0
- 668 031a 80E0      		ldi r24,lo8(__c.4824)
- 669 031c 90E0      		ldi r25,hi8(__c.4824)
- 670               	.L77:
+ 668 031a 80E0      		ldi r24,lo8(__c.4968)
+ 669 031c 90E0      		ldi r25,hi8(__c.4968)
+ 670               	.L76:
  671 031e 0E94 0000 		call xputs
  672               	.LVL59:
- 673 0322 00C0      		rjmp .L44
+ 673 0322 00C0      		rjmp .L8
  674               	.L24:
  352:../../common/command.c ****             break;
  675               		.loc 1 352 0
  676 0324 80E0      		ldi r24,0
- 677 0326 00C0      		rjmp .L76
+ 677 0326 00C0      		rjmp .L75
  678               	.L29:
  358:../../common/command.c ****             break;
  679               		.loc 1 358 0
  680 0328 87EC      		ldi r24,lo8(-57)
- 681               	.L75:
+ 681               	.L74:
  682 032a 8C0F      		add r24,r28
- 683               	.L76:
+ 683               	.L75:
  684 032c 0E94 0000 		call switch_default_layer
  685               	.LVL60:
- 686 0330 00C0      		rjmp .L44
+ 686 0330 00C0      		rjmp .L8
  687               	.L9:
  361:../../common/command.c ****             return false;
  688               		.loc 1 361 0
- 689 0332 80E0      		ldi r24,lo8(__c.4832)
- 690 0334 90E0      		ldi r25,hi8(__c.4832)
+ 689 0332 80E0      		ldi r24,lo8(__c.4976)
+ 690 0334 90E0      		ldi r25,hi8(__c.4976)
  691 0336 0E94 0000 		call xputs
  692               	.LVL61:
  693               	.LBE95:
@@ -1568,478 +1592,480 @@
   76:../../common/command.c ****         case CONSOLE:
  695               		.loc 1 76 0
  696 033a 80E0      		ldi r24,0
- 697 033c 00C0      		rjmp .L8
- 698               	.LVL62:
- 699               	.L44:
- 700 033e 81E0      		ldi r24,lo8(1)
- 701               	.L8:
+ 697               	.L42:
   76:../../common/command.c ****         case CONSOLE:
- 702               		.loc 1 76 0 is_stmt 0 discriminator 6
- 703 0340 8170      		andi r24,lo8(1)
- 704 0342 00C0      		rjmp .L74
- 705               	.L6:
- 706               	.LVL63:
- 707               	.LBB102:
- 708               	.LBB103:
+ 698               		.loc 1 76 0 is_stmt 0 discriminator 6
+ 699 033c 8170      		andi r24,lo8(1)
+ 700 033e 00C0      		rjmp .L73
+ 701               	.L6:
+ 702               	.LVL62:
+ 703               	.LBB102:
+ 704               	.LBB103:
  382:../../common/command.c ****         case KC_H:
- 709               		.loc 1 382 0 is_stmt 1
- 710 0344 C431      		cpi r28,lo8(20)
- 711 0346 01F0      		breq .L40
- 712 0348 00F4      		brsh .L41
- 713 034a CB30      		cpi r28,lo8(11)
- 714 034c 01F0      		breq .L42
- 715 034e 00C0      		rjmp .L39
- 716               	.L41:
- 717 0350 C932      		cpi r28,lo8(41)
- 718 0352 01F0      		breq .L40
- 719 0354 C833      		cpi r28,lo8(56)
- 720 0356 01F4      		brne .L39
- 721               	.L42:
- 722               	.LBB104:
- 723               	.LBB105:
+ 705               		.loc 1 382 0 is_stmt 1
+ 706 0340 C431      		cpi r28,lo8(20)
+ 707 0342 01F0      		breq .L39
+ 708 0344 00F4      		brsh .L40
+ 709 0346 CB30      		cpi r28,lo8(11)
+ 710 0348 01F0      		breq .L41
+ 711 034a 00C0      		rjmp .L38
+ 712               	.L40:
+ 713 034c C932      		cpi r28,lo8(41)
+ 714 034e 01F0      		breq .L39
+ 715 0350 C833      		cpi r28,lo8(56)
+ 716 0352 01F4      		brne .L38
+ 717               	.L41:
+ 718               	.LBB104:
+ 719               	.LBB105:
  373:../../common/command.c ****     print("ESC/q:	quit\n");
- 724               		.loc 1 373 0
- 725 0358 80E0      		ldi r24,lo8(__c.4837)
- 726 035a 90E0      		ldi r25,hi8(__c.4837)
- 727 035c 0E94 0000 		call xputs
- 728               	.LVL64:
+ 720               		.loc 1 373 0
+ 721 0354 80E0      		ldi r24,lo8(__c.4981)
+ 722 0356 90E0      		ldi r25,hi8(__c.4981)
+ 723 0358 0E94 0000 		call xputs
+ 724               	.LVL63:
  374:../../common/command.c **** #ifdef MOUSEKEY_ENABLE
- 729               		.loc 1 374 0
- 730 0360 80E0      		ldi r24,lo8(__c.4839)
- 731 0362 90E0      		ldi r25,hi8(__c.4839)
- 732 0364 0E94 0000 		call xputs
- 733               	.LVL65:
- 734               	.LBE105:
- 735               	.LBE104:
+ 725               		.loc 1 374 0
+ 726 035c 80E0      		ldi r24,lo8(__c.4983)
+ 727 035e 90E0      		ldi r25,hi8(__c.4983)
+ 728 0360 0E94 0000 		call xputs
+ 729               	.LVL64:
+ 730               	.LBE105:
+ 731               	.LBE104:
  404:../../common/command.c ****     return true;
- 736               		.loc 1 404 0
- 737 0368 80E0      		ldi r24,lo8(__c.4854)
- 738 036a 90E0      		ldi r25,hi8(__c.4854)
- 739 036c 00C0      		rjmp .L80
- 740               	.L40:
+ 732               		.loc 1 404 0
+ 733 0364 80E0      		ldi r24,lo8(__c.4998)
+ 734 0366 90E0      		ldi r25,hi8(__c.4998)
+ 735 0368 00C0      		rjmp .L79
+ 736               	.L39:
  389:../../common/command.c ****             state = ONESHOT;
- 741               		.loc 1 389 0
- 742 036e 80E0      		ldi r24,lo8(__c.4849)
- 743 0370 90E0      		ldi r25,hi8(__c.4849)
- 744 0372 0E94 0000 		call xputs
- 745               	.LVL66:
+ 737               		.loc 1 389 0
+ 738 036a 80E0      		ldi r24,lo8(__c.4993)
+ 739 036c 90E0      		ldi r25,hi8(__c.4993)
+ 740 036e 0E94 0000 		call xputs
+ 741               	.LVL65:
  390:../../common/command.c ****             return false;
- 746               		.loc 1 390 0
- 747 0376 1092 0000 		sts state,__zero_reg__
- 748 037a 00C0      		rjmp .L81
- 749               	.L39:
+ 742               		.loc 1 390 0
+ 743 0372 1092 0000 		sts state,__zero_reg__
+ 744 0376 00C0      		rjmp .L80
+ 745               	.L38:
  401:../../common/command.c ****             return false;
- 750               		.loc 1 401 0
- 751 037c 80E0      		ldi r24,lo8(__c.4852)
- 752 037e 90E0      		ldi r25,hi8(__c.4852)
- 753               	.L80:
- 754 0380 0E94 0000 		call xputs
- 755               	.LVL67:
- 756               	.L81:
- 757               	.LBE103:
- 758               	.LBE102:
+ 746               		.loc 1 401 0
+ 747 0378 80E0      		ldi r24,lo8(__c.4996)
+ 748 037a 90E0      		ldi r25,hi8(__c.4996)
+ 749               	.L79:
+ 750 037c 0E94 0000 		call xputs
+ 751               	.LVL66:
+ 752               	.L80:
+ 753               	.LBE103:
+ 754               	.LBE102:
   89:../../common/command.c **** }
- 759               		.loc 1 89 0
- 760 0384 81E0      		ldi r24,lo8(1)
- 761 0386 00C0      		rjmp .L74
- 762               	.LVL68:
- 763               	.L83:
+ 755               		.loc 1 89 0
+ 756 0380 81E0      		ldi r24,lo8(1)
+ 757 0382 00C0      		rjmp .L73
+ 758               	.LVL67:
+ 759               	.L82:
   86:../../common/command.c ****             return false;
- 764               		.loc 1 86 0
- 765 0388 1092 0000 		sts state,__zero_reg__
- 766               	.L43:
+ 760               		.loc 1 86 0
+ 761 0384 1092 0000 		sts state,__zero_reg__
+ 762               	.L43:
   75:../../common/command.c ****             return (command_extra(code) || command_common(code));
- 767               		.loc 1 75 0
- 768 038c 80E0      		ldi r24,0
- 769               	.L74:
- 770               	/* epilogue start */
+ 763               		.loc 1 75 0
+ 764 0388 80E0      		ldi r24,0
+ 765 038a 00C0      		rjmp .L73
+ 766               	.L8:
+  76:../../common/command.c ****         case CONSOLE:
+ 767               		.loc 1 76 0
+ 768 038c 81E0      		ldi r24,lo8(1)
+ 769 038e 00C0      		rjmp .L42
+ 770               	.L73:
+ 771               	/* epilogue start */
   90:../../common/command.c **** 
- 771               		.loc 1 90 0
- 772 038e CF91      		pop r28
- 773               	.LVL69:
- 774 0390 0895      		ret
- 775               		.cfi_endproc
- 776               	.LFE102:
- 778               		.section	.progmem.data,"a",@progbits
- 781               	__c.4852:
- 782 0000 3F00      		.string	"?"
- 785               	__c.4849:
- 786 0002 0A51 7569 		.string	"\nQuit Console Mode\n"
- 786      7420 436F 
- 786      6E73 6F6C 
- 786      6520 4D6F 
- 786      6465 0A00 
- 789               	__c.4854:
- 790 0016 433E 2000 		.string	"C> "
- 793               	__c.4880:
- 794 001a 0A00      		.string	"\n"
- 797               	__c.4878:
- 798 001c 2575 00   		.string	"%u"
- 801               	__c.4876:
- 802 001f 2074 6F20 		.string	" to "
- 802      00
- 805               	__c.4874:
- 806 0024 2575 00   		.string	"%u"
- 809               	__c.4872:
- 810 0027 7377 6974 		.string	"switch_default_layer: "
- 810      6368 5F64 
- 810      6566 6175 
- 810      6C74 5F6C 
- 810      6179 6572 
- 813               	__c.4839:
- 814 003e 4553 432F 		.string	"ESC/q:\tquit\n"
- 814      713A 0971 
- 814      7569 740A 
- 814      00
- 817               	__c.4837:
- 818 004b 0A0A 2D2D 		.string	"\n\n----- Console Help -----\n"
- 818      2D2D 2D20 
- 818      436F 6E73 
- 818      6F6C 6520 
- 818      4865 6C70 
- 821               	__c.4756:
- 822 0067 5061 7573 		.string	"Paus:\tjump to bootloader\n"
- 822      3A09 6A75 
- 822      6D70 2074 
- 822      6F20 626F 
- 822      6F74 6C6F 
- 825               	__c.4754:
- 826 0081 4361 7073 		.string	"Caps:\tLock Keyboard(Child Proof)\n"
- 826      3A09 4C6F 
- 826      636B 204B 
- 826      6579 626F 
- 826      6172 6428 
- 829               	__c.4752:
- 830 00a3 5053 6372 		.string	"PScr:\tpower down/remote wake-up\n"
- 830      3A09 706F 
- 830      7765 7220 
- 830      646F 776E 
- 830      2F72 656D 
- 833               	__c.4750:
- 834 00c4 342F 4634 		.string	"4/F4:\tswitch to Layer4 \n"
- 834      3A09 7377 
- 834      6974 6368 
- 834      2074 6F20 
- 834      4C61 7965 
- 837               	__c.4748:
- 838 00dd 332F 4633 		.string	"3/F3:\tswitch to Layer3 \n"
- 838      3A09 7377 
- 838      6974 6368 
- 838      2074 6F20 
- 838      4C61 7965 
- 841               	__c.4746:
- 842 00f6 322F 4632 		.string	"2/F2:\tswitch to Layer2 \n"
- 842      3A09 7377 
- 842      6974 6368 
- 842      2074 6F20 
- 842      4C61 7965 
- 845               	__c.4744:
- 846 010f 312F 4631 		.string	"1/F1:\tswitch to Layer1 \n"
- 846      3A09 7377 
- 846      6974 6368 
- 846      2074 6F20 
- 846      4C61 7965 
- 849               	__c.4742:
- 850 0128 302F 4631 		.string	"0/F10:\tswitch to Layer0 \n"
- 850      303A 0973 
- 850      7769 7463 
- 850      6820 746F 
- 850      204C 6179 
- 853               	__c.4740:
- 854 0142 6E3A 0974 		.string	"n:\ttoggle NKRO\n"
- 854      6F67 676C 
- 854      6520 4E4B 
- 854      524F 0A00 
- 857               	__c.4738:
- 858 0152 653A 0970 		.string	"e:\tprint eeprom config\n"
- 858      7269 6E74 
- 858      2065 6570 
- 858      726F 6D20 
- 858      636F 6E66 
- 861               	__c.4736:
- 862 016a 733A 0970 		.string	"s:\tprint status\n"
- 862      7269 6E74 
- 862      2073 7461 
- 862      7475 730A 
- 862      00
- 865               	__c.4734:
- 866 017b 743A 0970 		.string	"t:\tprint timer count\n"
- 866      7269 6E74 
- 866      2074 696D 
- 866      6572 2063 
- 866      6F75 6E74 
- 869               	__c.4732:
- 870 0191 763A 0970 		.string	"v:\tprint device version & info\n"
- 870      7269 6E74 
- 870      2064 6576 
- 870      6963 6520 
- 870      7665 7273 
- 873               	__c.4730:
- 874 01b1 6D3A 0974 		.string	"m:\ttoggle mouse debug\n"
- 874      6F67 676C 
- 874      6520 6D6F 
- 874      7573 6520 
- 874      6465 6275 
- 877               	__c.4728:
- 878 01c8 6B3A 0974 		.string	"k:\ttoggle keyboard debug\n"
- 878      6F67 676C 
- 878      6520 6B65 
- 878      7962 6F61 
- 878      7264 2064 
- 881               	__c.4726:
- 882 01e2 783A 0974 		.string	"x:\ttoggle matrix debug\n"
- 882      6F67 676C 
- 882      6520 6D61 
- 882      7472 6978 
- 882      2064 6562 
- 885               	__c.4724:
- 886 01fa 643A 0974 		.string	"d:\ttoggle debug enable\n"
- 886      6F67 676C 
- 886      6520 6465 
- 886      6275 6720 
- 886      656E 6162 
- 889               	__c.4722:
- 890 0212 633A 0965 		.string	"c:\tenter console mode\n"
- 890      6E74 6572 
- 890      2063 6F6E 
- 890      736F 6C65 
- 890      206D 6F64 
- 893               	__c.4720:
- 894 0229 0A0A 2D2D 		.string	"\n\n----- Command Help -----\n"
- 894      2D2D 2D20 
- 894      436F 6D6D 
- 894      616E 6420 
- 894      4865 6C70 
- 897               	__c.4832:
- 898 0245 3F00      		.string	"?"
- 901               	__c.4824:
- 902 0247 4E4B 524F 		.string	"NKRO: disabled\n"
- 902      3A20 6469 
- 902      7361 626C 
- 902      6564 0A00 
- 905               	__c.4822:
- 906 0257 4E4B 524F 		.string	"NKRO: enabled\n"
- 906      3A20 656E 
- 906      6162 6C65 
- 906      640A 00
- 909               	__c.4819:
- 910 0266 686F 7374 		.string	"host_keyboard_leds(): %X\n"
- 910      5F6B 6579 
- 910      626F 6172 
- 910      645F 6C65 
- 910      6473 2829 
- 913               	__c.4817:
- 914 0280 0A0A 2D2D 		.string	"\n\n----- Status -----\n"
- 914      2D2D 2D20 
- 914      5374 6174 
- 914      7573 202D 
- 914      2D2D 2D2D 
- 917               	__c.4814:
- 918 0296 7469 6D65 		.string	"timer_count: %04lX\n"
- 918      725F 636F 
- 918      756E 743A 
- 918      2025 3034 
- 918      6C58 0A00 
- 921               	__c.4811:
- 922 02aa 4743 433A 		.string	"GCC: 4.9.2 AVR-LIBC: 1.8.0svn AVR_ARCH: avr5\n"
- 922      2034 2E39 
- 922      2E32 2041 
- 922      5652 2D4C 
- 922      4942 433A 
- 925               	__c.4809:
- 926 02d8 4F50 5449 		.string	"OPTIONS: LUFA CONSOLE COMMAND NKRO 4096\n"
- 926      4F4E 533A 
- 926      204C 5546 
- 926      4120 434F 
- 926      4E53 4F4C 
- 929               	__c.4807:
- 930 0301 4255 494C 		.string	"BUILD: a803933-dirty (21:24:34 Aug 11 2016)\n"
- 930      443A 2061 
- 930      3830 3339 
- 930      3333 2D64 
- 930      6972 7479 
- 933               	__c.4805:
- 934 032e 5649 443A 		.string	"VID: 0x16C0(technomancy) PID: 0x047C(Atreus) VER: 36\n"
- 934      2030 7831 
- 934      3643 3028 
- 934      7465 6368 
- 934      6E6F 6D61 
- 937               	__c.4803:
- 938 0364 4445 5343 		.string	"DESC: TMK keyboard firmware for Atreus\n"
- 938      3A20 544D 
- 938      4B20 6B65 
- 938      7962 6F61 
- 938      7264 2066 
- 941               	__c.4801:
- 942 038c 0A0A 2D2D 		.string	"\n\n----- Version -----\n"
- 942      2D2D 2D20 
- 942      5665 7273 
- 942      696F 6E20 
- 942      2D2D 2D2D 
- 945               	__c.4798:
- 946 03a3 0A44 4542 		.string	"\nDEBUG: mouse disabled.\n"
- 946      5547 3A20 
- 946      6D6F 7573 
- 946      6520 6469 
- 946      7361 626C 
- 949               	__c.4796:
- 950 03bc 0A44 4542 		.string	"\nDEBUG: mouse enabled.\n"
- 950      5547 3A20 
- 950      6D6F 7573 
- 950      6520 656E 
- 950      6162 6C65 
- 953               	__c.4793:
- 954 03d4 0A44 4542 		.string	"\nDEBUG: keyboard disabled.\n"
- 954      5547 3A20 
- 954      6B65 7962 
- 954      6F61 7264 
- 954      2064 6973 
- 957               	__c.4791:
- 958 03f0 0A44 4542 		.string	"\nDEBUG: keyboard enabled.\n"
- 958      5547 3A20 
- 958      6B65 7962 
- 958      6F61 7264 
- 958      2065 6E61 
- 961               	__c.4788:
- 962 040b 0A44 4542 		.string	"\nDEBUG: matrix disabled.\n"
- 962      5547 3A20 
- 962      6D61 7472 
- 962      6978 2064 
- 962      6973 6162 
- 965               	__c.4786:
- 966 0425 0A44 4542 		.string	"\nDEBUG: matrix enabled.\n"
- 966      5547 3A20 
- 966      6D61 7472 
- 966      6978 2065 
- 966      6E61 626C 
- 969               	__c.4783:
- 970 043e 0A44 4542 		.string	"\nDEBUG: enabled.\n"
- 970      5547 3A20 
- 970      656E 6162 
- 970      6C65 642E 
- 970      0A00 
- 973               	__c.4781:
- 974 0450 0A44 4542 		.string	"\nDEBUG: disabled.\n"
- 974      5547 3A20 
- 974      6469 7361 
- 974      626C 6564 
- 974      2E0A 00
- 977               	__c.4778:
- 978 0463 6E6F 7420 		.string	"not supported.\n"
- 978      7375 7070 
- 978      6F72 7465 
- 978      642E 0A00 
- 981               	__c.4776:
- 982 0473 0A0A 4A75 		.string	"\n\nJump to bootloader... "
- 982      6D70 2074 
- 982      6F20 626F 
- 982      6F74 6C6F 
- 982      6164 6572 
- 985               	__c.4773:
- 986 048c 433E 2000 		.string	"C> "
- 989               	__c.4771:
- 990 0490 0A45 6E74 		.string	"\nEnter Console Mode\n"
- 990      6572 2043 
- 990      6F6E 736F 
- 990      6C65 204D 
- 990      6F64 650A 
- 993               	__c.4765:
- 994 04a5 556E 6C6F 		.string	"Unlocked.\n"
- 994      636B 6564 
- 994      2E0A 00
- 997               	__c.4763:
- 998 04b0 4C6F 636B 		.string	"Locked.\n"
- 998      6564 2E0A 
- 998      00
- 999               		.local	host_driver.4761
- 1000               		.comm	host_driver.4761,2,1
- 1001               		.local	state
- 1002               		.comm	state,1,1
- 1003               		.comm	debug_config,1,1
- 1004               		.text
- 1005               	.Letext0:
- 1006               		.file 3 "/usr/lib/avr/include/stdint.h"
- 1007               		.file 4 "../../common/report.h"
- 1008               		.file 5 "../../common/host_driver.h"
- 1009               		.file 6 "../../common/debug_config.h"
- 1010               		.file 7 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBTask.h"
- 1011               		.file 8 "../../common/host.h"
- 1012               		.file 9 "../../common/timer.h"
- 1013               		.file 10 "../../common/action_layer.h"
- 1014               		.file 11 "../../common/action_util.h"
- 1015               		.file 12 "../../common/xprintf.h"
- 1016               		.file 13 "../../common/action.h"
- 1017               		.file 14 "../../common/bootloader.h"
- 1018               		.file 15 "../../common/keycode.h"
- 1019               		.file 16 "../../common/util.h"
+ 772               		.loc 1 90 0
+ 773 0390 CF91      		pop r28
+ 774               	.LVL68:
+ 775 0392 0895      		ret
+ 776               		.cfi_endproc
+ 777               	.LFE102:
+ 779               		.section	.progmem.data,"a",@progbits
+ 782               	__c.4996:
+ 783 0000 3F00      		.string	"?"
+ 786               	__c.4993:
+ 787 0002 0A51 7569 		.string	"\nQuit Console Mode\n"
+ 787      7420 436F 
+ 787      6E73 6F6C 
+ 787      6520 4D6F 
+ 787      6465 0A00 
+ 790               	__c.4998:
+ 791 0016 433E 2000 		.string	"C> "
+ 794               	__c.5024:
+ 795 001a 0A00      		.string	"\n"
+ 798               	__c.5022:
+ 799 001c 2575 00   		.string	"%u"
+ 802               	__c.5020:
+ 803 001f 2074 6F20 		.string	" to "
+ 803      00
+ 806               	__c.5018:
+ 807 0024 2575 00   		.string	"%u"
+ 810               	__c.5016:
+ 811 0027 7377 6974 		.string	"switch_default_layer: "
+ 811      6368 5F64 
+ 811      6566 6175 
+ 811      6C74 5F6C 
+ 811      6179 6572 
+ 814               	__c.4983:
+ 815 003e 4553 432F 		.string	"ESC/q:\tquit\n"
+ 815      713A 0971 
+ 815      7569 740A 
+ 815      00
+ 818               	__c.4981:
+ 819 004b 0A0A 2D2D 		.string	"\n\n----- Console Help -----\n"
+ 819      2D2D 2D20 
+ 819      436F 6E73 
+ 819      6F6C 6520 
+ 819      4865 6C70 
+ 822               	__c.4900:
+ 823 0067 5061 7573 		.string	"Paus:\tjump to bootloader\n"
+ 823      3A09 6A75 
+ 823      6D70 2074 
+ 823      6F20 626F 
+ 823      6F74 6C6F 
+ 826               	__c.4898:
+ 827 0081 4361 7073 		.string	"Caps:\tLock Keyboard(Child Proof)\n"
+ 827      3A09 4C6F 
+ 827      636B 204B 
+ 827      6579 626F 
+ 827      6172 6428 
+ 830               	__c.4896:
+ 831 00a3 5053 6372 		.string	"PScr:\tpower down/remote wake-up\n"
+ 831      3A09 706F 
+ 831      7765 7220 
+ 831      646F 776E 
+ 831      2F72 656D 
+ 834               	__c.4894:
+ 835 00c4 342F 4634 		.string	"4/F4:\tswitch to Layer4 \n"
+ 835      3A09 7377 
+ 835      6974 6368 
+ 835      2074 6F20 
+ 835      4C61 7965 
+ 838               	__c.4892:
+ 839 00dd 332F 4633 		.string	"3/F3:\tswitch to Layer3 \n"
+ 839      3A09 7377 
+ 839      6974 6368 
+ 839      2074 6F20 
+ 839      4C61 7965 
+ 842               	__c.4890:
+ 843 00f6 322F 4632 		.string	"2/F2:\tswitch to Layer2 \n"
+ 843      3A09 7377 
+ 843      6974 6368 
+ 843      2074 6F20 
+ 843      4C61 7965 
+ 846               	__c.4888:
+ 847 010f 312F 4631 		.string	"1/F1:\tswitch to Layer1 \n"
+ 847      3A09 7377 
+ 847      6974 6368 
+ 847      2074 6F20 
+ 847      4C61 7965 
+ 850               	__c.4886:
+ 851 0128 302F 4631 		.string	"0/F10:\tswitch to Layer0 \n"
+ 851      303A 0973 
+ 851      7769 7463 
+ 851      6820 746F 
+ 851      204C 6179 
+ 854               	__c.4884:
+ 855 0142 6E3A 0974 		.string	"n:\ttoggle NKRO\n"
+ 855      6F67 676C 
+ 855      6520 4E4B 
+ 855      524F 0A00 
+ 858               	__c.4882:
+ 859 0152 653A 0970 		.string	"e:\tprint eeprom config\n"
+ 859      7269 6E74 
+ 859      2065 6570 
+ 859      726F 6D20 
+ 859      636F 6E66 
+ 862               	__c.4880:
+ 863 016a 733A 0970 		.string	"s:\tprint status\n"
+ 863      7269 6E74 
+ 863      2073 7461 
+ 863      7475 730A 
+ 863      00
+ 866               	__c.4878:
+ 867 017b 743A 0970 		.string	"t:\tprint timer count\n"
+ 867      7269 6E74 
+ 867      2074 696D 
+ 867      6572 2063 
+ 867      6F75 6E74 
+ 870               	__c.4876:
+ 871 0191 763A 0970 		.string	"v:\tprint device version & info\n"
+ 871      7269 6E74 
+ 871      2064 6576 
+ 871      6963 6520 
+ 871      7665 7273 
+ 874               	__c.4874:
+ 875 01b1 6D3A 0974 		.string	"m:\ttoggle mouse debug\n"
+ 875      6F67 676C 
+ 875      6520 6D6F 
+ 875      7573 6520 
+ 875      6465 6275 
+ 878               	__c.4872:
+ 879 01c8 6B3A 0974 		.string	"k:\ttoggle keyboard debug\n"
+ 879      6F67 676C 
+ 879      6520 6B65 
+ 879      7962 6F61 
+ 879      7264 2064 
+ 882               	__c.4870:
+ 883 01e2 783A 0974 		.string	"x:\ttoggle matrix debug\n"
+ 883      6F67 676C 
+ 883      6520 6D61 
+ 883      7472 6978 
+ 883      2064 6562 
+ 886               	__c.4868:
+ 887 01fa 643A 0974 		.string	"d:\ttoggle debug enable\n"
+ 887      6F67 676C 
+ 887      6520 6465 
+ 887      6275 6720 
+ 887      656E 6162 
+ 890               	__c.4866:
+ 891 0212 633A 0965 		.string	"c:\tenter console mode\n"
+ 891      6E74 6572 
+ 891      2063 6F6E 
+ 891      736F 6C65 
+ 891      206D 6F64 
+ 894               	__c.4864:
+ 895 0229 0A0A 2D2D 		.string	"\n\n----- Command Help -----\n"
+ 895      2D2D 2D20 
+ 895      436F 6D6D 
+ 895      616E 6420 
+ 895      4865 6C70 
+ 898               	__c.4976:
+ 899 0245 3F00      		.string	"?"
+ 902               	__c.4968:
+ 903 0247 4E4B 524F 		.string	"NKRO: disabled\n"
+ 903      3A20 6469 
+ 903      7361 626C 
+ 903      6564 0A00 
+ 906               	__c.4966:
+ 907 0257 4E4B 524F 		.string	"NKRO: enabled\n"
+ 907      3A20 656E 
+ 907      6162 6C65 
+ 907      640A 00
+ 910               	__c.4963:
+ 911 0266 686F 7374 		.string	"host_keyboard_leds(): %X\n"
+ 911      5F6B 6579 
+ 911      626F 6172 
+ 911      645F 6C65 
+ 911      6473 2829 
+ 914               	__c.4961:
+ 915 0280 0A0A 2D2D 		.string	"\n\n----- Status -----\n"
+ 915      2D2D 2D20 
+ 915      5374 6174 
+ 915      7573 202D 
+ 915      2D2D 2D2D 
+ 918               	__c.4958:
+ 919 0296 7469 6D65 		.string	"timer_count: %04lX\n"
+ 919      725F 636F 
+ 919      756E 743A 
+ 919      2025 3034 
+ 919      6C58 0A00 
+ 922               	__c.4955:
+ 923 02aa 4743 433A 		.string	"GCC: 5.3.0 AVR-LIBC: 2.0.0 AVR_ARCH: avr5\n"
+ 923      2035 2E33 
+ 923      2E30 2041 
+ 923      5652 2D4C 
+ 923      4942 433A 
+ 926               	__c.4953:
+ 927 02d5 4F50 5449 		.string	"OPTIONS: LUFA CONSOLE COMMAND NKRO 4096\n"
+ 927      4F4E 533A 
+ 927      204C 5546 
+ 927      4120 434F 
+ 927      4E53 4F4C 
+ 930               	__c.4951:
+ 931 02fe 4255 494C 		.string	"BUILD: 914701a-dirty (17:18:56 Aug 14 2016)\n"
+ 931      443A 2039 
+ 931      3134 3730 
+ 931      3161 2D64 
+ 931      6972 7479 
+ 934               	__c.4949:
+ 935 032b 5649 443A 		.string	"VID: 0x16C0(technomancy) PID: 0x047C(Atreus) VER: 36\n"
+ 935      2030 7831 
+ 935      3643 3028 
+ 935      7465 6368 
+ 935      6E6F 6D61 
+ 938               	__c.4947:
+ 939 0361 4445 5343 		.string	"DESC: TMK keyboard firmware for Atreus\n"
+ 939      3A20 544D 
+ 939      4B20 6B65 
+ 939      7962 6F61 
+ 939      7264 2066 
+ 942               	__c.4945:
+ 943 0389 0A0A 2D2D 		.string	"\n\n----- Version -----\n"
+ 943      2D2D 2D20 
+ 943      5665 7273 
+ 943      696F 6E20 
+ 943      2D2D 2D2D 
+ 946               	__c.4942:
+ 947 03a0 0A44 4542 		.string	"\nDEBUG: mouse disabled.\n"
+ 947      5547 3A20 
+ 947      6D6F 7573 
+ 947      6520 6469 
+ 947      7361 626C 
+ 950               	__c.4940:
+ 951 03b9 0A44 4542 		.string	"\nDEBUG: mouse enabled.\n"
+ 951      5547 3A20 
+ 951      6D6F 7573 
+ 951      6520 656E 
+ 951      6162 6C65 
+ 954               	__c.4937:
+ 955 03d1 0A44 4542 		.string	"\nDEBUG: keyboard disabled.\n"
+ 955      5547 3A20 
+ 955      6B65 7962 
+ 955      6F61 7264 
+ 955      2064 6973 
+ 958               	__c.4935:
+ 959 03ed 0A44 4542 		.string	"\nDEBUG: keyboard enabled.\n"
+ 959      5547 3A20 
+ 959      6B65 7962 
+ 959      6F61 7264 
+ 959      2065 6E61 
+ 962               	__c.4932:
+ 963 0408 0A44 4542 		.string	"\nDEBUG: matrix disabled.\n"
+ 963      5547 3A20 
+ 963      6D61 7472 
+ 963      6978 2064 
+ 963      6973 6162 
+ 966               	__c.4930:
+ 967 0422 0A44 4542 		.string	"\nDEBUG: matrix enabled.\n"
+ 967      5547 3A20 
+ 967      6D61 7472 
+ 967      6978 2065 
+ 967      6E61 626C 
+ 970               	__c.4927:
+ 971 043b 0A44 4542 		.string	"\nDEBUG: enabled.\n"
+ 971      5547 3A20 
+ 971      656E 6162 
+ 971      6C65 642E 
+ 971      0A00 
+ 974               	__c.4925:
+ 975 044d 0A44 4542 		.string	"\nDEBUG: disabled.\n"
+ 975      5547 3A20 
+ 975      6469 7361 
+ 975      626C 6564 
+ 975      2E0A 00
+ 978               	__c.4922:
+ 979 0460 6E6F 7420 		.string	"not supported.\n"
+ 979      7375 7070 
+ 979      6F72 7465 
+ 979      642E 0A00 
+ 982               	__c.4920:
+ 983 0470 0A0A 4A75 		.string	"\n\nJump to bootloader... "
+ 983      6D70 2074 
+ 983      6F20 626F 
+ 983      6F74 6C6F 
+ 983      6164 6572 
+ 986               	__c.4917:
+ 987 0489 433E 2000 		.string	"C> "
+ 990               	__c.4915:
+ 991 048d 0A45 6E74 		.string	"\nEnter Console Mode\n"
+ 991      6572 2043 
+ 991      6F6E 736F 
+ 991      6C65 204D 
+ 991      6F64 650A 
+ 994               	__c.4909:
+ 995 04a2 556E 6C6F 		.string	"Unlocked.\n"
+ 995      636B 6564 
+ 995      2E0A 00
+ 998               	__c.4907:
+ 999 04ad 4C6F 636B 		.string	"Locked.\n"
+ 999      6564 2E0A 
+ 999      00
+ 1000               		.local	host_driver.4905
+ 1001               		.comm	host_driver.4905,2,1
+ 1002               		.local	state
+ 1003               		.comm	state,1,1
+ 1004               		.comm	debug_config,1,1
+ 1005               		.text
+ 1006               	.Letext0:
+ 1007               		.file 3 "/usr/avr/include/stdint.h"
+ 1008               		.file 4 "../../common/report.h"
+ 1009               		.file 5 "../../common/host_driver.h"
+ 1010               		.file 6 "../../common/debug_config.h"
+ 1011               		.file 7 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBTask.h"
+ 1012               		.file 8 "../../common/host.h"
+ 1013               		.file 9 "../../common/timer.h"
+ 1014               		.file 10 "../../common/action_layer.h"
+ 1015               		.file 11 "../../common/action_util.h"
+ 1016               		.file 12 "../../common/xprintf.h"
+ 1017               		.file 13 "../../common/util.h"
+ 1018               		.file 14 "../../common/action.h"
+ 1019               		.file 15 "../../common/bootloader.h"
+ 1020               		.file 16 "../../common/keycode.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 command.c
-     /tmp/ccGaIADp.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccGaIADp.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccGaIADp.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccGaIADp.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccGaIADp.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccGaIADp.s:12     .text.switch_default_layer:0000000000000000 switch_default_layer
-     /tmp/ccGaIADp.s:809    .progmem.data:0000000000000027 __c.4872
-     /tmp/ccGaIADp.s:805    .progmem.data:0000000000000024 __c.4874
-     /tmp/ccGaIADp.s:801    .progmem.data:000000000000001f __c.4876
-     /tmp/ccGaIADp.s:797    .progmem.data:000000000000001c __c.4878
-     /tmp/ccGaIADp.s:793    .progmem.data:000000000000001a __c.4880
-     /tmp/ccGaIADp.s:122    .text.command_extra:0000000000000000 command_extra
-     /tmp/ccGaIADp.s:141    .text.command_proc:0000000000000000 command_proc
-     /tmp/ccGaIADp.s:1000   .bss:0000000000000002 state
+     /tmp/cce0swo8.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cce0swo8.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cce0swo8.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cce0swo8.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cce0swo8.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cce0swo8.s:12     .text.switch_default_layer:0000000000000000 switch_default_layer
+     /tmp/cce0swo8.s:810    .progmem.data:0000000000000027 __c.5016
+     /tmp/cce0swo8.s:806    .progmem.data:0000000000000024 __c.5018
+     /tmp/cce0swo8.s:802    .progmem.data:000000000000001f __c.5020
+     /tmp/cce0swo8.s:798    .progmem.data:000000000000001c __c.5022
+     /tmp/cce0swo8.s:794    .progmem.data:000000000000001a __c.5024
+     /tmp/cce0swo8.s:122    .text.command_extra:0000000000000000 command_extra
+     /tmp/cce0swo8.s:141    .text.command_proc:0000000000000000 command_proc
+     /tmp/cce0swo8.s:1001   .bss:0000000000000002 state
                             *COM*:0000000000000001 debug_config
-     /tmp/ccGaIADp.s:817    .progmem.data:000000000000004b __c.4837
-     /tmp/ccGaIADp.s:813    .progmem.data:000000000000003e __c.4839
-     /tmp/ccGaIADp.s:989    .progmem.data:0000000000000490 __c.4771
-     /tmp/ccGaIADp.s:985    .progmem.data:000000000000048c __c.4773
-     /tmp/ccGaIADp.s:941    .progmem.data:000000000000038c __c.4801
-     /tmp/ccGaIADp.s:937    .progmem.data:0000000000000364 __c.4803
-     /tmp/ccGaIADp.s:933    .progmem.data:000000000000032e __c.4805
-     /tmp/ccGaIADp.s:929    .progmem.data:0000000000000301 __c.4807
-     /tmp/ccGaIADp.s:925    .progmem.data:00000000000002d8 __c.4809
-     /tmp/ccGaIADp.s:921    .progmem.data:00000000000002aa __c.4811
-     /tmp/ccGaIADp.s:981    .progmem.data:0000000000000473 __c.4776
-     /tmp/ccGaIADp.s:977    .progmem.data:0000000000000463 __c.4778
-                             .bss:0000000000000000 host_driver.4761
-     /tmp/ccGaIADp.s:997    .progmem.data:00000000000004b0 __c.4763
-     /tmp/ccGaIADp.s:993    .progmem.data:00000000000004a5 __c.4765
-     /tmp/ccGaIADp.s:893    .progmem.data:0000000000000229 __c.4720
-     /tmp/ccGaIADp.s:889    .progmem.data:0000000000000212 __c.4722
-     /tmp/ccGaIADp.s:885    .progmem.data:00000000000001fa __c.4724
-     /tmp/ccGaIADp.s:881    .progmem.data:00000000000001e2 __c.4726
-     /tmp/ccGaIADp.s:877    .progmem.data:00000000000001c8 __c.4728
-     /tmp/ccGaIADp.s:873    .progmem.data:00000000000001b1 __c.4730
-     /tmp/ccGaIADp.s:869    .progmem.data:0000000000000191 __c.4732
-     /tmp/ccGaIADp.s:865    .progmem.data:000000000000017b __c.4734
-     /tmp/ccGaIADp.s:861    .progmem.data:000000000000016a __c.4736
-     /tmp/ccGaIADp.s:857    .progmem.data:0000000000000152 __c.4738
-     /tmp/ccGaIADp.s:853    .progmem.data:0000000000000142 __c.4740
-     /tmp/ccGaIADp.s:849    .progmem.data:0000000000000128 __c.4742
-     /tmp/ccGaIADp.s:845    .progmem.data:000000000000010f __c.4744
-     /tmp/ccGaIADp.s:841    .progmem.data:00000000000000f6 __c.4746
-     /tmp/ccGaIADp.s:837    .progmem.data:00000000000000dd __c.4748
-     /tmp/ccGaIADp.s:833    .progmem.data:00000000000000c4 __c.4750
-     /tmp/ccGaIADp.s:829    .progmem.data:00000000000000a3 __c.4752
-     /tmp/ccGaIADp.s:825    .progmem.data:0000000000000081 __c.4754
-     /tmp/ccGaIADp.s:821    .progmem.data:0000000000000067 __c.4756
-     /tmp/ccGaIADp.s:973    .progmem.data:0000000000000450 __c.4781
-     /tmp/ccGaIADp.s:969    .progmem.data:000000000000043e __c.4783
-     /tmp/ccGaIADp.s:965    .progmem.data:0000000000000425 __c.4786
-     /tmp/ccGaIADp.s:961    .progmem.data:000000000000040b __c.4788
-     /tmp/ccGaIADp.s:957    .progmem.data:00000000000003f0 __c.4791
-     /tmp/ccGaIADp.s:953    .progmem.data:00000000000003d4 __c.4793
-     /tmp/ccGaIADp.s:949    .progmem.data:00000000000003bc __c.4796
-     /tmp/ccGaIADp.s:945    .progmem.data:00000000000003a3 __c.4798
-     /tmp/ccGaIADp.s:917    .progmem.data:0000000000000296 __c.4814
-     /tmp/ccGaIADp.s:913    .progmem.data:0000000000000280 __c.4817
-     /tmp/ccGaIADp.s:909    .progmem.data:0000000000000266 __c.4819
-     /tmp/ccGaIADp.s:905    .progmem.data:0000000000000257 __c.4822
-     /tmp/ccGaIADp.s:901    .progmem.data:0000000000000247 __c.4824
-     /tmp/ccGaIADp.s:897    .progmem.data:0000000000000245 __c.4832
-     /tmp/ccGaIADp.s:789    .progmem.data:0000000000000016 __c.4854
-     /tmp/ccGaIADp.s:785    .progmem.data:0000000000000002 __c.4849
-     /tmp/ccGaIADp.s:781    .progmem.data:0000000000000000 __c.4852
+     /tmp/cce0swo8.s:818    .progmem.data:000000000000004b __c.4981
+     /tmp/cce0swo8.s:814    .progmem.data:000000000000003e __c.4983
+     /tmp/cce0swo8.s:990    .progmem.data:000000000000048d __c.4915
+     /tmp/cce0swo8.s:986    .progmem.data:0000000000000489 __c.4917
+     /tmp/cce0swo8.s:942    .progmem.data:0000000000000389 __c.4945
+     /tmp/cce0swo8.s:938    .progmem.data:0000000000000361 __c.4947
+     /tmp/cce0swo8.s:934    .progmem.data:000000000000032b __c.4949
+     /tmp/cce0swo8.s:930    .progmem.data:00000000000002fe __c.4951
+     /tmp/cce0swo8.s:926    .progmem.data:00000000000002d5 __c.4953
+     /tmp/cce0swo8.s:922    .progmem.data:00000000000002aa __c.4955
+     /tmp/cce0swo8.s:982    .progmem.data:0000000000000470 __c.4920
+     /tmp/cce0swo8.s:978    .progmem.data:0000000000000460 __c.4922
+                             .bss:0000000000000000 host_driver.4905
+     /tmp/cce0swo8.s:998    .progmem.data:00000000000004ad __c.4907
+     /tmp/cce0swo8.s:994    .progmem.data:00000000000004a2 __c.4909
+     /tmp/cce0swo8.s:894    .progmem.data:0000000000000229 __c.4864
+     /tmp/cce0swo8.s:890    .progmem.data:0000000000000212 __c.4866
+     /tmp/cce0swo8.s:886    .progmem.data:00000000000001fa __c.4868
+     /tmp/cce0swo8.s:882    .progmem.data:00000000000001e2 __c.4870
+     /tmp/cce0swo8.s:878    .progmem.data:00000000000001c8 __c.4872
+     /tmp/cce0swo8.s:874    .progmem.data:00000000000001b1 __c.4874
+     /tmp/cce0swo8.s:870    .progmem.data:0000000000000191 __c.4876
+     /tmp/cce0swo8.s:866    .progmem.data:000000000000017b __c.4878
+     /tmp/cce0swo8.s:862    .progmem.data:000000000000016a __c.4880
+     /tmp/cce0swo8.s:858    .progmem.data:0000000000000152 __c.4882
+     /tmp/cce0swo8.s:854    .progmem.data:0000000000000142 __c.4884
+     /tmp/cce0swo8.s:850    .progmem.data:0000000000000128 __c.4886
+     /tmp/cce0swo8.s:846    .progmem.data:000000000000010f __c.4888
+     /tmp/cce0swo8.s:842    .progmem.data:00000000000000f6 __c.4890
+     /tmp/cce0swo8.s:838    .progmem.data:00000000000000dd __c.4892
+     /tmp/cce0swo8.s:834    .progmem.data:00000000000000c4 __c.4894
+     /tmp/cce0swo8.s:830    .progmem.data:00000000000000a3 __c.4896
+     /tmp/cce0swo8.s:826    .progmem.data:0000000000000081 __c.4898
+     /tmp/cce0swo8.s:822    .progmem.data:0000000000000067 __c.4900
+     /tmp/cce0swo8.s:974    .progmem.data:000000000000044d __c.4925
+     /tmp/cce0swo8.s:970    .progmem.data:000000000000043b __c.4927
+     /tmp/cce0swo8.s:966    .progmem.data:0000000000000422 __c.4930
+     /tmp/cce0swo8.s:962    .progmem.data:0000000000000408 __c.4932
+     /tmp/cce0swo8.s:958    .progmem.data:00000000000003ed __c.4935
+     /tmp/cce0swo8.s:954    .progmem.data:00000000000003d1 __c.4937
+     /tmp/cce0swo8.s:950    .progmem.data:00000000000003b9 __c.4940
+     /tmp/cce0swo8.s:946    .progmem.data:00000000000003a0 __c.4942
+     /tmp/cce0swo8.s:918    .progmem.data:0000000000000296 __c.4958
+     /tmp/cce0swo8.s:914    .progmem.data:0000000000000280 __c.4961
+     /tmp/cce0swo8.s:910    .progmem.data:0000000000000266 __c.4963
+     /tmp/cce0swo8.s:906    .progmem.data:0000000000000257 __c.4966
+     /tmp/cce0swo8.s:902    .progmem.data:0000000000000247 __c.4968
+     /tmp/cce0swo8.s:898    .progmem.data:0000000000000245 __c.4976
+     /tmp/cce0swo8.s:790    .progmem.data:0000000000000016 __c.4998
+     /tmp/cce0swo8.s:786    .progmem.data:0000000000000002 __c.4993
+     /tmp/cce0swo8.s:782    .progmem.data:0000000000000000 __c.4996
 
 UNDEFINED SYMBOLS
 xputs

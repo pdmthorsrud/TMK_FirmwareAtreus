@@ -284,11 +284,11 @@
  197 0034 E206      		cpc r14,r18
  198 0036 F306      		cpc r15,r19
  199 0038 00F4      		brsh .L8
- 200 003a 4150      		subi r20,1
- 201 003c 5109      		sbc r21,__zero_reg__
- 202               	.LVL8:
- 203               	.L8:
- 204               		.loc 1 96 0 is_stmt 0 discriminator 2
+ 200               		.loc 1 96 0 is_stmt 0 discriminator 2
+ 201 003a 4150      		subi r20,1
+ 202 003c 5109      		sbc r21,__zero_reg__
+ 203               	.LVL8:
+ 204               	.L8:
  205 003e 9A01      		movw r18,r20
  206 0040 281B      		sub r18,r24
  207 0042 390B      		sbc r19,r25
@@ -486,22 +486,22 @@
  386 0000 0000 0000 		.zero	4
  387               		.text
  388               	.Letext0:
- 389               		.file 2 "/usr/lib/avr/include/stdint.h"
+ 389               		.file 2 "/usr/avr/include/stdint.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 timer.c
-     /tmp/ccuimW2a.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccuimW2a.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccuimW2a.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccuimW2a.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccuimW2a.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccuimW2a.s:13     .text.timer_init:0000000000000000 timer_init
-     /tmp/ccuimW2a.s:40     .text.timer_clear:0000000000000000 timer_clear
-     /tmp/ccuimW2a.s:385    .bss:0000000000000000 timer_count
-     /tmp/ccuimW2a.s:71     .text.timer_read:0000000000000000 timer_read
-     /tmp/ccuimW2a.s:103    .text.timer_read32:0000000000000000 timer_read32
-     /tmp/ccuimW2a.s:136    .text.timer_elapsed:0000000000000000 timer_elapsed
-     /tmp/ccuimW2a.s:226    .text.timer_elapsed32:0000000000000000 timer_elapsed32
-     /tmp/ccuimW2a.s:320    .text.__vector_21:0000000000000000 __vector_21
+     /tmp/ccpn3FqR.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccpn3FqR.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccpn3FqR.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccpn3FqR.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccpn3FqR.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccpn3FqR.s:13     .text.timer_init:0000000000000000 timer_init
+     /tmp/ccpn3FqR.s:40     .text.timer_clear:0000000000000000 timer_clear
+     /tmp/ccpn3FqR.s:385    .bss:0000000000000000 timer_count
+     /tmp/ccpn3FqR.s:71     .text.timer_read:0000000000000000 timer_read
+     /tmp/ccpn3FqR.s:103    .text.timer_read32:0000000000000000 timer_read32
+     /tmp/ccpn3FqR.s:136    .text.timer_elapsed:0000000000000000 timer_elapsed
+     /tmp/ccpn3FqR.s:226    .text.timer_elapsed32:0000000000000000 timer_elapsed32
+     /tmp/ccpn3FqR.s:320    .text.__vector_21:0000000000000000 __vector_21
 
 UNDEFINED SYMBOLS
 __do_clear_bss

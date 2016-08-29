@@ -142,7 +142,7 @@
  105               	/* frame size = 140 */
  106               	/* stack size = 158 */
  107               	.L__stack_usage = 158
- 108 0036 4C01      		movw r8,r24
+ 108 0036 6C01      		movw r12,r24
  109               	.LVL1:
   39:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	HID_StateTable_t      StateTable[HID_STATETABLE_STACK_DEPTH];
   40:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	HID_StateTable_t*     CurrStateTable          = &StateTable[0];
@@ -196,10 +196,10 @@
  146 006c 2150      		subi r18,1
  147 006e 3109      		sbc r19,__zero_reg__
  148               	.LVL4:
- 149 0070 EC96      		adiw r28,122-62
+ 149 0070 ED96      		adiw r28,123-62
  150 0072 3FAF      		std Y+63,r19
  151 0074 2EAF      		std Y+62,r18
- 152 0076 EC97      		sbiw r28,122-62
+ 152 0076 ED97      		sbiw r28,123-62
  153 0078 81E0      		ldi r24,lo8(1)
  154 007a D901      		movw r26,r18
  155 007c 8C93      		st X,r24
@@ -223,7 +223,7 @@
  170 0094 312C      		mov r3,__zero_reg__
   40:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	HID_CollectionPath_t* CurrCollectionPath      = NULL;
  171               		.loc 1 40 0
- 172 0096 5F01      		movw r10,r30
+ 172 0096 7F01      		movw r14,r30
  173               	.LBB2:
  174               	.LBB3:
  175               	.LBB4:
@@ -438,10 +438,10 @@
  176               		.loc 1 259 0
  177 0098 295B      		subi r18,-71
  178 009a 3F4F      		sbci r19,-1
- 179 009c EE96      		adiw r28,124-62
+ 179 009c EF96      		adiw r28,125-62
  180 009e 3FAF      		std Y+63,r19
  181 00a0 2EAF      		std Y+62,r18
- 182 00a2 EE97      		sbiw r28,124-62
+ 182 00a2 EF97      		sbiw r28,125-62
  183               	.LBE4:
  184               	.LBE3:
  185               	.LBB9:
@@ -449,32 +449,32 @@
  186               		.loc 1 184 0
  187 00a4 2E54      		subi r18,78
  188 00a6 3109      		sbc r19,__zero_reg__
- 189 00a8 CC57      		subi r28,lo8(-132)
- 190 00aa DF4F      		sbci r29,hi8(-132)
+ 189 00a8 CB57      		subi r28,lo8(-133)
+ 190 00aa DF4F      		sbci r29,hi8(-133)
  191 00ac 3983      		std Y+1,r19
  192 00ae 2883      		st Y,r18
- 193 00b0 C458      		subi r28,lo8(132)
- 194 00b2 D040      		sbci r29,hi8(132)
+ 193 00b0 C558      		subi r28,lo8(133)
+ 194 00b2 D040      		sbci r29,hi8(133)
  195               	.LBE9:
  132:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				{
  196               		.loc 1 132 0
  197 00b4 205B      		subi r18,-80
  198 00b6 3F4F      		sbci r19,-1
- 199 00b8 C258      		subi r28,lo8(-126)
- 200 00ba DF4F      		sbci r29,hi8(-126)
+ 199 00b8 C158      		subi r28,lo8(-127)
+ 200 00ba DF4F      		sbci r29,hi8(-127)
  201 00bc 3983      		std Y+1,r19
  202 00be 2883      		st Y,r18
- 203 00c0 CE57      		subi r28,lo8(126)
- 204 00c2 D040      		sbci r29,hi8(126)
+ 203 00c0 CF57      		subi r28,lo8(127)
+ 204 00c2 D040      		sbci r29,hi8(127)
  205               	.LBB10:
  136:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 					{
  206               		.loc 1 136 0
- 207 00c4 CA57      		subi r28,lo8(-134)
- 208 00c6 DF4F      		sbci r29,hi8(-134)
+ 207 00c4 C957      		subi r28,lo8(-135)
+ 208 00c6 DF4F      		sbci r29,hi8(-135)
  209 00c8 B983      		std Y+1,r27
  210 00ca A883      		st Y,r26
- 211 00cc C658      		subi r28,lo8(134)
- 212 00ce D040      		sbci r29,hi8(134)
+ 211 00cc C758      		subi r28,lo8(135)
+ 212 00ce D040      		sbci r29,hi8(135)
  213               	.LVL5:
  214               	.L2:
  215               	.LBE10:
@@ -488,308 +488,258 @@
  222               	.LBB17:
   55:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 		uint32_t ReportItemData = 0;
  223               		.loc 1 55 0
- 224 00d8 D401      		movw r26,r8
+ 224 00d8 D601      		movw r26,r12
  225 00da BC91      		ld r27,X
- 226 00dc EA96      		adiw r28,121-63
+ 226 00dc EB96      		adiw r28,122-63
  227 00de BFAF      		std Y+63,r27
- 228 00e0 EA97      		sbiw r28,121-63
+ 228 00e0 EB97      		sbiw r28,122-63
  229               	.LVL6:
   61:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 		{
  230               		.loc 1 61 0
  231 00e2 8B2F      		mov r24,r27
  232 00e4 8370      		andi r24,lo8(3)
  233 00e6 8230      		cpi r24,lo8(2)
- 234 00e8 01F4      		brne .+2
- 235 00ea 00C0      		rjmp .L4
- 236 00ec 8330      		cpi r24,lo8(3)
- 237 00ee 01F0      		breq .L5
- 238 00f0 8130      		cpi r24,lo8(1)
- 239 00f2 01F4      		brne .+2
- 240 00f4 00C0      		rjmp .L6
+ 234 00e8 01F0      		breq .L4
+ 235 00ea 8330      		cpi r24,lo8(3)
+ 236 00ec 01F0      		breq .L5
+ 237 00ee 8130      		cpi r24,lo8(1)
+ 238 00f0 01F0      		breq .L6
   58:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 		ReportSize--;
- 241               		.loc 1 58 0
- 242 00f6 EFEF      		ldi r30,-1
- 243 00f8 8E1A      		sub r8,r30
- 244 00fa 9E0A      		sbc r9,r30
- 245               	.LVL7:
+ 239               		.loc 1 58 0
+ 240 00f2 EFEF      		ldi r30,-1
+ 241 00f4 CE1A      		sub r12,r30
+ 242 00f6 DE0A      		sbc r13,r30
+ 243               	.LVL7:
   59:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
- 246               		.loc 1 59 0
- 247 00fc 6150      		subi r22,1
- 248 00fe 7109      		sbc r23,__zero_reg__
- 249               	.LVL8:
+ 244               		.loc 1 59 0
+ 245 00f8 6150      		subi r22,1
+ 246 00fa 7109      		sbc r23,__zero_reg__
+ 247               	.LVL8:
   56:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
- 250               		.loc 1 56 0
- 251 0100 C12C      		mov r12,__zero_reg__
- 252 0102 D12C      		mov r13,__zero_reg__
- 253 0104 7601      		movw r14,r12
- 254 0106 00C0      		rjmp .L7
- 255               	.LVL9:
- 256               	.L5:
+ 248               		.loc 1 56 0
+ 249 00fc 812C      		mov r8,__zero_reg__
+ 250 00fe 912C      		mov r9,__zero_reg__
+ 251 0100 5401      		movw r10,r8
+ 252 0102 00C0      		rjmp .L7
+ 253               	.LVL9:
+ 254               	.L5:
   64:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 			                       ((uint16_t)ReportData[1] << 8)  | ReportData[0]);
- 257               		.loc 1 64 0
- 258 0108 D401      		movw r26,r8
- 259 010a 1496      		adiw r26,4
- 260 010c 9C91      		ld r25,X
- 261 010e 1497      		sbiw r26,4
- 262 0110 1396      		adiw r26,3
- 263 0112 CC90      		ld r12,X
- 264 0114 1397      		sbiw r26,3
- 265 0116 D12C      		mov r13,__zero_reg__
- 266 0118 E12C      		mov r14,__zero_reg__
- 267 011a F12C      		mov r15,__zero_reg__
- 268 011c 7601      		movw r14,r12
- 269 011e DD24      		clr r13
- 270 0120 CC24      		clr r12
- 271 0122 F92A      		or r15,r25
-  65:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				ReportSize     -= 4;
- 272               		.loc 1 65 0
- 273 0124 1196      		adiw r26,1
- 274 0126 2C91      		ld r18,X
- 275 0128 D701      		movw r26,r14
- 276 012a C601      		movw r24,r12
- 277 012c 822B      		or r24,r18
- 278 012e C058      		subi r28,lo8(-128)
- 279 0130 DF4F      		sbci r29,hi8(-128)
- 280 0132 8883      		st Y,r24
- 281 0134 9983      		std Y+1,r25
- 282 0136 AA83      		std Y+2,r26
- 283 0138 BB83      		std Y+3,r27
- 284 013a C058      		subi r28,lo8(128)
- 285 013c D040      		sbci r29,hi8(128)
- 286 013e D401      		movw r26,r8
- 287 0140 1296      		adiw r26,2
- 288 0142 CC90      		ld r12,X
- 289 0144 D12C      		mov r13,__zero_reg__
- 290 0146 DC2C      		mov r13,r12
- 291 0148 CC24      		clr r12
-  64:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 			                       ((uint16_t)ReportData[1] << 8)  | ReportData[0]);
- 292               		.loc 1 64 0
- 293 014a E12C      		mov r14,__zero_reg__
- 294 014c F12C      		mov r15,__zero_reg__
- 295 014e C058      		subi r28,lo8(-128)
- 296 0150 DF4F      		sbci r29,hi8(-128)
- 297 0152 8881      		ld r24,Y
- 298 0154 9981      		ldd r25,Y+1
- 299 0156 AA81      		ldd r26,Y+2
- 300 0158 BB81      		ldd r27,Y+3
- 301 015a C058      		subi r28,lo8(128)
- 302 015c D040      		sbci r29,hi8(128)
- 303 015e C82A      		or r12,r24
- 304 0160 D92A      		or r13,r25
- 305 0162 EA2A      		or r14,r26
- 306 0164 FB2A      		or r15,r27
- 307               	.LVL10:
+ 255               		.loc 1 64 0
+ 256 0104 D601      		movw r26,r12
+ 257 0106 1196      		adiw r26,1
+ 258 0108 8D90      		ld r8,X+
+ 259 010a 9D90      		ld r9,X+
+ 260 010c AD90      		ld r10,X+
+ 261 010e BC90      		ld r11,X
+ 262 0110 1497      		sbiw r26,1+3
+ 263               	.LVL10:
   66:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				ReportData     += 4;
- 308               		.loc 1 66 0
- 309 0166 6550      		subi r22,5
- 310 0168 7109      		sbc r23,__zero_reg__
- 311               	.LVL11:
+ 264               		.loc 1 66 0
+ 265 0112 6550      		subi r22,5
+ 266 0114 7109      		sbc r23,__zero_reg__
+ 267               	.LVL11:
   67:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				break;
- 312               		.loc 1 67 0
- 313 016a 95E0      		ldi r25,5
- 314 016c 890E      		add r8,r25
- 315 016e 911C      		adc r9,__zero_reg__
- 316               	.LVL12:
+ 268               		.loc 1 67 0
+ 269 0116 B5E0      		ldi r27,5
+ 270 0118 CB0E      		add r12,r27
+ 271 011a D11C      		adc r13,__zero_reg__
+ 272               	.LVL12:
   68:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 			case HID_RI_DATA_BITS_16:
- 317               		.loc 1 68 0
- 318 0170 00C0      		rjmp .L7
- 319               	.LVL13:
- 320               	.L4:
+ 273               		.loc 1 68 0
+ 274 011c 00C0      		rjmp .L7
+ 275               	.LVL13:
+ 276               	.L4:
   70:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				ReportSize     -= 2;
- 321               		.loc 1 70 0
- 322 0172 D401      		movw r26,r8
- 323 0174 1296      		adiw r26,2
- 324 0176 CC90      		ld r12,X
- 325 0178 1297      		sbiw r26,2
- 326 017a D12C      		mov r13,__zero_reg__
- 327 017c DC2C      		mov r13,r12
- 328 017e CC24      		clr r12
- 329 0180 1196      		adiw r26,1
- 330 0182 8C91      		ld r24,X
- 331 0184 C82A      		or r12,r24
- 332 0186 E12C      		mov r14,__zero_reg__
- 333 0188 F12C      		mov r15,__zero_reg__
- 334               	.LVL14:
+ 277               		.loc 1 70 0
+ 278 011e F601      		movw r30,r12
+ 279 0120 8180      		ldd r8,Z+1
+ 280 0122 9280      		ldd r9,Z+2
+ 281 0124 A12C      		mov r10,__zero_reg__
+ 282 0126 B12C      		mov r11,__zero_reg__
+ 283               	.LVL14:
   71:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				ReportData     += 2;
- 335               		.loc 1 71 0
- 336 018a 6350      		subi r22,3
- 337 018c 7109      		sbc r23,__zero_reg__
- 338               	.LVL15:
+ 284               		.loc 1 71 0
+ 285 0128 6350      		subi r22,3
+ 286 012a 7109      		sbc r23,__zero_reg__
+ 287               	.LVL15:
   72:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				break;
- 339               		.loc 1 72 0
- 340 018e B3E0      		ldi r27,3
- 341 0190 8B0E      		add r8,r27
- 342 0192 911C      		adc r9,__zero_reg__
- 343               	.LVL16:
+ 288               		.loc 1 72 0
+ 289 012c F3E0      		ldi r31,3
+ 290 012e CF0E      		add r12,r31
+ 291 0130 D11C      		adc r13,__zero_reg__
+ 292               	.LVL16:
   73:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 			case HID_RI_DATA_BITS_8:
- 344               		.loc 1 73 0
- 345 0194 00C0      		rjmp .L7
- 346               	.LVL17:
- 347               	.L6:
+ 293               		.loc 1 73 0
+ 294 0132 00C0      		rjmp .L7
+ 295               	.LVL17:
+ 296               	.L6:
   75:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				ReportSize     -= 1;
- 348               		.loc 1 75 0
- 349 0196 F401      		movw r30,r8
- 350 0198 C180      		ldd r12,Z+1
- 351 019a D12C      		mov r13,__zero_reg__
- 352 019c E12C      		mov r14,__zero_reg__
- 353 019e F12C      		mov r15,__zero_reg__
- 354               	.LVL18:
+ 297               		.loc 1 75 0
+ 298 0134 D601      		movw r26,r12
+ 299 0136 1196      		adiw r26,1
+ 300 0138 8C90      		ld r8,X
+ 301 013a 912C      		mov r9,__zero_reg__
+ 302 013c A12C      		mov r10,__zero_reg__
+ 303 013e B12C      		mov r11,__zero_reg__
+ 304               	.LVL18:
   76:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				ReportData     += 1;
- 355               		.loc 1 76 0
- 356 01a0 6250      		subi r22,2
- 357 01a2 7109      		sbc r23,__zero_reg__
- 358               	.LVL19:
+ 305               		.loc 1 76 0
+ 306 0140 6250      		subi r22,2
+ 307 0142 7109      		sbc r23,__zero_reg__
+ 308               	.LVL19:
   77:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				break;
- 359               		.loc 1 77 0
- 360 01a4 F2E0      		ldi r31,2
- 361 01a6 8F0E      		add r8,r31
- 362 01a8 911C      		adc r9,__zero_reg__
- 363               	.LVL20:
- 364               	.L7:
+ 309               		.loc 1 77 0
+ 310 0144 B2E0      		ldi r27,2
+ 311 0146 CB0E      		add r12,r27
+ 312 0148 D11C      		adc r13,__zero_reg__
+ 313               	.LVL20:
+ 314               	.L7:
+ 315 014a EB96      		adiw r28,122-63
+ 316 014c 1FAD      		ldd r17,Y+63
+ 317 014e EB97      		sbiw r28,122-63
+ 318 0150 1C7F      		andi r17,lo8(-4)
   81:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 		{
- 365               		.loc 1 81 0
- 366 01aa EA96      		adiw r28,121-63
- 367 01ac 1FAD      		ldd r17,Y+63
- 368 01ae EA97      		sbiw r28,121-63
- 369 01b0 1C7F      		andi r17,lo8(-4)
- 370 01b2 1436      		cpi r17,lo8(100)
- 371 01b4 01F4      		brne .+2
- 372 01b6 00C0      		rjmp .L9
- 373 01b8 00F4      		brsh .L10
- 374 01ba 1432      		cpi r17,lo8(36)
- 375 01bc 01F4      		brne .+2
- 376 01be 00C0      		rjmp .L11
- 377 01c0 00F4      		brsh .L12
- 378 01c2 1830      		cpi r17,lo8(8)
- 379 01c4 01F4      		brne .+2
- 380 01c6 00C0      		rjmp .L13
- 381 01c8 00F4      		brsh .L14
- 382 01ca 1430      		cpi r17,lo8(4)
- 383 01cc 01F0      		breq .+2
- 384 01ce 00C0      		rjmp .L17
+ 319               		.loc 1 81 0
+ 320 0152 1436      		cpi r17,lo8(100)
+ 321 0154 01F4      		brne .+2
+ 322 0156 00C0      		rjmp .L9
+ 323 0158 00F4      		brsh .L10
+ 324 015a 1432      		cpi r17,lo8(36)
+ 325 015c 01F4      		brne .+2
+ 326 015e 00C0      		rjmp .L11
+ 327 0160 00F4      		brsh .L12
+ 328 0162 1830      		cpi r17,lo8(8)
+ 329 0164 01F4      		brne .+2
+ 330 0166 00C0      		rjmp .L13
+ 331 0168 00F4      		brsh .L14
+ 332 016a 1430      		cpi r17,lo8(4)
+ 333 016c 01F0      		breq .+2
+ 334 016e 00C0      		rjmp .L17
  103:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				break;
- 385               		.loc 1 103 0
- 386 01d0 D501      		movw r26,r10
- 387               	.LVL21:
- 388 01d2 1296      		adiw r26,1+1
- 389 01d4 DC92      		st X,r13
- 390 01d6 CE92      		st -X,r12
- 391 01d8 1197      		sbiw r26,1
+ 335               		.loc 1 103 0
+ 336 0170 D701      		movw r26,r14
+ 337               	.LVL21:
+ 338 0172 1296      		adiw r26,1+1
+ 339 0174 9C92      		st X,r9
+ 340 0176 8E92      		st -X,r8
+ 341 0178 1197      		sbiw r26,1
  104:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 			case HID_RI_LOGICAL_MINIMUM(0):
- 392               		.loc 1 104 0
- 393 01da 00C0      		rjmp .L17
- 394               	.LVL22:
- 395               	.L14:
+ 342               		.loc 1 104 0
+ 343 017a 00C0      		rjmp .L17
+ 344               	.LVL22:
+ 345               	.L14:
   81:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 		{
- 396               		.loc 1 81 0
- 397 01dc 1431      		cpi r17,lo8(20)
- 398 01de 01F4      		brne .+2
- 399 01e0 00C0      		rjmp .L16
- 400 01e2 1831      		cpi r17,lo8(24)
- 401 01e4 01F0      		breq .+2
- 402 01e6 00C0      		rjmp .L17
+ 346               		.loc 1 81 0
+ 347 017c 1431      		cpi r17,lo8(20)
+ 348 017e 01F4      		brne .+2
+ 349 0180 00C0      		rjmp .L16
+ 350 0182 1831      		cpi r17,lo8(24)
+ 351 0184 01F0      		breq .+2
+ 352 0186 00C0      		rjmp .L17
  166:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				break;
- 403               		.loc 1 166 0
- 404 01e8 2601      		movw r4,r12
- 405 01ea 3701      		movw r6,r14
- 406               	.LVL23:
- 407 01ec 00C0      		rjmp .L17
- 408               	.LVL24:
- 409               	.L12:
+ 353               		.loc 1 166 0
+ 354 0188 2401      		movw r4,r8
+ 355 018a 3501      		movw r6,r10
+ 356               	.LVL23:
+ 357 018c 00C0      		rjmp .L17
+ 358               	.LVL24:
+ 359               	.L12:
   81:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 		{
- 410               		.loc 1 81 0
- 411 01ee 1433      		cpi r17,lo8(52)
- 412 01f0 01F4      		brne .+2
- 413 01f2 00C0      		rjmp .L18
- 414 01f4 00F4      		brsh .L19
- 415 01f6 1832      		cpi r17,lo8(40)
- 416 01f8 01F0      		breq .+2
- 417 01fa 00C0      		rjmp .L17
- 418               	.LVL25:
+ 360               		.loc 1 81 0
+ 361 018e 1433      		cpi r17,lo8(52)
+ 362 0190 01F4      		brne .+2
+ 363 0192 00C0      		rjmp .L18
+ 364 0194 00F4      		brsh .L19
+ 365 0196 1832      		cpi r17,lo8(40)
+ 366 0198 01F0      		breq .+2
+ 367 019a 00C0      		rjmp .L17
+ 368               	.LVL25:
  169:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				break;
- 419               		.loc 1 169 0
- 420 01fc E996      		adiw r28,117-60
- 421 01fe CCAE      		std Y+60,r12
- 422 0200 DDAE      		std Y+61,r13
- 423 0202 EEAE      		std Y+62,r14
- 424 0204 FFAE      		std Y+63,r15
- 425 0206 E997      		sbiw r28,117-60
+ 369               		.loc 1 169 0
+ 370 019c E996      		adiw r28,117-60
+ 371 019e 8CAE      		std Y+60,r8
+ 372 01a0 9DAE      		std Y+61,r9
+ 373 01a2 AEAE      		std Y+62,r10
+ 374 01a4 BFAE      		std Y+63,r11
+ 375 01a6 E997      		sbiw r28,117-60
  170:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 			case HID_RI_COLLECTION(0):
- 426               		.loc 1 170 0
- 427 0208 00C0      		rjmp .L17
- 428               	.LVL26:
- 429               	.L19:
+ 376               		.loc 1 170 0
+ 377 01a8 00C0      		rjmp .L17
+ 378               	.LVL26:
+ 379               	.L19:
   81:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 		{
- 430               		.loc 1 81 0
- 431 020a 1434      		cpi r17,lo8(68)
- 432 020c 01F4      		brne .+2
- 433 020e 00C0      		rjmp .L21
- 434 0210 1435      		cpi r17,lo8(84)
- 435 0212 01F0      		breq .+2
- 436 0214 00C0      		rjmp .L17
+ 380               		.loc 1 81 0
+ 381 01aa 1434      		cpi r17,lo8(68)
+ 382 01ac 01F4      		brne .+2
+ 383 01ae 00C0      		rjmp .L21
+ 384 01b0 1435      		cpi r17,lo8(84)
+ 385 01b2 01F0      		breq .+2
+ 386 01b4 00C0      		rjmp .L17
  118:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				break;
- 437               		.loc 1 118 0
- 438 0216 F501      		movw r30,r10
- 439 0218 C186      		std Z+9,r12
- 440               	.LVL27:
+ 387               		.loc 1 118 0
+ 388 01b6 F701      		movw r30,r14
+ 389 01b8 8186      		std Z+9,r8
+ 390               	.LVL27:
  119:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 			case HID_RI_UNIT(0):
- 441               		.loc 1 119 0
- 442 021a 00C0      		rjmp .L17
- 443               	.LVL28:
- 444               	.L10:
+ 391               		.loc 1 119 0
+ 392 01ba 00C0      		rjmp .L17
+ 393               	.LVL28:
+ 394               	.L10:
   81:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 		{
- 445               		.loc 1 81 0
- 446 021c 1439      		cpi r17,lo8(-108)
- 447 021e 01F4      		brne .+2
- 448 0220 00C0      		rjmp .L23
- 449 0222 00F4      		brsh .L24
- 450 0224 1038      		cpi r17,lo8(-128)
- 451 0226 01F0      		breq .L25
- 452 0228 00F4      		brsh .L26
- 453 022a 1437      		cpi r17,lo8(116)
- 454 022c 01F0      		breq .+2
- 455 022e 00C0      		rjmp .L17
+ 395               		.loc 1 81 0
+ 396 01bc 1439      		cpi r17,lo8(-108)
+ 397 01be 01F4      		brne .+2
+ 398 01c0 00C0      		rjmp .L23
+ 399 01c2 00F4      		brsh .L24
+ 400 01c4 1038      		cpi r17,lo8(-128)
+ 401 01c6 01F0      		breq .L25
+ 402 01c8 00F4      		brsh .L26
+ 403 01ca 1437      		cpi r17,lo8(116)
+ 404 01cc 01F0      		breq .+2
+ 405 01ce 00C0      		rjmp .L17
  124:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				break;
- 456               		.loc 1 124 0
- 457 0230 F501      		movw r30,r10
- 458 0232 C082      		st Z,r12
- 459               	.LVL29:
+ 406               		.loc 1 124 0
+ 407 01d0 F701      		movw r30,r14
+ 408 01d2 8082      		st Z,r8
+ 409               	.LVL29:
  125:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 			case HID_RI_REPORT_COUNT(0):
- 460               		.loc 1 125 0
- 461 0234 00C0      		rjmp .L17
- 462               	.LVL30:
- 463               	.L26:
+ 410               		.loc 1 125 0
+ 411 01d4 00C0      		rjmp .L17
+ 412               	.LVL30:
+ 413               	.L26:
   81:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 		{
- 464               		.loc 1 81 0
- 465 0236 1438      		cpi r17,lo8(-124)
- 466 0238 01F4      		brne .+2
- 467 023a 00C0      		rjmp .L28
- 468 023c 1039      		cpi r17,lo8(-112)
- 469 023e 01F0      		breq .L25
- 470 0240 00C0      		rjmp .L17
- 471               	.L24:
- 472 0242 103B      		cpi r17,lo8(-80)
- 473 0244 01F0      		breq .L25
- 474 0246 00F4      		brsh .L29
- 475 0248 103A      		cpi r17,lo8(-96)
- 476 024a 01F4      		brne .+2
- 477 024c 00C0      		rjmp .L30
- 478 024e 143A      		cpi r17,lo8(-92)
- 479 0250 01F0      		breq .L31
- 480 0252 00C0      		rjmp .L17
- 481               	.L29:
- 482 0254 143B      		cpi r17,lo8(-76)
- 483 0256 01F0      		breq .L32
- 484 0258 103C      		cpi r17,lo8(-64)
- 485 025a 01F4      		brne .+2
- 486 025c 00C0      		rjmp .L33
- 487 025e 00C0      		rjmp .L17
- 488               	.L25:
+ 414               		.loc 1 81 0
+ 415 01d6 1438      		cpi r17,lo8(-124)
+ 416 01d8 01F4      		brne .+2
+ 417 01da 00C0      		rjmp .L28
+ 418 01dc 1039      		cpi r17,lo8(-112)
+ 419 01de 01F0      		breq .L25
+ 420 01e0 00C0      		rjmp .L17
+ 421               	.L24:
+ 422 01e2 103B      		cpi r17,lo8(-80)
+ 423 01e4 01F0      		breq .L25
+ 424 01e6 00F4      		brsh .L29
+ 425 01e8 103A      		cpi r17,lo8(-96)
+ 426 01ea 01F4      		brne .+2
+ 427 01ec 00C0      		rjmp .L30
+ 428 01ee 143A      		cpi r17,lo8(-92)
+ 429 01f0 01F0      		breq .L31
+ 430 01f2 00C0      		rjmp .L17
+ 431               	.L29:
+ 432 01f4 143B      		cpi r17,lo8(-76)
+ 433 01f6 01F0      		breq .L32
+ 434 01f8 103C      		cpi r17,lo8(-64)
+ 435 01fa 01F4      		brne .+2
+ 436 01fc 00C0      		rjmp .L33
+ 437 01fe 00C0      		rjmp .L17
+ 438               	.L25:
   81:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 		{
- 489               		.loc 1 81 0 is_stmt 0 discriminator 1
- 490 0260 20E0      		ldi r18,0
- 491               	.LBB11:
- 492               	.LBB6:
+ 439               		.loc 1 81 0 is_stmt 0 discriminator 1
+ 440 0200 EA96      		adiw r28,121-63
+ 441 0202 1FAE      		std Y+63,__zero_reg__
+ 442 0204 EA97      		sbiw r28,121-63
+ 443               	.LBB11:
+ 444               	.LBB6:
  260:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
  261:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 					if (ParserData->TotalReportItems == HID_MAX_REPORTITEMS)
  262:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 					  return HID_PARSE_InsufficientReportItems;
@@ -798,1448 +748,1448 @@
  265:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 					       &NewReportItem, sizeof(HID_ReportItem_t));
  266:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
  267:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 					if (!(ReportItemData & HID_IOF_CONSTANT) && CALLBACK_HIDParser_FilterHIDReportItem(&NewReportI
- 493               		.loc 1 267 0 is_stmt 1 discriminator 1
- 494 0262 D701      		movw r26,r14
- 495 0264 C601      		movw r24,r12
- 496 0266 8170      		andi r24,1
- 497 0268 9927      		clr r25
- 498 026a AA27      		clr r26
- 499 026c BB27      		clr r27
- 500 026e C058      		subi r28,lo8(-128)
- 501 0270 DF4F      		sbci r29,hi8(-128)
- 502 0272 8883      		st Y,r24
- 503 0274 9983      		std Y+1,r25
- 504 0276 AA83      		std Y+2,r26
- 505 0278 BB83      		std Y+3,r27
- 506 027a C058      		subi r28,lo8(128)
- 507 027c D040      		sbci r29,hi8(128)
- 508 027e 00C0      		rjmp .L34
- 509               	.L31:
- 510               	.LBE6:
- 511               	.LBE11:
+ 445               		.loc 1 267 0 is_stmt 1 discriminator 1
+ 446 0206 D501      		movw r26,r10
+ 447 0208 C401      		movw r24,r8
+ 448 020a 8170      		andi r24,1
+ 449 020c 9927      		clr r25
+ 450 020e AA27      		clr r26
+ 451 0210 BB27      		clr r27
+ 452 0212 CF57      		subi r28,lo8(-129)
+ 453 0214 DF4F      		sbci r29,hi8(-129)
+ 454 0216 8883      		st Y,r24
+ 455 0218 9983      		std Y+1,r25
+ 456 021a AA83      		std Y+2,r26
+ 457 021c BB83      		std Y+3,r27
+ 458 021e C158      		subi r28,lo8(129)
+ 459 0220 D040      		sbci r29,hi8(129)
+ 460 0222 00C0      		rjmp .L34
+ 461               	.L31:
+ 462               	.LBE6:
+ 463               	.LBE11:
   84:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				  return HID_PARSE_HIDStackOverflow;
- 512               		.loc 1 84 0
- 513 0280 CE01      		movw r24,r28
- 514 0282 4D96      		adiw r24,29
- 515 0284 A816      		cp r10,r24
- 516 0286 B906      		cpc r11,r25
- 517 0288 01F4      		brne .+2
- 518 028a 00C0      		rjmp .L62
+ 464               		.loc 1 84 0
+ 465 0224 CE01      		movw r24,r28
+ 466 0226 4D96      		adiw r24,29
+ 467 0228 E816      		cp r14,r24
+ 468 022a F906      		cpc r15,r25
+ 469 022c 01F4      		brne .+2
+ 470 022e 00C0      		rjmp .L62
   87:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				       CurrStateTable,
- 519               		.loc 1 87 0
- 520 028c C501      		movw r24,r10
- 521 028e 4C96      		adiw r24,28
- 522 0290 2AE2      		ldi r18,lo8(42)
- 523 0292 F501      		movw r30,r10
- 524 0294 DC01      		movw r26,r24
- 525               	.LVL31:
- 526               		0:
- 527 0296 0190      		ld r0,Z+
- 528 0298 0D92      		st X+,r0
- 529 029a 2A95      		dec r18
- 530 029c 01F4      		brne 0b
- 531               	.LVL32:
+ 471               		.loc 1 87 0
+ 472 0230 C701      		movw r24,r14
+ 473 0232 4C96      		adiw r24,28
+ 474 0234 2AE2      		ldi r18,lo8(42)
+ 475 0236 F701      		movw r30,r14
+ 476 0238 DC01      		movw r26,r24
+ 477               	.LVL31:
+ 478               		0:
+ 479 023a 0190      		ld r0,Z+
+ 480 023c 0D92      		st X+,r0
+ 481 023e 2A95      		dec r18
+ 482 0240 01F4      		brne 0b
+ 483               	.LVL32:
   91:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				break;
- 532               		.loc 1 91 0
- 533 029e 5C01      		movw r10,r24
+ 484               		.loc 1 91 0
+ 485 0242 7C01      		movw r14,r24
   92:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 			case HID_RI_POP(0):
- 534               		.loc 1 92 0
- 535 02a0 00C0      		rjmp .L17
- 536               	.LVL33:
- 537               	.L32:
+ 486               		.loc 1 92 0
+ 487 0244 00C0      		rjmp .L17
+ 488               	.LVL33:
+ 489               	.L32:
   94:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				  return HID_PARSE_HIDStackUnderflow;
- 538               		.loc 1 94 0
- 539 02a2 CE01      		movw r24,r28
- 540 02a4 0196      		adiw r24,1
- 541 02a6 A816      		cp r10,r24
- 542 02a8 B906      		cpc r11,r25
- 543 02aa 01F4      		brne .+2
- 544 02ac 00C0      		rjmp .L63
+ 490               		.loc 1 94 0
+ 491 0246 CE01      		movw r24,r28
+ 492 0248 0196      		adiw r24,1
+ 493 024a 8E15      		cp r24,r14
+ 494 024c 9F05      		cpc r25,r15
+ 495 024e 01F4      		brne .+2
+ 496 0250 00C0      		rjmp .L63
   97:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				break;
- 545               		.loc 1 97 0
- 546 02ae 9CE1      		ldi r25,28
- 547 02b0 A91A      		sub r10,r25
- 548 02b2 B108      		sbc r11,__zero_reg__
- 549               	.LVL34:
+ 497               		.loc 1 97 0
+ 498 0252 9CE1      		ldi r25,28
+ 499 0254 E91A      		sub r14,r25
+ 500 0256 F108      		sbc r15,__zero_reg__
+ 501               	.LVL34:
   98:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 			case HID_RI_USAGE_PAGE(0):
- 550               		.loc 1 98 0
- 551 02b4 00C0      		rjmp .L17
- 552               	.L16:
+ 502               		.loc 1 98 0
+ 503 0258 00C0      		rjmp .L17
+ 504               	.L16:
  106:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				break;
- 553               		.loc 1 106 0
- 554 02b6 F501      		movw r30,r10
- 555 02b8 C286      		std Z+10,r12
- 556 02ba D386      		std Z+11,r13
- 557 02bc E486      		std Z+12,r14
- 558 02be F586      		std Z+13,r15
+ 505               		.loc 1 106 0
+ 506 025a F701      		movw r30,r14
+ 507 025c 8286      		std Z+10,r8
+ 508 025e 9386      		std Z+11,r9
+ 509 0260 A486      		std Z+12,r10
+ 510 0262 B586      		std Z+13,r11
  107:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 			case HID_RI_LOGICAL_MAXIMUM(0):
- 559               		.loc 1 107 0
- 560 02c0 00C0      		rjmp .L17
- 561               	.LVL35:
- 562               	.L11:
+ 511               		.loc 1 107 0
+ 512 0264 00C0      		rjmp .L17
+ 513               	.LVL35:
+ 514               	.L11:
  109:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				break;
- 563               		.loc 1 109 0
- 564 02c2 D501      		movw r26,r10
- 565               	.LVL36:
- 566 02c4 1E96      		adiw r26,14
- 567 02c6 CD92      		st X+,r12
- 568 02c8 DD92      		st X+,r13
- 569 02ca ED92      		st X+,r14
- 570 02cc FC92      		st X,r15
- 571 02ce 5197      		sbiw r26,14+3
+ 515               		.loc 1 109 0
+ 516 0266 D701      		movw r26,r14
+ 517               	.LVL36:
+ 518 0268 1E96      		adiw r26,14
+ 519 026a 8D92      		st X+,r8
+ 520 026c 9D92      		st X+,r9
+ 521 026e AD92      		st X+,r10
+ 522 0270 BC92      		st X,r11
+ 523 0272 5197      		sbiw r26,14+3
  110:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 			case HID_RI_PHYSICAL_MINIMUM(0):
- 572               		.loc 1 110 0
- 573 02d0 00C0      		rjmp .L17
- 574               	.LVL37:
- 575               	.L18:
+ 524               		.loc 1 110 0
+ 525 0274 00C0      		rjmp .L17
+ 526               	.LVL37:
+ 527               	.L18:
  112:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				break;
- 576               		.loc 1 112 0
- 577 02d2 F501      		movw r30,r10
- 578 02d4 C28A      		std Z+18,r12
- 579 02d6 D38A      		std Z+19,r13
- 580 02d8 E48A      		std Z+20,r14
- 581 02da F58A      		std Z+21,r15
- 582               	.LVL38:
+ 528               		.loc 1 112 0
+ 529 0276 F701      		movw r30,r14
+ 530 0278 828A      		std Z+18,r8
+ 531 027a 938A      		std Z+19,r9
+ 532 027c A48A      		std Z+20,r10
+ 533 027e B58A      		std Z+21,r11
+ 534               	.LVL38:
  113:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 			case HID_RI_PHYSICAL_MAXIMUM(0):
- 583               		.loc 1 113 0
- 584 02dc 00C0      		rjmp .L17
- 585               	.LVL39:
- 586               	.L21:
+ 535               		.loc 1 113 0
+ 536 0280 00C0      		rjmp .L17
+ 537               	.LVL39:
+ 538               	.L21:
  115:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				break;
- 587               		.loc 1 115 0
- 588 02de D501      		movw r26,r10
- 589               	.LVL40:
- 590 02e0 5696      		adiw r26,22
- 591 02e2 CD92      		st X+,r12
- 592 02e4 DD92      		st X+,r13
- 593 02e6 ED92      		st X+,r14
- 594 02e8 FC92      		st X,r15
- 595 02ea 5997      		sbiw r26,22+3
+ 539               		.loc 1 115 0
+ 540 0282 D701      		movw r26,r14
+ 541               	.LVL40:
+ 542 0284 5696      		adiw r26,22
+ 543 0286 8D92      		st X+,r8
+ 544 0288 9D92      		st X+,r9
+ 545 028a AD92      		st X+,r10
+ 546 028c BC92      		st X,r11
+ 547 028e 5997      		sbiw r26,22+3
  116:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 			case HID_RI_UNIT_EXPONENT(0):
- 596               		.loc 1 116 0
- 597 02ec 00C0      		rjmp .L17
- 598               	.LVL41:
- 599               	.L9:
+ 548               		.loc 1 116 0
+ 549 0290 00C0      		rjmp .L17
+ 550               	.LVL41:
+ 551               	.L9:
  121:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				break;
- 600               		.loc 1 121 0
- 601 02ee D501      		movw r26,r10
- 602               	.LVL42:
- 603 02f0 1596      		adiw r26,5
- 604 02f2 CD92      		st X+,r12
- 605 02f4 DD92      		st X+,r13
- 606 02f6 ED92      		st X+,r14
- 607 02f8 FC92      		st X,r15
- 608 02fa 1897      		sbiw r26,5+3
+ 552               		.loc 1 121 0
+ 553 0292 D701      		movw r26,r14
+ 554               	.LVL42:
+ 555 0294 1596      		adiw r26,5
+ 556 0296 8D92      		st X+,r8
+ 557 0298 9D92      		st X+,r9
+ 558 029a AD92      		st X+,r10
+ 559 029c BC92      		st X,r11
+ 560 029e 1897      		sbiw r26,5+3
  122:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 			case HID_RI_REPORT_SIZE(0):
- 609               		.loc 1 122 0
- 610 02fc 00C0      		rjmp .L17
- 611               	.LVL43:
- 612               	.L23:
+ 561               		.loc 1 122 0
+ 562 02a0 00C0      		rjmp .L17
+ 563               	.LVL43:
+ 564               	.L23:
  127:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				break;
- 613               		.loc 1 127 0
- 614 02fe D501      		movw r26,r10
- 615               	.LVL44:
- 616 0300 5A96      		adiw r26,26
- 617 0302 CC92      		st X,r12
+ 565               		.loc 1 127 0
+ 566 02a2 D701      		movw r26,r14
+ 567               	.LVL44:
+ 568 02a4 5A96      		adiw r26,26
+ 569 02a6 8C92      		st X,r8
  128:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 			case HID_RI_REPORT_ID(0):
- 618               		.loc 1 128 0
- 619 0304 00C0      		rjmp .L17
- 620               	.LVL45:
- 621               	.L28:
+ 570               		.loc 1 128 0
+ 571 02a8 00C0      		rjmp .L17
+ 572               	.LVL45:
+ 573               	.L28:
  130:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
- 622               		.loc 1 130 0
- 623 0306 AC2D      		mov r26,r12
- 624               	.LVL46:
- 625 0308 F501      		movw r30,r10
- 626 030a C38E      		std Z+27,r12
+ 574               		.loc 1 130 0
+ 575 02aa A82D      		mov r26,r8
+ 576               	.LVL46:
+ 577 02ac F701      		movw r30,r14
+ 578 02ae 838E      		std Z+27,r8
  132:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				{
- 627               		.loc 1 132 0
- 628 030c C258      		subi r28,lo8(-126)
- 629 030e DF4F      		sbci r29,hi8(-126)
- 630 0310 E881      		ld r30,Y
- 631 0312 F981      		ldd r31,Y+1
- 632 0314 CE57      		subi r28,lo8(126)
- 633 0316 D040      		sbci r29,hi8(126)
- 634 0318 8081      		ld r24,Z
- 635 031a 8823      		tst r24
- 636 031c 01F0      		breq .L36
- 637               	.LBB12:
+ 579               		.loc 1 132 0
+ 580 02b0 C158      		subi r28,lo8(-127)
+ 581 02b2 DF4F      		sbci r29,hi8(-127)
+ 582 02b4 E881      		ld r30,Y
+ 583 02b6 F981      		ldd r31,Y+1
+ 584 02b8 CF57      		subi r28,lo8(127)
+ 585 02ba D040      		sbci r29,hi8(127)
+ 586 02bc 8081      		ld r24,Z
+ 587 02be 8823      		tst r24
+ 588 02c0 01F0      		breq .L36
+ 589               	.LBB12:
  136:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 					{
- 638               		.loc 1 136 0
- 639 031e CA57      		subi r28,lo8(-134)
- 640 0320 DF4F      		sbci r29,hi8(-134)
- 641 0322 E881      		ld r30,Y
- 642 0324 F981      		ldd r31,Y+1
- 643 0326 C658      		subi r28,lo8(134)
- 644 0328 D040      		sbci r29,hi8(134)
- 645 032a 1081      		ld r17,Z
- 646 032c FA01      		movw r30,r20
- 647 032e E057      		subi r30,112
- 648 0330 FC4F      		sbci r31,-4
- 649 0332 80E0      		ldi r24,0
- 650 0334 90E0      		ldi r25,0
- 651               	.L37:
- 652               	.LVL47:
+ 590               		.loc 1 136 0
+ 591 02c2 C957      		subi r28,lo8(-135)
+ 592 02c4 DF4F      		sbci r29,hi8(-135)
+ 593 02c6 E881      		ld r30,Y
+ 594 02c8 F981      		ldd r31,Y+1
+ 595 02ca C758      		subi r28,lo8(135)
+ 596 02cc D040      		sbci r29,hi8(135)
+ 597 02ce 1081      		ld r17,Z
+ 598 02d0 FA01      		movw r30,r20
+ 599 02d2 E057      		subi r30,112
+ 600 02d4 FC4F      		sbci r31,-4
+ 601 02d6 80E0      		ldi r24,0
+ 602 02d8 90E0      		ldi r25,0
+ 603               	.L37:
+ 604               	.LVL47:
  136:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 					{
- 653               		.loc 1 136 0 is_stmt 0 discriminator 1
- 654 0336 8117      		cp r24,r17
- 655 0338 00F4      		brsh .L92
+ 605               		.loc 1 136 0 is_stmt 0 discriminator 1
+ 606 02da 8117      		cp r24,r17
+ 607 02dc 00F4      		brsh .L92
  138:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 						{
- 656               		.loc 1 138 0 is_stmt 1
- 657 033a 9C01      		movw r18,r24
- 658 033c B081      		ld r27,Z
- 659 033e 0196      		adiw r24,1
- 660               	.LVL48:
- 661 0340 3796      		adiw r30,7
- 662 0342 BA13      		cpse r27,r26
- 663 0344 00C0      		rjmp .L37
+ 608               		.loc 1 138 0 is_stmt 1
+ 609 02de 9C01      		movw r18,r24
+ 610 02e0 B081      		ld r27,Z
+ 611 02e2 0196      		adiw r24,1
+ 612               	.LVL48:
+ 613 02e4 3796      		adiw r30,7
+ 614 02e6 AB13      		cpse r26,r27
+ 615 02e8 00C0      		rjmp .L37
  140:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 							break;
- 664               		.loc 1 140 0
- 665 0346 E7E0      		ldi r30,lo8(7)
- 666 0348 E29F      		mul r30,r18
- 667 034a C001      		movw r24,r0
- 668 034c E39F      		mul r30,r19
- 669 034e 900D      		add r25,r0
- 670 0350 1124      		clr __zero_reg__
- 671 0352 8057      		subi r24,112
- 672 0354 9C4F      		sbci r25,-4
- 673 0356 9A01      		movw r18,r20
- 674               	.LVL49:
- 675 0358 280F      		add r18,r24
- 676 035a 391F      		adc r19,r25
- 677 035c E596      		adiw r28,115-62
- 678 035e 3FAF      		std Y+63,r19
- 679 0360 2EAF      		std Y+62,r18
- 680 0362 E597      		sbiw r28,115-62
- 681               	.LVL50:
- 682 0364 00C0      		rjmp .L36
- 683               	.LVL51:
- 684               	.L92:
- 685               	.LBE12:
+ 616               		.loc 1 140 0
+ 617 02ea E7E0      		ldi r30,lo8(7)
+ 618 02ec E29F      		mul r30,r18
+ 619 02ee C001      		movw r24,r0
+ 620 02f0 E39F      		mul r30,r19
+ 621 02f2 900D      		add r25,r0
+ 622 02f4 1124      		clr __zero_reg__
+ 623 02f6 8057      		subi r24,112
+ 624 02f8 9C4F      		sbci r25,-4
+ 625 02fa 9A01      		movw r18,r20
+ 626               	.LVL49:
+ 627 02fc 280F      		add r18,r24
+ 628 02fe 391F      		adc r19,r25
+ 629 0300 E596      		adiw r28,115-62
+ 630 0302 3FAF      		std Y+63,r19
+ 631 0304 2EAF      		std Y+62,r18
+ 632 0306 E597      		sbiw r28,115-62
+ 633               	.LVL50:
+ 634 0308 00C0      		rjmp .L36
+ 635               	.LVL51:
+ 636               	.L92:
+ 637               	.LBE12:
  147:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 						  return HID_PARSE_InsufficientReportIDItems;
- 686               		.loc 1 147 0
- 687 0366 1A30      		cpi r17,lo8(10)
- 688 0368 01F4      		brne .+2
- 689 036a 00C0      		rjmp .L93
+ 638               		.loc 1 147 0
+ 639 030a 1A30      		cpi r17,lo8(10)
+ 640 030c 01F4      		brne .+2
+ 641 030e 00C0      		rjmp .L93
  150:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 						memset(CurrReportIDInfo, 0x00, sizeof(HID_ReportSizeInfo_t));
- 690               		.loc 1 150 0
- 691 036c 81E0      		ldi r24,lo8(1)
- 692               	.LVL52:
- 693 036e 810F      		add r24,r17
- 694 0370 EC96      		adiw r28,122-62
- 695 0372 AEAD      		ldd r26,Y+62
- 696 0374 BFAD      		ldd r27,Y+63
- 697 0376 EC97      		sbiw r28,122-62
- 698 0378 8C93      		st X,r24
- 699 037a 87E0      		ldi r24,lo8(7)
- 700 037c 9A01      		movw r18,r20
- 701 037e 819F      		mul r24,r17
- 702 0380 200D      		add r18,r0
- 703 0382 311D      		adc r19,r1
- 704 0384 1124      		clr __zero_reg__
- 705 0386 F901      		movw r30,r18
- 706 0388 E057      		subi r30,112
- 707 038a FC4F      		sbci r31,-4
- 708 038c E596      		adiw r28,115-62
- 709 038e FFAF      		std Y+63,r31
- 710 0390 EEAF      		std Y+62,r30
- 711 0392 E597      		sbiw r28,115-62
- 712               	.LVL53:
+ 642               		.loc 1 150 0
+ 643 0310 81E0      		ldi r24,lo8(1)
+ 644               	.LVL52:
+ 645 0312 810F      		add r24,r17
+ 646 0314 ED96      		adiw r28,123-62
+ 647 0316 AEAD      		ldd r26,Y+62
+ 648 0318 BFAD      		ldd r27,Y+63
+ 649 031a ED97      		sbiw r28,123-62
+ 650 031c 8C93      		st X,r24
+ 651 031e 87E0      		ldi r24,lo8(7)
+ 652 0320 9A01      		movw r18,r20
+ 653 0322 819F      		mul r24,r17
+ 654 0324 200D      		add r18,r0
+ 655 0326 311D      		adc r19,r1
+ 656 0328 1124      		clr __zero_reg__
+ 657 032a F901      		movw r30,r18
+ 658 032c E057      		subi r30,112
+ 659 032e FC4F      		sbci r31,-4
+ 660 0330 E596      		adiw r28,115-62
+ 661 0332 FFAF      		std Y+63,r31
+ 662 0334 EEAF      		std Y+62,r30
+ 663 0336 E597      		sbiw r28,115-62
+ 664               	.LVL53:
  151:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 					}
- 713               		.loc 1 151 0
- 714               		0:
- 715 0394 1192      		st Z+,__zero_reg__
- 716 0396 8A95      		dec r24
- 717 0398 01F4      		brne 0b
- 718               	.LVL54:
- 719               	.L36:
+ 665               		.loc 1 151 0
+ 666               		0:
+ 667 0338 1192      		st Z+,__zero_reg__
+ 668 033a 8A95      		dec r24
+ 669 033c 01F4      		brne 0b
+ 670               	.LVL54:
+ 671               	.L36:
  155:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
- 720               		.loc 1 155 0
- 721 039a 81E0      		ldi r24,lo8(1)
- 722 039c C258      		subi r28,lo8(-126)
- 723 039e DF4F      		sbci r29,hi8(-126)
- 724 03a0 A881      		ld r26,Y
- 725 03a2 B981      		ldd r27,Y+1
- 726 03a4 CE57      		subi r28,lo8(126)
- 727 03a6 D040      		sbci r29,hi8(126)
- 728 03a8 8C93      		st X,r24
+ 672               		.loc 1 155 0
+ 673 033e 81E0      		ldi r24,lo8(1)
+ 674 0340 C158      		subi r28,lo8(-127)
+ 675 0342 DF4F      		sbci r29,hi8(-127)
+ 676 0344 A881      		ld r26,Y
+ 677 0346 B981      		ldd r27,Y+1
+ 678 0348 CF57      		subi r28,lo8(127)
+ 679 034a D040      		sbci r29,hi8(127)
+ 680 034c 8C93      		st X,r24
  157:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				break;
- 729               		.loc 1 157 0
- 730 03aa F501      		movw r30,r10
- 731 03ac 838D      		ldd r24,Z+27
- 732 03ae E596      		adiw r28,115-62
- 733 03b0 AEAD      		ldd r26,Y+62
- 734 03b2 BFAD      		ldd r27,Y+63
- 735 03b4 E597      		sbiw r28,115-62
- 736 03b6 8C93      		st X,r24
+ 681               		.loc 1 157 0
+ 682 034e F701      		movw r30,r14
+ 683 0350 838D      		ldd r24,Z+27
+ 684 0352 E596      		adiw r28,115-62
+ 685 0354 AEAD      		ldd r26,Y+62
+ 686 0356 BFAD      		ldd r27,Y+63
+ 687 0358 E597      		sbiw r28,115-62
+ 688 035a 8C93      		st X,r24
  158:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 			case HID_RI_USAGE(0):
- 737               		.loc 1 158 0
- 738 03b8 00C0      		rjmp .L17
- 739               	.LVL55:
- 740               	.L13:
+ 689               		.loc 1 158 0
+ 690 035c 00C0      		rjmp .L17
+ 691               	.LVL55:
+ 692               	.L13:
  160:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				  return HID_PARSE_UsageListOverflow;
- 741               		.loc 1 160 0
- 742 03ba 0830      		cpi r16,lo8(8)
- 743 03bc 01F4      		brne .+2
- 744 03be 00C0      		rjmp .L64
- 745               	.LVL56:
+ 693               		.loc 1 160 0
+ 694 035e 0830      		cpi r16,lo8(8)
+ 695 0360 01F4      		brne .+2
+ 696 0362 00C0      		rjmp .L64
+ 697               	.LVL56:
  163:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				break;
- 746               		.loc 1 163 0
- 747 03c0 FE01      		movw r30,r28
- 748 03c2 ED59      		subi r30,-99
- 749 03c4 FF4F      		sbci r31,-1
- 750 03c6 E00F      		add r30,r16
- 751 03c8 F11D      		adc r31,__zero_reg__
- 752 03ca E00F      		add r30,r16
- 753 03cc F11D      		adc r31,__zero_reg__
- 754 03ce D182      		std Z+1,r13
- 755 03d0 C082      		st Z,r12
- 756               	.LVL57:
- 757 03d2 0F5F      		subi r16,lo8(-(1))
- 758               	.LVL58:
+ 698               		.loc 1 163 0
+ 699 0364 FE01      		movw r30,r28
+ 700 0366 ED59      		subi r30,-99
+ 701 0368 FF4F      		sbci r31,-1
+ 702 036a E00F      		add r30,r16
+ 703 036c F11D      		adc r31,__zero_reg__
+ 704 036e E00F      		add r30,r16
+ 705 0370 F11D      		adc r31,__zero_reg__
+ 706 0372 9182      		std Z+1,r9
+ 707 0374 8082      		st Z,r8
+ 708               	.LVL57:
+ 709 0376 0F5F      		subi r16,lo8(-(1))
+ 710               	.LVL58:
  164:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 			case HID_RI_USAGE_MINIMUM(0):
- 759               		.loc 1 164 0
- 760 03d4 00C0      		rjmp .L17
- 761               	.LVL59:
- 762               	.L30:
+ 711               		.loc 1 164 0
+ 712 0378 00C0      		rjmp .L17
+ 713               	.LVL59:
+ 714               	.L30:
  172:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				{
- 763               		.loc 1 172 0
- 764 03d6 2114      		cp r2,__zero_reg__
- 765 03d8 3104      		cpc r3,__zero_reg__
- 766 03da 01F4      		brne .L40
+ 715               		.loc 1 172 0
+ 716 037a 2114      		cp r2,__zero_reg__
+ 717 037c 3104      		cpc r3,__zero_reg__
+ 718 037e 01F4      		brne .L40
  174:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				}
- 767               		.loc 1 174 0
- 768 03dc 1A01      		movw r2,r20
- 769               	.LVL60:
- 770 03de B7EB      		ldi r27,-73
- 771 03e0 2B1A      		sub r2,r27
- 772 03e2 BCEF      		ldi r27,-4
- 773 03e4 3B0A      		sbc r3,r27
- 774               	.LVL61:
- 775 03e6 00C0      		rjmp .L41
- 776               	.L40:
- 777               	.LVL62:
- 778               	.LBB13:
+ 719               		.loc 1 174 0
+ 720 0380 1A01      		movw r2,r20
+ 721               	.LVL60:
+ 722 0382 B7EB      		ldi r27,-73
+ 723 0384 2B1A      		sub r2,r27
+ 724 0386 BCEF      		ldi r27,-4
+ 725 0388 3B0A      		sbc r3,r27
+ 726               	.LVL61:
+ 727 038a 00C0      		rjmp .L41
+ 728               	.L40:
+ 729               	.LVL62:
+ 730               	.LBB13:
  180:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
- 779               		.loc 1 180 0
- 780 03e8 FA01      		movw r30,r20
- 781 03ea E05B      		subi r30,-80
- 782 03ec FC4F      		sbci r31,-4
- 783               	.LVL63:
- 784               	.L42:
+ 731               		.loc 1 180 0
+ 732 038c FA01      		movw r30,r20
+ 733 038e E05B      		subi r30,-80
+ 734 0390 FC4F      		sbci r31,-4
+ 735               	.LVL63:
+ 736               	.L42:
  182:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 					{
- 785               		.loc 1 182 0
- 786 03ee 8581      		ldd r24,Z+5
- 787 03f0 9681      		ldd r25,Z+6
- 788 03f2 892B      		or r24,r25
- 789 03f4 01F0      		breq .L94
+ 737               		.loc 1 182 0
+ 738 0392 8581      		ldd r24,Z+5
+ 739 0394 9681      		ldd r25,Z+6
+ 740 0396 892B      		or r24,r25
+ 741 0398 01F0      		breq .L94
  184:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 						  return HID_PARSE_InsufficientCollectionPaths;
- 790               		.loc 1 184 0
- 791 03f6 CC57      		subi r28,lo8(-132)
- 792 03f8 DF4F      		sbci r29,hi8(-132)
- 793 03fa 2881      		ld r18,Y
- 794 03fc 3981      		ldd r19,Y+1
- 795 03fe C458      		subi r28,lo8(132)
- 796 0400 D040      		sbci r29,hi8(132)
- 797 0402 E217      		cp r30,r18
- 798 0404 F307      		cpc r31,r19
- 799 0406 01F4      		brne .+2
- 800 0408 00C0      		rjmp .L65
+ 742               		.loc 1 184 0
+ 743 039a CB57      		subi r28,lo8(-133)
+ 744 039c DF4F      		sbci r29,hi8(-133)
+ 745 039e 2881      		ld r18,Y
+ 746 03a0 3981      		ldd r19,Y+1
+ 747 03a2 C558      		subi r28,lo8(133)
+ 748 03a4 D040      		sbci r29,hi8(133)
+ 749 03a6 E217      		cp r30,r18
+ 750 03a8 F307      		cpc r31,r19
+ 751 03aa 01F4      		brne .+2
+ 752 03ac 00C0      		rjmp .L65
  187:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 					}
- 801               		.loc 1 187 0
- 802 040a 3796      		adiw r30,7
- 803               	.LVL64:
- 804 040c 00C0      		rjmp .L42
- 805               	.L94:
+ 753               		.loc 1 187 0
+ 754 03ae 3796      		adiw r30,7
+ 755               	.LVL64:
+ 756 03b0 00C0      		rjmp .L42
+ 757               	.L94:
  190:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				}
- 806               		.loc 1 190 0
- 807 040e 3682      		std Z+6,r3
- 808 0410 2582      		std Z+5,r2
- 809               	.LVL65:
- 810 0412 1F01      		movw r2,r30
- 811               	.LVL66:
- 812               	.L41:
- 813               	.LBE13:
+ 758               		.loc 1 190 0
+ 759 03b2 3682      		std Z+6,r3
+ 760 03b4 2582      		std Z+5,r2
+ 761               	.LVL65:
+ 762 03b6 1F01      		movw r2,r30
+ 763               	.LVL66:
+ 764               	.L41:
+ 765               	.LBE13:
  193:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				CurrCollectionPath->Usage.Page = CurrStateTable->Attributes.Usage.Page;
- 814               		.loc 1 193 0
- 815 0414 D101      		movw r26,r2
- 816 0416 CC92      		st X,r12
+ 766               		.loc 1 193 0
+ 767 03b8 D101      		movw r26,r2
+ 768 03ba 8C92      		st X,r8
  194:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
- 817               		.loc 1 194 0
- 818 0418 F501      		movw r30,r10
- 819 041a 8181      		ldd r24,Z+1
- 820 041c 9281      		ldd r25,Z+2
- 821 041e 1296      		adiw r26,1+1
- 822 0420 9C93      		st X,r25
- 823 0422 8E93      		st -X,r24
- 824 0424 1197      		sbiw r26,1
+ 769               		.loc 1 194 0
+ 770 03bc F701      		movw r30,r14
+ 771 03be 8181      		ldd r24,Z+1
+ 772 03c0 9281      		ldd r25,Z+2
+ 773 03c2 1296      		adiw r26,1+1
+ 774 03c4 9C93      		st X,r25
+ 775 03c6 8E93      		st -X,r24
+ 776 03c8 1197      		sbiw r26,1
  196:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				{
- 825               		.loc 1 196 0
- 826 0426 0023      		tst r16
- 827 0428 01F0      		breq .L44
+ 777               		.loc 1 196 0
+ 778 03ca 0023      		tst r16
+ 779 03cc 01F0      		breq .L44
  198:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
- 828               		.loc 1 198 0
- 829 042a A596      		adiw r28,99-62
- 830 042c 8EAD      		ldd r24,Y+62
- 831 042e 9FAD      		ldd r25,Y+63
- 832 0430 A597      		sbiw r28,99-62
- 833 0432 1496      		adiw r26,3+1
- 834 0434 9C93      		st X,r25
- 835 0436 8E93      		st -X,r24
- 836 0438 1397      		sbiw r26,3
- 837               	.LVL67:
- 838 043a FE01      		movw r30,r28
- 839 043c ED59      		subi r30,-99
- 840 043e FF4F      		sbci r31,-1
- 841               	.LBB14:
+ 780               		.loc 1 198 0
+ 781 03ce FE01      		movw r30,r28
+ 782 03d0 ED59      		subi r30,-99
+ 783 03d2 FF4F      		sbci r31,-1
+ 784 03d4 8191      		ld r24,Z+
+ 785 03d6 9191      		ld r25,Z+
+ 786 03d8 1496      		adiw r26,3+1
+ 787 03da 9C93      		st X,r25
+ 788 03dc 8E93      		st -X,r24
+ 789 03de 1397      		sbiw r26,3
+ 790               	.LVL67:
+ 791 03e0 DE01      		movw r26,r28
+ 792 03e2 AD59      		subi r26,-99
+ 793 03e4 BF4F      		sbci r27,-1
+ 794               	.LBB14:
  200:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 					  UsageList[i] = UsageList[i + 1];
- 842               		.loc 1 200 0
- 843 0440 20E0      		ldi r18,0
- 844               	.LVL68:
- 845               	.L45:
+ 795               		.loc 1 200 0
+ 796 03e6 20E0      		ldi r18,0
+ 797               	.LVL68:
+ 798               	.L45:
  201:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
- 846               		.loc 1 201 0 discriminator 3
- 847 0442 8281      		ldd r24,Z+2
- 848 0444 9381      		ldd r25,Z+3
- 849 0446 8193      		st Z+,r24
- 850 0448 9193      		st Z+,r25
+ 799               		.loc 1 201 0 discriminator 3
+ 800 03e8 8191      		ld r24,Z+
+ 801 03ea 9191      		ld r25,Z+
+ 802 03ec 8D93      		st X+,r24
+ 803 03ee 9D93      		st X+,r25
  200:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 					  UsageList[i] = UsageList[i + 1];
- 851               		.loc 1 200 0 discriminator 3
- 852 044a 2F5F      		subi r18,lo8(-(1))
- 853               	.LVL69:
- 854 044c 2013      		cpse r18,r16
- 855 044e 00C0      		rjmp .L45
- 856               	.LBE14:
+ 804               		.loc 1 200 0 discriminator 3
+ 805 03f0 2F5F      		subi r18,lo8(-(1))
+ 806               	.LVL69:
+ 807 03f2 0213      		cpse r16,r18
+ 808 03f4 00C0      		rjmp .L45
+ 809               	.LBE14:
  203:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				}
- 857               		.loc 1 203 0
- 858 0450 0150      		subi r16,lo8(-(-1))
- 859               	.LVL70:
- 860 0452 00C0      		rjmp .L17
- 861               	.LVL71:
- 862               	.L44:
+ 810               		.loc 1 203 0
+ 811 03f6 0150      		subi r16,lo8(-(-1))
+ 812               	.LVL70:
+ 813 03f8 00C0      		rjmp .L17
+ 814               	.LVL71:
+ 815               	.L44:
  205:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				{
- 863               		.loc 1 205 0
- 864 0454 E996      		adiw r28,117-60
- 865 0456 8CAD      		ldd r24,Y+60
- 866 0458 9DAD      		ldd r25,Y+61
- 867 045a AEAD      		ldd r26,Y+62
- 868 045c BFAD      		ldd r27,Y+63
- 869 045e E997      		sbiw r28,117-60
- 870 0460 8415      		cp r24,r4
- 871 0462 9505      		cpc r25,r5
- 872 0464 A605      		cpc r26,r6
- 873 0466 B705      		cpc r27,r7
- 874 0468 00F4      		brsh .+2
- 875 046a 00C0      		rjmp .L17
- 876               	.LVL72:
+ 816               		.loc 1 205 0
+ 817 03fa E996      		adiw r28,117-60
+ 818 03fc 8CAD      		ldd r24,Y+60
+ 819 03fe 9DAD      		ldd r25,Y+61
+ 820 0400 AEAD      		ldd r26,Y+62
+ 821 0402 BFAD      		ldd r27,Y+63
+ 822 0404 E997      		sbiw r28,117-60
+ 823 0406 8415      		cp r24,r4
+ 824 0408 9505      		cpc r25,r5
+ 825 040a A605      		cpc r26,r6
+ 826 040c B705      		cpc r27,r7
+ 827 040e 00F4      		brsh .+2
+ 828 0410 00C0      		rjmp .L17
+ 829               	.LVL72:
  207:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				}
- 877               		.loc 1 207 0
- 878 046c D101      		movw r26,r2
- 879 046e 1496      		adiw r26,3+1
- 880 0470 5C92      		st X,r5
- 881 0472 4E92      		st -X,r4
- 882 0474 1397      		sbiw r26,3
- 883 0476 BFEF      		ldi r27,-1
- 884 0478 4B1A      		sub r4,r27
- 885 047a 5B0A      		sbc r5,r27
- 886 047c 6B0A      		sbc r6,r27
- 887 047e 7B0A      		sbc r7,r27
- 888               	.LVL73:
- 889 0480 00C0      		rjmp .L17
- 890               	.LVL74:
- 891               	.L33:
+ 830               		.loc 1 207 0
+ 831 0412 D101      		movw r26,r2
+ 832 0414 1496      		adiw r26,3+1
+ 833 0416 5C92      		st X,r5
+ 834 0418 4E92      		st -X,r4
+ 835 041a 1397      		sbiw r26,3
+ 836 041c BFEF      		ldi r27,-1
+ 837 041e 4B1A      		sub r4,r27
+ 838 0420 5B0A      		sbc r5,r27
+ 839 0422 6B0A      		sbc r6,r27
+ 840 0424 7B0A      		sbc r7,r27
+ 841               	.LVL73:
+ 842 0426 00C0      		rjmp .L17
+ 843               	.LVL74:
+ 844               	.L33:
  212:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				  return HID_PARSE_UnexpectedEndCollection;
- 892               		.loc 1 212 0
- 893 0482 2114      		cp r2,__zero_reg__
- 894 0484 3104      		cpc r3,__zero_reg__
- 895 0486 01F4      		brne .+2
- 896 0488 00C0      		rjmp .L66
+ 845               		.loc 1 212 0
+ 846 0428 2114      		cp r2,__zero_reg__
+ 847 042a 3104      		cpc r3,__zero_reg__
+ 848 042c 01F4      		brne .+2
+ 849 042e 00C0      		rjmp .L66
  215:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				break;
- 897               		.loc 1 215 0
- 898 048a F101      		movw r30,r2
- 899 048c 2580      		ldd r2,Z+5
- 900 048e 3680      		ldd r3,Z+6
- 901               	.LVL75:
+ 850               		.loc 1 215 0
+ 851 0430 F101      		movw r30,r2
+ 852 0432 2580      		ldd r2,Z+5
+ 853 0434 3680      		ldd r3,Z+6
+ 854               	.LVL75:
  216:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 			case HID_RI_INPUT(0):
- 902               		.loc 1 216 0
- 903 0490 00C0      		rjmp .L17
- 904               	.LVL76:
- 905               	.L53:
- 906               	.LBB15:
- 907               	.LBB7:
+ 855               		.loc 1 216 0
+ 856 0436 00C0      		rjmp .L17
+ 857               	.LVL76:
+ 858               	.L53:
+ 859               	.LBB15:
+ 860               	.LBB7:
  264:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 					       &NewReportItem, sizeof(HID_ReportItem_t));
- 908               		.loc 1 264 0
- 909 0492 DA01      		movw r26,r20
- 910 0494 FAE2      		ldi r31,lo8(42)
- 911 0496 F89F      		mul r31,r24
- 912 0498 A00D      		add r26,r0
- 913 049a B11D      		adc r27,r1
- 914 049c 1124      		clr __zero_reg__
- 915 049e 1196      		adiw r26,1
- 916 04a0 FE01      		movw r30,r28
- 917 04a2 F996      		adiw r30,57
- 918 04a4 8AE2      		ldi r24,lo8(42)
- 919               		0:
- 920 04a6 0190      		ld r0,Z+
- 921 04a8 0D92      		st X+,r0
- 922 04aa 8A95      		dec r24
- 923 04ac 01F4      		brne 0b
- 924               		.loc 1 267 0
- 925 04ae C058      		subi r28,lo8(-128)
- 926 04b0 DF4F      		sbci r29,hi8(-128)
- 927 04b2 8881      		ld r24,Y
- 928 04b4 9981      		ldd r25,Y+1
- 929 04b6 AA81      		ldd r26,Y+2
- 930 04b8 BB81      		ldd r27,Y+3
- 931 04ba C058      		subi r28,lo8(128)
- 932 04bc D040      		sbci r29,hi8(128)
- 933 04be 892B      		or r24,r25
- 934 04c0 8A2B      		or r24,r26
- 935 04c2 8B2B      		or r24,r27
- 936 04c4 01F4      		brne .+2
- 937 04c6 00C0      		rjmp .L95
- 938               	.LVL77:
- 939               	.L55:
- 940               	.LBE7:
+ 861               		.loc 1 264 0
+ 862 0438 DA01      		movw r26,r20
+ 863 043a EAE2      		ldi r30,lo8(42)
+ 864 043c E89F      		mul r30,r24
+ 865 043e A00D      		add r26,r0
+ 866 0440 B11D      		adc r27,r1
+ 867 0442 1124      		clr __zero_reg__
+ 868 0444 1196      		adiw r26,1
+ 869 0446 FE01      		movw r30,r28
+ 870 0448 F996      		adiw r30,57
+ 871 044a 8AE2      		ldi r24,lo8(42)
+ 872               		0:
+ 873 044c 0190      		ld r0,Z+
+ 874 044e 0D92      		st X+,r0
+ 875 0450 8A95      		dec r24
+ 876 0452 01F4      		brne 0b
+ 877               		.loc 1 267 0
+ 878 0454 CF57      		subi r28,lo8(-129)
+ 879 0456 DF4F      		sbci r29,hi8(-129)
+ 880 0458 8881      		ld r24,Y
+ 881 045a 9981      		ldd r25,Y+1
+ 882 045c AA81      		ldd r26,Y+2
+ 883 045e BB81      		ldd r27,Y+3
+ 884 0460 C158      		subi r28,lo8(129)
+ 885 0462 D040      		sbci r29,hi8(129)
+ 886 0464 892B      		or r24,r25
+ 887 0466 8A2B      		or r24,r26
+ 888 0468 8B2B      		or r24,r27
+ 889 046a 01F4      		brne .+2
+ 890 046c 00C0      		rjmp .L95
+ 891               	.L55:
+ 892               	.LBE7:
  220:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				{
- 941               		.loc 1 220 0
- 942 04c8 2F5F      		subi r18,lo8(-(1))
- 943               	.LVL78:
- 944               	.L34:
+ 893               		.loc 1 220 0
+ 894 046e EA96      		adiw r28,121-63
+ 895 0470 2FAD      		ldd r18,Y+63
+ 896 0472 EA97      		sbiw r28,121-63
+ 897 0474 2F5F      		subi r18,lo8(-(1))
+ 898 0476 EA96      		adiw r28,121-63
+ 899 0478 2FAF      		std Y+63,r18
+ 900 047a EA97      		sbiw r28,121-63
+ 901               	.LVL77:
+ 902               	.L34:
  220:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				{
- 945               		.loc 1 220 0 is_stmt 0 discriminator 1
- 946 04ca F501      		movw r30,r10
- 947 04cc 828D      		ldd r24,Z+26
- 948 04ce 2817      		cp r18,r24
- 949 04d0 00F0      		brlo .+2
- 950 04d2 00C0      		rjmp .L17
- 951               	.LBB8:
+ 903               		.loc 1 220 0 is_stmt 0 discriminator 1
+ 904 047c D701      		movw r26,r14
+ 905 047e 5A96      		adiw r26,26
+ 906 0480 8C91      		ld r24,X
+ 907 0482 EA96      		adiw r28,121-63
+ 908 0484 2FAD      		ldd r18,Y+63
+ 909 0486 EA97      		sbiw r28,121-63
+ 910 0488 2817      		cp r18,r24
+ 911 048a 00F0      		brlo .+2
+ 912 048c 00C0      		rjmp .L17
+ 913               	.LBB8:
  224:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 					       &CurrStateTable->Attributes,
- 952               		.loc 1 224 0 is_stmt 1
- 953 04d4 F501      		movw r30,r10
- 954 04d6 DE01      		movw r26,r28
- 955 04d8 AF5B      		subi r26,-65
- 956 04da BF4F      		sbci r27,-1
- 957 04dc 8AE1      		ldi r24,lo8(26)
- 958               		0:
- 959 04de 0190      		ld r0,Z+
- 960 04e0 0D92      		st X+,r0
- 961 04e2 8A95      		dec r24
- 962 04e4 01F4      		brne 0b
+ 914               		.loc 1 224 0 is_stmt 1
+ 915 048e 8AE1      		ldi r24,lo8(26)
+ 916 0490 F701      		movw r30,r14
+ 917 0492 DE01      		movw r26,r28
+ 918 0494 AF5B      		subi r26,-65
+ 919 0496 BF4F      		sbci r27,-1
+ 920               		0:
+ 921 0498 0190      		ld r0,Z+
+ 922 049a 0D92      		st X+,r0
+ 923 049c 8A95      		dec r24
+ 924 049e 01F4      		brne 0b
  228:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 					NewReportItem.CollectionPath = CurrCollectionPath;
- 963               		.loc 1 228 0
- 964 04e6 DDAE      		std Y+61,r13
- 965 04e8 CCAE      		std Y+60,r12
+ 925               		.loc 1 228 0
+ 926 04a0 9DAE      		std Y+61,r9
+ 927 04a2 8CAE      		std Y+60,r8
  229:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 					NewReportItem.ReportID       = CurrStateTable->ReportID;
- 966               		.loc 1 229 0
- 967 04ea 2196      		adiw r28,63-62
- 968 04ec 3FAE      		std Y+63,r3
- 969 04ee 2EAE      		std Y+62,r2
- 970 04f0 2197      		sbiw r28,63-62
+ 928               		.loc 1 229 0
+ 929 04a4 2196      		adiw r28,63-62
+ 930 04a6 3FAE      		std Y+63,r3
+ 931 04a8 2EAE      		std Y+62,r2
+ 932 04aa 2197      		sbiw r28,63-62
  230:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
- 971               		.loc 1 230 0
- 972 04f2 D501      		movw r26,r10
- 973 04f4 5B96      		adiw r26,27
- 974 04f6 8C91      		ld r24,X
- 975 04f8 8EAF      		std Y+62,r24
+ 933               		.loc 1 230 0
+ 934 04ac D701      		movw r26,r14
+ 935 04ae 5B96      		adiw r26,27
+ 936 04b0 8C91      		ld r24,X
+ 937 04b2 8EAF      		std Y+62,r24
  232:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 					{
- 976               		.loc 1 232 0
- 977 04fa 0023      		tst r16
- 978 04fc 01F0      		breq .L46
+ 938               		.loc 1 232 0
+ 939 04b4 0023      		tst r16
+ 940 04b6 01F0      		breq .L46
  234:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
- 979               		.loc 1 234 0
- 980 04fe A596      		adiw r28,99-62
- 981 0500 8EAD      		ldd r24,Y+62
- 982 0502 9FAD      		ldd r25,Y+63
- 983 0504 A597      		sbiw r28,99-62
- 984 0506 2696      		adiw r28,68-62
- 985 0508 9FAF      		std Y+63,r25
- 986 050a 8EAF      		std Y+62,r24
- 987 050c 2697      		sbiw r28,68-62
- 988               	.LVL79:
- 989 050e FE01      		movw r30,r28
- 990 0510 ED59      		subi r30,-99
- 991 0512 FF4F      		sbci r31,-1
- 992               	.LBB5:
+ 941               		.loc 1 234 0
+ 942 04b8 FE01      		movw r30,r28
+ 943 04ba ED59      		subi r30,-99
+ 944 04bc FF4F      		sbci r31,-1
+ 945 04be 8191      		ld r24,Z+
+ 946 04c0 9191      		ld r25,Z+
+ 947 04c2 2696      		adiw r28,68-62
+ 948 04c4 9FAF      		std Y+63,r25
+ 949 04c6 8EAF      		std Y+62,r24
+ 950 04c8 2697      		sbiw r28,68-62
+ 951               	.LVL78:
+ 952 04ca DE01      		movw r26,r28
+ 953 04cc AD59      		subi r26,-99
+ 954 04ce BF4F      		sbci r27,-1
+ 955               	.LBB5:
  236:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 						  UsageList[i] = UsageList[i + 1];
- 993               		.loc 1 236 0
- 994 0514 30E0      		ldi r19,0
- 995               	.LVL80:
- 996               	.L47:
+ 956               		.loc 1 236 0
+ 957 04d0 20E0      		ldi r18,0
+ 958               	.LVL79:
+ 959               	.L47:
  237:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
- 997               		.loc 1 237 0 discriminator 3
- 998 0516 8281      		ldd r24,Z+2
- 999 0518 9381      		ldd r25,Z+3
- 1000 051a 8193      		st Z+,r24
- 1001 051c 9193      		st Z+,r25
+ 960               		.loc 1 237 0 discriminator 3
+ 961 04d2 8191      		ld r24,Z+
+ 962 04d4 9191      		ld r25,Z+
+ 963 04d6 8D93      		st X+,r24
+ 964 04d8 9D93      		st X+,r25
  236:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 						  UsageList[i] = UsageList[i + 1];
- 1002               		.loc 1 236 0 discriminator 3
- 1003 051e 3F5F      		subi r19,lo8(-(1))
- 1004               	.LVL81:
- 1005 0520 3013      		cpse r19,r16
- 1006 0522 00C0      		rjmp .L47
- 1007               	.LBE5:
+ 965               		.loc 1 236 0 discriminator 3
+ 966 04da 2F5F      		subi r18,lo8(-(1))
+ 967               	.LVL80:
+ 968 04dc 0213      		cpse r16,r18
+ 969 04de 00C0      		rjmp .L47
+ 970               	.LBE5:
  239:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 					}
- 1008               		.loc 1 239 0
- 1009 0524 0150      		subi r16,lo8(-(-1))
- 1010               	.LVL82:
- 1011 0526 00C0      		rjmp .L48
- 1012               	.LVL83:
- 1013               	.L46:
+ 971               		.loc 1 239 0
+ 972 04e0 0150      		subi r16,lo8(-(-1))
+ 973               	.LVL81:
+ 974 04e2 00C0      		rjmp .L48
+ 975               	.LVL82:
+ 976               	.L46:
  241:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 					{
- 1014               		.loc 1 241 0
- 1015 0528 E996      		adiw r28,117-60
- 1016 052a 8CAD      		ldd r24,Y+60
- 1017 052c 9DAD      		ldd r25,Y+61
- 1018 052e AEAD      		ldd r26,Y+62
- 1019 0530 BFAD      		ldd r27,Y+63
- 1020 0532 E997      		sbiw r28,117-60
- 1021 0534 8415      		cp r24,r4
- 1022 0536 9505      		cpc r25,r5
- 1023 0538 A605      		cpc r26,r6
- 1024 053a B705      		cpc r27,r7
- 1025 053c 00F0      		brlo .L48
- 1026               	.LVL84:
+ 977               		.loc 1 241 0
+ 978 04e4 E996      		adiw r28,117-60
+ 979 04e6 8CAD      		ldd r24,Y+60
+ 980 04e8 9DAD      		ldd r25,Y+61
+ 981 04ea AEAD      		ldd r26,Y+62
+ 982 04ec BFAD      		ldd r27,Y+63
+ 983 04ee E997      		sbiw r28,117-60
+ 984 04f0 8415      		cp r24,r4
+ 985 04f2 9505      		cpc r25,r5
+ 986 04f4 A605      		cpc r26,r6
+ 987 04f6 B705      		cpc r27,r7
+ 988 04f8 00F0      		brlo .L48
+ 989               	.LVL83:
  243:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 					}
- 1027               		.loc 1 243 0
- 1028 053e 2696      		adiw r28,68-62
- 1029 0540 5FAE      		std Y+63,r5
- 1030 0542 4EAE      		std Y+62,r4
- 1031 0544 2697      		sbiw r28,68-62
- 1032 0546 9FEF      		ldi r25,-1
- 1033 0548 491A      		sub r4,r25
- 1034 054a 590A      		sbc r5,r25
- 1035 054c 690A      		sbc r6,r25
- 1036 054e 790A      		sbc r7,r25
- 1037               	.LVL85:
- 1038               	.L48:
+ 990               		.loc 1 243 0
+ 991 04fa 2696      		adiw r28,68-62
+ 992 04fc 5FAE      		std Y+63,r5
+ 993 04fe 4EAE      		std Y+62,r4
+ 994 0500 2697      		sbiw r28,68-62
+ 995 0502 9FEF      		ldi r25,-1
+ 996 0504 491A      		sub r4,r25
+ 997 0506 590A      		sbc r5,r25
+ 998 0508 690A      		sbc r6,r25
+ 999 050a 790A      		sbc r7,r25
+ 1000               	.LVL84:
+ 1001               	.L48:
  248:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 					  NewReportItem.ItemType = HID_REPORT_ITEM_In;
- 1039               		.loc 1 248 0
- 1040 0550 1038      		cpi r17,lo8(-128)
- 1041 0552 01F4      		brne .L49
+ 1002               		.loc 1 248 0
+ 1003 050c 1038      		cpi r17,lo8(-128)
+ 1004 050e 01F4      		brne .L49
  249:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 					else if (ItemTypeTag == HID_RI_OUTPUT(0))
- 1042               		.loc 1 249 0
- 1043 0554 1BAE      		std Y+59,__zero_reg__
- 1044 0556 00C0      		rjmp .L50
- 1045               	.L49:
+ 1005               		.loc 1 249 0
+ 1006 0510 1BAE      		std Y+59,__zero_reg__
+ 1007 0512 00C0      		rjmp .L50
+ 1008               	.L49:
  250:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 					  NewReportItem.ItemType = HID_REPORT_ITEM_Out;
- 1046               		.loc 1 250 0
- 1047 0558 1039      		cpi r17,lo8(-112)
- 1048 055a 01F4      		brne .L51
+ 1009               		.loc 1 250 0
+ 1010 0514 1039      		cpi r17,lo8(-112)
+ 1011 0516 01F4      		brne .L51
  251:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 					else
- 1049               		.loc 1 251 0
- 1050 055c A1E0      		ldi r26,lo8(1)
- 1051 055e ABAF      		std Y+59,r26
- 1052 0560 00C0      		rjmp .L50
- 1053               	.L51:
+ 1012               		.loc 1 251 0
+ 1013 0518 A1E0      		ldi r26,lo8(1)
+ 1014 051a ABAF      		std Y+59,r26
+ 1015 051c 00C0      		rjmp .L50
+ 1016               	.L51:
  253:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
- 1054               		.loc 1 253 0
- 1055 0562 B2E0      		ldi r27,lo8(2)
- 1056 0564 BBAF      		std Y+59,r27
- 1057               	.L50:
+ 1017               		.loc 1 253 0
+ 1018 051e B2E0      		ldi r27,lo8(2)
+ 1019 0520 BBAF      		std Y+59,r27
+ 1020               	.L50:
  255:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
- 1058               		.loc 1 255 0
- 1059 0566 8BAD      		ldd r24,Y+59
- 1060 0568 E596      		adiw r28,115-62
- 1061 056a EEAD      		ldd r30,Y+62
- 1062 056c FFAD      		ldd r31,Y+63
- 1063 056e E597      		sbiw r28,115-62
- 1064 0570 E80F      		add r30,r24
- 1065 0572 F11D      		adc r31,__zero_reg__
- 1066 0574 E80F      		add r30,r24
- 1067 0576 F11D      		adc r31,__zero_reg__
- 1068 0578 8181      		ldd r24,Z+1
- 1069 057a 9281      		ldd r25,Z+2
- 1070 057c 9AAF      		std Y+58,r25
- 1071 057e 89AF      		std Y+57,r24
+ 1021               		.loc 1 255 0
+ 1022 0522 8BAD      		ldd r24,Y+59
+ 1023 0524 E596      		adiw r28,115-62
+ 1024 0526 EEAD      		ldd r30,Y+62
+ 1025 0528 FFAD      		ldd r31,Y+63
+ 1026 052a E597      		sbiw r28,115-62
+ 1027 052c E80F      		add r30,r24
+ 1028 052e F11D      		adc r31,__zero_reg__
+ 1029 0530 E80F      		add r30,r24
+ 1030 0532 F11D      		adc r31,__zero_reg__
+ 1031 0534 8181      		ldd r24,Z+1
+ 1032 0536 9281      		ldd r25,Z+2
+ 1033 0538 9AAF      		std Y+58,r25
+ 1034 053a 89AF      		std Y+57,r24
  257:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
- 1072               		.loc 1 257 0
- 1073 0580 D501      		movw r26,r10
- 1074 0582 3C91      		ld r19,X
- 1075 0584 8181      		ldd r24,Z+1
- 1076 0586 9281      		ldd r25,Z+2
- 1077 0588 830F      		add r24,r19
- 1078 058a 911D      		adc r25,__zero_reg__
- 1079 058c 9283      		std Z+2,r25
- 1080 058e 8183      		std Z+1,r24
+ 1035               		.loc 1 257 0
+ 1036 053c D701      		movw r26,r14
+ 1037 053e 2C91      		ld r18,X
+ 1038 0540 8181      		ldd r24,Z+1
+ 1039 0542 9281      		ldd r25,Z+2
+ 1040 0544 820F      		add r24,r18
+ 1041 0546 911D      		adc r25,__zero_reg__
+ 1042 0548 9283      		std Z+2,r25
+ 1043 054a 8183      		std Z+1,r24
  259:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
- 1081               		.loc 1 259 0
- 1082 0590 8BAD      		ldd r24,Y+59
- 1083 0592 E596      		adiw r28,115-62
- 1084 0594 EEAD      		ldd r30,Y+62
- 1085 0596 FFAD      		ldd r31,Y+63
- 1086 0598 E597      		sbiw r28,115-62
- 1087 059a E80F      		add r30,r24
- 1088 059c F11D      		adc r31,__zero_reg__
- 1089 059e E80F      		add r30,r24
- 1090 05a0 F11D      		adc r31,__zero_reg__
- 1091 05a2 EE96      		adiw r28,124-62
- 1092 05a4 AEAD      		ldd r26,Y+62
- 1093 05a6 BFAD      		ldd r27,Y+63
- 1094 05a8 EE97      		sbiw r28,124-62
- 1095 05aa 8D91      		ld r24,X+
- 1096 05ac 9C91      		ld r25,X
- 1097 05ae 0180      		ldd __tmp_reg__,Z+1
- 1098 05b0 F281      		ldd r31,Z+2
- 1099 05b2 E02D      		mov r30,__tmp_reg__
- 1100 05b4 E817      		cp r30,r24
- 1101 05b6 F907      		cpc r31,r25
- 1102 05b8 00F4      		brsh .L52
- 1103 05ba FC01      		movw r30,r24
- 1104               	.L52:
- 1105 05bc EE96      		adiw r28,124-62
- 1106 05be AEAD      		ldd r26,Y+62
- 1107 05c0 BFAD      		ldd r27,Y+63
- 1108 05c2 EE97      		sbiw r28,124-62
- 1109 05c4 ED93      		st X+,r30
- 1110 05c6 FC93      		st X,r31
+ 1044               		.loc 1 259 0
+ 1045 054c 8BAD      		ldd r24,Y+59
+ 1046 054e E596      		adiw r28,115-62
+ 1047 0550 EEAD      		ldd r30,Y+62
+ 1048 0552 FFAD      		ldd r31,Y+63
+ 1049 0554 E597      		sbiw r28,115-62
+ 1050 0556 E80F      		add r30,r24
+ 1051 0558 F11D      		adc r31,__zero_reg__
+ 1052 055a E80F      		add r30,r24
+ 1053 055c F11D      		adc r31,__zero_reg__
+ 1054 055e EF96      		adiw r28,125-62
+ 1055 0560 AEAD      		ldd r26,Y+62
+ 1056 0562 BFAD      		ldd r27,Y+63
+ 1057 0564 EF97      		sbiw r28,125-62
+ 1058 0566 8D91      		ld r24,X+
+ 1059 0568 9C91      		ld r25,X
+ 1060 056a 2181      		ldd r18,Z+1
+ 1061 056c 3281      		ldd r19,Z+2
+ 1062 056e 2817      		cp r18,r24
+ 1063 0570 3907      		cpc r19,r25
+ 1064 0572 00F4      		brsh .L52
+ 1065 0574 9C01      		movw r18,r24
+ 1066               	.L52:
+ 1067 0576 EF96      		adiw r28,125-62
+ 1068 0578 EEAD      		ldd r30,Y+62
+ 1069 057a FFAD      		ldd r31,Y+63
+ 1070 057c EF97      		sbiw r28,125-62
+ 1071 057e 3183      		std Z+1,r19
+ 1072 0580 2083      		st Z,r18
  261:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 					  return HID_PARSE_InsufficientReportItems;
- 1111               		.loc 1 261 0
- 1112 05c8 FA01      		movw r30,r20
- 1113 05ca 8081      		ld r24,Z
- 1114 05cc 8431      		cpi r24,lo8(20)
- 1115 05ce 01F0      		breq .+2
- 1116 05d0 00C0      		rjmp .L53
+ 1073               		.loc 1 261 0
+ 1074 0582 DA01      		movw r26,r20
+ 1075 0584 8C91      		ld r24,X
+ 1076 0586 8431      		cpi r24,lo8(20)
+ 1077 0588 01F0      		breq .+2
+ 1078 058a 00C0      		rjmp .L53
  262:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
- 1117               		.loc 1 262 0
- 1118 05d2 83E0      		ldi r24,lo8(3)
- 1119 05d4 00C0      		rjmp .L88
- 1120               	.L95:
- 1121               		.loc 1 267 0 discriminator 1
- 1122 05d6 CE01      		movw r24,r28
- 1123 05d8 C996      		adiw r24,57
- 1124 05da C857      		subi r28,lo8(-136)
- 1125 05dc DF4F      		sbci r29,hi8(-136)
- 1126 05de 2883      		st Y,r18
- 1127 05e0 C858      		subi r28,lo8(136)
- 1128 05e2 D040      		sbci r29,hi8(136)
- 1129 05e4 C557      		subi r28,lo8(-139)
- 1130 05e6 DF4F      		sbci r29,hi8(-139)
- 1131 05e8 4883      		st Y,r20
- 1132 05ea CB58      		subi r28,lo8(139)
- 1133 05ec D040      		sbci r29,hi8(139)
- 1134 05ee C457      		subi r28,lo8(-140)
- 1135 05f0 DF4F      		sbci r29,hi8(-140)
- 1136 05f2 5883      		st Y,r21
- 1137 05f4 CC58      		subi r28,lo8(140)
- 1138 05f6 D040      		sbci r29,hi8(140)
- 1139 05f8 C757      		subi r28,lo8(-137)
- 1140 05fa DF4F      		sbci r29,hi8(-137)
- 1141 05fc 6883      		st Y,r22
- 1142 05fe C958      		subi r28,lo8(137)
- 1143 0600 D040      		sbci r29,hi8(137)
- 1144 0602 C657      		subi r28,lo8(-138)
- 1145 0604 DF4F      		sbci r29,hi8(-138)
- 1146 0606 7883      		st Y,r23
- 1147 0608 CA58      		subi r28,lo8(138)
- 1148 060a D040      		sbci r29,hi8(138)
- 1149 060c 0E94 0000 		call CALLBACK_HIDParser_FilterHIDReportItem
- 1150               	.LVL86:
- 1151 0610 C857      		subi r28,lo8(-136)
- 1152 0612 DF4F      		sbci r29,hi8(-136)
- 1153 0614 2881      		ld r18,Y
- 1154 0616 C858      		subi r28,lo8(136)
- 1155 0618 D040      		sbci r29,hi8(136)
- 1156 061a C557      		subi r28,lo8(-139)
- 1157 061c DF4F      		sbci r29,hi8(-139)
- 1158 061e 4881      		ld r20,Y
- 1159 0620 CB58      		subi r28,lo8(139)
- 1160 0622 D040      		sbci r29,hi8(139)
- 1161 0624 C457      		subi r28,lo8(-140)
- 1162 0626 DF4F      		sbci r29,hi8(-140)
- 1163 0628 5881      		ld r21,Y
- 1164 062a CC58      		subi r28,lo8(140)
- 1165 062c D040      		sbci r29,hi8(140)
- 1166 062e C757      		subi r28,lo8(-137)
- 1167 0630 DF4F      		sbci r29,hi8(-137)
- 1168 0632 6881      		ld r22,Y
- 1169 0634 C958      		subi r28,lo8(137)
- 1170 0636 D040      		sbci r29,hi8(137)
- 1171 0638 C657      		subi r28,lo8(-138)
- 1172 063a DF4F      		sbci r29,hi8(-138)
- 1173 063c 7881      		ld r23,Y
- 1174 063e CA58      		subi r28,lo8(138)
- 1175 0640 D040      		sbci r29,hi8(138)
- 1176 0642 8823      		tst r24
- 1177 0644 01F4      		brne .+2
- 1178 0646 00C0      		rjmp .L55
+ 1079               		.loc 1 262 0
+ 1080 058c 83E0      		ldi r24,lo8(3)
+ 1081 058e 00C0      		rjmp .L88
+ 1082               	.L95:
+ 1083               		.loc 1 267 0 discriminator 1
+ 1084 0590 CE01      		movw r24,r28
+ 1085 0592 C996      		adiw r24,57
+ 1086 0594 C557      		subi r28,lo8(-139)
+ 1087 0596 DF4F      		sbci r29,hi8(-139)
+ 1088 0598 4883      		st Y,r20
+ 1089 059a CB58      		subi r28,lo8(139)
+ 1090 059c D040      		sbci r29,hi8(139)
+ 1091 059e C457      		subi r28,lo8(-140)
+ 1092 05a0 DF4F      		sbci r29,hi8(-140)
+ 1093 05a2 5883      		st Y,r21
+ 1094 05a4 CC58      		subi r28,lo8(140)
+ 1095 05a6 D040      		sbci r29,hi8(140)
+ 1096 05a8 C757      		subi r28,lo8(-137)
+ 1097 05aa DF4F      		sbci r29,hi8(-137)
+ 1098 05ac 6883      		st Y,r22
+ 1099 05ae C958      		subi r28,lo8(137)
+ 1100 05b0 D040      		sbci r29,hi8(137)
+ 1101 05b2 C657      		subi r28,lo8(-138)
+ 1102 05b4 DF4F      		sbci r29,hi8(-138)
+ 1103 05b6 7883      		st Y,r23
+ 1104 05b8 CA58      		subi r28,lo8(138)
+ 1105 05ba D040      		sbci r29,hi8(138)
+ 1106 05bc 0E94 0000 		call CALLBACK_HIDParser_FilterHIDReportItem
+ 1107               	.LVL85:
+ 1108 05c0 C557      		subi r28,lo8(-139)
+ 1109 05c2 DF4F      		sbci r29,hi8(-139)
+ 1110 05c4 4881      		ld r20,Y
+ 1111 05c6 CB58      		subi r28,lo8(139)
+ 1112 05c8 D040      		sbci r29,hi8(139)
+ 1113 05ca C457      		subi r28,lo8(-140)
+ 1114 05cc DF4F      		sbci r29,hi8(-140)
+ 1115 05ce 5881      		ld r21,Y
+ 1116 05d0 CC58      		subi r28,lo8(140)
+ 1117 05d2 D040      		sbci r29,hi8(140)
+ 1118 05d4 C757      		subi r28,lo8(-137)
+ 1119 05d6 DF4F      		sbci r29,hi8(-137)
+ 1120 05d8 6881      		ld r22,Y
+ 1121 05da C958      		subi r28,lo8(137)
+ 1122 05dc D040      		sbci r29,hi8(137)
+ 1123 05de C657      		subi r28,lo8(-138)
+ 1124 05e0 DF4F      		sbci r29,hi8(-138)
+ 1125 05e2 7881      		ld r23,Y
+ 1126 05e4 CA58      		subi r28,lo8(138)
+ 1127 05e6 D040      		sbci r29,hi8(138)
+ 1128 05e8 8823      		tst r24
+ 1129 05ea 01F4      		brne .+2
+ 1130 05ec 00C0      		rjmp .L55
  268:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 					  ParserData->TotalReportItems++;
- 1179               		.loc 1 268 0
- 1180 0648 DA01      		movw r26,r20
- 1181 064a 8C91      		ld r24,X
- 1182 064c 8F5F      		subi r24,lo8(-(1))
- 1183 064e 8C93      		st X,r24
- 1184 0650 00C0      		rjmp .L55
- 1185               	.LVL87:
- 1186               	.L17:
- 1187               	.LBE8:
- 1188               	.LBE15:
+ 1131               		.loc 1 268 0
+ 1132 05ee DA01      		movw r26,r20
+ 1133 05f0 8C91      		ld r24,X
+ 1134 05f2 8F5F      		subi r24,lo8(-(1))
+ 1135 05f4 8C93      		st X,r24
+ 1136 05f6 00C0      		rjmp .L55
+ 1137               	.LVL86:
+ 1138               	.L17:
+ 1139               	.LBE8:
+ 1140               	.LBE15:
  269:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				}
  270:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
  271:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 				break;
  272:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 		}
  273:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
  274:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 		if ((HIDReportItem & HID_RI_TYPE_MASK) == HID_RI_TYPE_MAIN)
- 1189               		.loc 1 274 0
- 1190 0652 EA96      		adiw r28,121-63
- 1191 0654 8FAD      		ldd r24,Y+63
- 1192 0656 EA97      		sbiw r28,121-63
- 1193 0658 8C70      		andi r24,lo8(12)
- 1194 065a 01F0      		breq .+2
- 1195 065c 00C0      		rjmp .L2
+ 1141               		.loc 1 274 0
+ 1142 05f8 EB96      		adiw r28,122-63
+ 1143 05fa 8FAD      		ldd r24,Y+63
+ 1144 05fc EB97      		sbiw r28,122-63
+ 1145 05fe 8C70      		andi r24,lo8(12)
+ 1146 0600 01F0      		breq .+2
+ 1147 0602 00C0      		rjmp .L2
  275:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 		{
  276:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 			UsageMinMax.Minimum = 0;
  277:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 			UsageMinMax.Maximum = 0;
- 1196               		.loc 1 277 0
- 1197 065e E996      		adiw r28,117-60
- 1198 0660 1CAE      		std Y+60,__zero_reg__
- 1199 0662 1DAE      		std Y+61,__zero_reg__
- 1200 0664 1EAE      		std Y+62,__zero_reg__
- 1201 0666 1FAE      		std Y+63,__zero_reg__
- 1202 0668 E997      		sbiw r28,117-60
- 1203               	.LVL88:
+ 1148               		.loc 1 277 0
+ 1149 0604 E996      		adiw r28,117-60
+ 1150 0606 1CAE      		std Y+60,__zero_reg__
+ 1151 0608 1DAE      		std Y+61,__zero_reg__
+ 1152 060a 1EAE      		std Y+62,__zero_reg__
+ 1153 060c 1FAE      		std Y+63,__zero_reg__
+ 1154 060e E997      		sbiw r28,117-60
+ 1155               	.LVL87:
  276:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 			UsageMinMax.Maximum = 0;
- 1204               		.loc 1 276 0
- 1205 066a 412C      		mov r4,__zero_reg__
- 1206 066c 512C      		mov r5,__zero_reg__
- 1207 066e 3201      		movw r6,r4
- 1208               	.LVL89:
+ 1156               		.loc 1 276 0
+ 1157 0610 412C      		mov r4,__zero_reg__
+ 1158 0612 512C      		mov r5,__zero_reg__
+ 1159 0614 3201      		movw r6,r4
+ 1160               	.LVL88:
  278:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 			UsageListSize       = 0;
- 1209               		.loc 1 278 0
- 1210 0670 00E0      		ldi r16,0
- 1211               	.LVL90:
- 1212 0672 00C0      		rjmp .L2
- 1213               	.LVL91:
- 1214               	.L91:
- 1215               	.LBE17:
+ 1161               		.loc 1 278 0
+ 1162 0616 00E0      		ldi r16,0
+ 1163               	.LVL89:
+ 1164 0618 00C0      		rjmp .L2
+ 1165               	.LVL90:
+ 1166               	.L91:
+ 1167               	.LBE17:
  279:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 		}
  280:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	}
  281:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
  282:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	if (!(ParserData->TotalReportItems))
- 1216               		.loc 1 282 0
- 1217 0674 DA01      		movw r26,r20
- 1218 0676 8C91      		ld r24,X
- 1219 0678 8823      		tst r24
- 1220 067a 01F0      		breq .L67
+ 1168               		.loc 1 282 0
+ 1169 061a DA01      		movw r26,r20
+ 1170 061c 8C91      		ld r24,X
+ 1171 061e 8823      		tst r24
+ 1172 0620 01F0      		breq .L67
  283:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	  return HID_PARSE_NoUnfilteredReportItems;
  284:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
  285:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	return HID_PARSE_Successful;
- 1221               		.loc 1 285 0
- 1222 067c 80E0      		ldi r24,0
- 1223 067e 00C0      		rjmp .L88
- 1224               	.LVL92:
- 1225               	.L62:
- 1226               	.LBB18:
+ 1173               		.loc 1 285 0
+ 1174 0622 80E0      		ldi r24,0
+ 1175 0624 00C0      		rjmp .L88
+ 1176               	.LVL91:
+ 1177               	.L62:
+ 1178               	.LBB18:
   85:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
- 1227               		.loc 1 85 0
- 1228 0680 81E0      		ldi r24,lo8(1)
- 1229 0682 00C0      		rjmp .L88
- 1230               	.L63:
+ 1179               		.loc 1 85 0
+ 1180 0626 81E0      		ldi r24,lo8(1)
+ 1181 0628 00C0      		rjmp .L88
+ 1182               	.L63:
   95:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
- 1231               		.loc 1 95 0
- 1232 0684 82E0      		ldi r24,lo8(2)
- 1233 0686 00C0      		rjmp .L88
- 1234               	.L64:
+ 1183               		.loc 1 95 0
+ 1184 062a 82E0      		ldi r24,lo8(2)
+ 1185 062c 00C0      		rjmp .L88
+ 1186               	.L64:
  161:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
- 1235               		.loc 1 161 0
- 1236 0688 86E0      		ldi r24,lo8(6)
- 1237 068a 00C0      		rjmp .L88
- 1238               	.LVL93:
- 1239               	.L65:
- 1240               	.LBB16:
+ 1187               		.loc 1 161 0
+ 1188 062e 86E0      		ldi r24,lo8(6)
+ 1189 0630 00C0      		rjmp .L88
+ 1190               	.LVL92:
+ 1191               	.L65:
+ 1192               	.LBB16:
  185:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
- 1241               		.loc 1 185 0
- 1242 068c 85E0      		ldi r24,lo8(5)
- 1243 068e 00C0      		rjmp .L88
- 1244               	.LVL94:
- 1245               	.L66:
- 1246               	.LBE16:
+ 1193               		.loc 1 185 0
+ 1194 0632 85E0      		ldi r24,lo8(5)
+ 1195 0634 00C0      		rjmp .L88
+ 1196               	.LVL93:
+ 1197               	.L66:
+ 1198               	.LBE16:
  213:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
- 1247               		.loc 1 213 0
- 1248 0690 84E0      		ldi r24,lo8(4)
- 1249 0692 00C0      		rjmp .L88
- 1250               	.LVL95:
- 1251               	.L67:
- 1252               	.LBE18:
+ 1199               		.loc 1 213 0
+ 1200 0636 84E0      		ldi r24,lo8(4)
+ 1201 0638 00C0      		rjmp .L88
+ 1202               	.LVL94:
+ 1203               	.L67:
+ 1204               	.LBE18:
  283:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
- 1253               		.loc 1 283 0
- 1254 0694 88E0      		ldi r24,lo8(8)
- 1255 0696 00C0      		rjmp .L88
- 1256               	.LVL96:
- 1257               	.L93:
- 1258               	.LBB19:
+ 1205               		.loc 1 283 0
+ 1206 063a 88E0      		ldi r24,lo8(8)
+ 1207 063c 00C0      		rjmp .L88
+ 1208               	.LVL95:
+ 1209               	.L93:
+ 1210               	.LBB19:
  148:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
- 1259               		.loc 1 148 0
- 1260 0698 87E0      		ldi r24,lo8(7)
- 1261               	.LVL97:
- 1262               	.L88:
- 1263               	/* epilogue start */
- 1264               	.LBE19:
+ 1211               		.loc 1 148 0
+ 1212 063e 87E0      		ldi r24,lo8(7)
+ 1213               	.LVL96:
+ 1214               	.L88:
+ 1215               	/* epilogue start */
+ 1216               	.LBE19:
  286:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** }
- 1265               		.loc 1 286 0
- 1266 069a C457      		subi r28,116
- 1267 069c DF4F      		sbci r29,-1
- 1268 069e 0FB6      		in __tmp_reg__,__SREG__
- 1269 06a0 F894      		cli
- 1270 06a2 DEBF      		out __SP_H__,r29
- 1271 06a4 0FBE      		out __SREG__,__tmp_reg__
- 1272 06a6 CDBF      		out __SP_L__,r28
- 1273 06a8 DF91      		pop r29
- 1274 06aa CF91      		pop r28
- 1275 06ac 1F91      		pop r17
- 1276 06ae 0F91      		pop r16
- 1277               	.LVL98:
- 1278 06b0 FF90      		pop r15
- 1279 06b2 EF90      		pop r14
- 1280 06b4 DF90      		pop r13
- 1281 06b6 CF90      		pop r12
- 1282 06b8 BF90      		pop r11
- 1283 06ba AF90      		pop r10
- 1284               	.LVL99:
- 1285 06bc 9F90      		pop r9
- 1286 06be 8F90      		pop r8
- 1287               	.LVL100:
- 1288 06c0 7F90      		pop r7
- 1289 06c2 6F90      		pop r6
- 1290 06c4 5F90      		pop r5
- 1291 06c6 4F90      		pop r4
- 1292               	.LVL101:
- 1293 06c8 3F90      		pop r3
- 1294 06ca 2F90      		pop r2
- 1295 06cc 0895      		ret
- 1296               		.cfi_endproc
- 1297               	.LFE16:
- 1299               		.section	.text.USB_GetHIDReportItemInfo,"ax",@progbits
- 1300               	.global	USB_GetHIDReportItemInfo
- 1302               	USB_GetHIDReportItemInfo:
- 1303               	.LFB17:
+ 1217               		.loc 1 286 0
+ 1218 0640 C457      		subi r28,116
+ 1219 0642 DF4F      		sbci r29,-1
+ 1220 0644 0FB6      		in __tmp_reg__,__SREG__
+ 1221 0646 F894      		cli
+ 1222 0648 DEBF      		out __SP_H__,r29
+ 1223 064a 0FBE      		out __SREG__,__tmp_reg__
+ 1224 064c CDBF      		out __SP_L__,r28
+ 1225 064e DF91      		pop r29
+ 1226 0650 CF91      		pop r28
+ 1227 0652 1F91      		pop r17
+ 1228 0654 0F91      		pop r16
+ 1229               	.LVL97:
+ 1230 0656 FF90      		pop r15
+ 1231 0658 EF90      		pop r14
+ 1232               	.LVL98:
+ 1233 065a DF90      		pop r13
+ 1234 065c CF90      		pop r12
+ 1235               	.LVL99:
+ 1236 065e BF90      		pop r11
+ 1237 0660 AF90      		pop r10
+ 1238 0662 9F90      		pop r9
+ 1239 0664 8F90      		pop r8
+ 1240 0666 7F90      		pop r7
+ 1241 0668 6F90      		pop r6
+ 1242 066a 5F90      		pop r5
+ 1243 066c 4F90      		pop r4
+ 1244               	.LVL100:
+ 1245 066e 3F90      		pop r3
+ 1246 0670 2F90      		pop r2
+ 1247 0672 0895      		ret
+ 1248               		.cfi_endproc
+ 1249               	.LFE16:
+ 1251               		.section	.text.USB_GetHIDReportItemInfo,"ax",@progbits
+ 1252               	.global	USB_GetHIDReportItemInfo
+ 1254               	USB_GetHIDReportItemInfo:
+ 1255               	.LFB17:
  287:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
  288:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** bool USB_GetHIDReportItemInfo(const uint8_t* ReportData,
  289:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c ****                               HID_ReportItem_t* const ReportItem)
  290:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** {
- 1304               		.loc 1 290 0
- 1305               		.cfi_startproc
- 1306               	.LVL102:
- 1307 0000 8F92      		push r8
- 1308               	.LCFI20:
- 1309               		.cfi_def_cfa_offset 3
- 1310               		.cfi_offset 8, -2
- 1311 0002 9F92      		push r9
- 1312               	.LCFI21:
- 1313               		.cfi_def_cfa_offset 4
- 1314               		.cfi_offset 9, -3
- 1315 0004 AF92      		push r10
- 1316               	.LCFI22:
- 1317               		.cfi_def_cfa_offset 5
- 1318               		.cfi_offset 10, -4
- 1319 0006 BF92      		push r11
- 1320               	.LCFI23:
- 1321               		.cfi_def_cfa_offset 6
- 1322               		.cfi_offset 11, -5
- 1323 0008 CF92      		push r12
- 1324               	.LCFI24:
- 1325               		.cfi_def_cfa_offset 7
- 1326               		.cfi_offset 12, -6
- 1327 000a DF92      		push r13
- 1328               	.LCFI25:
- 1329               		.cfi_def_cfa_offset 8
- 1330               		.cfi_offset 13, -7
- 1331 000c EF92      		push r14
- 1332               	.LCFI26:
- 1333               		.cfi_def_cfa_offset 9
- 1334               		.cfi_offset 14, -8
- 1335 000e FF92      		push r15
- 1336               	.LCFI27:
- 1337               		.cfi_def_cfa_offset 10
- 1338               		.cfi_offset 15, -9
- 1339               	/* prologue: function */
- 1340               	/* frame size = 0 */
- 1341               	/* stack size = 8 */
- 1342               	.L__stack_usage = 8
- 1343 0010 FB01      		movw r30,r22
+ 1256               		.loc 1 290 0
+ 1257               		.cfi_startproc
+ 1258               	.LVL101:
+ 1259 0000 8F92      		push r8
+ 1260               	.LCFI20:
+ 1261               		.cfi_def_cfa_offset 3
+ 1262               		.cfi_offset 8, -2
+ 1263 0002 9F92      		push r9
+ 1264               	.LCFI21:
+ 1265               		.cfi_def_cfa_offset 4
+ 1266               		.cfi_offset 9, -3
+ 1267 0004 AF92      		push r10
+ 1268               	.LCFI22:
+ 1269               		.cfi_def_cfa_offset 5
+ 1270               		.cfi_offset 10, -4
+ 1271 0006 BF92      		push r11
+ 1272               	.LCFI23:
+ 1273               		.cfi_def_cfa_offset 6
+ 1274               		.cfi_offset 11, -5
+ 1275 0008 CF92      		push r12
+ 1276               	.LCFI24:
+ 1277               		.cfi_def_cfa_offset 7
+ 1278               		.cfi_offset 12, -6
+ 1279 000a DF92      		push r13
+ 1280               	.LCFI25:
+ 1281               		.cfi_def_cfa_offset 8
+ 1282               		.cfi_offset 13, -7
+ 1283 000c EF92      		push r14
+ 1284               	.LCFI26:
+ 1285               		.cfi_def_cfa_offset 9
+ 1286               		.cfi_offset 14, -8
+ 1287 000e FF92      		push r15
+ 1288               	.LCFI27:
+ 1289               		.cfi_def_cfa_offset 10
+ 1290               		.cfi_offset 15, -9
+ 1291               	/* prologue: function */
+ 1292               	/* frame size = 0 */
+ 1293               	/* stack size = 8 */
+ 1294               	.L__stack_usage = 8
+ 1295 0010 FB01      		movw r30,r22
  291:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	if (ReportItem == NULL)
- 1344               		.loc 1 291 0
- 1345 0012 3097      		sbiw r30,0
- 1346 0014 01F4      		brne .+2
- 1347 0016 00C0      		rjmp .L103
+ 1296               		.loc 1 291 0
+ 1297 0012 3097      		sbiw r30,0
+ 1298 0014 01F4      		brne .+2
+ 1299 0016 00C0      		rjmp .L103
+ 1300               	.LVL102:
  292:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	  return false;
  293:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
  294:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	uint16_t DataBitsRem  = ReportItem->Attributes.BitSize;
- 1348               		.loc 1 294 0
- 1349 0018 2085      		ldd r18,Z+8
- 1350               	.LVL103:
  295:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	uint16_t CurrentBit   = ReportItem->BitOffset;
- 1351               		.loc 1 295 0
- 1352 001a 6081      		ld r22,Z
- 1353 001c 7181      		ldd r23,Z+1
- 1354               	.LVL104:
  296:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	uint32_t BitMask      = (1 << 0);
  297:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
  298:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	if (ReportItem->ReportID)
- 1355               		.loc 1 298 0
- 1356 001e 3581      		ldd r19,Z+5
- 1357 0020 3323      		tst r19
- 1358 0022 01F0      		breq .L98
+ 1301               		.loc 1 298 0
+ 1302 0018 2581      		ldd r18,Z+5
+ 1303 001a 2223      		tst r18
+ 1304 001c 01F0      		breq .L98
  299:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	{
  300:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 		if (ReportItem->ReportID != ReportData[0])
- 1359               		.loc 1 300 0
- 1360 0024 DC01      		movw r26,r24
- 1361 0026 4C91      		ld r20,X
- 1362 0028 3413      		cpse r19,r20
- 1363 002a 00C0      		rjmp .L103
+ 1305               		.loc 1 300 0
+ 1306 001e DC01      		movw r26,r24
+ 1307 0020 3C91      		ld r19,X
+ 1308 0022 2313      		cpse r18,r19
+ 1309 0024 00C0      		rjmp .L103
  301:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 		  return false;
  302:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
  303:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 		ReportData++;
- 1364               		.loc 1 303 0
- 1365 002c 0196      		adiw r24,1
- 1366               	.LVL105:
- 1367               	.L98:
+ 1310               		.loc 1 303 0
+ 1311 0026 0196      		adiw r24,1
+ 1312               	.LVL103:
+ 1313               	.L98:
  294:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	uint16_t CurrentBit   = ReportItem->BitOffset;
- 1368               		.loc 1 294 0
- 1369 002e 30E0      		ldi r19,0
+ 1314               		.loc 1 294 0
+ 1315 0028 2085      		ldd r18,Z+8
+ 1316 002a 30E0      		ldi r19,0
+ 295:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	uint32_t BitMask      = (1 << 0);
+ 1317               		.loc 1 295 0
+ 1318 002c 6081      		ld r22,Z
+ 1319 002e 7181      		ldd r23,Z+1
+ 1320               	.LVL104:
  304:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	}
  305:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
  306:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	ReportItem->PreviousValue = ReportItem->Value;
- 1370               		.loc 1 306 0
- 1371 0030 C2A0      		ldd r12,Z+34
- 1372 0032 D3A0      		ldd r13,Z+35
- 1373 0034 E4A0      		ldd r14,Z+36
- 1374 0036 F5A0      		ldd r15,Z+37
- 1375 0038 C6A2      		std Z+38,r12
- 1376 003a D7A2      		std Z+39,r13
- 1377 003c E0A6      		std Z+40,r14
- 1378 003e F1A6      		std Z+41,r15
+ 1321               		.loc 1 306 0
+ 1322 0030 C2A0      		ldd r12,Z+34
+ 1323 0032 D3A0      		ldd r13,Z+35
+ 1324 0034 E4A0      		ldd r14,Z+36
+ 1325 0036 F5A0      		ldd r15,Z+37
+ 1326 0038 C6A2      		std Z+38,r12
+ 1327 003a D7A2      		std Z+39,r13
+ 1328 003c E0A6      		std Z+40,r14
+ 1329 003e F1A6      		std Z+41,r15
  307:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	ReportItem->Value = 0;
- 1379               		.loc 1 307 0
- 1380 0040 12A2      		std Z+34,__zero_reg__
- 1381 0042 13A2      		std Z+35,__zero_reg__
- 1382 0044 14A2      		std Z+36,__zero_reg__
- 1383 0046 15A2      		std Z+37,__zero_reg__
+ 1330               		.loc 1 307 0
+ 1331 0040 12A2      		std Z+34,__zero_reg__
+ 1332 0042 13A2      		std Z+35,__zero_reg__
+ 1333 0044 14A2      		std Z+36,__zero_reg__
+ 1334 0046 15A2      		std Z+37,__zero_reg__
  296:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
- 1384               		.loc 1 296 0
- 1385 0048 C12C      		mov r12,__zero_reg__
- 1386 004a D12C      		mov r13,__zero_reg__
- 1387 004c 7601      		movw r14,r12
- 1388 004e C394      		inc r12
- 1389               	.LVL106:
- 1390               	.L99:
+ 1335               		.loc 1 296 0
+ 1336 0048 C12C      		mov r12,__zero_reg__
+ 1337 004a D12C      		mov r13,__zero_reg__
+ 1338 004c 7601      		movw r14,r12
+ 1339 004e C394      		inc r12
+ 1340               	.LVL105:
+ 1341               	.L99:
  308:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
  309:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	while (DataBitsRem--)
- 1391               		.loc 1 309 0
- 1392               	.LVL107:
- 1393 0050 2150      		subi r18,1
- 1394 0052 3109      		sbc r19,__zero_reg__
- 1395 0054 00F0      		brcs .L110
+ 1342               		.loc 1 309 0
+ 1343               	.LVL106:
+ 1344 0050 2150      		subi r18,1
+ 1345 0052 3109      		sbc r19,__zero_reg__
+ 1346 0054 00F0      		brcs .L110
  310:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	{
  311:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 		if (ReportData[CurrentBit / 8] & (1 << (CurrentBit % 8)))
- 1396               		.loc 1 311 0
- 1397 0056 DB01      		movw r26,r22
- 1398 0058 53E0      		ldi r21,3
- 1399               		1:
- 1400 005a B695      		lsr r27
- 1401 005c A795      		ror r26
- 1402 005e 5A95      		dec r21
- 1403 0060 01F4      		brne 1b
- 1404 0062 A80F      		add r26,r24
- 1405 0064 B91F      		adc r27,r25
- 1406 0066 4C91      		ld r20,X
- 1407 0068 50E0      		ldi r21,0
- 1408 006a DB01      		movw r26,r22
- 1409 006c A770      		andi r26,7
- 1410 006e BB27      		clr r27
- 1411 0070 00C0      		rjmp 2f
- 1412               		1:
- 1413 0072 5595      		asr r21
- 1414 0074 4795      		ror r20
- 1415               		2:
- 1416 0076 AA95      		dec r26
- 1417 0078 02F4      		brpl 1b
- 1418 007a 40FF      		sbrs r20,0
- 1419 007c 00C0      		rjmp .L100
+ 1347               		.loc 1 311 0
+ 1348 0056 DB01      		movw r26,r22
+ 1349 0058 53E0      		ldi r21,3
+ 1350               		1:
+ 1351 005a B695      		lsr r27
+ 1352 005c A795      		ror r26
+ 1353 005e 5A95      		dec r21
+ 1354 0060 01F4      		brne 1b
+ 1355 0062 A80F      		add r26,r24
+ 1356 0064 B91F      		adc r27,r25
+ 1357 0066 4C91      		ld r20,X
+ 1358 0068 50E0      		ldi r21,0
+ 1359 006a DB01      		movw r26,r22
+ 1360 006c A770      		andi r26,7
+ 1361 006e BB27      		clr r27
+ 1362 0070 00C0      		rjmp 2f
+ 1363               		1:
+ 1364 0072 5595      		asr r21
+ 1365 0074 4795      		ror r20
+ 1366               		2:
+ 1367 0076 AA95      		dec r26
+ 1368 0078 02F4      		brpl 1b
+ 1369 007a 40FF      		sbrs r20,0
+ 1370 007c 00C0      		rjmp .L100
  312:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 		  ReportItem->Value |= BitMask;
- 1420               		.loc 1 312 0
- 1421 007e 82A0      		ldd r8,Z+34
- 1422 0080 93A0      		ldd r9,Z+35
- 1423 0082 A4A0      		ldd r10,Z+36
- 1424 0084 B5A0      		ldd r11,Z+37
- 1425 0086 8C28      		or r8,r12
- 1426 0088 9D28      		or r9,r13
- 1427 008a AE28      		or r10,r14
- 1428 008c BF28      		or r11,r15
- 1429 008e 82A2      		std Z+34,r8
- 1430 0090 93A2      		std Z+35,r9
- 1431 0092 A4A2      		std Z+36,r10
- 1432 0094 B5A2      		std Z+37,r11
- 1433               	.L100:
+ 1371               		.loc 1 312 0
+ 1372 007e 82A0      		ldd r8,Z+34
+ 1373 0080 93A0      		ldd r9,Z+35
+ 1374 0082 A4A0      		ldd r10,Z+36
+ 1375 0084 B5A0      		ldd r11,Z+37
+ 1376 0086 8C28      		or r8,r12
+ 1377 0088 9D28      		or r9,r13
+ 1378 008a AE28      		or r10,r14
+ 1379 008c BF28      		or r11,r15
+ 1380 008e 82A2      		std Z+34,r8
+ 1381 0090 93A2      		std Z+35,r9
+ 1382 0092 A4A2      		std Z+36,r10
+ 1383 0094 B5A2      		std Z+37,r11
+ 1384               	.L100:
  313:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
  314:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 		CurrentBit++;
- 1434               		.loc 1 314 0
- 1435 0096 6F5F      		subi r22,-1
- 1436 0098 7F4F      		sbci r23,-1
- 1437               	.LVL108:
+ 1385               		.loc 1 314 0
+ 1386 0096 6F5F      		subi r22,-1
+ 1387 0098 7F4F      		sbci r23,-1
+ 1388               	.LVL107:
  315:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 		BitMask <<= 1;
- 1438               		.loc 1 315 0
- 1439 009a CC0C      		lsl r12
- 1440 009c DD1C      		rol r13
- 1441 009e EE1C      		rol r14
- 1442 00a0 FF1C      		rol r15
- 1443               	.LVL109:
- 1444 00a2 00C0      		rjmp .L99
- 1445               	.L110:
+ 1389               		.loc 1 315 0
+ 1390 009a CC0C      		lsl r12
+ 1391 009c DD1C      		rol r13
+ 1392 009e EE1C      		rol r14
+ 1393 00a0 FF1C      		rol r15
+ 1394               	.LVL108:
+ 1395 00a2 00C0      		rjmp .L99
+ 1396               	.L110:
  316:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	}
  317:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
  318:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	return true;
- 1446               		.loc 1 318 0
- 1447 00a4 81E0      		ldi r24,lo8(1)
- 1448               	.LVL110:
- 1449 00a6 00C0      		rjmp .L97
- 1450               	.LVL111:
- 1451               	.L103:
+ 1397               		.loc 1 318 0
+ 1398 00a4 81E0      		ldi r24,lo8(1)
+ 1399               	.LVL109:
+ 1400 00a6 00C0      		rjmp .L97
+ 1401               	.LVL110:
+ 1402               	.L103:
  292:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
- 1452               		.loc 1 292 0
- 1453 00a8 80E0      		ldi r24,0
- 1454               	.LVL112:
- 1455               	.L97:
- 1456               	/* epilogue start */
+ 1403               		.loc 1 292 0
+ 1404 00a8 80E0      		ldi r24,0
+ 1405               	.LVL111:
+ 1406               	.L97:
+ 1407               	/* epilogue start */
  319:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** }
- 1457               		.loc 1 319 0
- 1458 00aa FF90      		pop r15
- 1459 00ac EF90      		pop r14
- 1460 00ae DF90      		pop r13
- 1461 00b0 CF90      		pop r12
- 1462 00b2 BF90      		pop r11
- 1463 00b4 AF90      		pop r10
- 1464 00b6 9F90      		pop r9
- 1465 00b8 8F90      		pop r8
- 1466 00ba 0895      		ret
- 1467               		.cfi_endproc
- 1468               	.LFE17:
- 1470               		.section	.text.USB_SetHIDReportItemInfo,"ax",@progbits
- 1471               	.global	USB_SetHIDReportItemInfo
- 1473               	USB_SetHIDReportItemInfo:
- 1474               	.LFB18:
+ 1408               		.loc 1 319 0
+ 1409 00aa FF90      		pop r15
+ 1410 00ac EF90      		pop r14
+ 1411 00ae DF90      		pop r13
+ 1412 00b0 CF90      		pop r12
+ 1413 00b2 BF90      		pop r11
+ 1414 00b4 AF90      		pop r10
+ 1415 00b6 9F90      		pop r9
+ 1416 00b8 8F90      		pop r8
+ 1417 00ba 0895      		ret
+ 1418               		.cfi_endproc
+ 1419               	.LFE17:
+ 1421               		.section	.text.USB_SetHIDReportItemInfo,"ax",@progbits
+ 1422               	.global	USB_SetHIDReportItemInfo
+ 1424               	USB_SetHIDReportItemInfo:
+ 1425               	.LFB18:
  320:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
  321:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** void USB_SetHIDReportItemInfo(uint8_t* ReportData,
  322:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c ****                               HID_ReportItem_t* const ReportItem)
  323:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** {
- 1475               		.loc 1 323 0
- 1476               		.cfi_startproc
- 1477               	.LVL113:
- 1478 0000 4F92      		push r4
- 1479               	.LCFI28:
- 1480               		.cfi_def_cfa_offset 3
- 1481               		.cfi_offset 4, -2
- 1482 0002 5F92      		push r5
- 1483               	.LCFI29:
- 1484               		.cfi_def_cfa_offset 4
- 1485               		.cfi_offset 5, -3
- 1486 0004 6F92      		push r6
- 1487               	.LCFI30:
- 1488               		.cfi_def_cfa_offset 5
- 1489               		.cfi_offset 6, -4
- 1490 0006 7F92      		push r7
- 1491               	.LCFI31:
- 1492               		.cfi_def_cfa_offset 6
- 1493               		.cfi_offset 7, -5
- 1494 0008 8F92      		push r8
- 1495               	.LCFI32:
- 1496               		.cfi_def_cfa_offset 7
- 1497               		.cfi_offset 8, -6
- 1498 000a 9F92      		push r9
- 1499               	.LCFI33:
- 1500               		.cfi_def_cfa_offset 8
- 1501               		.cfi_offset 9, -7
- 1502 000c AF92      		push r10
- 1503               	.LCFI34:
- 1504               		.cfi_def_cfa_offset 9
- 1505               		.cfi_offset 10, -8
- 1506 000e BF92      		push r11
- 1507               	.LCFI35:
- 1508               		.cfi_def_cfa_offset 10
- 1509               		.cfi_offset 11, -9
- 1510 0010 CF92      		push r12
- 1511               	.LCFI36:
- 1512               		.cfi_def_cfa_offset 11
- 1513               		.cfi_offset 12, -10
- 1514 0012 DF92      		push r13
- 1515               	.LCFI37:
- 1516               		.cfi_def_cfa_offset 12
- 1517               		.cfi_offset 13, -11
- 1518 0014 EF92      		push r14
- 1519               	.LCFI38:
- 1520               		.cfi_def_cfa_offset 13
- 1521               		.cfi_offset 14, -12
- 1522 0016 FF92      		push r15
- 1523               	.LCFI39:
- 1524               		.cfi_def_cfa_offset 14
- 1525               		.cfi_offset 15, -13
- 1526 0018 CF93      		push r28
- 1527               	.LCFI40:
- 1528               		.cfi_def_cfa_offset 15
- 1529               		.cfi_offset 28, -14
- 1530 001a DF93      		push r29
- 1531               	.LCFI41:
- 1532               		.cfi_def_cfa_offset 16
- 1533               		.cfi_offset 29, -15
- 1534               	/* prologue: function */
- 1535               	/* frame size = 0 */
- 1536               	/* stack size = 14 */
- 1537               	.L__stack_usage = 14
- 1538 001c FB01      		movw r30,r22
+ 1426               		.loc 1 323 0
+ 1427               		.cfi_startproc
+ 1428               	.LVL112:
+ 1429 0000 4F92      		push r4
+ 1430               	.LCFI28:
+ 1431               		.cfi_def_cfa_offset 3
+ 1432               		.cfi_offset 4, -2
+ 1433 0002 5F92      		push r5
+ 1434               	.LCFI29:
+ 1435               		.cfi_def_cfa_offset 4
+ 1436               		.cfi_offset 5, -3
+ 1437 0004 6F92      		push r6
+ 1438               	.LCFI30:
+ 1439               		.cfi_def_cfa_offset 5
+ 1440               		.cfi_offset 6, -4
+ 1441 0006 7F92      		push r7
+ 1442               	.LCFI31:
+ 1443               		.cfi_def_cfa_offset 6
+ 1444               		.cfi_offset 7, -5
+ 1445 0008 8F92      		push r8
+ 1446               	.LCFI32:
+ 1447               		.cfi_def_cfa_offset 7
+ 1448               		.cfi_offset 8, -6
+ 1449 000a 9F92      		push r9
+ 1450               	.LCFI33:
+ 1451               		.cfi_def_cfa_offset 8
+ 1452               		.cfi_offset 9, -7
+ 1453 000c AF92      		push r10
+ 1454               	.LCFI34:
+ 1455               		.cfi_def_cfa_offset 9
+ 1456               		.cfi_offset 10, -8
+ 1457 000e BF92      		push r11
+ 1458               	.LCFI35:
+ 1459               		.cfi_def_cfa_offset 10
+ 1460               		.cfi_offset 11, -9
+ 1461 0010 CF92      		push r12
+ 1462               	.LCFI36:
+ 1463               		.cfi_def_cfa_offset 11
+ 1464               		.cfi_offset 12, -10
+ 1465 0012 DF92      		push r13
+ 1466               	.LCFI37:
+ 1467               		.cfi_def_cfa_offset 12
+ 1468               		.cfi_offset 13, -11
+ 1469 0014 EF92      		push r14
+ 1470               	.LCFI38:
+ 1471               		.cfi_def_cfa_offset 13
+ 1472               		.cfi_offset 14, -12
+ 1473 0016 FF92      		push r15
+ 1474               	.LCFI39:
+ 1475               		.cfi_def_cfa_offset 14
+ 1476               		.cfi_offset 15, -13
+ 1477 0018 CF93      		push r28
+ 1478               	.LCFI40:
+ 1479               		.cfi_def_cfa_offset 15
+ 1480               		.cfi_offset 28, -14
+ 1481 001a DF93      		push r29
+ 1482               	.LCFI41:
+ 1483               		.cfi_def_cfa_offset 16
+ 1484               		.cfi_offset 29, -15
+ 1485               	/* prologue: function */
+ 1486               	/* frame size = 0 */
+ 1487               	/* stack size = 14 */
+ 1488               	.L__stack_usage = 14
+ 1489 001c FB01      		movw r30,r22
  324:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	if (ReportItem == NULL)
- 1539               		.loc 1 324 0
- 1540 001e 3097      		sbiw r30,0
- 1541 0020 01F4      		brne .+2
- 1542 0022 00C0      		rjmp .L111
+ 1490               		.loc 1 324 0
+ 1491 001e 3097      		sbiw r30,0
+ 1492 0020 01F4      		brne .+2
+ 1493 0022 00C0      		rjmp .L111
  325:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	  return;
  326:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
  327:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	uint16_t DataBitsRem  = ReportItem->Attributes.BitSize;
- 1543               		.loc 1 327 0
- 1544 0024 2085      		ldd r18,Z+8
- 1545 0026 30E0      		ldi r19,0
- 1546               	.LVL114:
+ 1494               		.loc 1 327 0
+ 1495 0024 2085      		ldd r18,Z+8
+ 1496 0026 30E0      		ldi r19,0
+ 1497               	.LVL113:
  328:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	uint16_t CurrentBit   = ReportItem->BitOffset;
- 1547               		.loc 1 328 0
- 1548 0028 4081      		ld r20,Z
- 1549 002a 5181      		ldd r21,Z+1
- 1550               	.LVL115:
+ 1498               		.loc 1 328 0
+ 1499 0028 4081      		ld r20,Z
+ 1500 002a 5181      		ldd r21,Z+1
+ 1501               	.LVL114:
  329:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	uint32_t BitMask      = (1 << 0);
  330:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
  331:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	if (ReportItem->ReportID)
- 1551               		.loc 1 331 0
- 1552 002c 6581      		ldd r22,Z+5
- 1553               	.LVL116:
- 1554 002e 6623      		tst r22
- 1555 0030 01F0      		breq .L113
+ 1502               		.loc 1 331 0
+ 1503 002c 6581      		ldd r22,Z+5
+ 1504               	.LVL115:
+ 1505 002e 6623      		tst r22
+ 1506 0030 01F0      		breq .L113
  332:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	{
  333:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 		ReportData[0] = ReportItem->ReportID;
- 1556               		.loc 1 333 0
- 1557 0032 DC01      		movw r26,r24
- 1558 0034 6D93      		st X+,r22
- 1559 0036 CD01      		movw r24,r26
- 1560               	.LVL117:
- 1561               	.L113:
+ 1507               		.loc 1 333 0
+ 1508 0032 DC01      		movw r26,r24
+ 1509 0034 6D93      		st X+,r22
+ 1510 0036 CD01      		movw r24,r26
+ 1511               	.LVL116:
+ 1512               	.L113:
  334:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 		ReportData++;
  335:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	}
  336:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
  337:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	ReportItem->PreviousValue = ReportItem->Value;
- 1562               		.loc 1 337 0
- 1563 0038 C2A0      		ldd r12,Z+34
- 1564 003a D3A0      		ldd r13,Z+35
- 1565 003c E4A0      		ldd r14,Z+36
- 1566 003e F5A0      		ldd r15,Z+37
- 1567 0040 C6A2      		std Z+38,r12
- 1568 0042 D7A2      		std Z+39,r13
- 1569 0044 E0A6      		std Z+40,r14
- 1570 0046 F1A6      		std Z+41,r15
+ 1513               		.loc 1 337 0
+ 1514 0038 C2A0      		ldd r12,Z+34
+ 1515 003a D3A0      		ldd r13,Z+35
+ 1516 003c E4A0      		ldd r14,Z+36
+ 1517 003e F5A0      		ldd r15,Z+37
+ 1518 0040 C6A2      		std Z+38,r12
+ 1519 0042 D7A2      		std Z+39,r13
+ 1520 0044 E0A6      		std Z+40,r14
+ 1521 0046 F1A6      		std Z+41,r15
  329:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
- 1571               		.loc 1 329 0
- 1572 0048 C12C      		mov r12,__zero_reg__
- 1573 004a D12C      		mov r13,__zero_reg__
- 1574 004c 7601      		movw r14,r12
- 1575 004e C394      		inc r12
+ 1522               		.loc 1 329 0
+ 1523 0048 C12C      		mov r12,__zero_reg__
+ 1524 004a D12C      		mov r13,__zero_reg__
+ 1525 004c 7601      		movw r14,r12
+ 1526 004e C394      		inc r12
  338:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
  339:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	while (DataBitsRem--)
  340:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	{
  341:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 		if (ReportItem->Value & (1 << (CurrentBit % 8)))
- 1576               		.loc 1 341 0
- 1577 0050 C1E0      		ldi r28,lo8(1)
- 1578 0052 D0E0      		ldi r29,0
- 1579               	.LVL118:
- 1580               	.L114:
+ 1527               		.loc 1 341 0
+ 1528 0050 C1E0      		ldi r28,lo8(1)
+ 1529 0052 D0E0      		ldi r29,0
+ 1530               	.LVL117:
+ 1531               	.L114:
  339:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	{
- 1581               		.loc 1 339 0
- 1582               	.LVL119:
- 1583 0054 2150      		subi r18,1
- 1584 0056 3109      		sbc r19,__zero_reg__
- 1585 0058 00F0      		brcs .L111
- 1586               		.loc 1 341 0
- 1587 005a BA01      		movw r22,r20
- 1588 005c 6770      		andi r22,7
- 1589 005e 7727      		clr r23
- 1590 0060 4E01      		movw r8,r28
- 1591 0062 00C0      		rjmp 2f
- 1592               		1:
- 1593 0064 880C      		lsl r8
- 1594 0066 991C      		rol r9
- 1595               		2:
- 1596 0068 6A95      		dec r22
- 1597 006a 02F4      		brpl 1b
- 1598 006c 092C      		mov __tmp_reg__,r9
- 1599 006e 000C      		lsl r0
- 1600 0070 AA08      		sbc r10,r10
- 1601 0072 BB08      		sbc r11,r11
- 1602 0074 42A0      		ldd r4,Z+34
- 1603 0076 53A0      		ldd r5,Z+35
- 1604 0078 64A0      		ldd r6,Z+36
- 1605 007a 75A0      		ldd r7,Z+37
- 1606 007c 8420      		and r8,r4
- 1607 007e 9520      		and r9,r5
- 1608 0080 A620      		and r10,r6
- 1609 0082 B720      		and r11,r7
- 1610 0084 8928      		or r8,r9
- 1611 0086 8A28      		or r8,r10
- 1612 0088 8B28      		or r8,r11
- 1613 008a 01F0      		breq .L115
+ 1532               		.loc 1 339 0
+ 1533               	.LVL118:
+ 1534 0054 2150      		subi r18,1
+ 1535 0056 3109      		sbc r19,__zero_reg__
+ 1536 0058 00F0      		brcs .L111
+ 1537               		.loc 1 341 0
+ 1538 005a BA01      		movw r22,r20
+ 1539 005c 6770      		andi r22,7
+ 1540 005e 7727      		clr r23
+ 1541 0060 4E01      		movw r8,r28
+ 1542 0062 00C0      		rjmp 2f
+ 1543               		1:
+ 1544 0064 880C      		lsl r8
+ 1545 0066 991C      		rol r9
+ 1546               		2:
+ 1547 0068 6A95      		dec r22
+ 1548 006a 02F4      		brpl 1b
+ 1549 006c 092C      		mov __tmp_reg__,r9
+ 1550 006e 000C      		lsl r0
+ 1551 0070 AA08      		sbc r10,r10
+ 1552 0072 BB08      		sbc r11,r11
+ 1553 0074 42A0      		ldd r4,Z+34
+ 1554 0076 53A0      		ldd r5,Z+35
+ 1555 0078 64A0      		ldd r6,Z+36
+ 1556 007a 75A0      		ldd r7,Z+37
+ 1557 007c 8420      		and r8,r4
+ 1558 007e 9520      		and r9,r5
+ 1559 0080 A620      		and r10,r6
+ 1560 0082 B720      		and r11,r7
+ 1561 0084 8928      		or r8,r9
+ 1562 0086 8A28      		or r8,r10
+ 1563 0088 8B28      		or r8,r11
+ 1564 008a 01F0      		breq .L115
  342:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 		  ReportData[CurrentBit / 8] |= BitMask;
- 1614               		.loc 1 342 0
- 1615 008c DA01      		movw r26,r20
- 1616 008e 73E0      		ldi r23,3
- 1617               		1:
- 1618 0090 B695      		lsr r27
- 1619 0092 A795      		ror r26
- 1620 0094 7A95      		dec r23
- 1621 0096 01F4      		brne 1b
- 1622 0098 A80F      		add r26,r24
- 1623 009a B91F      		adc r27,r25
- 1624 009c 6C91      		ld r22,X
- 1625 009e 6C29      		or r22,r12
- 1626 00a0 6C93      		st X,r22
- 1627               	.L115:
+ 1565               		.loc 1 342 0
+ 1566 008c DA01      		movw r26,r20
+ 1567 008e 73E0      		ldi r23,3
+ 1568               		1:
+ 1569 0090 B695      		lsr r27
+ 1570 0092 A795      		ror r26
+ 1571 0094 7A95      		dec r23
+ 1572 0096 01F4      		brne 1b
+ 1573 0098 A80F      		add r26,r24
+ 1574 009a B91F      		adc r27,r25
+ 1575 009c 6C91      		ld r22,X
+ 1576 009e 6C29      		or r22,r12
+ 1577 00a0 6C93      		st X,r22
+ 1578               	.L115:
  343:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
  344:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 		CurrentBit++;
- 1628               		.loc 1 344 0
- 1629 00a2 4F5F      		subi r20,-1
- 1630 00a4 5F4F      		sbci r21,-1
- 1631               	.LVL120:
+ 1579               		.loc 1 344 0
+ 1580 00a2 4F5F      		subi r20,-1
+ 1581 00a4 5F4F      		sbci r21,-1
+ 1582               	.LVL119:
  345:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 		BitMask <<= 1;
- 1632               		.loc 1 345 0
- 1633 00a6 CC0C      		lsl r12
- 1634 00a8 DD1C      		rol r13
- 1635 00aa EE1C      		rol r14
- 1636 00ac FF1C      		rol r15
- 1637               	.LVL121:
- 1638 00ae 00C0      		rjmp .L114
- 1639               	.LVL122:
- 1640               	.L111:
- 1641               	/* epilogue start */
+ 1583               		.loc 1 345 0
+ 1584 00a6 CC0C      		lsl r12
+ 1585 00a8 DD1C      		rol r13
+ 1586 00aa EE1C      		rol r14
+ 1587 00ac FF1C      		rol r15
+ 1588               	.LVL120:
+ 1589 00ae 00C0      		rjmp .L114
+ 1590               	.LVL121:
+ 1591               	.L111:
+ 1592               	/* epilogue start */
  346:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	}
  347:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** }
- 1642               		.loc 1 347 0
- 1643 00b0 DF91      		pop r29
- 1644 00b2 CF91      		pop r28
- 1645 00b4 FF90      		pop r15
- 1646 00b6 EF90      		pop r14
- 1647 00b8 DF90      		pop r13
- 1648 00ba CF90      		pop r12
- 1649 00bc BF90      		pop r11
- 1650 00be AF90      		pop r10
- 1651 00c0 9F90      		pop r9
- 1652 00c2 8F90      		pop r8
- 1653 00c4 7F90      		pop r7
- 1654 00c6 6F90      		pop r6
- 1655 00c8 5F90      		pop r5
- 1656 00ca 4F90      		pop r4
- 1657 00cc 0895      		ret
- 1658               		.cfi_endproc
- 1659               	.LFE18:
- 1661               		.section	.text.USB_GetHIDReportSize,"ax",@progbits
- 1662               	.global	USB_GetHIDReportSize
- 1664               	USB_GetHIDReportSize:
- 1665               	.LFB19:
+ 1593               		.loc 1 347 0
+ 1594 00b0 DF91      		pop r29
+ 1595 00b2 CF91      		pop r28
+ 1596 00b4 FF90      		pop r15
+ 1597 00b6 EF90      		pop r14
+ 1598 00b8 DF90      		pop r13
+ 1599 00ba CF90      		pop r12
+ 1600 00bc BF90      		pop r11
+ 1601 00be AF90      		pop r10
+ 1602 00c0 9F90      		pop r9
+ 1603 00c2 8F90      		pop r8
+ 1604 00c4 7F90      		pop r7
+ 1605 00c6 6F90      		pop r6
+ 1606 00c8 5F90      		pop r5
+ 1607 00ca 4F90      		pop r4
+ 1608 00cc 0895      		ret
+ 1609               		.cfi_endproc
+ 1610               	.LFE18:
+ 1612               		.section	.text.USB_GetHIDReportSize,"ax",@progbits
+ 1613               	.global	USB_GetHIDReportSize
+ 1615               	USB_GetHIDReportSize:
+ 1616               	.LFB19:
  348:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
  349:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** uint16_t USB_GetHIDReportSize(HID_ReportInfo_t* const ParserData,
  350:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c ****                               const uint8_t ReportID,
  351:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c ****                               const uint8_t ReportType)
  352:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** {
- 1666               		.loc 1 352 0
- 1667               		.cfi_startproc
- 1668               	.LVL123:
- 1669               	/* prologue: function */
- 1670               	/* frame size = 0 */
- 1671               	/* stack size = 0 */
- 1672               	.L__stack_usage = 0
- 1673 0000 FC01      		movw r30,r24
- 1674 0002 E057      		subi r30,112
- 1675 0004 FC4F      		sbci r31,-4
- 1676 0006 8A52      		subi r24,42
- 1677 0008 9C4F      		sbci r25,-4
- 1678               	.LVL124:
- 1679 000a 50E0      		ldi r21,0
- 1680 000c 440F      		lsl r20
- 1681 000e 551F      		rol r21
- 1682               	.LVL125:
- 1683               	.L128:
- 1684 0010 DF01      		movw r26,r30
- 1685 0012 A40F      		add r26,r20
- 1686 0014 B51F      		adc r27,r21
- 1687               	.LBB20:
- 1688               	.LBB21:
+ 1617               		.loc 1 352 0
+ 1618               		.cfi_startproc
+ 1619               	.LVL122:
+ 1620               	/* prologue: function */
+ 1621               	/* frame size = 0 */
+ 1622               	/* stack size = 0 */
+ 1623               	.L__stack_usage = 0
+ 1624 0000 FC01      		movw r30,r24
+ 1625 0002 EA5B      		subi r30,-70
+ 1626 0004 FF4F      		sbci r31,-1
+ 1627 0006 50E0      		ldi r21,0
+ 1628 0008 440F      		lsl r20
+ 1629 000a 551F      		rol r21
+ 1630               	.LVL123:
+ 1631               	.LBB20:
+ 1632               	.LBB21:
  353:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	for (uint8_t i = 0; i < HID_MAX_REPORT_IDS; i++)
  354:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	{
  355:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 		uint16_t ReportSizeBits = ParserData->ReportIDSizes[i].ReportSizeBits[ReportType];
- 1689               		.loc 1 355 0
- 1690 0016 1196      		adiw r26,1
- 1691 0018 2D91      		ld r18,X+
- 1692 001a 3C91      		ld r19,X
- 1693 001c 1297      		sbiw r26,1+1
- 1694               	.LVL126:
+ 1633               		.loc 1 355 0
+ 1634 000c 4F56      		subi r20,111
+ 1635 000e 5C4F      		sbci r21,-4
+ 1636               	.LVL124:
+ 1637               	.L128:
+ 1638 0010 DC01      		movw r26,r24
+ 1639 0012 A40F      		add r26,r20
+ 1640 0014 B51F      		adc r27,r21
+ 1641 0016 2D91      		ld r18,X+
+ 1642 0018 3C91      		ld r19,X
+ 1643               	.LVL125:
  356:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
  357:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 		if (ParserData->ReportIDSizes[i].ReportID == ReportID)
- 1695               		.loc 1 357 0
- 1696 001e 7081      		ld r23,Z
- 1697 0020 7613      		cpse r23,r22
- 1698 0022 00C0      		rjmp .L125
+ 1644               		.loc 1 357 0
+ 1645 001a DC01      		movw r26,r24
+ 1646 001c A057      		subi r26,112
+ 1647 001e BC4F      		sbci r27,-4
+ 1648 0020 7C91      		ld r23,X
+ 1649 0022 7613      		cpse r23,r22
+ 1650 0024 00C0      		rjmp .L125
  358:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 		  return (ReportSizeBits / 8) + ((ReportSizeBits % 8) ? 1 : 0);
- 1699               		.loc 1 358 0
- 1700 0024 81E0      		ldi r24,lo8(1)
- 1701 0026 90E0      		ldi r25,0
- 1702               	.LVL127:
- 1703 0028 A901      		movw r20,r18
- 1704 002a 4770      		andi r20,7
- 1705 002c 5527      		clr r21
- 1706 002e 452B      		or r20,r21
- 1707 0030 01F4      		brne .L126
- 1708 0032 80E0      		ldi r24,0
- 1709 0034 90E0      		ldi r25,0
- 1710               	.L126:
- 1711 0036 43E0      		ldi r20,3
- 1712               		1:
- 1713 0038 3695      		lsr r19
- 1714 003a 2795      		ror r18
- 1715 003c 4A95      		dec r20
- 1716 003e 01F4      		brne 1b
- 1717               	.LVL128:
- 1718 0040 820F      		add r24,r18
- 1719 0042 931F      		adc r25,r19
- 1720 0044 0895      		ret
- 1721               	.LVL129:
- 1722               	.L125:
- 1723 0046 3796      		adiw r30,7
- 1724               	.LBE21:
+ 1651               		.loc 1 358 0
+ 1652 0026 81E0      		ldi r24,lo8(1)
+ 1653 0028 90E0      		ldi r25,0
+ 1654 002a A901      		movw r20,r18
+ 1655 002c 4770      		andi r20,7
+ 1656 002e 5527      		clr r21
+ 1657 0030 452B      		or r20,r21
+ 1658 0032 01F4      		brne .L126
+ 1659 0034 80E0      		ldi r24,0
+ 1660 0036 90E0      		ldi r25,0
+ 1661               	.L126:
+ 1662 0038 43E0      		ldi r20,3
+ 1663               		1:
+ 1664 003a 3695      		lsr r19
+ 1665 003c 2795      		ror r18
+ 1666 003e 4A95      		dec r20
+ 1667 0040 01F4      		brne 1b
+ 1668               	.LVL126:
+ 1669 0042 820F      		add r24,r18
+ 1670 0044 931F      		adc r25,r19
+ 1671 0046 0895      		ret
+ 1672               	.LVL127:
+ 1673               	.L125:
+ 1674 0048 0796      		adiw r24,7
+ 1675               	.LBE21:
  353:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	for (uint8_t i = 0; i < HID_MAX_REPORT_IDS; i++)
- 1725               		.loc 1 353 0 discriminator 2
- 1726 0048 E817      		cp r30,r24
- 1727 004a F907      		cpc r31,r25
- 1728 004c 01F4      		brne .L128
- 1729               	.LBE20:
+ 1676               		.loc 1 353 0 discriminator 2
+ 1677 004a 8E17      		cp r24,r30
+ 1678 004c 9F07      		cpc r25,r31
+ 1679 004e 01F4      		brne .L128
+ 1680               	.LBE20:
  359:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	}
  360:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 
  361:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** 	return 0;
- 1730               		.loc 1 361 0
- 1731 004e 80E0      		ldi r24,0
- 1732 0050 90E0      		ldi r25,0
+ 1681               		.loc 1 361 0
+ 1682 0050 80E0      		ldi r24,0
+ 1683 0052 90E0      		ldi r25,0
  362:../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.c **** }
- 1733               		.loc 1 362 0
- 1734 0052 0895      		ret
- 1735               		.cfi_endproc
- 1736               	.LFE19:
- 1738               		.text
- 1739               	.Letext0:
- 1740               		.file 2 "/usr/lib/avr/include/stdint.h"
- 1741               		.file 3 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDClassCommon.h"
- 1742               		.file 4 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.h"
+ 1684               		.loc 1 362 0
+ 1685 0054 0895      		ret
+ 1686               		.cfi_endproc
+ 1687               	.LFE19:
+ 1689               		.text
+ 1690               	.Letext0:
+ 1691               		.file 2 "/usr/avr/include/stdint.h"
+ 1692               		.file 3 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDClassCommon.h"
+ 1693               		.file 4 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.h"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 HIDParser.c
-     /tmp/ccCEIERt.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccCEIERt.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccCEIERt.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccCEIERt.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccCEIERt.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccCEIERt.s:13     .text.USB_ProcessHIDReport:0000000000000000 USB_ProcessHIDReport
-     /tmp/ccCEIERt.s:1302   .text.USB_GetHIDReportItemInfo:0000000000000000 USB_GetHIDReportItemInfo
-     /tmp/ccCEIERt.s:1473   .text.USB_SetHIDReportItemInfo:0000000000000000 USB_SetHIDReportItemInfo
-     /tmp/ccCEIERt.s:1664   .text.USB_GetHIDReportSize:0000000000000000 USB_GetHIDReportSize
+     /tmp/ccfiJv7g.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccfiJv7g.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccfiJv7g.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccfiJv7g.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccfiJv7g.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccfiJv7g.s:13     .text.USB_ProcessHIDReport:0000000000000000 USB_ProcessHIDReport
+     /tmp/ccfiJv7g.s:1254   .text.USB_GetHIDReportItemInfo:0000000000000000 USB_GetHIDReportItemInfo
+     /tmp/ccfiJv7g.s:1424   .text.USB_SetHIDReportItemInfo:0000000000000000 USB_SetHIDReportItemInfo
+     /tmp/ccfiJv7g.s:1615   .text.USB_GetHIDReportSize:0000000000000000 USB_GetHIDReportSize
 
 UNDEFINED SYMBOLS
 CALLBACK_HIDParser_FilterHIDReportItem
